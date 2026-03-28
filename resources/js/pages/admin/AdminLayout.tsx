@@ -24,7 +24,7 @@ export default function AdminLayout() {
             <aside className="w-64 shrink-0 border-r border-slate-800 bg-slate-950 px-4 py-6">
                 <div className="mb-8">
                     <p className="text-xs font-semibold uppercase tracking-widest text-slate-500">Back-office</p>
-                    <h1 className="mt-1 text-xl font-bold text-white">BAC Sénégal IA</h1>
+                    <img src="/logo.png" alt="Je Réussis Mon BAC" className="mt-3 w-36 h-auto brightness-0 invert" />
                 </div>
 
                 <nav className="space-y-1">

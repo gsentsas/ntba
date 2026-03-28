@@ -40,15 +40,7 @@ export function Sidebar() {
             )}
         >
             <div className="mb-8">
-                <div className="inline-flex items-center rounded-full bg-green px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-white">
-                    BAC Sénégal IA
-                </div>
-                <h2 className="mt-4 text-2xl font-semibold text-slate-950">
-                    Réussir le Bac, une séance à la fois
-                </h2>
-                <p className="mt-2 text-sm leading-6 text-slate-600">
-                    Tableau de bord mobile-first pour les révisions, l'IA et le suivi de progression.
-                </p>
+                <img src="/logo.png" alt="Je Réussis Mon BAC" className="w-44 h-auto" />
             </div>
 
             <nav className="space-y-1 pb-24">

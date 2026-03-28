@@ -2,7 +2,6 @@ import {
     ArrowRight,
     BookOpen,
     BookOpenCheck,
-    Brain,
     CalendarDays,
     ChartColumn,
     Check,
@@ -147,12 +146,7 @@ function NavBar() {
     return (
         <nav className="sticky top-0 z-50 border-b border-white/60 bg-white/90 backdrop-blur">
             <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-                <div className="flex items-center gap-2">
-                    <div className="flex size-8 items-center justify-center rounded-xl bg-green">
-                        <Brain className="size-5 text-white" />
-                    </div>
-                    <span className="text-lg font-bold text-slate-950">BAC Sénégal IA</span>
-                </div>
+                <img src="/logo.png" alt="Je Réussis Mon BAC" className="h-12 w-auto" />
 
                 <div className="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
                     <a href="#features" className="hover:text-green transition-colors">Fonctionnalités</a>

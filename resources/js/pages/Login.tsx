@@ -50,9 +50,7 @@ export default function Login() {
             <div className="mx-auto flex min-h-[calc(100vh-5rem)] max-w-5xl items-center justify-center">
                 <div className="grid w-full gap-8 lg:grid-cols-[1.1fr_0.9fr]">
                     <div className="hidden rounded-[2rem] bg-slate-950 p-8 text-white lg:block">
-                        <div className="inline-flex rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-green-light">
-                            BAC Sénégal IA
-                        </div>
+                        <img src="/logo.png" alt="Je Réussis Mon BAC" className="w-48 h-auto brightness-0 invert" />
                         <h1 className="mt-6 text-4xl font-semibold leading-tight">
                             Prépare ton Bac avec un coach IA pensé pour le Sénégal.
                         </h1>
