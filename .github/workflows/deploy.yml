@@ -1,0 +1,48 @@
+name: deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to VPS via SSH
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            set -e
+            cd ${{ secrets.VPS_PATH }}
+
+            # Récupérer les dernières modifications
+            git pull origin main
+
+            # Installer / mettre à jour les dépendances frontend
+            npm install
+
+            # Construire les assets Vite (Laravel + React BAC)
+            npm run build
+
+            # Mettre à jour les dépendances PHP
+            composer install --no-dev --optimize-autoloader --no-interaction
+
+            # Vider les caches Laravel
+            php artisan config:cache
+            php artisan route:cache
+            php artisan view:cache
+
+            # Mettre à jour les dépendances Node.js du backend
+            cd backend
+            npm install --omit=dev
+            cd ..
+
+            # Redémarrer le backend via PM2
+            ./backend/node_modules/.bin/pm2 restart bac-api --update-env
+
+            echo "✅ Déploiement terminé"
