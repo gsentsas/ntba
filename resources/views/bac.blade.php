@@ -6,7 +6,7 @@
         <meta name="description" content="Prépare ton Baccalauréat sénégalais avec un tuteur IA basé sur Claude">
         <title>BAC Sénégal IA</title>
 
-        <link rel="icon" href="/favicon.ico" sizes="any">
+        <link rel="icon" href="/logo.png" type="image/png" sizes="512x512">
         <link rel="icon" href="/favicon.svg" type="image/svg+xml">
         <link rel="apple-touch-icon" href="/apple-touch-icon.png">
         <link rel="manifest" href="/manifest.json">
