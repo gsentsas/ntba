@@ -692,8 +692,8 @@ function CTA() {
     return (
         <section className="px-6 py-24">
             <div className="mx-auto max-w-4xl overflow-hidden rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-green-dark p-12 text-center shadow-2xl">
-                <div className="mx-auto mb-6 flex size-16 items-center justify-center rounded-2xl bg-green">
-                    <Brain className="size-8 text-white" />
+                <div className="mx-auto mb-6 flex size-20 items-center justify-center">
+                    <img src="/logo.png" alt="Je Réussis Mon BAC" className="size-20 brightness-0 invert" />
                 </div>
                 <h2 className="text-4xl font-bold text-white md:text-5xl">
                     Prêt à décrocher ton BAC ?
@@ -727,14 +727,7 @@ function Footer() {
         <footer className="border-t border-slate-100 bg-white px-6 py-12">
             <div className="mx-auto max-w-6xl">
                 <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
-                    <div className="flex items-center gap-2">
-                        <div className="flex size-8 items-center justify-center rounded-xl bg-green">
-                            <Brain className="size-5 text-white" />
-                        </div>
-                        <span className="text-lg font-bold text-slate-950">
-                            BAC Sénégal IA
-                        </span>
-                    </div>
+                    <img src="/logo.png" alt="Je Réussis Mon BAC" className="h-10 w-auto" />
 
                     <p className="text-sm text-slate-500">
                         Programmes officiels Office du Baccalauréat · L1, L2,
