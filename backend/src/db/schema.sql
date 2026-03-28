@@ -1,5 +1,5 @@
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-CREATE EXTENSION IF NOT EXISTS pg_trgm;
+-- uuid-ossp not required: gen_random_uuid() is native PostgreSQL 13+
+-- pg_trgm requires superuser; trigram search not used in current queries
 
 CREATE TABLE IF NOT EXISTS series (
     code varchar(10) PRIMARY KEY,
@@ -24,7 +24,7 @@ VALUES
 ON CONFLICT (code) DO NOTHING;
 
 CREATE TABLE IF NOT EXISTS users (
-    id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
+    id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
     email varchar(255) UNIQUE NOT NULL,
     password_hash varchar(255),
     prenom varchar(100) NOT NULL,
