@@ -1907,7 +1907,7 @@ function detectSubject(libelle) {
     if (/\bSCPH\b/.test(l) || /\bSC[\s-]?PH\b/.test(l)) return 'Physique';
     if (/\bANGLAIS\b/.test(l) || /\bANGL?\b/.test(l)) return 'Anglais';
     if (/\bFRANCAIS\b/.test(l) || /\bFRANC?\b/.test(l)) return 'Français';
-    if (/\bPHILO\b/.test(l)) return 'Philosophie';
+    if (/\bPHIL[IO]+\b/.test(l) || /\bPHIO\b/.test(l)) return 'Philosophie';
     if (/\bHG\b/.test(l) || /\bHIST[\s-]?GEO\b/.test(l) || /\bHISTOIRE\b/.test(l)) return 'Histoire-Géographie';
     if (/\bECO(NOMIE)?\b/.test(l)) return 'Économie';
     if (/\bDROIT\b/.test(l)) return 'Droit';
@@ -1924,6 +1924,17 @@ function detectSubject(libelle) {
 
 const SERIES_NORM = { L: ['L1'], S: ['S1', 'S2'] };
 const HANDLED_SERIES = new Set(['S1', 'S2', 'L1', 'L2', 'STEG']);
+
+// Sujets que certaines séries ne proposent pas (skip silencieux, sans warning)
+const SILENT_SKIP = new Set(['L2:SVT', 'L2:Physique', 'L2:Économie', 'L2:Chimie']);
+
+// Sujets à auto-créer s'ils sont absents de la DB (manifest les recense mais seed.js ne les inclut pas)
+const AUTO_CREATE_META = {
+    'STEG:Droit':        { coefficient: 3, icon: '⚖️', color: '#7C3AED', description: 'Droit pour la série STEG.' },
+    'STEG:Espagnol':     { coefficient: 2, icon: '🇪🇸', color: '#DC2626', description: 'Espagnol LVI pour la série STEG.' },
+    'STEG:Informatique': { coefficient: 2, icon: '💻', color: '#475569', description: 'Informatique pour la série STEG.' },
+    'STEG:Philosophie':  { coefficient: 2, icon: '💭', color: '#7F77DD', description: 'Philosophie pour la série STEG.' },
+};
 
 function parseSeries(seriesStr) {
     const raw = (seriesStr || '').replace(/"/g, '').split(',').map((s) => s.trim()).filter(Boolean);
@@ -2021,8 +2032,38 @@ async function seedAnnales() {
             const questionText = `Épreuve officielle du BAC 2024 – ${ep.L.trim()} (${ep.G}, session de ${ep.M}).`;
 
             for (const serieCode of series) {
-                const subject = subjectIndex[`${serieCode}:${subjectName}`]
+                const compositeKey = `${serieCode}:${subjectName}`;
+
+                // Skip silencieux pour les sujets hors programme de la série
+                if (SILENT_SKIP.has(compositeKey)) { skipped++; continue; }
+
+                let subject = subjectIndex[compositeKey]
                     ?? subjectsRes.rows.find((s) => s.serie_code === serieCode && s.name.toLowerCase().includes(subjectName.toLowerCase().split(' ')[0]));
+
+                // Auto-créer le sujet s'il est dans notre liste et absent de la DB
+                if (!subject && AUTO_CREATE_META[compositeKey]) {
+                    const meta = AUTO_CREATE_META[compositeKey];
+                    const newId = uuidv4();
+                    const slug = subjectName.toLowerCase()
+                        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+                        .replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                    const orderRes = await client.query(
+                        'SELECT COALESCE(MAX(order_index), 0) + 1 AS next FROM subjects WHERE serie_code=$1', [serieCode],
+                    );
+                    await client.query(
+                        `INSERT INTO subjects (id, serie_code, name, slug, coefficient, icon, color, description, order_index)
+                         VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)
+                         ON CONFLICT (serie_code, slug) DO NOTHING`,
+                        [newId, serieCode, subjectName, slug, meta.coefficient, meta.icon, meta.color, meta.description, orderRes.rows[0].next],
+                    );
+                    // Re-fetch in case of conflict
+                    const res = await client.query('SELECT id, serie_code, name FROM subjects WHERE serie_code=$1 AND name=$2', [serieCode, subjectName]);
+                    subject = res.rows[0];
+                    if (subject) {
+                        subjectIndex[compositeKey] = subject;
+                        console.log(`   ✚ Sujet créé: ${compositeKey}`);
+                    }
+                }
 
                 if (!subject) {
                     console.log(`   ⚠️  "${subjectName}" introuvable pour série ${serieCode} – ignoré`);
