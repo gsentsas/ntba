@@ -21,6 +21,7 @@ import AdminDashboard from '@/pages/admin/AdminDashboard';
 import AdminUsers from '@/pages/admin/AdminUsers';
 import AdminExercises from '@/pages/admin/AdminExercises';
 import AdminContent from '@/pages/admin/AdminContent';
+import AdminForum from '@/pages/admin/AdminForum';
 import Landing from '@/pages/Landing';
 import { useAppStore } from '@/store';
 
@@ -77,6 +78,7 @@ export default function App() {
                         <Route path="users" element={<AdminUsers />} />
                         <Route path="exercises" element={<AdminExercises />} />
                         <Route path="content" element={<AdminContent />} />
+                        <Route path="forum" element={<AdminForum />} />
                     </Route>
 
                     {/* Redirection par défaut */}
