@@ -33,8 +33,10 @@ export default defineConfig({
         VitePWA({
             registerType: 'autoUpdate',
             manifest: false, // On utilise notre manifest.json dans public/
+            scope: '/bac/',  // Scope de l'app pour le Service Worker
             workbox: {
-                globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
+                globPatterns: ['**/*.{js,css,woff2}'],
+                navigateFallback: null,  // Pas d'index.html statique — Laravel sert les pages
                 runtimeCaching: [
                     {
                         urlPattern: /^https:\/\/fonts\.bunny\.net\/.*/i,
