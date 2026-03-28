@@ -1,8 +1,15 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { AlertCircle, ChevronRight, Clock, Lightbulb, Star, Trophy } from 'lucide-react';
-import toast from 'react-hot-toast';
 import { useQuery } from '@tanstack/react-query';
+import {
+    AlertCircle,
+    ChevronRight,
+    Clock,
+    Lightbulb,
+    Star,
+    Trophy,
+} from 'lucide-react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 import { Layout } from '@/components/Layout/Layout';
 import { Badge } from '@/components/ui/badge';
@@ -52,8 +59,18 @@ export default function Quiz() {
         enabled: !!user?.serie_code,
     });
 
-    const { data: rawExercises, isLoading, refetch } = useQuery({
-        queryKey: ['quiz-exercises', filterSubjectId, filterDifficulty, filterType, annaleOnly],
+    const {
+        data: rawExercises,
+        isLoading,
+        refetch,
+    } = useQuery({
+        queryKey: [
+            'quiz-exercises',
+            filterSubjectId,
+            filterDifficulty,
+            filterType,
+            annaleOnly,
+        ],
         queryFn: () =>
             exercisesApi.list({
                 subject_id: filterSubjectId || undefined,
@@ -78,6 +95,7 @@ export default function Quiz() {
             setScore({ correct: 0, total: 0, points: 0 });
             setDone(false);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [rawExercises]);
 
     function resetQuestion(ex?: Exercise) {
@@ -90,32 +108,51 @@ export default function Quiz() {
     }
 
     function startTimer(seconds: number) {
-        if (timerRef.current) clearInterval(timerRef.current);
+        if (timerRef.current) {
+            clearInterval(timerRef.current);
+        }
+
         setTimeLeft(seconds);
         timerRef.current = setInterval(() => {
             setTimeLeft((t) => {
                 if (t <= 1) {
                     clearInterval(timerRef.current!);
+
                     return 0;
                 }
+
                 return t - 1;
             });
         }, 1000);
     }
 
-    useEffect(() => () => { if (timerRef.current) clearInterval(timerRef.current); }, []);
+    useEffect(
+        () => () => {
+            if (timerRef.current) {
+                clearInterval(timerRef.current);
+            }
+        },
+        [],
+    );
 
     const currentEx = exercises[currentIndex];
 
     async function handleSubmit() {
-        if (!selected || !currentEx || submitting) return;
+        if (!selected || !currentEx || submitting) {
+            return;
+        }
+
         setSubmitting(true);
-        if (timerRef.current) clearInterval(timerRef.current);
+
+        if (timerRef.current) {
+            clearInterval(timerRef.current);
+        }
 
         try {
             const res = await exercisesApi.submit(currentEx.id, {
                 answer: selected,
-                time_spent_seconds: (currentEx.estimated_time_minutes * 60) - timeLeft,
+                time_spent_seconds:
+                    currentEx.estimated_time_minutes * 60 - timeLeft,
                 hints_used: hintsUsed,
             });
             setResult(res);
@@ -132,17 +169,21 @@ export default function Quiz() {
     }
 
     async function handleHint() {
-        if (!currentEx) return;
+        if (!currentEx) {
+            return;
+        }
+
         try {
             const { hint } = await exercisesApi.hint(currentEx.id, hintsUsed);
+
             if (hint) {
                 setCurrentHint(hint);
                 setHintsUsed((h) => h + 1);
             } else {
-                toast('Plus d\'indice disponible');
+                toast("Plus d'indice disponible");
             }
         } catch {
-            toast.error('Impossible de charger l\'indice');
+            toast.error("Impossible de charger l'indice");
         }
     }
 
@@ -160,12 +201,14 @@ export default function Quiz() {
         refetch();
     }
 
-    const formatTime = (secs: number) => `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, '0')}`;
+    const formatTime = (secs: number) =>
+        `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, '0')}`;
     const timerRed = timeLeft > 0 && timeLeft < 30;
 
     // ── Écran résultat ──
     if (done) {
         const pct = Math.round((score.correct / score.total) * 100);
+
         return (
             <Layout>
                 <div className="mx-auto max-w-lg">
@@ -178,10 +221,17 @@ export default function Quiz() {
                             </div>
 
                             <div>
-                                <p className="text-lg text-slate-500">Résultat</p>
-                                <p className="text-5xl font-bold text-green">{pct}%</p>
+                                <p className="text-lg text-slate-500">
+                                    Résultat
+                                </p>
+                                <p className="text-5xl font-bold text-green">
+                                    {pct}%
+                                </p>
                                 <p className="mt-1 text-slate-600">
-                                    {score.correct} bonne{score.correct > 1 ? 's' : ''} réponse{score.correct > 1 ? 's' : ''} sur {score.total}
+                                    {score.correct} bonne
+                                    {score.correct > 1 ? 's' : ''} réponse
+                                    {score.correct > 1 ? 's' : ''} sur{' '}
+                                    {score.total}
                                 </p>
                             </div>
 
@@ -192,7 +242,10 @@ export default function Quiz() {
                             </div>
 
                             <div className="flex flex-col gap-3">
-                                <Button onClick={handleRestart} className="bg-green hover:bg-green-dark text-white w-full">
+                                <Button
+                                    onClick={handleRestart}
+                                    className="w-full bg-green text-white hover:bg-green-dark"
+                                >
                                     Recommencer
                                 </Button>
                                 <Button
@@ -202,7 +255,11 @@ export default function Quiz() {
                                 >
                                     Réviser avec l'IA
                                 </Button>
-                                <Button variant="ghost" onClick={() => navigate('/stats')} className="w-full text-slate-500">
+                                <Button
+                                    variant="ghost"
+                                    onClick={() => navigate('/stats')}
+                                    className="w-full text-slate-500"
+                                >
                                     Voir mes stats
                                 </Button>
                             </div>
@@ -216,7 +273,6 @@ export default function Quiz() {
     return (
         <Layout>
             <div className="mx-auto max-w-3xl space-y-4">
-
                 {/* ── Filtres ── */}
                 <Card>
                     <CardContent className="flex flex-wrap items-center gap-3 py-3">
@@ -227,18 +283,24 @@ export default function Quiz() {
                         >
                             <option value="">Toutes les matières</option>
                             {subjects.map((s) => (
-                                <option key={s.id} value={s.id}>{s.icon} {s.name}</option>
+                                <option key={s.id} value={s.id}>
+                                    {s.icon} {s.name}
+                                </option>
                             ))}
                         </select>
 
                         <select
                             value={filterDifficulty}
-                            onChange={(e) => setFilterDifficulty(e.target.value)}
+                            onChange={(e) =>
+                                setFilterDifficulty(e.target.value)
+                            }
                             className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-sm focus:border-green focus:outline-none"
                         >
                             <option value="">Toute difficulté</option>
                             {[1, 2, 3, 4, 5].map((d) => (
-                                <option key={d} value={d}>{'★'.repeat(d)} ({d}/5)</option>
+                                <option key={d} value={d}>
+                                    {'★'.repeat(d)} ({d}/5)
+                                </option>
                             ))}
                         </select>
 
@@ -257,7 +319,9 @@ export default function Quiz() {
                             <input
                                 type="checkbox"
                                 checked={annaleOnly}
-                                onChange={(e) => setAnnaleOnly(e.target.checked)}
+                                onChange={(e) =>
+                                    setAnnaleOnly(e.target.checked)
+                                }
                                 className="h-4 w-4 rounded accent-green"
                             />
                             Annales uniquement
@@ -282,14 +346,18 @@ export default function Quiz() {
                                     <div
                                         key={i}
                                         className={`h-2 w-2 rounded-full transition-colors ${
-                                            i < currentIndex ? 'bg-green' :
-                                            i === currentIndex ? 'bg-green scale-125' :
-                                            'bg-slate-200'
+                                            i < currentIndex
+                                                ? 'bg-green'
+                                                : i === currentIndex
+                                                  ? 'scale-125 bg-green'
+                                                  : 'bg-slate-200'
                                         }`}
                                     />
                                 ))}
                             </div>
-                            <span className="text-sm text-slate-500">{currentIndex + 1} / {exercises.length}</span>
+                            <span className="text-sm text-slate-500">
+                                {currentIndex + 1} / {exercises.length}
+                            </span>
                         </div>
 
                         <Card>
@@ -297,24 +365,31 @@ export default function Quiz() {
                                 <div className="flex items-start justify-between gap-3">
                                     <div className="flex flex-wrap items-center gap-2">
                                         {currentEx.subject_name && (
-                                            <Badge className="bg-green-light text-green-dark border-0">
+                                            <Badge className="border-0 bg-green-light text-green-dark">
                                                 {currentEx.subject_name}
                                             </Badge>
                                         )}
                                         {currentEx.is_annale && (
-                                            <Badge className="bg-amber-light text-amber border-0">
+                                            <Badge className="border-0 bg-amber-light text-amber">
                                                 Annale {currentEx.annale_year}
                                             </Badge>
                                         )}
-                                        <span className="text-amber text-sm">
-                                            {'★'.repeat(currentEx.difficulty)}{'☆'.repeat(5 - currentEx.difficulty)}
+                                        <span className="text-sm text-amber">
+                                            {'★'.repeat(currentEx.difficulty)}
+                                            {'☆'.repeat(
+                                                5 - currentEx.difficulty,
+                                            )}
                                         </span>
                                     </div>
 
                                     {/* Timer */}
-                                    <div className={`flex items-center gap-1 rounded-full px-3 py-1 text-sm font-mono font-semibold ${
-                                        timerRed ? 'bg-red-50 text-red-600' : 'bg-slate-100 text-slate-600'
-                                    }`}>
+                                    <div
+                                        className={`flex items-center gap-1 rounded-full px-3 py-1 font-mono text-sm font-semibold ${
+                                            timerRed
+                                                ? 'bg-red-50 text-red-600'
+                                                : 'bg-slate-100 text-slate-600'
+                                        }`}
+                                    >
                                         <Clock className="h-3.5 w-3.5" />
                                         {formatTime(timeLeft)}
                                     </div>
@@ -323,47 +398,86 @@ export default function Quiz() {
 
                             <CardContent className="space-y-4 pt-4">
                                 {/* Question */}
-                                <p className="text-base font-medium text-slate-800">{currentEx.question_text}</p>
+                                <p className="text-base font-medium text-slate-800">
+                                    {currentEx.question_text}
+                                </p>
 
                                 {/* Options QCM */}
-                                {currentEx.type === 'qcm' && currentEx.options?.map((opt: ExerciseOption) => {
-                                    let cls = 'border-slate-200 bg-white hover:border-green hover:bg-green-xlight';
-                                    if (result) {
-                                        if (opt.label === result.correct_answer) cls = 'border-green bg-green-light';
-                                        else if (opt.label === selected) cls = 'border-red-400 bg-red-50';
-                                        else cls = 'border-slate-200 bg-white opacity-60';
-                                    } else if (selected === opt.label) {
-                                        cls = 'border-green bg-green-light';
-                                    }
-                                    return (
-                                        <button
-                                            key={opt.label}
-                                            disabled={!!result}
-                                            onClick={() => setSelected(opt.label)}
-                                            className={`w-full rounded-xl border-2 px-4 py-3 text-left text-sm transition-all ${cls}`}
-                                        >
-                                            <span className="mr-2 font-bold text-slate-500">{opt.label}.</span>
-                                            {opt.text}
-                                        </button>
-                                    );
-                                })}
+                                {currentEx.type === 'qcm' &&
+                                    currentEx.options?.map(
+                                        (opt: ExerciseOption) => {
+                                            let cls =
+                                                'border-slate-200 bg-white hover:border-green hover:bg-green-xlight';
+
+                                            if (result) {
+                                                if (
+                                                    opt.label ===
+                                                    result.correct_answer
+                                                ) {
+                                                    cls =
+                                                        'border-green bg-green-light';
+                                                } else if (
+                                                    opt.label === selected
+                                                ) {
+                                                    cls =
+                                                        'border-red-400 bg-red-50';
+                                                } else {
+                                                    cls =
+                                                        'border-slate-200 bg-white opacity-60';
+                                                }
+                                            } else if (selected === opt.label) {
+                                                cls =
+                                                    'border-green bg-green-light';
+                                            }
+
+                                            return (
+                                                <button
+                                                    key={opt.label}
+                                                    disabled={!!result}
+                                                    onClick={() =>
+                                                        setSelected(opt.label)
+                                                    }
+                                                    className={`w-full rounded-xl border-2 px-4 py-3 text-left text-sm transition-all ${cls}`}
+                                                >
+                                                    <span className="mr-2 font-bold text-slate-500">
+                                                        {opt.label}.
+                                                    </span>
+                                                    {opt.text}
+                                                </button>
+                                            );
+                                        },
+                                    )}
 
                                 {/* Vrai / Faux */}
                                 {currentEx.type === 'vrai_faux' && (
                                     <div className="flex gap-3">
                                         {['vrai', 'faux'].map((val) => {
-                                            let cls = 'border-slate-200 bg-white hover:border-green';
+                                            let cls =
+                                                'border-slate-200 bg-white hover:border-green';
+
                                             if (result) {
-                                                if (val === result.correct_answer) cls = 'border-green bg-green-light';
-                                                else if (val === selected) cls = 'border-red-400 bg-red-50';
+                                                if (
+                                                    val ===
+                                                    result.correct_answer
+                                                ) {
+                                                    cls =
+                                                        'border-green bg-green-light';
+                                                } else if (val === selected) {
+                                                    cls =
+                                                        'border-red-400 bg-red-50';
+                                                }
                                             } else if (selected === val) {
-                                                cls = 'border-green bg-green-light';
+                                                cls =
+                                                    'border-green bg-green-light';
                                             }
+
                                             return (
                                                 <button
                                                     key={val}
                                                     disabled={!!result}
-                                                    onClick={() => setSelected(val)}
+                                                    onClick={() =>
+                                                        setSelected(val)
+                                                    }
                                                     className={`flex-1 rounded-xl border-2 py-3 text-sm font-semibold capitalize transition-all ${cls}`}
                                                 >
                                                     {val}
@@ -383,13 +497,19 @@ export default function Quiz() {
 
                                 {/* Explication après soumission */}
                                 {result && (
-                                    <div className={`rounded-xl px-4 py-3 text-sm ${result.is_correct ? 'bg-green-light text-green-dark' : 'bg-red-50 text-red-700'}`}>
+                                    <div
+                                        className={`rounded-xl px-4 py-3 text-sm ${result.is_correct ? 'bg-green-light text-green-dark' : 'bg-red-50 text-red-700'}`}
+                                    >
                                         <p className="mb-1 font-semibold">
-                                            {result.is_correct ? '✓ Bonne réponse !' : `✗ Réponse correcte : ${result.correct_answer}`}
+                                            {result.is_correct
+                                                ? '✓ Bonne réponse !'
+                                                : `✗ Réponse correcte : ${result.correct_answer}`}
                                         </p>
                                         <p>{currentEx.explanation}</p>
                                         {result.points_earned > 0 && (
-                                            <p className="mt-1 font-medium text-green">+{result.points_earned} points</p>
+                                            <p className="mt-1 font-medium text-green">
+                                                +{result.points_earned} points
+                                            </p>
                                         )}
                                     </div>
                                 )}
@@ -410,10 +530,16 @@ export default function Quiz() {
                                             </Button>
                                             <Button
                                                 onClick={handleSubmit}
-                                                disabled={!selected || submitting}
+                                                disabled={
+                                                    !selected || submitting
+                                                }
                                                 className="bg-green text-white hover:bg-green-dark"
                                             >
-                                                {submitting ? <Spinner className="h-4 w-4" /> : 'Valider'}
+                                                {submitting ? (
+                                                    <Spinner className="h-4 w-4" />
+                                                ) : (
+                                                    'Valider'
+                                                )}
                                             </Button>
                                         </>
                                     ) : (
@@ -421,10 +547,17 @@ export default function Quiz() {
                                             onClick={handleNext}
                                             className="ml-auto bg-green text-white hover:bg-green-dark"
                                         >
-                                            {currentIndex + 1 < exercises.length ? (
-                                                <>Question suivante <ChevronRight className="h-4 w-4" /></>
+                                            {currentIndex + 1 <
+                                            exercises.length ? (
+                                                <>
+                                                    Question suivante{' '}
+                                                    <ChevronRight className="h-4 w-4" />
+                                                </>
                                             ) : (
-                                                <>Voir mon score <Trophy className="h-4 w-4" /></>
+                                                <>
+                                                    Voir mon score{' '}
+                                                    <Trophy className="h-4 w-4" />
+                                                </>
                                             )}
                                         </Button>
                                     )}
@@ -439,8 +572,18 @@ export default function Quiz() {
                     <Card>
                         <CardContent className="flex flex-col items-center gap-3 py-12 text-center">
                             <AlertCircle className="h-10 w-10 text-slate-300" />
-                            <p className="text-slate-500">Aucun exercice trouvé avec ces filtres.</p>
-                            <Button variant="outline" onClick={() => { setFilterSubjectId(''); setFilterDifficulty(''); setFilterType(''); setAnnaleOnly(false); }}>
+                            <p className="text-slate-500">
+                                Aucun exercice trouvé avec ces filtres.
+                            </p>
+                            <Button
+                                variant="outline"
+                                onClick={() => {
+                                    setFilterSubjectId('');
+                                    setFilterDifficulty('');
+                                    setFilterType('');
+                                    setAnnaleOnly(false);
+                                }}
+                            >
                                 Réinitialiser les filtres
                             </Button>
                         </CardContent>

@@ -1,10 +1,21 @@
+import {
+    BookOpen,
+    FileEdit,
+    LayoutDashboard,
+    MessageSquare,
+    Users,
+} from 'lucide-react';
 import { Navigate, NavLink, Outlet } from 'react-router-dom';
-import { BookOpen, FileEdit, LayoutDashboard, MessageSquare, Users } from 'lucide-react';
 
 import { useAppStore } from '@/store';
 
 const NAV_ITEMS = [
-    { to: '/admin', icon: LayoutDashboard, label: 'Tableau de bord', end: true },
+    {
+        to: '/admin',
+        icon: LayoutDashboard,
+        label: 'Tableau de bord',
+        end: true,
+    },
     { to: '/admin/users', icon: Users, label: 'Utilisateurs' },
     { to: '/admin/exercises', icon: BookOpen, label: 'Exercices' },
     { to: '/admin/content', icon: FileEdit, label: 'Contenu' },
@@ -23,8 +34,14 @@ export default function AdminLayout() {
             {/* Sidebar admin */}
             <aside className="w-64 shrink-0 border-r border-slate-800 bg-slate-950 px-4 py-6">
                 <div className="mb-8">
-                    <p className="text-xs font-semibold uppercase tracking-widest text-slate-500">Back-office</p>
-                    <img src="/logo.png" alt="Je Réussis Mon BAC" className="mt-3 w-36 h-auto brightness-0 invert" />
+                    <p className="text-xs font-semibold tracking-widest text-slate-500 uppercase">
+                        Back-office
+                    </p>
+                    <img
+                        src="/logo.png"
+                        alt="Je Réussis Mon BAC"
+                        className="mt-3 h-auto w-36 brightness-0 invert"
+                    />
                 </div>
 
                 <nav className="space-y-1">

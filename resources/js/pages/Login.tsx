@@ -1,11 +1,17 @@
 import { isAxiosError } from 'axios';
 import { ArrowRight, LockKeyhole, Mail } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardHeader,
+    CardTitle,
+} from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { useAuth } from '@/hooks/useAuth';
 import { useAppStore } from '@/store';
@@ -39,7 +45,7 @@ export default function Login() {
         } catch (error) {
             toast.error(
                 isAxiosError(error)
-                    ? error.response?.data?.message ?? 'Connexion impossible'
+                    ? (error.response?.data?.message ?? 'Connexion impossible')
                     : 'Connexion impossible',
             );
         }
@@ -50,18 +56,27 @@ export default function Login() {
             <div className="mx-auto flex min-h-[calc(100vh-5rem)] max-w-5xl items-center justify-center">
                 <div className="grid w-full gap-8 lg:grid-cols-[1.1fr_0.9fr]">
                     <div className="hidden rounded-[2rem] bg-slate-950 p-8 text-white lg:block">
-                        <img src="/logo.png" alt="Je Réussis Mon BAC" className="w-48 h-auto brightness-0 invert" />
-                        <h1 className="mt-6 text-4xl font-semibold leading-tight">
-                            Prépare ton Bac avec un coach IA pensé pour le Sénégal.
+                        <img
+                            src="/logo.png"
+                            alt="Je Réussis Mon BAC"
+                            className="h-auto w-48 brightness-0 invert"
+                        />
+                        <h1 className="mt-6 text-4xl leading-tight font-semibold">
+                            Prépare ton Bac avec un coach IA pensé pour le
+                            Sénégal.
                         </h1>
                         <p className="mt-4 max-w-md text-sm leading-7 text-white/70">
-                            Planning adaptatif, exercices ciblés, suivi de progression et accompagnement intelligent en français.
+                            Planning adaptatif, exercices ciblés, suivi de
+                            progression et accompagnement intelligent en
+                            français.
                         </p>
                     </div>
 
                     <Card className="border-white/70 bg-white/90 shadow-2xl shadow-green/10">
                         <CardHeader className="space-y-3">
-                            <CardTitle className="text-3xl text-slate-950">Connexion</CardTitle>
+                            <CardTitle className="text-3xl text-slate-950">
+                                Connexion
+                            </CardTitle>
                             <CardDescription className="text-base leading-6 text-slate-600">
                                 Reprends ta révision là où tu t’es arrêté.
                             </CardDescription>
@@ -70,13 +85,20 @@ export default function Login() {
                         <CardContent>
                             <form className="space-y-5" onSubmit={handleSubmit}>
                                 <label className="block space-y-2">
-                                    <span className="text-sm font-medium text-slate-800">Email</span>
+                                    <span className="text-sm font-medium text-slate-800">
+                                        Email
+                                    </span>
                                     <div className="relative">
                                         <Mail className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-slate-400" />
                                         <Input
                                             type="email"
                                             value={form.email}
-                                            onChange={(event) => setForm((prev) => ({ ...prev, email: event.target.value }))}
+                                            onChange={(event) =>
+                                                setForm((prev) => ({
+                                                    ...prev,
+                                                    email: event.target.value,
+                                                }))
+                                            }
                                             className="h-12 rounded-2xl border-slate-200 bg-slate-50 pl-10"
                                             placeholder="test@bac-senegal.sn"
                                             required
@@ -85,13 +107,21 @@ export default function Login() {
                                 </label>
 
                                 <label className="block space-y-2">
-                                    <span className="text-sm font-medium text-slate-800">Mot de passe</span>
+                                    <span className="text-sm font-medium text-slate-800">
+                                        Mot de passe
+                                    </span>
                                     <div className="relative">
                                         <LockKeyhole className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-slate-400" />
                                         <Input
                                             type="password"
                                             value={form.password}
-                                            onChange={(event) => setForm((prev) => ({ ...prev, password: event.target.value }))}
+                                            onChange={(event) =>
+                                                setForm((prev) => ({
+                                                    ...prev,
+                                                    password:
+                                                        event.target.value,
+                                                }))
+                                            }
                                             className="h-12 rounded-2xl border-slate-200 bg-slate-50 pl-10"
                                             placeholder="••••••••"
                                             required
@@ -111,7 +141,10 @@ export default function Login() {
 
                             <p className="mt-6 text-sm text-slate-600">
                                 Pas encore de compte ?{' '}
-                                <Link className="font-semibold text-green-dark hover:underline" to="/register">
+                                <Link
+                                    className="font-semibold text-green-dark hover:underline"
+                                    to="/register"
+                                >
                                     Créer un compte
                                 </Link>
                             </p>

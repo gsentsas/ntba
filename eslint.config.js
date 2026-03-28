@@ -109,6 +109,7 @@ export default [
             'vendor',
             'node_modules',
             'public',
+            'backend/**',
             'bootstrap/ssr',
             'tailwind.config.js',
             'vite.config.ts',

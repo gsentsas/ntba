@@ -1,4 +1,16 @@
-import { BookOpen, BookOpenCheck, CalendarDays, ChartColumn, ClipboardList, Crown, FlaskConical, LayoutDashboard, LogOut, MessageSquareText, Sparkles } from 'lucide-react';
+import {
+    BookOpen,
+    BookOpenCheck,
+    CalendarDays,
+    ChartColumn,
+    ClipboardList,
+    Crown,
+    FlaskConical,
+    LayoutDashboard,
+    LogOut,
+    MessageSquareText,
+    Sparkles,
+} from 'lucide-react';
 import { NavLink, useNavigate } from 'react-router-dom';
 
 import { cn } from '@/lib/utils';
@@ -40,7 +52,11 @@ export function Sidebar() {
             )}
         >
             <div className="mb-8">
-                <img src="/logo.png" alt="Je Réussis Mon BAC" className="w-44 h-auto" />
+                <img
+                    src="/logo.png"
+                    alt="Je Réussis Mon BAC"
+                    className="h-auto w-44"
+                />
             </div>
 
             <nav className="space-y-1 pb-24">
@@ -51,7 +67,11 @@ export function Sidebar() {
                         <NavLink
                             key={item.to}
                             to={item.to}
-                            onClick={() => { if (sidebarOpen) toggleSidebar(); }}
+                            onClick={() => {
+                                if (sidebarOpen) {
+                                    toggleSidebar();
+                                }
+                            }}
                             className={({ isActive }) =>
                                 cn(
                                     'flex min-h-11 w-full items-center gap-3 rounded-2xl px-4 py-2.5 text-left text-sm font-medium transition',
@@ -68,14 +88,18 @@ export function Sidebar() {
                 })}
             </nav>
 
-            <div className="absolute bottom-6 left-5 right-5">
+            <div className="absolute right-5 bottom-6 left-5">
                 <div className="flex items-center gap-3 rounded-2xl border border-white/60 bg-white/70 px-4 py-3">
                     <div className="flex size-9 shrink-0 items-center justify-center rounded-full bg-green text-sm font-semibold text-white">
                         {user?.prenom?.[0]?.toUpperCase() ?? '?'}
                     </div>
                     <div className="min-w-0 flex-1">
-                        <p className="truncate text-sm font-medium text-slate-900">{user?.prenom} {user?.nom}</p>
-                        <p className="truncate text-xs text-slate-500">{user?.serie_code}</p>
+                        <p className="truncate text-sm font-medium text-slate-900">
+                            {user?.prenom} {user?.nom}
+                        </p>
+                        <p className="truncate text-xs text-slate-500">
+                            {user?.serie_code}
+                        </p>
                     </div>
                     <button
                         type="button"

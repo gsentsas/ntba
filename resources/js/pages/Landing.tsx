@@ -55,10 +55,30 @@ const FEATURES = [
 ];
 
 const SERIES = [
-    { code: 'S1', label: 'Série S1', color: 'bg-green text-white', subjects: ['Maths', 'Physique', 'SVT', 'Chimie'] },
-    { code: 'S2', label: 'Série S2', color: 'bg-green text-white', subjects: ['Maths', 'Physique', 'SVT', 'Chimie'] },
-    { code: 'L1', label: 'Série L1', color: 'bg-purple text-white', subjects: ['Français', 'Philo', 'Histoire-Géo', 'Arabe'] },
-    { code: 'L2', label: 'Série L2', color: 'bg-purple text-white', subjects: ['Français', 'Anglais', 'Philo', 'Histoire-Géo'] },
+    {
+        code: 'S1',
+        label: 'Série S1',
+        color: 'bg-green text-white',
+        subjects: ['Maths', 'Physique', 'SVT', 'Chimie'],
+    },
+    {
+        code: 'S2',
+        label: 'Série S2',
+        color: 'bg-green text-white',
+        subjects: ['Maths', 'Physique', 'SVT', 'Chimie'],
+    },
+    {
+        code: 'L1',
+        label: 'Série L1',
+        color: 'bg-purple text-white',
+        subjects: ['Français', 'Philo', 'Histoire-Géo', 'Arabe'],
+    },
+    {
+        code: 'L2',
+        label: 'Série L2',
+        color: 'bg-purple text-white',
+        subjects: ['Français', 'Anglais', 'Philo', 'Histoire-Géo'],
+    },
 ];
 
 const STATS = [
@@ -109,12 +129,12 @@ const PLANS = [
         period: 'FCFA / an',
         color: 'border-amber',
         badge: '-33%',
-        cta: 'Choisir l\'annuel',
+        cta: "Choisir l'annuel",
         ctaStyle: 'bg-amber text-slate-900 hover:bg-amber/90',
         features: [
             'Tout Premium inclus',
             'Économisez 10 000 FCFA/an',
-            'Accès garanti toute l\'année scolaire',
+            "Accès garanti toute l'année scolaire",
             'Support prioritaire',
         ],
         disabled: [],
@@ -146,13 +166,37 @@ function NavBar() {
     return (
         <nav className="sticky top-0 z-50 border-b border-white/60 bg-white/90 backdrop-blur">
             <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-                <img src="/logo.png" alt="Je Réussis Mon BAC" className="h-12 w-auto" />
+                <img
+                    src="/logo.png"
+                    alt="Je Réussis Mon BAC"
+                    className="h-12 w-auto"
+                />
 
                 <div className="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
-                    <a href="#features" className="hover:text-green transition-colors">Fonctionnalités</a>
-                    <a href="#series" className="hover:text-green transition-colors">Séries</a>
-                    <a href="#pricing" className="hover:text-green transition-colors">Tarifs</a>
-                    <a href="#testimonials" className="hover:text-green transition-colors">Témoignages</a>
+                    <a
+                        href="#features"
+                        className="transition-colors hover:text-green"
+                    >
+                        Fonctionnalités
+                    </a>
+                    <a
+                        href="#series"
+                        className="transition-colors hover:text-green"
+                    >
+                        Séries
+                    </a>
+                    <a
+                        href="#pricing"
+                        className="transition-colors hover:text-green"
+                    >
+                        Tarifs
+                    </a>
+                    <a
+                        href="#testimonials"
+                        className="transition-colors hover:text-green"
+                    >
+                        Témoignages
+                    </a>
                 </div>
 
                 <div className="flex items-center gap-3">
@@ -179,7 +223,7 @@ function Hero() {
         <section className="relative overflow-hidden bg-[radial-gradient(ellipse_at_top_left,_rgba(29,158,117,0.15),_transparent_55%),radial-gradient(ellipse_at_bottom_right,_rgba(127,119,221,0.12),_transparent_55%)] px-6 py-20 text-center md:py-32">
             {/* Decorative blobs */}
             <div className="pointer-events-none absolute -top-32 -left-32 size-[500px] rounded-full bg-green/8 blur-3xl" />
-            <div className="pointer-events-none absolute -bottom-24 -right-24 size-[400px] rounded-full bg-purple/8 blur-3xl" />
+            <div className="pointer-events-none absolute -right-24 -bottom-24 size-[400px] rounded-full bg-purple/8 blur-3xl" />
 
             <div className="relative mx-auto max-w-4xl">
                 <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-green/30 bg-green-light px-4 py-1.5 text-sm font-semibold text-green-dark">
@@ -187,7 +231,7 @@ function Hero() {
                     Plateforme officielle BAC Sénégal — Terminale L1, L2, S1, S2
                 </div>
 
-                <h1 className="text-5xl font-bold leading-tight tracking-tight text-slate-950 md:text-6xl lg:text-7xl">
+                <h1 className="text-5xl leading-tight font-bold tracking-tight text-slate-950 md:text-6xl lg:text-7xl">
                     Réussis ton BAC avec
                     <span className="block bg-gradient-to-r from-green to-green-dark bg-clip-text text-transparent">
                         un coach IA personnel
@@ -195,7 +239,9 @@ function Hero() {
                 </h1>
 
                 <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-                    Planning adaptatif, exercices ciblés, tuteur IA en français, annales officielles et simulations d'examen. Tout ce qu'il faut pour décrocher ton BAC — en un seul endroit.
+                    Planning adaptatif, exercices ciblés, tuteur IA en français,
+                    annales officielles et simulations d'examen. Tout ce qu'il
+                    faut pour décrocher ton BAC — en un seul endroit.
                 </p>
 
                 <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -221,20 +267,36 @@ function Hero() {
 
             {/* App screenshot mockup */}
             <div className="relative mx-auto mt-20 max-w-5xl">
-                <div className="overflow-hidden rounded-3xl border border-white/60 bg-white shadow-2xl shadow-slate-900/15 ring-1 ring-slate-900/5">
+                <div className="overflow-hidden rounded-3xl border border-white/60 bg-white shadow-2xl ring-1 shadow-slate-900/15 ring-slate-900/5">
                     <div className="flex items-center gap-2 border-b border-slate-100 bg-slate-50 px-5 py-3.5">
                         <div className="size-3 rounded-full bg-red-400" />
                         <div className="size-3 rounded-full bg-amber" />
                         <div className="size-3 rounded-full bg-green" />
-                        <div className="mx-auto rounded-full bg-white px-24 py-1 text-xs text-slate-400">bac-senegal.sn</div>
+                        <div className="mx-auto rounded-full bg-white px-24 py-1 text-xs text-slate-400">
+                            bac-senegal.sn
+                        </div>
                     </div>
                     <div className="grid min-h-64 grid-cols-[220px_1fr] bg-bac-bg md:min-h-80">
                         {/* Sidebar mockup */}
                         <div className="border-r border-slate-100 bg-gradient-to-b from-white to-green-xlight p-4">
-                            <div className="mb-3 rounded-xl bg-green px-3 py-1.5 text-center text-xs font-bold text-white">BAC Sénégal IA</div>
-                            {['Dashboard', 'Matières', 'Tuteur IA', 'Planning', 'Quiz', 'Annales'].map((item, i) => (
-                                <div key={item} className={`mt-1 flex items-center gap-2 rounded-xl px-3 py-2 text-xs font-medium ${i === 0 ? 'bg-slate-950 text-white' : 'text-slate-600'}`}>
-                                    <div className={`size-2 rounded-full ${i === 0 ? 'bg-green' : 'bg-slate-300'}`} />
+                            <div className="mb-3 rounded-xl bg-green px-3 py-1.5 text-center text-xs font-bold text-white">
+                                BAC Sénégal IA
+                            </div>
+                            {[
+                                'Dashboard',
+                                'Matières',
+                                'Tuteur IA',
+                                'Planning',
+                                'Quiz',
+                                'Annales',
+                            ].map((item, i) => (
+                                <div
+                                    key={item}
+                                    className={`mt-1 flex items-center gap-2 rounded-xl px-3 py-2 text-xs font-medium ${i === 0 ? 'bg-slate-950 text-white' : 'text-slate-600'}`}
+                                >
+                                    <div
+                                        className={`size-2 rounded-full ${i === 0 ? 'bg-green' : 'bg-slate-300'}`}
+                                    />
                                     {item}
                                 </div>
                             ))}
@@ -250,19 +312,39 @@ function Hero() {
                             </div>
                             <div className="grid grid-cols-3 gap-3">
                                 {[
-                                    { color: 'bg-green-light', w: 'w-20', label: 'Progression' },
-                                    { color: 'bg-amber-light', w: 'w-16', label: 'Streak' },
-                                    { color: 'bg-purple-light', w: 'w-24', label: 'Score IA' },
+                                    {
+                                        color: 'bg-green-light',
+                                        w: 'w-20',
+                                        label: 'Progression',
+                                    },
+                                    {
+                                        color: 'bg-amber-light',
+                                        w: 'w-16',
+                                        label: 'Streak',
+                                    },
+                                    {
+                                        color: 'bg-purple-light',
+                                        w: 'w-24',
+                                        label: 'Score IA',
+                                    },
                                 ].map((c) => (
-                                    <div key={c.label} className={`${c.color} rounded-2xl p-4`}>
+                                    <div
+                                        key={c.label}
+                                        className={`${c.color} rounded-2xl p-4`}
+                                    >
                                         <div className="h-6 w-12 rounded-full bg-white/60" />
-                                        <div className={`mt-2 h-3 ${c.w} rounded-full bg-white/80`} />
+                                        <div
+                                            className={`mt-2 h-3 ${c.w} rounded-full bg-white/80`}
+                                        />
                                     </div>
                                 ))}
                             </div>
                             <div className="mt-4 space-y-2">
                                 {[1, 2, 3].map((n) => (
-                                    <div key={n} className="flex items-center gap-3 rounded-2xl bg-white p-3 shadow-sm">
+                                    <div
+                                        key={n}
+                                        className="flex items-center gap-3 rounded-2xl bg-white p-3 shadow-sm"
+                                    >
                                         <div className="size-8 rounded-xl bg-green-light" />
                                         <div className="flex-1">
                                             <div className="h-3 w-32 rounded-full bg-slate-200" />
@@ -277,14 +359,20 @@ function Hero() {
                 </div>
                 {/* Floating badges */}
                 <div className="absolute -top-4 -right-4 hidden rounded-2xl border border-white bg-white px-4 py-3 shadow-xl md:block">
-                    <p className="text-xs font-semibold text-slate-500">Progression cette semaine</p>
+                    <p className="text-xs font-semibold text-slate-500">
+                        Progression cette semaine
+                    </p>
                     <p className="text-2xl font-bold text-green">+24 pts</p>
                 </div>
                 <div className="absolute -bottom-4 -left-4 hidden rounded-2xl border border-white bg-white px-4 py-3 shadow-xl md:block">
-                    <p className="text-xs font-semibold text-slate-500">Streak actuel</p>
+                    <p className="text-xs font-semibold text-slate-500">
+                        Streak actuel
+                    </p>
                     <div className="flex items-center gap-1.5">
                         <span className="text-2xl">🔥</span>
-                        <p className="text-2xl font-bold text-coral">14 jours</p>
+                        <p className="text-2xl font-bold text-coral">
+                            14 jours
+                        </p>
                     </div>
                 </div>
             </div>
@@ -300,8 +388,12 @@ function Stats() {
                     {STATS.map(({ value, label, icon: Icon }) => (
                         <div key={label} className="text-center">
                             <Icon className="mx-auto mb-2 size-6 text-green" />
-                            <p className="text-3xl font-bold text-slate-950">{value}</p>
-                            <p className="mt-1 text-sm text-slate-500">{label}</p>
+                            <p className="text-3xl font-bold text-slate-950">
+                                {value}
+                            </p>
+                            <p className="mt-1 text-sm text-slate-500">
+                                {label}
+                            </p>
                         </div>
                     ))}
                 </div>
@@ -320,10 +412,14 @@ function Features() {
                         Tout ce qu'il te faut pour réussir
                     </div>
                     <h2 className="text-4xl font-bold text-slate-950 md:text-5xl">
-                        Une plateforme complète,<br />pensée pour le BAC Sénégal
+                        Une plateforme complète,
+                        <br />
+                        pensée pour le BAC Sénégal
                     </h2>
                     <p className="mx-auto mt-5 max-w-xl text-lg text-slate-600">
-                        Chaque fonctionnalité a été conçue en accord avec les programmes officiels de l'Office du Baccalauréat du Sénégal.
+                        Chaque fonctionnalité a été conçue en accord avec les
+                        programmes officiels de l'Office du Baccalauréat du
+                        Sénégal.
                     </p>
                 </div>
 
@@ -331,13 +427,19 @@ function Features() {
                     {FEATURES.map(({ icon: Icon, color, title, desc }) => (
                         <div
                             key={title}
-                            className="group rounded-3xl border border-white bg-white p-7 shadow-sm transition hover:shadow-md hover:-translate-y-0.5"
+                            className="group rounded-3xl border border-white bg-white p-7 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
                         >
-                            <div className={`inline-flex size-12 items-center justify-center rounded-2xl ${color}`}>
+                            <div
+                                className={`inline-flex size-12 items-center justify-center rounded-2xl ${color}`}
+                            >
                                 <Icon className="size-5" />
                             </div>
-                            <h3 className="mt-5 text-lg font-semibold text-slate-950">{title}</h3>
-                            <p className="mt-2 text-sm leading-7 text-slate-600">{desc}</p>
+                            <h3 className="mt-5 text-lg font-semibold text-slate-950">
+                                {title}
+                            </h3>
+                            <p className="mt-2 text-sm leading-7 text-slate-600">
+                                {desc}
+                            </p>
                         </div>
                     ))}
                 </div>
@@ -355,28 +457,40 @@ function Series() {
                         Toutes les séries couvertes
                     </h2>
                     <p className="mx-auto mt-5 max-w-xl text-lg text-slate-600">
-                        Programme complet et à jour pour les Terminales L1, L2, S1 et S2. Exercices, cours et annales pour chaque matière.
+                        Programme complet et à jour pour les Terminales L1, L2,
+                        S1 et S2. Exercices, cours et annales pour chaque
+                        matière.
                     </p>
                 </div>
 
                 <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
                     {SERIES.map(({ code, label, color, subjects }) => (
-                        <div key={code} className="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-sm">
+                        <div
+                            key={code}
+                            className="overflow-hidden rounded-3xl border border-slate-100 bg-white shadow-sm"
+                        >
                             <div className={`${color} px-5 py-4`}>
-                                <p className="text-xs font-semibold uppercase tracking-wider opacity-80">{label}</p>
-                                <p className="mt-1 text-3xl font-bold">{code}</p>
+                                <p className="text-xs font-semibold tracking-wider uppercase opacity-80">
+                                    {label}
+                                </p>
+                                <p className="mt-1 text-3xl font-bold">
+                                    {code}
+                                </p>
                             </div>
                             <div className="p-5">
                                 <ul className="space-y-2">
                                     {subjects.map((s) => (
-                                        <li key={s} className="flex items-center gap-2 text-sm text-slate-700">
+                                        <li
+                                            key={s}
+                                            className="flex items-center gap-2 text-sm text-slate-700"
+                                        >
                                             <Check className="size-4 shrink-0 text-green" />
                                             {s}
                                         </li>
                                     ))}
                                     <li className="flex items-center gap-2 text-sm text-slate-400">
-                                        <Check className="size-4 shrink-0" />
-                                        + toutes matières
+                                        <Check className="size-4 shrink-0" />+
+                                        toutes matières
                                     </li>
                                 </ul>
                             </div>
@@ -390,10 +504,26 @@ function Series() {
 
 function HowItWorks() {
     const steps = [
-        { n: '01', title: 'Crée ton compte', desc: 'Inscris-toi en 30 secondes. Choisis ta série et l\'application configure ton environnement.' },
-        { n: '02', title: 'Reçois ton planning', desc: 'L\'IA analyse tes matières et génère un calendrier de révisions adapté à tes objectifs et au compte à rebours BAC.' },
-        { n: '03', title: 'Révise avec le tuteur IA', desc: 'Pose des questions, fais des exercices, reçois des explications détaillées. Le coach s\'adapte à ton niveau.' },
-        { n: '04', title: 'Valide avec les annales', desc: 'Entraîne-toi sur les vrais sujets du BAC Sénégal. Simule l\'examen et mesure ta progression.' },
+        {
+            n: '01',
+            title: 'Crée ton compte',
+            desc: "Inscris-toi en 30 secondes. Choisis ta série et l'application configure ton environnement.",
+        },
+        {
+            n: '02',
+            title: 'Reçois ton planning',
+            desc: "L'IA analyse tes matières et génère un calendrier de révisions adapté à tes objectifs et au compte à rebours BAC.",
+        },
+        {
+            n: '03',
+            title: 'Révise avec le tuteur IA',
+            desc: "Pose des questions, fais des exercices, reçois des explications détaillées. Le coach s'adapte à ton niveau.",
+        },
+        {
+            n: '04',
+            title: 'Valide avec les annales',
+            desc: "Entraîne-toi sur les vrais sujets du BAC Sénégal. Simule l'examen et mesure ta progression.",
+        },
     ];
 
     return (
@@ -405,7 +535,9 @@ function HowItWorks() {
                         Simple et efficace
                     </div>
                     <h2 className="text-4xl font-bold md:text-5xl">
-                        En route vers le BAC<br />en 4 étapes
+                        En route vers le BAC
+                        <br />
+                        en 4 étapes
                     </h2>
                 </div>
 
@@ -415,8 +547,12 @@ function HowItWorks() {
                             <div className="mb-5 inline-flex size-12 items-center justify-center rounded-2xl bg-green text-lg font-bold text-white">
                                 {n}
                             </div>
-                            <h3 className="text-lg font-semibold text-white">{title}</h3>
-                            <p className="mt-2 text-sm leading-7 text-slate-400">{desc}</p>
+                            <h3 className="text-lg font-semibold text-white">
+                                {title}
+                            </h3>
+                            <p className="mt-2 text-sm leading-7 text-slate-400">
+                                {desc}
+                            </p>
                         </div>
                     ))}
                 </div>
@@ -433,25 +569,40 @@ function Testimonials() {
                     <h2 className="text-4xl font-bold text-slate-950 md:text-5xl">
                         Ils ont réussi leur BAC
                     </h2>
-                    <p className="mt-4 text-lg text-slate-600">Rejoins des milliers d'élèves qui ont fait confiance à BAC Sénégal IA.</p>
+                    <p className="mt-4 text-lg text-slate-600">
+                        Rejoins des milliers d'élèves qui ont fait confiance à
+                        BAC Sénégal IA.
+                    </p>
                 </div>
 
                 <div className="mt-14 grid gap-6 md:grid-cols-3">
                     {TESTIMONIALS.map(({ name, serie, text, note }) => (
-                        <div key={name} className="rounded-3xl border border-white bg-white p-7 shadow-sm">
+                        <div
+                            key={name}
+                            className="rounded-3xl border border-white bg-white p-7 shadow-sm"
+                        >
                             <div className="flex gap-0.5">
                                 {Array.from({ length: note }).map((_, i) => (
-                                    <Star key={i} className="size-4 fill-amber text-amber" />
+                                    <Star
+                                        key={i}
+                                        className="size-4 fill-amber text-amber"
+                                    />
                                 ))}
                             </div>
-                            <p className="mt-4 text-sm leading-7 text-slate-700">"{text}"</p>
+                            <p className="mt-4 text-sm leading-7 text-slate-700">
+                                "{text}"
+                            </p>
                             <div className="mt-5 flex items-center gap-3">
                                 <div className="flex size-10 items-center justify-center rounded-full bg-green text-sm font-bold text-white">
                                     {name[0]}
                                 </div>
                                 <div>
-                                    <p className="text-sm font-semibold text-slate-900">{name}</p>
-                                    <p className="text-xs text-slate-500">{serie}</p>
+                                    <p className="text-sm font-semibold text-slate-900">
+                                        {name}
+                                    </p>
+                                    <p className="text-xs text-slate-500">
+                                        {serie}
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -471,42 +622,66 @@ function Pricing() {
                         Des tarifs accessibles
                     </h2>
                     <p className="mt-4 text-lg text-slate-600">
-                        Commence gratuitement. Passe au Premium quand tu es prêt.
+                        Commence gratuitement. Passe au Premium quand tu es
+                        prêt.
                     </p>
                 </div>
 
                 <div className="mt-14 grid gap-6 md:grid-cols-3">
-                    {PLANS.map(({ name, price, period, color, badge, cta, ctaStyle, features }) => (
-                        <div key={name} className={`relative rounded-3xl border-2 ${color} bg-white p-8 shadow-sm`}>
-                            {badge && (
-                                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-green px-4 py-1 text-xs font-bold text-white shadow">
-                                    {badge}
-                                </div>
-                            )}
-                            <p className="text-sm font-semibold uppercase tracking-wider text-slate-500">{name}</p>
-                            <div className="mt-3 flex items-baseline gap-1">
-                                <span className="text-4xl font-bold text-slate-950">{price}</span>
-                                <span className="text-sm text-slate-500">{period}</span>
-                            </div>
-
-                            <ul className="mt-7 space-y-3">
-                                {features.map((f) => (
-                                    <li key={f} className="flex items-start gap-2.5 text-sm text-slate-700">
-                                        <Check className="mt-0.5 size-4 shrink-0 text-green" />
-                                        {f}
-                                    </li>
-                                ))}
-                            </ul>
-
-                            <Link
-                                to="/register"
-                                className={`mt-8 flex items-center justify-center gap-2 rounded-2xl px-5 py-3.5 text-sm font-semibold transition ${ctaStyle}`}
+                    {PLANS.map(
+                        ({
+                            name,
+                            price,
+                            period,
+                            color,
+                            badge,
+                            cta,
+                            ctaStyle,
+                            features,
+                        }) => (
+                            <div
+                                key={name}
+                                className={`relative rounded-3xl border-2 ${color} bg-white p-8 shadow-sm`}
                             >
-                                {cta}
-                                <ArrowRight className="size-4" />
-                            </Link>
-                        </div>
-                    ))}
+                                {badge && (
+                                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-green px-4 py-1 text-xs font-bold text-white shadow">
+                                        {badge}
+                                    </div>
+                                )}
+                                <p className="text-sm font-semibold tracking-wider text-slate-500 uppercase">
+                                    {name}
+                                </p>
+                                <div className="mt-3 flex items-baseline gap-1">
+                                    <span className="text-4xl font-bold text-slate-950">
+                                        {price}
+                                    </span>
+                                    <span className="text-sm text-slate-500">
+                                        {period}
+                                    </span>
+                                </div>
+
+                                <ul className="mt-7 space-y-3">
+                                    {features.map((f) => (
+                                        <li
+                                            key={f}
+                                            className="flex items-start gap-2.5 text-sm text-slate-700"
+                                        >
+                                            <Check className="mt-0.5 size-4 shrink-0 text-green" />
+                                            {f}
+                                        </li>
+                                    ))}
+                                </ul>
+
+                                <Link
+                                    to="/register"
+                                    className={`mt-8 flex items-center justify-center gap-2 rounded-2xl px-5 py-3.5 text-sm font-semibold transition ${ctaStyle}`}
+                                >
+                                    {cta}
+                                    <ArrowRight className="size-4" />
+                                </Link>
+                            </div>
+                        ),
+                    )}
                 </div>
             </div>
         </section>
@@ -524,7 +699,8 @@ function CTA() {
                     Prêt à décrocher ton BAC ?
                 </h2>
                 <p className="mx-auto mt-5 max-w-xl text-lg text-slate-300">
-                    Rejoins dès aujourd'hui les élèves qui révisent intelligemment. Gratuit pour commencer, sans engagement.
+                    Rejoins dès aujourd'hui les élèves qui révisent
+                    intelligemment. Gratuit pour commencer, sans engagement.
                 </p>
                 <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
                     <Link
@@ -555,21 +731,35 @@ function Footer() {
                         <div className="flex size-8 items-center justify-center rounded-xl bg-green">
                             <Brain className="size-5 text-white" />
                         </div>
-                        <span className="text-lg font-bold text-slate-950">BAC Sénégal IA</span>
+                        <span className="text-lg font-bold text-slate-950">
+                            BAC Sénégal IA
+                        </span>
                     </div>
 
                     <p className="text-sm text-slate-500">
-                        Programmes officiels Office du Baccalauréat · L1, L2, S1, S2
+                        Programmes officiels Office du Baccalauréat · L1, L2,
+                        S1, S2
                     </p>
 
                     <div className="flex gap-6 text-sm text-slate-500">
-                        <Link to="/login" className="hover:text-green transition-colors">Connexion</Link>
-                        <Link to="/register" className="hover:text-green transition-colors">S'inscrire</Link>
+                        <Link
+                            to="/login"
+                            className="transition-colors hover:text-green"
+                        >
+                            Connexion
+                        </Link>
+                        <Link
+                            to="/register"
+                            className="transition-colors hover:text-green"
+                        >
+                            S'inscrire
+                        </Link>
                     </div>
                 </div>
 
                 <div className="mt-8 border-t border-slate-100 pt-8 text-center text-xs text-slate-400">
-                    © {new Date().getFullYear()} BAC Sénégal IA · Tous droits réservés
+                    © {new Date().getFullYear()} BAC Sénégal IA · Tous droits
+                    réservés
                 </div>
             </div>
         </footer>
