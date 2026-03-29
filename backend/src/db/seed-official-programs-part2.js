@@ -1438,28 +1438,111 @@ const HISTGEO_CHAPTERS = [
     ],
     course_content: `# Décolonisation et Tiers-Monde
 
-## 1. La décolonisation : contexte et causes
-Après la Seconde Guerre mondiale, le mouvement d'indépendance des peuples colonisés s'accélère.
+## Objectifs du chapitre
+- Expliquer les causes et les formes de la décolonisation après 1945.
+- Situer les grandes étapes de l'indépendance en Asie et en Afrique.
+- Comprendre la naissance du Tiers-Monde et du non-alignement.
+- Relier l'histoire mondiale au cas du Sénégal.
 
-**Causes** :
-- Affaiblissement des puissances coloniales (France, Royaume-Uni).
-- Développement des mouvements nationalistes (Gandhi en Inde, Lamine Guèye et Senghor au Sénégal).
-- Rôle de l'ONU (Charte de 1945 : droit des peuples à disposer d'eux-mêmes).
-- Guerre froide : USA et URSS soutiennent les indépendances pour contrer les empires coloniaux.
+## 1. Contexte général après 1945
+Au lendemain de la Seconde Guerre mondiale, les empires coloniaux européens sont fragilisés. La guerre a affaibli économiquement et moralement les puissances coloniales, tandis que les peuples colonisés réclament davantage de liberté, de justice et d'égalité.
 
-## 2. La Conférence de Bandung (avril 1955)
-29 pays d'Asie et d'Afrique se réunissent en Indonésie. Naissance du concept de **Tiers-Monde** (terme forgé par Alfred Sauvy, 1952).
+La période 1945-1975 correspond à la grande vague de décolonisation en Asie puis en Afrique.
 
-**Principes de Bandung** : paix, non-agression, non-ingérence, égalité, coexistence pacifique.
+## 2. Les causes de la décolonisation
+### a. L'affaiblissement des métropoles
+La France, le Royaume-Uni, la Belgique ou les Pays-Bas sortent affaiblis du conflit mondial. Ils ont moins de moyens pour maintenir leur domination.
 
-## 3. Le Mouvement des non-alignés
-Fondé en 1961 (conférence de Belgrade). Refuse l'alignement sur les blocs américain ou soviétique.
+### b. La montée des nationalismes
+Dans les colonies, des élites politiques, syndicales et intellectuelles revendiquent l'autonomie puis l'indépendance. Elles s'appuient sur le sentiment national, l'injustice coloniale et l'aspiration à la souveraineté.
 
-## 4. L'indépendance du Sénégal
-- **20 juin 1960** : indépendance de la Fédération du Mali (Sénégal + Soudan français).
-- **20 août 1960** : le Sénégal se retire de la fédération. **4 avril 1960** est célébrée comme fête nationale.
-- **Léopold Sédar Senghor** devient le 1er président (1960-1980).
-- **Abdou Diouf** lui succède (1981-2000).`,
+### c. Le rôle du contexte international
+La Charte de l'ONU de 1945 affirme le droit des peuples à disposer d'eux-mêmes. Les États-Unis et l'URSS critiquent aussi les vieux empires coloniaux, même si chacun agit selon ses propres intérêts stratégiques.
+
+## 3. Les formes de la décolonisation
+La décolonisation ne suit pas partout le même chemin.
+
+### Décolonisation pacifique
+Certaines colonies accèdent à l'indépendance par négociation, par exemple plusieurs territoires d'Afrique noire française ou britannique.
+
+### Décolonisation violente
+Dans d'autres cas, elle passe par de longues guerres, comme en Indochine ou en Algérie. Ces conflits montrent la résistance des métropoles et la détermination des mouvements indépendantistes.
+
+## 4. La décolonisation en Asie
+L'Asie ouvre la voie dès les années 1940.
+
+- **1947** : indépendance de l'Inde et création du Pakistan.
+- **1949** : indépendance de l'Indonésie vis-à-vis des Pays-Bas.
+- **1954** : fin de la guerre d'Indochine avec les accords de Genève.
+
+L'Asie devient ainsi un espace majeur d'affirmation des peuples anciennement colonisés.
+
+## 5. La décolonisation en Afrique
+En Afrique, le mouvement s'accélère surtout dans les années 1950 et 1960.
+
+- **1956** : indépendance du Maroc et de la Tunisie.
+- **1957** : indépendance du Ghana, premier État d'Afrique noire britannique indépendant.
+- **1960** : "année de l'Afrique", avec de nombreuses indépendances.
+
+La décolonisation africaine est diverse : certaines indépendances sont négociées, d'autres arrachées dans la violence.
+
+## 6. Bandung et la naissance du Tiers-Monde
+En **avril 1955**, la conférence de **Bandung** en Indonésie réunit 29 pays d'Asie et d'Afrique. C'est un moment politique majeur.
+
+### Principes défendus
+- respect de la souveraineté
+- non-agression
+- non-ingérence
+- égalité entre les nations
+- coexistence pacifique
+
+Bandung donne une visibilité internationale aux peuples du Sud et prépare l'affirmation du **Tiers-Monde**, expression proposée par **Alfred Sauvy** en 1952.
+
+## 7. Le non-alignement
+Le mouvement des non-alignés est officiellement structuré en **1961 à Belgrade**. Il regroupe des pays qui refusent de s'aligner sur le bloc américain ou sur le bloc soviétique.
+
+Le non-alignement ne signifie pas neutralité absolue, mais volonté d'autonomie politique, diplomatique et économique.
+
+Parmi ses grandes figures, on retient :
+- Nehru
+- Nasser
+- Tito
+- Soekarno
+
+## 8. L'indépendance du Sénégal
+Le Sénégal obtient son indépendance dans le contexte général de la décolonisation africaine.
+
+### Repères essentiels
+- **4 avril 1960** : proclamation de l'indépendance au sein de la Fédération du Mali.
+- **20 août 1960** : éclatement de la Fédération du Mali.
+- **Léopold Sédar Senghor** devient le premier président de la République du Sénégal.
+
+Le Sénégal se distingue par un accès relativement pacifique à l'indépendance, même si cette évolution s'inscrit dans un long processus politique.
+
+## 9. Conséquences de la décolonisation
+La décolonisation transforme profondément le monde :
+- disparition progressive des grands empires coloniaux
+- multiplication des États indépendants
+- entrée des pays du Sud dans les relations internationales
+- naissance de nouveaux défis : développement, unité nationale, dépendance économique
+
+## 10. Méthode pour un devoir
+Pour traiter un sujet sur la décolonisation, il faut :
+1. définir le terme ;
+2. situer la période ;
+3. montrer les causes ;
+4. distinguer les formes de décolonisation ;
+5. donner des exemples précis ;
+6. ouvrir sur le Tiers-Monde et le non-alignement.
+
+## 11. Erreurs fréquentes
+- Confondre décolonisation et simple changement administratif.
+- Oublier que les indépendances n'ont pas toutes été pacifiques.
+- Réduire Bandung à une simple réunion diplomatique.
+- Négliger le cas du Sénégal dans le contexte africain.
+
+## 12. À retenir
+La décolonisation est l'un des grands bouleversements du XXe siècle. Elle marque la fin des empires coloniaux, l'émergence du Tiers-Monde et l'entrée de nombreux États africains et asiatiques sur la scène internationale.`,
     exercises: [
       ex('Conférence de Bandung',
         'La Conférence de Bandung (1955) réunit :',
@@ -1500,25 +1583,125 @@ Fondé en 1961 (conférence de Belgrade). Refuse l'alignement sur les blocs amé
     ],
     course_content: `# La Guerre Froide et le monde bipolaire
 
-## 1. Origines et formation des blocs (1947-1949)
-**Discours de Fulton** (Churchill, 1946) : dénonce le "rideau de fer" séparant l'Europe.
-**Doctrine Truman** (1947) : les USA s'engagent à contenir l'expansion soviétique.
-**Plan Marshall** (1947) : aide économique américaine à l'Europe pour empêcher la progression communiste.
+## Objectifs du chapitre
+- Définir la Guerre froide et ses caractéristiques.
+- Comprendre la formation des deux blocs.
+- Identifier les grandes crises et les phases d'apaisement.
+- Expliquer les causes de la fin du monde bipolaire.
 
-**Deux blocs** :
-- Bloc occidental : USA, OTAN (1949), économie de marché, démocratie libérale.
-- Bloc soviétique : URSS, Pacte de Varsovie (1955), économie planifiée, régime communiste.
+## 1. Définition de la Guerre froide
+La Guerre froide est un affrontement durable entre les **États-Unis** et l'**URSS** de **1947 à 1991**. Cet affrontement est idéologique, politique, économique, diplomatique, militaire et technologique, mais il n'oppose presque jamais directement les deux superpuissances sur le champ de bataille.
 
-## 2. Les crises majeures
-- **Blocus de Berlin** (1948-1949) : l'URSS bloque les accès à Berlin-Ouest. Pont aérien allié.
-- **Guerre de Corée** (1950-1953) : premier conflit armé indirect entre blocs.
-- **Crise des missiles de Cuba** (octobre 1962) : l'URSS installe des missiles à Cuba. Négociation Kennedy-Khrouchtchev. Risque nucléaire maximal.
+On parle donc de "guerre" par la tension permanente, et de "froide" parce qu'il n'y a pas de guerre directe totale entre les deux camps.
 
-## 3. La détente et la fin de la Guerre froide
-- **Accords SALT** (1972) : limitation des armements stratégiques.
-- **Accords d'Helsinki** (1975) : coopération et droits de l'homme.
-- **Chute du mur de Berlin** (9 novembre 1989) : symbole de la fin de la division.
-- **Dissolution de l'URSS** (décembre 1991) : fin officielle de la Guerre froide.`,
+## 2. La formation des deux blocs
+Après 1945, les anciens alliés de la Seconde Guerre mondiale deviennent des adversaires.
+
+### a. Le bloc occidental
+Dirigé par les États-Unis, il défend :
+- la démocratie libérale
+- l'économie de marché
+- l'influence politique et militaire américaine
+
+### b. Le bloc soviétique
+Dirigé par l'URSS, il repose sur :
+- le parti unique
+- l'économie planifiée
+- l'extension du modèle communiste
+
+### c. Les textes et décisions fondatrices
+- **Discours de Fulton** de Churchill en 1946 : dénonciation du rideau de fer.
+- **Doctrine Truman** en 1947 : politique de containment.
+- **Plan Marshall** en 1947 : aide américaine à l'Europe occidentale.
+- **Doctrine Jdanov** en 1947 : réponse idéologique soviétique.
+
+## 3. Le monde bipolaire
+Le monde se structure autour de deux pôles opposés.
+
+### Alliances militaires
+- **OTAN** en 1949 pour le camp occidental
+- **Pacte de Varsovie** en 1955 pour le camp soviétique
+
+### Une rivalité globale
+La compétition concerne :
+- l'Europe
+- l'Asie
+- l'Afrique
+- l'Amérique latine
+- l'espace et la technologie
+
+## 4. Les grandes crises de la Guerre froide
+### Berlin
+Berlin est un lieu symbolique majeur de la division du monde.
+- **1948-1949** : blocus de Berlin
+- **1961** : construction du mur de Berlin
+
+### La guerre de Corée
+De **1950 à 1953**, elle oppose indirectement les deux blocs et montre que la Guerre froide peut provoquer des guerres périphériques très violentes.
+
+### La crise de Cuba
+En **octobre 1962**, l'installation de missiles soviétiques à Cuba provoque la plus grave crise de la Guerre froide. Le monde frôle alors la guerre nucléaire.
+
+## 5. La course aux armements et à l'espace
+Les deux superpuissances cherchent à prouver leur supériorité.
+
+### Armements
+La possession de l'arme nucléaire crée un équilibre de la terreur. Chaque camp peut détruire l'autre, ce qui dissuade l'affrontement direct.
+
+### Conquête spatiale
+- **1957** : Spoutnik 1 lancé par l'URSS
+- **1961** : Youri Gagarine, premier homme dans l'espace
+- **1969** : les États-Unis marchent sur la Lune
+
+## 6. La détente
+À partir des années 1960-1970, les deux camps cherchent par moments à réduire les tensions.
+
+### Quelques repères
+- téléphone rouge après Cuba
+- **Accords SALT** en 1972
+- **Accords d'Helsinki** en 1975
+
+La détente n'efface pas la rivalité, mais elle en limite certains risques.
+
+## 7. La reprise des tensions et l'effondrement du bloc soviétique
+À la fin des années 1970, les tensions reprennent. Puis l'URSS s'affaiblit.
+
+### Facteurs de crise du bloc soviétique
+- difficultés économiques
+- retard technologique
+- contestations internes
+- coût de la course aux armements
+
+### Réformes de Gorbatchev
+- **Perestroïka**
+- **Glasnost**
+
+Ces réformes accélèrent les transformations sans sauver le système.
+
+## 8. La fin de la Guerre froide
+Plusieurs dates sont essentielles :
+- **9 novembre 1989** : chute du mur de Berlin
+- **1990** : réunification allemande
+- **1991** : disparition de l'URSS
+
+Le monde bipolaire prend fin et les États-Unis apparaissent alors comme la seule superpuissance.
+
+## 9. Méthode pour réussir au Bac
+Dans un devoir, il faut :
+1. définir la Guerre froide ;
+2. montrer la bipolarisation du monde ;
+3. illustrer avec des crises précises ;
+4. distinguer tension, détente et fin du conflit ;
+5. utiliser les bonnes dates.
+
+## 10. Erreurs fréquentes
+- Dire que les États-Unis et l'URSS se sont affrontés directement dans une guerre mondiale.
+- Oublier l'importance des doctrines de 1947.
+- Confondre chute du mur de Berlin et dissolution de l'URSS.
+- Réduire la Guerre froide à l'Europe uniquement.
+
+## 11. À retenir
+La Guerre froide a structuré les relations internationales pendant près d'un demi-siècle. Elle oppose deux modèles de société et organise le monde en deux blocs rivaux jusqu'à l'effondrement du bloc soviétique.`,
     exercises: [
       ex('Doctrine Truman',
         'La doctrine Truman (1947) visait à :',
@@ -1555,29 +1738,128 @@ Fondé en 1961 (conférence de Belgrade). Refuse l'alignement sur les blocs amé
     ],
     course_content: `# Le monde contemporain
 
+## Objectifs du chapitre
+- Comprendre comment on mesure le développement.
+- Expliquer les inégalités entre espaces du monde.
+- Définir la mondialisation et ses effets.
+- Situer la place de l'Afrique et du Sénégal dans le monde actuel.
+
 ## 1. Mesurer le développement
-**PIB (Produit Intérieur Brut)** : indicateur économique de richesse produite, mais ne mesure pas le bien-être.
+Le développement ne se réduit pas à la richesse économique. Il prend en compte le niveau de vie, la santé, l'éducation et l'accès aux services essentiels.
 
-**IDH (Indice de Développement Humain)** : créé par le PNUD (1990). Combine :
-- Espérance de vie à la naissance.
-- Niveau d'éducation (durée moyenne de scolarisation).
-- Revenu national brut par habitant.
+### Le PIB
+Le **Produit Intérieur Brut** mesure la richesse produite dans un pays pendant une année. C'est un indicateur utile, mais incomplet : il ne mesure ni les inégalités, ni le bien-être réel, ni la qualité de l'environnement.
 
-## 2. Un monde inégal
-- **Pays développés** (Nord) : IDH élevé, économies de services, urbanisation avancée.
-- **Pays en développement** (Sud) : IDH faible à moyen, économies agricoles et extractives.
-- **Pays émergents** : BRICS (Brésil, Russie, Inde, Chine, Afrique du Sud) – croissance rapide.
+### L'IDH
+L'**Indice de Développement Humain** a été proposé par le PNUD pour corriger cette vision trop étroite. Il combine :
+- l'espérance de vie ;
+- l'éducation ;
+- le revenu par habitant.
 
-## 3. La mondialisation
-Processus d'intensification des échanges (marchandises, capitaux, personnes, informations).
-- **Centres** de la mondialisation : États-Unis, Europe, Asie du Pacifique (triade).
-- **Inégalités** : fracture numérique, dette des pays du Sud, termes de l'échange défavorables.
+L'IDH permet de mieux comparer les niveaux de développement.
 
-## 4. L'Afrique dans le monde
-- Continent le plus jeune (âge médian ~19 ans), fort taux de croissance démographique.
-- Ressources naturelles considérables (pétrole, minerais, terres agricoles).
-- Défis : pauvreté, conflits, migrations, changement climatique.
-- **Le Sénégal** : démocratie stable, économie en croissance, émergence pétrolière et gazière.`,
+## 2. Un monde marqué par de fortes inégalités
+Le monde contemporain est profondément inégal.
+
+### Les pays développés
+Ils se caractérisent généralement par :
+- un IDH élevé ;
+- une forte urbanisation ;
+- des économies dominées par les services et l'industrie avancée ;
+- de bonnes infrastructures.
+
+### Les pays en développement
+Ils connaissent souvent :
+- un IDH faible ou moyen ;
+- des économies fragiles ou dépendantes ;
+- des difficultés d'accès à l'éducation, à la santé ou à l'emploi.
+
+### Les pays émergents
+Les pays émergents connaissent une croissance rapide et un poids croissant dans la mondialisation, mais ils conservent souvent de fortes inégalités internes.
+
+## 3. Les facteurs d'inégalités
+Les écarts entre pays et à l'intérieur des pays s'expliquent par plusieurs facteurs :
+- héritages historiques
+- niveau d'industrialisation
+- accès aux ressources
+- qualité de la gouvernance
+- intégration plus ou moins favorable à la mondialisation
+
+## 4. La mondialisation
+La mondialisation est l'intensification des échanges de marchandises, de capitaux, d'informations, de services et de personnes à l'échelle planétaire.
+
+### Les grands centres d'impulsion
+Les principaux pôles de la mondialisation se situent dans :
+- l'Amérique du Nord
+- l'Europe occidentale
+- l'Asie orientale et pacifique
+
+Cette concentration des flux renforce l'idée de **triade**.
+
+### Effets positifs
+- circulation rapide des informations
+- développement du commerce
+- diffusion des innovations
+
+### Effets négatifs
+- aggravation de certaines inégalités
+- dépendance économique
+- uniformisation culturelle
+- pression sur l'environnement
+
+## 5. Développement durable et défis environnementaux
+Le développement durable vise à répondre aux besoins du présent sans compromettre ceux des générations futures.
+
+Les grands défis contemporains sont :
+- changement climatique
+- déforestation
+- pollution
+- désertification
+- épuisement de certaines ressources
+
+## 6. L'Afrique dans le monde
+L'Afrique occupe une place de plus en plus importante dans la géographie mondiale.
+
+### Atouts
+- population jeune
+- richesses minières et agricoles
+- marchés en expansion
+- potentiel énergétique
+
+### Difficultés
+- pauvreté persistante
+- inégalités sociales
+- fragilité de certains États
+- pression démographique
+- vulnérabilité climatique
+
+L'Afrique n'est donc ni un continent uniforme ni un espace marginal : elle est un espace de contrastes, de défis et d'opportunités.
+
+## 7. Le Sénégal dans la mondialisation
+Le Sénégal est inséré dans les échanges régionaux et mondiaux.
+
+On peut retenir :
+- la stabilité politique relative ;
+- le rôle de Dakar comme métropole et carrefour ;
+- les échanges avec la sous-région et le reste du monde ;
+- les enjeux liés à la croissance, à l'emploi, aux ressources énergétiques et à l'environnement.
+
+## 8. Méthode de travail
+Pour réussir un sujet de géographie :
+1. définir les notions ;
+2. hiérarchiser les idées ;
+3. utiliser des exemples précis ;
+4. articuler échelles mondiale, africaine et sénégalaise ;
+5. montrer les contrastes.
+
+## 9. Erreurs fréquentes
+- Réduire le développement au seul PIB.
+- Opposer mécaniquement Nord et Sud sans nuance.
+- Présenter l'Afrique comme un bloc homogène.
+- Oublier les effets ambivalents de la mondialisation.
+
+## 10. À retenir
+Le monde contemporain est à la fois intégré et inégal. La mondialisation rapproche les espaces, mais elle ne supprime pas les écarts de développement. L'Afrique et le Sénégal y occupent une place en évolution, entre contraintes fortes et potentialités réelles.`,
     exercises: [
       ex('L\'IDH',
         'L\'Indice de Développement Humain (IDH) combine :',
@@ -3366,54 +3648,163 @@ const INFO_S2_CHAPTERS = [
     ],
     course_content: `# Algorithmique et programmation
 
-## 1. Notion d'algorithme
-Un **algorithme** est une suite d'instructions finies, non ambiguës, permettant de résoudre un problème.
+## Objectifs du chapitre
+- Comprendre ce qu'est un algorithme et pourquoi il doit être correct et lisible.
+- Maîtriser les structures de base de la programmation.
+- Manipuler des variables, fonctions, listes et traitements classiques.
+- Développer une logique de résolution de problème en Python.
 
-**Propriétés** : lisibilité, efficacité, terminaison (l'algorithme s'arrête), correction (produit le bon résultat).
+## 1. Qu'est-ce qu'un algorithme ?
+Un **algorithme** est une suite finie d'instructions ordonnées qui permet de résoudre un problème. Il doit être compréhensible, exécutable et conduire à un résultat correct.
 
-## 2. Structures de contrôle
-**Séquence** : instructions exécutées dans l'ordre.
-**Alternative** :
+### Qualités d'un bon algorithme
+- **clarté**
+- **terminaison**
+- **correction**
+- **efficacité**
+
+Un algorithme ne dépend pas d'abord d'un langage : il traduit une démarche logique.
+
+## 2. De l'analyse du problème au programme
+Avant de coder, il faut :
+1. comprendre le problème ;
+2. identifier les entrées et les sorties ;
+3. découper le problème en étapes ;
+4. écrire un pseudo-code ou un organigramme ;
+5. seulement ensuite programmer.
+
+Cette méthode évite de coder au hasard.
+
+## 3. Structures de contrôle
+Toute programmation de base repose sur trois structures.
+
+### Séquence
+Les instructions s'exécutent dans l'ordre.
+
+### Alternative
+On choisit entre plusieurs cas.
 \`\`\`python
 if condition:
-    # bloc vrai
+    action_1
 else:
-    # bloc faux
+    action_2
 \`\`\`
-**Boucle for** (nombre d'itérations connu) :
+
+### Répétition
+On répète une action.
+
+#### Boucle for
+Elle est utilisée quand le nombre d'itérations est connu.
 \`\`\`python
 for i in range(n):
-    # répéter n fois
+    print(i)
 \`\`\`
-**Boucle while** (condition d'arrêt) :
+
+#### Boucle while
+Elle est utilisée quand on répète tant qu'une condition reste vraie.
 \`\`\`python
 while condition:
-    # répéter tant que vrai
+    traitement()
 \`\`\`
 
-## 3. Fonctions et procédures
+## 4. Variables, types et expressions
+Une variable est un espace mémoire qui contient une valeur.
+
+### Types de base
+- entier
+- réel
+- chaîne de caractères
+- booléen
+
+Il faut savoir affecter, modifier et afficher une valeur.
+
 \`\`\`python
-def nom_fonction(parametre1, parametre2):
-    # corps
-    return resultat
+age = 17
+nom = "Awa"
+admis = True
 \`\`\`
-**Portée des variables** : locale (dans la fonction) vs globale.
 
-## 4. Tableaux (listes en Python)
+## 5. Fonctions et modularité
+Une fonction permet de regrouper un traitement réutilisable.
+
 \`\`\`python
-tab = [3, 1, 4, 1, 5]
-tab[0]      # accès au 1er élément (indice 0)
-len(tab)    # longueur du tableau
-tab.append(9)  # ajouter en fin
+def carre(x):
+    return x * x
 \`\`\`
 
-## 5. Algorithmes de tri
-**Tri à bulles** : comparer les éléments adjacents, échanger si désordre. Complexité : O(n²).
-**Tri par sélection** : trouver le minimum du sous-tableau non trié, le placer en tête. O(n²).
-**Tri par insertion** : insérer chaque élément à sa place dans la partie triée. O(n²).
+### Intérêt des fonctions
+- éviter les répétitions ;
+- clarifier le programme ;
+- faciliter les tests ;
+- découper un problème complexe en sous-problèmes.
 
-## 6. Recherche dichotomique
-Sur un tableau **trié**, comparer l'élément cherché au milieu, puis restreindre l'intervalle de moitié à chaque étape. Complexité : **O(log n)** (beaucoup plus rapide que la recherche séquentielle O(n)).`,
+Il faut aussi distinguer **variables locales** et **variables globales**.
+
+## 6. Listes et tableaux
+En Python, les tableaux du programme sont souvent représentés par des **listes**.
+
+\`\`\`python
+notes = [12, 15, 9, 18]
+print(notes[0])
+notes.append(14)
+\`\`\`
+
+### Opérations courantes
+- accéder à un élément ;
+- parcourir la liste ;
+- ajouter ou supprimer ;
+- calculer une somme ou un maximum ;
+- rechercher une valeur.
+
+## 7. Recherche et parcours
+### Recherche séquentielle
+On parcourt les éléments un à un jusqu'à trouver la valeur cherchée.
+
+### Recherche dichotomique
+Elle s'applique sur un tableau **trié**. À chaque étape, on compare avec l'élément du milieu et on élimine la moitié inutile.
+
+Son intérêt est majeur :
+- recherche séquentielle : **O(n)**
+- recherche dichotomique : **O(log n)**
+
+## 8. Algorithmes de tri
+Le tri consiste à ranger les éléments dans un ordre donné.
+
+### Tri à bulles
+On compare les éléments voisins et on échange s'ils sont mal placés.
+
+### Tri par sélection
+On cherche le minimum de la partie non triée, puis on le place au bon endroit.
+
+### Tri par insertion
+On insère chaque nouvel élément dans la partie déjà triée.
+
+Ces tris sont simples à comprendre mais peu efficaces pour de grands ensembles.
+
+## 9. Récursivité
+Une fonction récursive s'appelle elle-même pour résoudre un problème plus petit.
+
+Elle doit obligatoirement contenir :
+- un **cas de base** ;
+- un **appel récursif** qui rapproche de ce cas de base.
+
+## 10. Méthode pour écrire un bon programme
+1. analyser l'énoncé ;
+2. identifier les données ;
+3. choisir l'algorithme adapté ;
+4. écrire le code ;
+5. tester avec plusieurs cas ;
+6. corriger les erreurs.
+
+## 11. Erreurs fréquentes
+- Confondre le signe d'affectation = et l'opérateur de comparaison ==.
+- Oublier d'initialiser une variable.
+- Créer une boucle infinie avec une instruction while mal contrôlée.
+- Utiliser la recherche dichotomique sur une liste non triée.
+- Écrire un programme sans le tester.
+
+## 12. À retenir
+L'algorithmique apprend à raisonner avec rigueur. La programmation, elle, traduit ce raisonnement dans un langage. Pour réussir, il faut être à la fois logique, méthodique et attentif aux détails.`,
     exercises: [
       ex('Structure de boucle',
         'Quelle structure utilise-t-on quand on ne connaît pas à l\'avance le nombre d\'itérations ?',
@@ -3450,50 +3841,155 @@ Sur un tableau **trié**, comparer l'élément cherché au milieu, puis restrein
     ],
     course_content: `# Systèmes d'exploitation et réseaux
 
-## 1. Système d'exploitation (SE)
-Le **système d'exploitation** est le logiciel fondamental qui gère les ressources matérielles et fournit les services aux applications.
+## Objectifs du chapitre
+- Comprendre le rôle du système d'exploitation dans un ordinateur.
+- Maîtriser les notions de base sur les fichiers, processus et périphériques.
+- Identifier les composants et le fonctionnement d'un réseau informatique.
+- Comprendre l'adressage IP, les protocoles et les enjeux de sécurité.
 
-**Fonctions principales** :
-- Gestion du **processeur** (ordonnancement des processus).
-- Gestion de la **mémoire** (allocation RAM, mémoire virtuelle).
-- Gestion des **fichiers** (arborescence, permissions).
-- Gestion des **entrées/sorties** (périphériques).
+## 1. Le système d'exploitation
+Le **système d'exploitation** est le logiciel de base qui permet à l'ordinateur de fonctionner. Il sert d'intermédiaire entre le matériel, les applications et l'utilisateur.
 
-**Exemples** : Windows, Linux (Ubuntu, Debian), macOS, Android.
+Sans système d'exploitation, un ordinateur ne peut pas exécuter facilement des programmes ni organiser ses ressources.
 
-**Arborescence Linux** :
+### Fonctions principales
+- gestion du processeur ;
+- gestion de la mémoire ;
+- gestion des fichiers ;
+- gestion des périphériques ;
+- gestion des utilisateurs et des droits.
+
+### Exemples
+- Windows
+- Linux
+- macOS
+- Android
+
+## 2. Fichiers, dossiers et organisation
+Le système d'exploitation organise les données dans une **arborescence**.
+
+### Sous Linux
 \`\`\`
-/ (racine)
-├── /home   (répertoires utilisateurs)
-├── /etc    (configuration système)
-├── /bin    (commandes essentielles)
-└── /var    (données variables : logs, spool)
+/        racine
+/home    dossiers des utilisateurs
+/etc     configuration
+/bin     commandes essentielles
+/var     données variables
 \`\`\`
 
-## 2. Réseaux informatiques
-Un **réseau** connecte des machines pour partager des ressources et communiquer.
+Il faut savoir distinguer :
+- un fichier ;
+- un dossier ;
+- un chemin absolu ;
+- un chemin relatif.
 
-**Topologies** : bus, étoile (la plus courante), anneau, maille.
+## 3. Processus et mémoire
+Un **processus** est un programme en cours d'exécution. Le système d'exploitation doit partager le processeur entre plusieurs tâches et gérer la mémoire disponible.
 
-**Types** : LAN (réseau local), WAN (réseau étendu), Internet (réseau mondial).
+### Mémoire
+- **RAM** : mémoire vive, rapide mais volatile
+- **stockage** : disque dur ou SSD, plus durable mais plus lent
 
-**Équipements** : switch (commutation niveau 2), routeur (niveau 3, interconnexion réseaux), point d'accès Wi-Fi.
+Le système d'exploitation alloue et libère ces ressources selon les besoins.
 
-## 3. Protocoles TCP/IP
-**TCP** (Transmission Control Protocol) : connexion fiable, contrôle de flux, garantie de livraison.
-**IP** (Internet Protocol) : adressage et routage des paquets.
-**UDP** : sans connexion, plus rapide mais non fiable (streaming, jeux en ligne).
+## 4. Réseaux informatiques
+Un réseau relie plusieurs équipements afin de partager des ressources et d'échanger des données.
 
-**Adressage IPv4** : 192.168.1.10 / 255.255.255.0
-- Adresse réseau : 192.168.1.0
-- Broadcast : 192.168.1.255
-- Plage hôtes : 192.168.1.1 à 192.168.1.254
+### Types de réseaux
+- **LAN** : réseau local
+- **WAN** : réseau étendu
+- **Internet** : réseau mondial de réseaux
 
-## 4. Sécurité informatique
-- **Pare-feu (firewall)** : filtre le trafic selon des règles.
-- **Chiffrement** : rendre les données illisibles sans la clé (HTTPS = HTTP + TLS).
-- **Mot de passe fort** : ≥ 12 caractères, majuscules + chiffres + symboles.
-- **Menaces** : virus, malware, phishing, ransomware.`,
+### Topologies
+- bus
+- étoile
+- anneau
+- maille
+
+La topologie en étoile est très courante dans les réseaux modernes.
+
+## 5. Équipements réseau
+- **switch** : connecte plusieurs machines dans un même réseau local
+- **routeur** : relie plusieurs réseaux différents
+- **point d'accès Wi-Fi** : permet la connexion sans fil
+- **modem** : interface avec le fournisseur d'accès
+
+## 6. Protocoles et modèle TCP/IP
+Les échanges sur un réseau reposent sur des règles appelées **protocoles**.
+
+### IP
+Le protocole IP assure l'adressage et l'acheminement des paquets.
+
+### TCP
+TCP assure une communication fiable :
+- établissement de connexion ;
+- contrôle d'erreur ;
+- remise dans l'ordre des paquets.
+
+### UDP
+UDP est plus rapide mais moins fiable. Il est utilisé quand la rapidité est prioritaire.
+
+## 7. Adressage IPv4
+Une adresse IPv4 est composée de 4 octets, par exemple :
+\`\`\`
+192.168.1.10
+\`\`\`
+
+Avec un masque /24, on distingue :
+- l'adresse réseau ;
+- les adresses hôtes ;
+- l'adresse de broadcast.
+
+Exemple :
+- réseau : 192.168.1.0
+- broadcast : 192.168.1.255
+
+## 8. Internet et services
+Internet permet de nombreux services :
+- navigation web ;
+- courrier électronique ;
+- transfert de fichiers ;
+- visioconférence ;
+- cloud ;
+- réseaux sociaux.
+
+Chaque service s'appuie sur des protocoles spécifiques comme HTTP, HTTPS, SMTP ou FTP.
+
+## 9. Sécurité informatique
+La sécurité est indispensable pour protéger les données, les utilisateurs et les équipements.
+
+### Menaces courantes
+- virus
+- malware
+- phishing
+- ransomware
+- vol de mot de passe
+
+### Moyens de protection
+- pare-feu
+- antivirus
+- mots de passe robustes
+- mises à jour régulières
+- chiffrement des communications
+
+HTTPS protège les échanges web grâce au chiffrement.
+
+## 10. Méthode de raisonnement
+Dans un exercice, il faut savoir :
+1. identifier le rôle d'un équipement ;
+2. reconnaître le bon protocole ;
+3. distinguer réseau local et Internet ;
+4. lire correctement une adresse IP et son masque ;
+5. proposer une mesure de sécurité adaptée.
+
+## 11. Erreurs fréquentes
+- Confondre switch et routeur.
+- Penser qu'Internet est synonyme de web.
+- Croire que HTTPS accélère le site au lieu de le sécuriser.
+- Mal interpréter l'adresse réseau et l'adresse d'un hôte.
+
+## 12. À retenir
+Le système d'exploitation organise les ressources de l'ordinateur, tandis que les réseaux permettent la communication entre machines. Ces deux notions sont inséparables dans le monde numérique actuel et doivent être maîtrisées à la fois techniquement et pratiquement.`,
     exercises: [
       ex('Adressage IP',
         'Dans l\'adresse IP 192.168.10.5 avec le masque /24 (255.255.255.0), l\'adresse réseau est :',
@@ -3530,58 +4026,144 @@ Un **réseau** connecte des machines pour partager des ressources et communiquer
     ],
     course_content: `# Bases de données relationnelles
 
-## 1. Modèle relationnel
-Une **base de données relationnelle** organise les informations en **tables** (relations) constituées de lignes (tuples/enregistrements) et de colonnes (attributs).
+## Objectifs du chapitre
+- Comprendre comment une base relationnelle organise l'information.
+- Identifier les notions de table, clé, relation et cardinalité.
+- Savoir écrire les principales requêtes SQL.
+- Concevoir une base simple sans redondance excessive.
 
-**Concepts clés** :
-- **Clé primaire** : attribut (ou combinaison) qui identifie de manière unique chaque ligne.
-- **Clé étrangère** : attribut qui référence la clé primaire d'une autre table (intégrité référentielle).
-- **Cardinalité** : 1-1, 1-N (un à plusieurs), N-N (plusieurs à plusieurs).
+## 1. Qu'est-ce qu'une base de données relationnelle ?
+Une base de données relationnelle stocke les informations dans des **tables** composées de lignes et de colonnes.
 
-## 2. Langage SQL
-SQL (Structured Query Language) est le langage standard pour interroger et manipuler les bases de données.
+Chaque table représente un ensemble cohérent d'informations :
+- une table eleves
+- une table classes
+- une table matieres
 
-### Requêtes de lecture (SELECT)
+Ce modèle permet d'organiser les données de façon structurée, claire et interrogeable.
+
+## 2. Les notions fondamentales
+### Table, ligne, colonne
+- une **table** contient des données sur un même sujet ;
+- une **ligne** correspond à un enregistrement ;
+- une **colonne** représente un attribut.
+
+### Clé primaire
+La **clé primaire** identifie de manière unique chaque enregistrement.
+
+### Clé étrangère
+La **clé étrangère** établit un lien avec une autre table.
+
+### Cardinalité
+Les relations entre entités peuvent être :
+- un à un ;
+- un à plusieurs ;
+- plusieurs à plusieurs.
+
+## 3. Modélisation avant création
+Avant d'écrire du SQL, il faut réfléchir au modèle de données.
+
+### Entité-association
+- **entité** : objet du monde réel
+- **attribut** : propriété de l'entité
+- **association** : lien entre plusieurs entités
+
+Exemple :
+- un **élève** appartient à une **classe**
+- une **classe** contient plusieurs **élèves**
+
+## 4. Le langage SQL
+SQL est le langage utilisé pour interroger et modifier les bases de données.
+
+### Lire des données : SELECT
 \`\`\`sql
--- Sélectionner toutes les colonnes
-SELECT * FROM eleves;
-
--- Avec condition et tri
 SELECT nom, prenom, note
 FROM eleves
 WHERE note >= 10
 ORDER BY note DESC;
-
--- Compter
-SELECT COUNT(*) FROM eleves WHERE serie = 'S2';
 \`\`\`
 
-### Jointures (JOIN)
+Cette requête sélectionne certains champs, applique un filtre et trie les résultats.
+
+### Ajouter des données : INSERT
 \`\`\`sql
--- Relier deux tables
+INSERT INTO eleves (nom, prenom, note)
+VALUES ('Diallo', 'Fatou', 15);
+\`\`\`
+
+### Modifier des données : UPDATE
+\`\`\`sql
+UPDATE eleves
+SET note = 16
+WHERE nom = 'Diallo';
+\`\`\`
+
+### Supprimer des données : DELETE
+\`\`\`sql
+DELETE FROM eleves
+WHERE note < 5;
+\`\`\`
+
+## 5. Les jointures
+Une jointure permet de relier des tables entre elles.
+
+\`\`\`sql
 SELECT eleves.nom, classes.libelle
 FROM eleves
 INNER JOIN classes ON eleves.classe_id = classes.id;
 \`\`\`
 
-### Modifications
-\`\`\`sql
-INSERT INTO eleves (nom, prenom, note) VALUES ('Diallo', 'Fatou', 15);
-UPDATE eleves SET note = 16 WHERE nom = 'Diallo';
-DELETE FROM eleves WHERE note < 5;
-\`\`\`
+Cette requête relie chaque élève à sa classe.
 
-## 3. Conception : diagramme entité-association
-Avant de créer les tables, on modélise les entités et leurs relations :
-- **Entité** : objet du monde réel (Élève, Classe, Matière).
-- **Association** : lien entre entités (un élève est inscrit dans une classe).
-- **Attribut** : propriété d'une entité (nom, prénom, date de naissance).
+### Importance des jointures
+Sans jointures, une base relationnelle perd tout son intérêt. Elles permettent de reconstituer l'information répartie dans plusieurs tables.
 
-## 4. Normalisation
-Les formes normales évitent les redondances et anomalies :
-- **1FN** : attributs atomiques, pas de groupes répétés.
-- **2FN** : 1FN + tout attribut dépend entièrement de la clé primaire.
-- **3FN** : 2FN + pas de dépendance transitive.`,
+## 6. Intégrité et cohérence des données
+Une bonne base doit éviter :
+- les doublons inutiles ;
+- les valeurs incohérentes ;
+- les liens cassés entre tables.
+
+Les clés primaires et étrangères garantissent cette cohérence.
+
+## 7. Normalisation
+La normalisation sert à réduire les redondances et les anomalies.
+
+### Première forme normale (1FN)
+Les attributs doivent être atomiques. On évite les listes dans une cellule.
+
+### Deuxième forme normale (2FN)
+Chaque attribut non clé doit dépendre entièrement de la clé primaire.
+
+### Troisième forme normale (3FN)
+On évite les dépendances transitives entre attributs non clés.
+
+## 8. Exemples d'application
+Dans un contexte scolaire, on peut modéliser :
+- les élèves ;
+- les classes ;
+- les matières ;
+- les notes ;
+- les enseignants.
+
+Chaque information doit être rangée dans la bonne table pour faciliter les requêtes.
+
+## 9. Méthode pour réussir un exercice
+1. identifier les entités ;
+2. déterminer les relations ;
+3. choisir la clé primaire ;
+4. écrire la requête demandée ;
+5. vérifier le sens de la condition ou de la jointure.
+
+## 10. Erreurs fréquentes
+- Confondre clé primaire et clé étrangère.
+- Utiliser WHERE pour trier au lieu de ORDER BY.
+- Oublier la condition de jointure.
+- Mettre plusieurs valeurs dans une seule cellule.
+- Concevoir des tables avec trop de répétitions.
+
+## 11. À retenir
+Les bases de données relationnelles permettent d'organiser, de relier et d'interroger efficacement l'information. Pour bien les maîtriser, il faut comprendre à la fois la logique du modèle relationnel et les commandes essentielles du SQL.`,
     exercises: [
       ex('Clé primaire',
         'Dans une table SQL, la clé primaire (PRIMARY KEY) garantit que :',

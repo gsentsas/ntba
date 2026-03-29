@@ -86,21 +86,54 @@ const PROGRAMS = {
         ],
         course_content: `# Analyse – Fonctions numériques et usuelles
 
-## 1. Rappels de continuité
-Une fonction $f$ est **continue en $a$** si $\\lim_{x\\to a}f(x)=f(a)$.
+## Objectifs du chapitre
+- Étudier une fonction de manière complète : domaine, limites, continuité, dérivabilité et variations.
+- Utiliser le théorème des valeurs intermédiaires et la notion de bijection.
+- Reconnaître les asymptotes et interpréter le comportement d'une courbe.
+- Maîtriser les fonctions usuelles du programme S1.
 
-**Théorème des valeurs intermédiaires (TVI)** : si $f$ est continue sur $[a;b]$ et si $f(a)\\cdot f(b)<0$, alors il existe $c\\in]a;b[$ tel que $f(c)=0$.
+## 1. Domaine, continuité et limites
+L'étude d'une fonction commence toujours par son **domaine de définition**. Il faut ensuite déterminer les limites aux bornes de ce domaine et vérifier la continuité.
 
-## 2. Fonction réciproque
-Si $f$ est **strictement monotone et continue** sur $I$, elle est bijective de $I$ vers $J=f(I)$. Sa réciproque $f^{-1}$ vérifie :
-$$(f^{-1})'(y) = \\frac{1}{f'(f^{-1}(y))}$$
+Une fonction $f$ est **continue en $a$** si :
+$$\\lim_{x\\to a} f(x) = f(a)$$
 
-## 3. Branches infinies
-- **Asymptote horizontale** : $\\lim_{x\\to\\pm\\infty}f(x)=l$
-- **Asymptote verticale** : $\\lim_{x\\to a}f(x)=\\pm\\infty$
-- **Asymptote oblique** : $\\lim_{x\\to\\pm\\infty}[f(x)-(ax+b)]=0$
+Une fonction continue ne présente pas de rupture graphique au point considéré.
 
-## 4. Dérivées – formules clés
+## 2. Théorème des valeurs intermédiaires
+Si $f$ est continue sur $[a;b]$ et si $f(a)$ et $f(b)$ sont de signes contraires, alors il existe au moins un réel $c\\in]a;b[$ tel que :
+$$f(c)=0$$
+
+Ce théorème est fondamental pour justifier l'existence d'une racine, mais il ne donne pas sa valeur exacte.
+
+## 3. Dérivabilité et variations
+La dérivée permet de mesurer le taux de variation d'une fonction. Son signe permet d'étudier le sens de variation :
+- si $f'(x)>0$, alors $f$ est croissante ;
+- si $f'(x)<0$, alors $f$ est décroissante.
+
+L'étude des variations conduit à un tableau de variations puis à la représentation graphique.
+
+## 4. Fonction réciproque
+Si une fonction est **continue** et **strictement monotone** sur un intervalle $I$, alors elle est bijective de $I$ vers $J=f(I)$ et possède une réciproque $f^{-1}$.
+
+La dérivée de la réciproque est donnée par :
+$$(f^{-1})'(y)=\\frac{1}{f'(f^{-1}(y))}$$
+
+Cette formule s'utilise avec prudence : elle suppose que $f'(f^{-1}(y))\\neq 0$.
+
+## 5. Branches infinies et asymptotes
+### Asymptote horizontale
+Si $\\lim_{x\\to\\pm\\infty} f(x)=l$, alors la droite $y=l$ est une asymptote horizontale.
+
+### Asymptote verticale
+Si $\\lim_{x\\to a} f(x)=\\pm\\infty$, alors la droite $x=a$ est une asymptote verticale.
+
+### Asymptote oblique
+Si :
+$$\\lim_{x\\to\\pm\\infty}[f(x)-(ax+b)]=0$$
+alors la droite $y=ax+b$ est une asymptote oblique.
+
+## 6. Dérivées des fonctions usuelles
 | Fonction | Dérivée |
 |----------|---------|
 | $x^n$ | $nx^{n-1}$ |
@@ -110,13 +143,37 @@ $$(f^{-1})'(y) = \\frac{1}{f'(f^{-1}(y))}$$
 | $\\cos x$ | $-\\sin x$ |
 | $f^\\alpha$ | $\\alpha f' f^{\\alpha-1}$ |
 | $\\ln f$ | $f'/f$ |
-| $e^f$ | $f'e^f$ |
+| $e^f$ | $f' e^f$ |
 
-## 5. Fonctions usuelles au BAC S1
-- Polynômes et fractions rationnelles
-- Fonctions trigonométriques : $\\sin, \\cos, \\tan$
-- Logarithme népérien $\\ln$ et exponentielle $e^x$
-- Fonctions puissances $x^\\alpha$ ($\\alpha\\in\\mathbb{R}$)`,
+Il faut savoir combiner ces formules avec les règles sur les sommes, produits, quotients et compositions.
+
+## 7. Fonctions usuelles au Bac S1
+Le programme mobilise fréquemment :
+- les polynômes ;
+- les fractions rationnelles ;
+- les fonctions trigonométriques ;
+- le logarithme népérien ;
+- l'exponentielle ;
+- les fonctions puissances.
+
+Chaque famille possède ses particularités de domaine, de limite et de dérivation.
+
+## 8. Méthode d'étude d'une fonction
+1. déterminer le domaine ;
+2. calculer les limites ;
+3. étudier la continuité et les asymptotes ;
+4. calculer la dérivée ;
+5. dresser le tableau de variations ;
+6. interpréter graphiquement.
+
+## 9. Erreurs fréquentes
+- Oublier de préciser le domaine de définition.
+- Utiliser le TVI sans vérifier la continuité.
+- Confondre existence d'une racine et unicité de la racine.
+- Oublier la dérivée de la fonction intérieure dans une composée.
+
+## 10. À retenir
+L'analyse de fonctions est un chapitre central du Bac S1. Elle demande de la rigueur, une bonne maîtrise des formules et une vraie méthode d'étude.`,
         exercises: [
           ex('Dérivée de f^α',
             'La dérivée de $f(x) = (2x+1)^5$ est :',
@@ -156,19 +213,84 @@ $$(f^{-1})'(y) = \\frac{1}{f'(f^{-1}(y))}$$
         ],
         course_content: `# Suites numériques – Compléments
 
-## 1. Théorèmes de convergence
-**Théorème** : Toute suite **croissante et majorée** est convergente. Toute suite **décroissante et minorée** est convergente.
+## Objectifs du chapitre
+- Étudier le comportement d'une suite à l'infini.
+- Utiliser les théorèmes de convergence.
+- Traiter les suites définies par récurrence.
+- Comprendre la notion de point fixe et les suites adjacentes.
 
-**Suites adjacentes** : deux suites $(u_n)$ et $(v_n)$ sont adjacentes si l'une est croissante, l'autre décroissante, et $v_n-u_n\\to 0$. Elles convergent vers la même limite.
+## 1. Rappels essentiels
+Une suite est une fonction définie sur les entiers naturels. Elle peut être donnée :
+- par une formule explicite ;
+- par récurrence ;
+- par une relation entre plusieurs termes.
 
-## 2. Limite d'une suite U_{n+1} = f(U_n)
-**Méthode :**
-1. Montrer que $(u_n)$ est monotone et bornée → elle converge vers $l$
-2. Passer à la limite dans $u_{n+1}=f(u_n)$ : $l = f(l)$ (équation du point fixe)
-3. Vérifier que $l$ est dans l'intervalle stable
+L'objectif principal est souvent de déterminer si elle converge, diverge ou oscille.
 
-## 3. Suites récurrentes d'ordre 2
-Si $u_{n+2} = au_{n+1}+bu_n$, on résout l'équation caractéristique $r^2=ar+b$.`,
+## 2. Monotonie et bornes
+Les notions de suite croissante, décroissante, majorée et minorée sont fondamentales.
+
+### Théorèmes de convergence
+- Toute suite **croissante et majorée** converge.
+- Toute suite **décroissante et minorée** converge.
+
+Ces résultats sont très utilisés dans les démonstrations de convergence.
+
+## 3. Suites adjacentes
+Deux suites $(u_n)$ et $(v_n)$ sont dites adjacentes si :
+- l'une est croissante ;
+- l'autre est décroissante ;
+- $v_n-u_n\\to 0$.
+
+Dans ce cas, elles convergent vers une même limite.
+
+## 4. Suites récurrentes du type $u_{n+1}=f(u_n)$
+Quand une suite est définie par une relation de récurrence, on suit souvent la méthode suivante :
+1. montrer qu'elle est monotone ;
+2. montrer qu'elle est bornée ;
+3. conclure qu'elle converge ;
+4. poser $u_n\\to l$ et passer à la limite dans :
+$$u_{n+1}=f(u_n)$$
+5. résoudre l'équation :
+$$l=f(l)$$
+
+Cette équation s'appelle l'équation du **point fixe**.
+
+## 5. Suites arithmétiques et géométriques
+Même si elles sont déjà connues, elles restent des outils de base.
+
+### Suite arithmétique
+$$u_n=u_0+nr$$
+
+### Suite géométrique
+$$u_n=u_0q^n$$
+
+Il faut savoir reconnaître ces suites, utiliser leurs formules et étudier leur convergence.
+
+## 6. Suites récurrentes d'ordre 2
+Pour une relation du type :
+$$u_{n+2}=au_{n+1}+bu_n$$
+on cherche souvent une solution par l'équation caractéristique :
+$$r^2=ar+b$$
+
+Cette méthode rapproche l'étude des suites de celle des équations différentielles.
+
+## 7. Méthode type au Bac
+Pour une suite récurrente, il faut :
+1. conjecturer le comportement ;
+2. démontrer monotonicité et bornes ;
+3. conclure sur la convergence ;
+4. identifier la limite par le point fixe ;
+5. vérifier la cohérence du résultat.
+
+## 8. Erreurs fréquentes
+- Affirmer qu'une suite converge sans preuve.
+- Oublier de montrer qu'une suite monotone est aussi bornée.
+- Résoudre $l=f(l)$ sans vérifier que la suite converge réellement.
+- Confondre suite bornée et suite convergente.
+
+## 9. À retenir
+L'étude des suites en S1 repose sur une idée simple mais puissante : une suite monotone et bornée converge. Autour de ce principe, on construit la plupart des raisonnements du chapitre.`,
         exercises: [
           ex('Suite croissante majorée',
             'La suite définie par $u_0=1$ et $u_{n+1}=\\frac{u_n+3}{2}$ est croissante et majorée par $3$. Elle converge vers :',
@@ -205,29 +327,74 @@ Si $u_{n+2} = au_{n+1}+bu_n$, on résout l'équation caractéristique $r^2=ar+b$
         ],
         course_content: `# Calcul intégral
 
-## 1. Définition et propriétés
-Si $F$ est une primitive de $f$ sur $[a;b]$ :
+## Objectifs du chapitre
+- Comprendre l'intégrale comme aire algébrique et comme outil de calcul.
+- Maîtriser les propriétés de l'intégrale définie.
+- Savoir utiliser l'intégration par parties et le changement de variable.
+- Calculer des aires et des volumes de révolution.
+
+## 1. Définition fondamentale
+Si $F$ est une primitive de $f$ sur $[a;b]$, alors :
 $$\\int_a^b f(x)\\,dx = F(b)-F(a)$$
 
-**Relation de Chasles** : $\\int_a^b f = \\int_a^c f + \\int_c^b f$
+Ce résultat relie l'intégration et la dérivation. Il constitue le cœur du calcul intégral.
 
-**Linéarité** : $\\int_a^b [\\alpha f + \\beta g] = \\alpha\\int_a^b f + \\beta\\int_a^b g$
+## 2. Propriétés de l'intégrale
+### Relation de Chasles
+$$\\int_a^b f = \\int_a^c f + \\int_c^b f$$
 
-**Positivité** : si $f\\geq 0$ sur $[a;b]$, alors $\\int_a^b f\\geq 0$
+### Linéarité
+$$\\int_a^b (\\alpha f + \\beta g) = \\alpha\\int_a^b f + \\beta\\int_a^b g$$
 
-## 2. Intégration par parties (IPP)
+### Positivité
+Si $f\\ge 0$ sur $[a;b]$, alors :
+$$\\int_a^b f(x)\\,dx\\ge 0$$
+
+Ces propriétés permettent de simplifier les calculs et de justifier des encadrements.
+
+## 3. Intégration par parties
+La formule d'IPP est :
 $$\\int_a^b u(x)v'(x)\\,dx = [u(x)v(x)]_a^b - \\int_a^b u'(x)v(x)\\,dx$$
 
-## 3. Changement de variable (substitution)
-Si $x=\\varphi(t)$, alors $dx=\\varphi'(t)\\,dt$ et les bornes changent.
+Elle s'utilise surtout quand l'intégrande est un produit de fonctions de natures différentes.
 
-## 4. Calcul d'aires
-**Aire entre deux courbes** :
-$$\\mathcal{A} = \\int_a^b |f(x)-g(x)|\\,dx$$
+## 4. Changement de variable
+Si l'on pose $x=\\varphi(t)$, alors :
+$$dx=\\varphi'(t)\\,dt$$
 
-## 5. Volumes de révolution
-Rotation autour de l'axe des abscisses :
-$$V = \\pi\\int_a^b [f(x)]^2\\,dx$$`,
+Il faut alors transformer correctement l'intégrande **et** les bornes.
+
+Cette méthode est utile pour simplifier une expression ou ramener l'intégrale à une forme connue.
+
+## 5. Calcul d'aires
+L'intégrale donne une aire algébrique. Pour obtenir une aire géométrique, on utilise souvent une valeur absolue.
+
+### Aire entre deux courbes
+$$\\mathcal{A}=\\int_a^b |f(x)-g(x)|\\,dx$$
+
+Il faut d'abord savoir quelle courbe est au-dessus de l'autre sur l'intervalle considéré.
+
+## 6. Volumes de révolution
+Pour la rotation autour de l'axe des abscisses :
+$$V=\\pi\\int_a^b [f(x)]^2\\,dx$$
+
+Ce type de calcul montre l'importance de l'intégrale en géométrie et en physique.
+
+## 7. Méthode de résolution
+1. reconnaître la forme de l'intégrale ;
+2. choisir une primitive, une IPP ou une substitution ;
+3. vérifier les bornes ;
+4. simplifier soigneusement ;
+5. interpréter le résultat si l'énoncé parle d'aire ou de volume.
+
+## 8. Erreurs fréquentes
+- Oublier les bornes dans une intégrale définie.
+- Confondre aire algébrique et aire géométrique.
+- Faire une IPP mal orientée en choisissant mal $u$ et $v'$.
+- Oublier de changer les bornes après une substitution.
+
+## 9. À retenir
+Le calcul intégral en S1 ne sert pas seulement à trouver des primitives. Il permet aussi d'interpréter géométriquement une situation et de résoudre des problèmes variés avec méthode.`,
         exercises: [
           ex('Calcul d\'intégrale',
             '$\\int_0^2 (3x^2 - 2x + 1)\\,dx$ vaut :',
@@ -269,24 +436,85 @@ $$V = \\pi\\int_a^b [f(x)]^2\\,dx$$`,
         ],
         course_content: `# Équations différentielles
 
-## 1. Équation du 1er ordre : $y' + ay = 0$
-**Solution générale** : $y = Ce^{-ax}$, $C\\in\\mathbb{R}$
+## Objectifs du chapitre
+- Résoudre les équations différentielles linéaires du premier ordre.
+- Résoudre les équations différentielles linéaires du second ordre à coefficients constants.
+- Utiliser l'équation caractéristique et distinguer les cas selon le discriminant.
+- Déterminer une solution particulière lorsque le second membre est donné.
 
-**Avec second membre** : $y' + ay = b(x)$
-- On cherche une solution particulière $y_p$
-- Solution générale = $y_p + Ce^{-ax}$
+## 1. Équation différentielle du premier ordre
+L'équation homogène :
+$$y'+ay=0$$
+admet pour solution générale :
+$$y=Ce^{-ax}$$
 
-## 2. Équation du 2ème ordre : $y'' + py' + qy = 0$
-**Équation caractéristique** : $r^2 + pr + q = 0$, discriminant $\\Delta = p^2 - 4q$
+où $C$ est une constante réelle.
 
-| Cas | Solutions | Solution générale |
-|-----|-----------|-------------------|
-| $\\Delta > 0$ | $r_1, r_2$ réels distincts | $y = C_1e^{r_1x}+C_2e^{r_2x}$ |
-| $\\Delta = 0$ | $r_0$ racine double | $y = (C_1+C_2 x)e^{r_0 x}$ |
-| $\\Delta < 0$ | $r = \\alpha\\pm i\\beta$ | $y = e^{\\alpha x}(C_1\\cos\\beta x+C_2\\sin\\beta x)$ |
+### Avec second membre
+Pour :
+$$y'+ay=b(x)$$
+on cherche :
+- une solution particulière $y_p$ ;
+- puis la solution générale :
+$$y=y_p+Ce^{-ax}$$
 
-## 3. Avec second membre $A\\cos(\\omega t)+B\\sin(\\omega t)$
-On cherche une solution particulière de la forme $y_p = a\\cos(\\omega t)+b\\sin(\\omega t)$ et on identifie $a$ et $b$ par substitution.`,
+## 2. Équation différentielle du second ordre
+L'équation homogène :
+$$y''+py'+qy=0$$
+se résout à l'aide de l'équation caractéristique :
+$$r^2+pr+q=0$$
+
+Le discriminant $\\Delta=p^2-4q$ permet de distinguer trois cas.
+
+### Cas 1 : $\\Delta>0$
+Deux racines réelles distinctes $r_1$ et $r_2$ :
+$$y=C_1e^{r_1x}+C_2e^{r_2x}$$
+
+### Cas 2 : $\\Delta=0$
+Une racine double $r_0$ :
+$$y=(C_1+C_2x)e^{r_0x}$$
+
+### Cas 3 : $\\Delta<0$
+Deux racines complexes $\\alpha\\pm i\\beta$ :
+$$y=e^{\\alpha x}(C_1\\cos\\beta x+C_2\\sin\\beta x)$$
+
+## 3. Second membre trigonométrique
+Quand le second membre est de la forme :
+$$A\\cos(\\omega t)+B\\sin(\\omega t)$$
+on cherche souvent une solution particulière sous la forme :
+$$y_p=a\\cos(\\omega t)+b\\sin(\\omega t)$$
+
+On remplace ensuite dans l'équation pour identifier les coefficients.
+
+## 4. Conditions initiales
+Les constantes $C$, $C_1$ et $C_2$ sont déterminées grâce aux conditions initiales données par l'énoncé.
+
+Sans condition initiale, on ne peut obtenir que la solution générale.
+
+## 5. Lien avec les sciences
+Les équations différentielles modélisent de nombreux phénomènes :
+- croissance ou décroissance ;
+- oscillations ;
+- circuits électriques ;
+- mouvements mécaniques.
+
+Ce chapitre a donc une forte dimension appliquée.
+
+## 6. Méthode type
+1. reconnaître l'ordre de l'équation ;
+2. résoudre l'équation homogène ;
+3. chercher une solution particulière si nécessaire ;
+4. écrire la solution générale ;
+5. utiliser les conditions initiales.
+
+## 7. Erreurs fréquentes
+- Se tromper sur le signe dans l'équation caractéristique.
+- Oublier la solution homogène lorsqu'on trouve une solution particulière.
+- Mal traiter le cas de racine double.
+- Mélanger les formes de solutions selon le signe de $\\Delta$.
+
+## 8. À retenir
+Les équations différentielles demandent méthode et rigueur. Une fois l'ordre identifié et la bonne forme de solution choisie, la résolution devient très structurée.`,
         exercises: [
           ex("Équation du 1er ordre",
             "La solution générale de $y' - 3y = 0$ est :",
@@ -324,30 +552,88 @@ On cherche une solution particulière de la forme $y_p = a\\cos(\\omega t)+b\\si
         ],
         course_content: `# Probabilités et statistiques
 
-## 1. Variables aléatoires discrètes
-**Espérance** : $E(X) = \\sum_i x_i p_i$
+## Objectifs du chapitre
+- Manipuler les variables aléatoires discrètes.
+- Calculer espérance, variance et écart-type.
+- Exploiter la loi binomiale.
+- Étudier une série statistique à deux variables et interpréter une régression.
 
-**Variance** : $V(X) = E(X^2) - [E(X)]^2$
+## 1. Variable aléatoire discrète
+Une variable aléatoire associe un nombre réel à chaque issue d'une expérience aléatoire.
 
-**Écart-type** : $\\sigma(X) = \\sqrt{V(X)}$
+Pour une variable discrète, on connaît les valeurs possibles $x_i$ et leurs probabilités $p_i$.
 
-## 2. Loi binomiale $X \\sim B(n, p)$
-Répétition de $n$ épreuves de Bernoulli indépendantes, probabilité de succès $p$.
-$$P(X=k) = \\binom{n}{k} p^k(1-p)^{n-k}$$
-- $E(X) = np$
-- $V(X) = np(1-p)$
+### Espérance
+$$E(X)=\\sum_i x_i p_i$$
 
-## 3. Séries statistiques à deux variables
-Nuage de points $(x_i, y_i)$, point moyen $G=(\\bar{x}, \\bar{y})$.
+L'espérance représente la valeur moyenne théorique.
 
-**Covariance** : $\\text{cov}(X,Y) = \\overline{xy} - \\bar{x}\\cdot\\bar{y}$
+### Variance
+$$V(X)=E(X^2)-[E(X)]^2$$
 
-**Droite de régression** (moindres carrés) de $y$ en $x$ :
-$$y = ax + b, \\quad a = \\frac{\\text{cov}(X,Y)}{V(X)}, \\quad b = \\bar{y} - a\\bar{x}$$
+### Écart-type
+$$\\sigma(X)=\\sqrt{V(X)}$$
 
-**Coefficient de corrélation linéaire** :
-$$r = \\frac{\\text{cov}(X,Y)}{\\sigma_X \\cdot \\sigma_Y}, \\quad r\\in[-1;1]$$
-Si $|r|$ est proche de $1$, la corrélation est forte.`,
+L'écart-type mesure la dispersion autour de la moyenne.
+
+## 2. Loi binomiale
+La loi binomiale s'applique quand on répète $n$ fois une épreuve de Bernoulli indépendante, avec probabilité de succès $p$.
+
+Si $X\\sim B(n,p)$, alors :
+$$P(X=k)=\\binom{n}{k}p^k(1-p)^{n-k}$$
+
+et :
+- $E(X)=np$
+- $V(X)=np(1-p)$
+
+Il faut savoir reconnaître une situation binomiale avant d'utiliser les formules.
+
+## 3. Statistiques à deux variables
+On étudie un nuage de points $(x_i,y_i)$ pour analyser une liaison entre deux grandeurs.
+
+### Point moyen
+$$G=(\\bar{x},\\bar{y})$$
+
+### Covariance
+$$\\text{cov}(X,Y)=\\overline{xy}-\\bar{x}\\bar{y}$$
+
+Elle indique le sens global de la variation conjointe de $X$ et $Y$.
+
+## 4. Droite de régression
+La droite de régression de $y$ en $x$ s'écrit :
+$$y=ax+b$$
+avec :
+$$a=\\frac{\\text{cov}(X,Y)}{V(X)}$$
+et :
+$$b=\\bar{y}-a\\bar{x}$$
+
+Cette droite sert à ajuster au mieux le nuage de points.
+
+## 5. Coefficient de corrélation
+Le coefficient de corrélation linéaire est :
+$$r=\\frac{\\text{cov}(X,Y)}{\\sigma_X\\sigma_Y}$$
+
+Il appartient à l'intervalle $[-1;1]$.
+
+### Interprétation
+- $r$ proche de $1$ : forte corrélation positive ;
+- $r$ proche de $-1$ : forte corrélation négative ;
+- $r$ proche de $0$ : faible liaison linéaire.
+
+## 6. Méthode de travail
+1. identifier la loi ou la série étudiée ;
+2. calculer proprement les grandeurs ;
+3. interpréter les résultats ;
+4. vérifier la cohérence numérique.
+
+## 7. Erreurs fréquentes
+- Confondre probabilité et espérance.
+- Mal utiliser la formule de variance.
+- Appliquer la loi binomiale sans indépendance des épreuves.
+- Interpréter le coefficient de corrélation comme un lien de causalité certaine.
+
+## 8. À retenir
+Probabilités et statistiques en S1 servent à modéliser l'aléatoire et à analyser les données. Il faut savoir calculer, mais aussi interpréter correctement les résultats.`,
         exercises: [
           ex('Loi binomiale – probabilité',
             'On répète 5 fois une épreuve de Bernoulli avec $p=0{,}4$. La probabilité d\'obtenir exactement 2 succès est $C_5^2 \\times 0{,}4^2 \\times 0{,}6^3$ =',
@@ -385,24 +671,84 @@ Si $|r|$ est proche de $1$, la corrélation est forte.`,
         ],
         course_content: `# Nombres complexes et similitudes planes
 
-## 1. Formes d'un nombre complexe
-- **Algébrique** : $z = a + ib$, $a = \\text{Re}(z)$, $b = \\text{Im}(z)$
-- **Trigonométrique** : $z = r(\\cos\\theta + i\\sin\\theta)$ où $r=|z|$, $\\theta=\\arg(z)$
-- **Exponentielle** : $z = re^{i\\theta}$
+## Objectifs du chapitre
+- Maîtriser les différentes écritures d'un nombre complexe.
+- Utiliser module, argument et formule de Moivre.
+- Déterminer les racines nièmes d'un complexe.
+- Relier nombres complexes et transformations du plan.
 
-## 2. Formule de Moivre
-$$z^n = r^n e^{in\\theta} = r^n(\\cos n\\theta + i\\sin n\\theta)$$
+## 1. Les trois formes d'un nombre complexe
+### Forme algébrique
+$$z=a+ib$$
+avec $a=\\text{Re}(z)$ et $b=\\text{Im}(z)$.
 
-## 3. Racines $n$-ièmes de $z_0 = r_0 e^{i\\theta_0}$
-$$z_k = r_0^{1/n} e^{i(\\theta_0+2k\\pi)/n}, \\quad k=0,1,\\ldots,n-1$$
+### Forme trigonométrique
+$$z=r(\\cos\\theta+i\\sin\\theta)$$
+où $r=|z|$ et $\\theta=\\arg(z)$.
 
-## 4. Identités trigonométriques via les complexes
-$$\\cos\\theta = \\frac{e^{i\\theta}+e^{-i\\theta}}{2}, \\quad \\sin\\theta = \\frac{e^{i\\theta}-e^{-i\\theta}}{2i}$$
+### Forme exponentielle
+$$z=re^{i\\theta}$$
 
-## 5. Similitudes planes directes
-Une similitude directe de rapport $k$ et d'angle $\\alpha$ s'écrit :
-$$z' = az + b, \\quad a = ke^{i\\alpha}\\in\\mathbb{C}^*$$
-- Si $a\\neq 1$ : centre fixe $\\Omega$ tel que $\\Omega(a-1)+b=0$, soit $z_\\Omega = b/(1-a)$`,
+Chaque forme a son intérêt : calcul direct, interprétation géométrique ou puissance d'un complexe.
+
+## 2. Module, argument et représentation
+Le module représente la distance de l'image de $z$ à l'origine.
+L'argument représente la direction du vecteur associé.
+
+Ces deux notions permettent une lecture géométrique du plan complexe.
+
+## 3. Produit, quotient et puissances
+La forme exponentielle simplifie les calculs :
+- les modules se multiplient ;
+- les arguments s'additionnent.
+
+### Formule de Moivre
+$$z^n=r^n e^{in\\theta}=r^n(\\cos n\\theta+i\\sin n\\theta)$$
+
+Elle permet de calculer facilement les puissances et de retrouver certaines identités trigonométriques.
+
+## 4. Racines nièmes
+Si :
+$$z_0=r_0 e^{i\\theta_0}$$
+alors ses racines $n$-ièmes sont :
+$$z_k=r_0^{1/n}e^{i(\\theta_0+2k\\pi)/n}, \\quad k=0,1,\\ldots,n-1$$
+
+Elles sont régulièrement réparties sur un cercle dans le plan complexe.
+
+## 5. Formules d'Euler
+Les complexes permettent de relier trigonométrie et exponentielle :
+$$\\cos\\theta=\\frac{e^{i\\theta}+e^{-i\\theta}}{2}$$
+$$\\sin\\theta=\\frac{e^{i\\theta}-e^{-i\\theta}}{2i}$$
+
+## 6. Similitudes directes planes
+Une similitude directe s'écrit :
+$$z'=az+b$$
+avec :
+$$a=ke^{i\\alpha} \\in \\mathbb{C}^*$$
+
+Elle combine :
+- une rotation ;
+- une homothétie ;
+- éventuellement une translation.
+
+Si $a\\neq 1$, son centre est donné par :
+$$z_\\Omega=\\frac{b}{1-a}$$
+
+## 7. Méthode type
+1. choisir la forme la plus adaptée du complexe ;
+2. calculer module et argument ;
+3. passer en forme exponentielle pour les produits, quotients et puissances ;
+4. revenir à la forme algébrique si nécessaire ;
+5. interpréter géométriquement.
+
+## 8. Erreurs fréquentes
+- Confondre argument et module.
+- Oublier le caractère modulo $2\\pi$ de l'argument.
+- Mal répartir les racines nièmes.
+- Utiliser la forme algébrique là où la forme exponentielle est plus simple.
+
+## 9. À retenir
+Les nombres complexes unifient calcul algébrique, géométrie et trigonométrie. En S1, ils deviennent un outil puissant pour comprendre les transformations du plan.`,
         exercises: [
           ex('Module d\'un complexe',
             'Le module de $z = 3 - 4i$ est :',
@@ -443,27 +789,86 @@ $$z' = az + b, \\quad a = ke^{i\\alpha}\\in\\mathbb{C}^*$$
         ],
         course_content: `# Géométrie plane et dans l'espace
 
+## Objectifs du chapitre
+- Utiliser le barycentre comme outil de simplification géométrique.
+- Maîtriser les notions d'application affine et de similitude.
+- Exploiter le produit vectoriel et le produit mixte dans l'espace.
+- Reconnaître et caractériser les principales coniques.
+- Étudier une courbe paramétrée.
+
 ## 1. Barycentres
-Le barycentre $G$ des points pondérés $(A_i, a_i)$ vérifie :
-$$\\left(\\sum a_i\\right)\\cdot\\overrightarrow{OG} = \\sum a_i\\cdot\\overrightarrow{OA_i}$$
+Le barycentre $G$ des points pondérés $(A_i,a_i)$ vérifie :
+$$\\left(\\sum a_i\\right)\\overrightarrow{OG}=\\sum a_i\\overrightarrow{OA_i}$$
 
-## 2. Applications affines et similitudes directes planes
-Une **application affine** conserve le parallélisme et les rapports de division.
-Une **similitude directe** conserve les angles orientés et les rapports de distances.
+Le barycentre permet de traduire des relations géométriques en relations vectorielles simples.
 
-## 3. Produit vectoriel dans l'espace
-Si $\\vec{u}=(u_1,u_2,u_3)$ et $\\vec{v}=(v_1,v_2,v_3)$ :
-$$\\vec{u}\\wedge\\vec{v} = (u_2v_3-u_3v_2,\\; u_3v_1-u_1v_3,\\; u_1v_2-u_2v_1)$$
-**Propriétés** : $\\vec{u}\\wedge\\vec{v}\\perp\\vec{u}$ et $\\vec{u}\\wedge\\vec{v}\\perp\\vec{v}$, $|\\vec{u}\\wedge\\vec{v}|=|\\vec{u}||\\vec{v}|\\sin\\theta$
+## 2. Applications affines et similitudes
+Une **application affine** conserve :
+- l'alignement ;
+- le parallélisme ;
+- les rapports sur une même droite.
 
-## 4. Coniques (définition foyer-directrice)
-Une conique est le lieu des points $M$ tels que $\\frac{MF}{d(M,\\Delta)}=e$.
-- **Ellipse** ($e<1$) : $\\frac{x^2}{a^2}+\\frac{y^2}{b^2}=1$, $b^2=a^2(1-e^2)$
-- **Parabole** ($e=1$) : $y^2=4px$
-- **Hyperbole** ($e>1$) : $\\frac{x^2}{a^2}-\\frac{y^2}{b^2}=1$
+Une **similitude directe** conserve en plus les angles orientés et les rapports de distances.
 
-## 5. Courbes paramétrées
-$\\begin{cases}x=f(t)\\\\y=g(t)\\end{cases}$ : tangente en $t_0$ dirigée par $(f'(t_0), g'(t_0))$.`,
+Ces transformations sont essentielles pour comprendre la structure des figures géométriques.
+
+## 3. Produit vectoriel
+Pour deux vecteurs de l'espace :
+$$\\vec{u}\\wedge\\vec{v}=(u_2v_3-u_3v_2,\\;u_3v_1-u_1v_3,\\;u_1v_2-u_2v_1)$$
+
+### Propriétés
+- $\\vec{u}\\wedge\\vec{v}$ est orthogonal à $\\vec{u}$ ;
+- $\\vec{u}\\wedge\\vec{v}$ est orthogonal à $\\vec{v}$ ;
+- sa norme vaut :
+$$|\\vec{u}\\wedge\\vec{v}|=|\\vec{u}|\\,|\\vec{v}|\\sin\\theta$$
+
+Le produit vectoriel est très utile pour étudier l'orthogonalité, les aires et les plans.
+
+## 4. Produit mixte
+Le produit mixte :
+$$[\\vec{u},\\vec{v},\\vec{w}] = \\vec{u}\\cdot(\\vec{v}\\wedge\\vec{w})$$
+mesure un volume orienté.
+
+### Conséquence importante
+Si le produit mixte est nul, alors les trois vecteurs sont coplanaires.
+
+## 5. Coniques
+Une conique est définie par la relation :
+$$\\frac{MF}{d(M,\\Delta)}=e$$
+
+### Selon la valeur de l'excentricité
+- **ellipse** si $e<1$
+- **parabole** si $e=1$
+- **hyperbole** si $e>1$
+
+Il faut connaître leurs équations usuelles et leur interprétation géométrique.
+
+## 6. Courbes paramétrées
+Une courbe paramétrée s'écrit :
+$$\\begin{cases}
+x=f(t) \\\\
+y=g(t)
+\\end{cases}$$
+
+La tangente au point correspondant à $t_0$ est dirigée par :
+$$(f'(t_0),g'(t_0))$$
+
+Cette écriture est utile pour décrire certains mouvements ou certaines courbes non données sous la forme $y=f(x)$.
+
+## 7. Méthode de travail
+1. choisir le bon outil vectoriel ou analytique ;
+2. traduire la situation en équations ;
+3. interpréter le résultat géométriquement ;
+4. vérifier les conditions de validité.
+
+## 8. Erreurs fréquentes
+- Confondre produit scalaire et produit vectoriel.
+- Oublier que le produit vectoriel est un vecteur.
+- Utiliser le barycentre sans condition sur la somme des coefficients.
+- Confondre ellipse, parabole et hyperbole.
+
+## 9. À retenir
+La géométrie de S1 relie vision graphique, calcul vectoriel et équations. Plus on relie les outils entre eux, plus les problèmes deviennent lisibles et intéressants.`,
         exercises: [
           ex('Produit vectoriel',
             'Si $\\vec{u}=(1,0,0)$ et $\\vec{v}=(0,1,0)$, alors $\\vec{u}\\wedge\\vec{v}$ vaut :',
@@ -1567,4 +1972,7 @@ async function seed() {
   }
 }
 
-seed().catch(process.exit);
+seed().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
