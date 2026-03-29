@@ -21,7 +21,7 @@ export function Topbar() {
                 </Button>
 
                 <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-green-dark">
+                    <p className="text-xs font-semibold tracking-[0.16em] text-green-dark uppercase">
                         Session du jour
                     </p>
                     <h1 className="text-lg font-semibold text-slate-950">
@@ -42,7 +42,10 @@ export function Topbar() {
             <div className="flex items-center gap-3">
                 <div className="hidden rounded-full bg-amber-light px-3 py-2 text-sm font-medium text-slate-900 sm:flex sm:items-center sm:gap-2">
                     <Flame className="size-4 text-coral" />
-                    <span>{globalProgress?.streak_days ?? user?.streak_days ?? 0} jours</span>
+                    <span>
+                        {globalProgress?.streak_days ?? user?.streak_days ?? 0}{' '}
+                        jours
+                    </span>
                 </div>
 
                 <button

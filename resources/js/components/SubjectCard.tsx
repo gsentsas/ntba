@@ -15,12 +15,14 @@ export default function SubjectCard({ item }: SubjectCardProps) {
         <article className="rounded-[1.75rem] border border-white/70 bg-white/90 p-5 shadow-sm">
             <div className="flex items-start justify-between gap-4">
                 <div>
-                    <div className="inline-flex items-center gap-2 rounded-full bg-bac-bg px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-slate-700">
+                    <div className="inline-flex items-center gap-2 rounded-full bg-bac-bg px-3 py-1 text-xs font-semibold tracking-[0.16em] text-slate-700 uppercase">
                         <span>{item.subject.icon}</span>
                         <span>{item.subject.name}</span>
                     </div>
                     <p className="mt-3 text-sm text-slate-600">
-                        Coefficient {item.subject.coefficient} · {item.chapters_done}/{item.chapters_total} chapitres maîtrisés
+                        Coefficient {item.subject.coefficient} ·{' '}
+                        {item.chapters_done}/{item.chapters_total} chapitres
+                        maîtrisés
                     </p>
                 </div>
 
@@ -33,10 +35,7 @@ export default function SubjectCard({ item }: SubjectCardProps) {
             </div>
 
             <div className="mt-5 space-y-4">
-                <ProgressBar
-                    value={item.completion_pct}
-                    label="Progression"
-                />
+                <ProgressBar value={item.completion_pct} label="Progression" />
 
                 <div className="grid grid-cols-2 gap-3 text-sm">
                     <div className="rounded-2xl bg-bac-bg p-3">

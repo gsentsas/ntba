@@ -6,12 +6,20 @@ import type { ChatMessage } from '@/types';
 
 const defaultWelcomeMessage: ChatMessage = {
     role: 'assistant',
-    content: 'Je suis Prof IA. Choisis une matière ou pose directement ta question sur le BAC Sénégal.',
+    content:
+        'Je suis Prof IA. Choisis une matière ou pose directement ta question sur le BAC Sénégal.',
 };
 
 export function useAIChat() {
-    const { activeChatSubjectId, currentSessionId, clearChatSession, setCurrentSessionId } = useAppStore();
-    const [messages, setMessages] = useState<ChatMessage[]>([defaultWelcomeMessage]);
+    const {
+        activeChatSubjectId,
+        currentSessionId,
+        clearChatSession,
+        setCurrentSessionId,
+    } = useAppStore();
+    const [messages, setMessages] = useState<ChatMessage[]>([
+        defaultWelcomeMessage,
+    ]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
@@ -19,7 +27,11 @@ export function useAIChat() {
         setError(null);
         setIsLoading(true);
 
-        setMessages((prev) => [...prev, { role: 'user', content: text }, { role: 'assistant', content: '' }]);
+        setMessages((prev) => [
+            ...prev,
+            { role: 'user', content: text },
+            { role: 'assistant', content: '' },
+        ]);
 
         try {
             const sessionId = await aiApi.chat(
@@ -33,12 +45,14 @@ export function useAIChat() {
                     setMessages((prev) => {
                         const next = [...prev];
                         const last = next[next.length - 1];
+
                         if (last?.role === 'assistant') {
                             next[next.length - 1] = {
                                 ...last,
                                 content: last.content + chunk,
                             };
                         }
+
                         return next;
                     });
                 },
@@ -46,7 +60,11 @@ export function useAIChat() {
 
             setCurrentSessionId(sessionId);
         } catch (caughtError) {
-            setError(caughtError instanceof Error ? caughtError.message : 'Erreur de chat IA');
+            setError(
+                caughtError instanceof Error
+                    ? caughtError.message
+                    : 'Erreur de chat IA',
+            );
             setMessages((prev) => prev.slice(0, -1));
         } finally {
             setIsLoading(false);
@@ -64,7 +82,8 @@ export function useAIChat() {
 
     function generateAndAsk(type: 'exercise' | 'summary' | 'oral') {
         const prompts = {
-            exercise: 'Génère-moi un exercice adapté à mon niveau sur ce chapitre.',
+            exercise:
+                'Génère-moi un exercice adapté à mon niveau sur ce chapitre.',
             summary: 'Prépare une fiche de révision claire sur ce chapitre.',
             oral: 'Interroge-moi à l’oral sur les notions essentielles de ce chapitre.',
         };

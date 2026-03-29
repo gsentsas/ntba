@@ -13,8 +13,8 @@ createServer((page) =>
         resolve: (name) =>
             resolvePageComponent(
                 `./pages/${name}.tsx`,
-                import.meta.glob('./pages/**/*.tsx')
+                import.meta.glob('./pages/**/*.tsx'),
             ),
         setup: ({ App, props }) => <App {...props} />,
-    })
+    }),
 );

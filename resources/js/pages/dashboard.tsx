@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+import { Layout } from '@/components/Layout/Layout';
 import SubjectCard from '@/components/SubjectCard';
 import TaskItem from '@/components/TaskItem';
-import { Layout } from '@/components/Layout/Layout';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -16,23 +16,25 @@ export default function Dashboard() {
     const user = useAppStore((state) => state.user);
     const setPage = useAppStore((state) => state.setPage);
     const { globalProgress, subjectsProgress } = useProgress();
-    const { todayTasks, todayStats, generatePlan, completeTask, isLoading } = usePlanning();
+    const { todayTasks, todayStats, generatePlan, completeTask, isLoading } =
+        usePlanning();
 
     useEffect(() => {
         setPage('dashboard');
     }, [setPage]);
 
-    const weakestHighCoeff = [...subjectsProgress]
-        .sort((a, b) => {
-            const scoreA = a.subject.coefficient * 10 - a.simulated_grade;
-            const scoreB = b.subject.coefficient * 10 - b.simulated_grade;
-            return scoreB - scoreA;
-        })[0];
+    const weakestHighCoeff = [...subjectsProgress].sort((a, b) => {
+        const scoreA = a.subject.coefficient * 10 - a.simulated_grade;
+        const scoreB = b.subject.coefficient * 10 - b.simulated_grade;
+
+        return scoreB - scoreA;
+    })[0];
 
     const prioritizedSubjects = [...subjectsProgress]
         .sort((a, b) => {
             const scoreA = a.subject.coefficient * 10 - a.simulated_grade;
             const scoreB = b.subject.coefficient * 10 - b.simulated_grade;
+
             return scoreB - scoreA;
         })
         .slice(0, 4);
@@ -43,14 +45,19 @@ export default function Dashboard() {
                 <Card className="overflow-hidden border-green-light bg-[linear-gradient(135deg,#1d9e75_0%,#0f6e56_100%)] text-white shadow-xl shadow-green/20">
                     <CardContent className="grid gap-6 px-6 py-8 lg:grid-cols-[1.2fr_0.8fr]">
                         <div>
-                            <p className="text-sm uppercase tracking-[0.18em] text-green-light">
+                            <p className="text-sm tracking-[0.18em] text-green-light uppercase">
                                 Tableau de bord
                             </p>
                             <h1 className="mt-3 text-4xl font-semibold">
                                 Bonjour {user?.prenom ?? 'élève'} !
                             </h1>
                             <p className="mt-4 max-w-2xl text-sm leading-7 text-white/80">
-                                Il reste {globalProgress?.days_until_bac ?? 0} jours avant le Bac. Ton rythme actuel te place à {globalProgress?.simulated_average?.toFixed(1) ?? '0.0'}/20.
+                                Il reste {globalProgress?.days_until_bac ?? 0}{' '}
+                                jours avant le Bac. Ton rythme actuel te place à{' '}
+                                {globalProgress?.simulated_average?.toFixed(
+                                    1,
+                                ) ?? '0.0'}
+                                /20.
                             </p>
                             <div className="mt-6 flex flex-wrap gap-3">
                                 <Link to="/planning">
@@ -59,13 +66,19 @@ export default function Dashboard() {
                                     </Button>
                                 </Link>
                                 <Badge className="rounded-full bg-white/10 px-4 py-2 text-white">
-                                    Streak {globalProgress?.streak_days ?? user?.streak_days ?? 0} jours
+                                    Streak{' '}
+                                    {globalProgress?.streak_days ??
+                                        user?.streak_days ??
+                                        0}{' '}
+                                    jours
                                 </Badge>
                             </div>
                         </div>
 
                         <div className="rounded-[1.75rem] bg-white/10 p-5 backdrop-blur">
-                            <p className="text-sm text-white/75">Progression globale</p>
+                            <p className="text-sm text-white/75">
+                                Progression globale
+                            </p>
                             <div className="mt-4 text-5xl font-semibold">
                                 {globalProgress?.overall_pct ?? 0}%
                             </div>
@@ -86,7 +99,13 @@ export default function Dashboard() {
                                 ✦ Suggestion IA
                             </p>
                             <p className="mt-2 text-sm leading-7 text-slate-700">
-                                Concentre-toi d’abord sur <strong>{weakestHighCoeff.subject.name}</strong> : coefficient {weakestHighCoeff.subject.coefficient} et moyenne simulée à {weakestHighCoeff.simulated_grade.toFixed(1)}/20.
+                                Concentre-toi d’abord sur{' '}
+                                <strong>{weakestHighCoeff.subject.name}</strong>{' '}
+                                : coefficient{' '}
+                                {weakestHighCoeff.subject.coefficient} et
+                                moyenne simulée à{' '}
+                                {weakestHighCoeff.simulated_grade.toFixed(1)}
+                                /20.
                             </p>
                         </CardContent>
                     </Card>
@@ -94,15 +113,36 @@ export default function Dashboard() {
 
                 <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
                     {[
-                        { label: 'Progression globale', value: `${globalProgress?.overall_pct ?? 0}%` },
-                        { label: 'Exercices faits', value: String(globalProgress?.total_exercises_done ?? 0) },
-                        { label: 'Moyenne simulée', value: `${globalProgress?.simulated_average?.toFixed(1) ?? '0.0'}/20` },
-                        { label: 'Streak actuel', value: `${globalProgress?.streak_days ?? 0} jours` },
+                        {
+                            label: 'Progression globale',
+                            value: `${globalProgress?.overall_pct ?? 0}%`,
+                        },
+                        {
+                            label: 'Exercices faits',
+                            value: String(
+                                globalProgress?.total_exercises_done ?? 0,
+                            ),
+                        },
+                        {
+                            label: 'Moyenne simulée',
+                            value: `${globalProgress?.simulated_average?.toFixed(1) ?? '0.0'}/20`,
+                        },
+                        {
+                            label: 'Streak actuel',
+                            value: `${globalProgress?.streak_days ?? 0} jours`,
+                        },
                     ].map((item) => (
-                        <Card key={item.label} className="border-white/70 bg-white/90">
+                        <Card
+                            key={item.label}
+                            className="border-white/70 bg-white/90"
+                        >
                             <CardContent className="px-5 py-5">
-                                <p className="text-sm text-slate-500">{item.label}</p>
-                                <p className="mt-3 text-3xl font-semibold text-slate-950">{item.value}</p>
+                                <p className="text-sm text-slate-500">
+                                    {item.label}
+                                </p>
+                                <p className="mt-3 text-3xl font-semibold text-slate-950">
+                                    {item.value}
+                                </p>
                             </CardContent>
                         </Card>
                     ))}
@@ -111,14 +151,22 @@ export default function Dashboard() {
                 <section className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
                     <div className="space-y-4">
                         <div className="flex items-center justify-between">
-                            <h2 className="text-2xl font-semibold text-slate-950">Matières prioritaires</h2>
-                            <Link to="/subjects" className="text-sm font-semibold text-green-dark">
+                            <h2 className="text-2xl font-semibold text-slate-950">
+                                Matières prioritaires
+                            </h2>
+                            <Link
+                                to="/subjects"
+                                className="text-sm font-semibold text-green-dark"
+                            >
                                 Voir toutes les matières
                             </Link>
                         </div>
                         <div className="grid gap-4 md:grid-cols-2">
                             {prioritizedSubjects.map((item) => (
-                                <SubjectCard key={item.subject.id} item={item} />
+                                <SubjectCard
+                                    key={item.subject.id}
+                                    item={item}
+                                />
                             ))}
                         </div>
                     </div>
@@ -126,9 +174,13 @@ export default function Dashboard() {
                     <Card className="border-white/70 bg-white/90">
                         <CardHeader className="flex flex-row items-center justify-between">
                             <div>
-                                <CardTitle className="text-2xl text-slate-950">Tâches du jour</CardTitle>
+                                <CardTitle className="text-2xl text-slate-950">
+                                    Tâches du jour
+                                </CardTitle>
                                 <p className="mt-2 text-sm text-slate-600">
-                                    {todayStats ? `${todayStats.completed_ratio} complétées · ${todayStats.minutes_remaining} min restantes` : 'Aucune donnée pour le moment'}
+                                    {todayStats
+                                        ? `${todayStats.completed_ratio} complétées · ${todayStats.minutes_remaining} min restantes`
+                                        : 'Aucune donnée pour le moment'}
                                 </p>
                             </div>
                         </CardHeader>

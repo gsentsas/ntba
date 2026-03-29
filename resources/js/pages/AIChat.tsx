@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
-import { Camera, RotateCcw, Send, Sparkles, X } from 'lucide-react';
-import toast from 'react-hot-toast';
 import { useQuery } from '@tanstack/react-query';
+import { Camera, RotateCcw, Send, Sparkles, X } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import toast from 'react-hot-toast';
 
 import { ChatMessage } from '@/components/ChatMessage';
 import { Layout } from '@/components/Layout/Layout';
@@ -12,16 +12,30 @@ import { subjectsApi, aiApi } from '@/services/api';
 import { useAppStore } from '@/store';
 
 const QUICK_ACTIONS = [
-    { label: 'Explique ce chapitre', value: 'Explique-moi les notions essentielles de ce chapitre de façon claire.' },
+    {
+        label: 'Explique ce chapitre',
+        value: 'Explique-moi les notions essentielles de ce chapitre de façon claire.',
+    },
     { label: 'Génère un exercice', value: 'exercise' as const },
     { label: 'Fiche de révision', value: 'summary' as const },
-    { label: 'Erreurs classiques', value: "Quelles sont les erreurs classiques des élèves au BAC sur ce chapitre ?" },
+    {
+        label: 'Erreurs classiques',
+        value: 'Quelles sont les erreurs classiques des élèves au BAC sur ce chapitre ?',
+    },
     { label: 'Interrogation orale', value: 'oral' as const },
 ];
 
 export default function AIChat() {
-    const { user, setActiveChatSubject, activeChatSubjectId, setPage } = useAppStore();
-    const { messages, isLoading, sendMessage, sendQuickQuestion, clearChat, generateAndAsk } = useAIChat();
+    const { user, setActiveChatSubject, activeChatSubjectId, setPage } =
+        useAppStore();
+    const {
+        messages,
+        isLoading,
+        sendMessage,
+        sendQuickQuestion,
+        clearChat,
+        generateAndAsk,
+    } = useAIChat();
 
     const [input, setInput] = useState('');
     const [photoLoading, setPhotoLoading] = useState(false);
@@ -45,7 +59,10 @@ export default function AIChat() {
     }, [messages]);
 
     function handleSend() {
-        if (!input.trim() || isLoading) return;
+        if (!input.trim() || isLoading) {
+            return;
+        }
+
         const text = input.trim();
         setInput('');
         sendMessage(text);
@@ -58,7 +75,9 @@ export default function AIChat() {
         }
     }
 
-    function handleQuickAction(value: string | 'exercise' | 'summary' | 'oral') {
+    function handleQuickAction(
+        value: string | 'exercise' | 'summary' | 'oral',
+    ) {
         if (value === 'exercise' || value === 'summary' || value === 'oral') {
             generateAndAsk(value);
         } else {
@@ -68,19 +87,25 @@ export default function AIChat() {
 
     async function handlePhotoUpload(e: React.ChangeEvent<HTMLInputElement>) {
         const file = e.target.files?.[0];
-        if (!file) return;
+
+        if (!file) {
+            return;
+        }
 
         if (file.size > 5 * 1024 * 1024) {
             toast.error('Image trop grande (max 5 Mo)');
+
             return;
         }
 
         if (!user?.is_premium) {
             toast.error('Correction photo réservée aux élèves Premium');
+
             return;
         }
 
         setPhotoLoading(true);
+
         try {
             const reader = new FileReader();
             reader.onload = async (ev) => {
@@ -99,7 +124,10 @@ export default function AIChat() {
             toast.error('Erreur lors de la correction de la photo');
         } finally {
             setPhotoLoading(false);
-            if (fileRef.current) fileRef.current.value = '';
+
+            if (fileRef.current) {
+                fileRef.current.value = '';
+            }
         }
     }
 
@@ -109,9 +137,8 @@ export default function AIChat() {
     return (
         <Layout>
             <div className="flex h-[calc(100vh-8rem)] flex-col gap-0 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-
                 {/* ── Sélecteur de matière ── */}
-                <div className="flex items-center gap-2 overflow-x-auto border-b border-slate-100 px-4 py-3 scrollbar-none">
+                <div className="scrollbar-none flex items-center gap-2 overflow-x-auto border-b border-slate-100 px-4 py-3">
                     <button
                         onClick={() => setActiveChatSubject(null)}
                         className={`flex shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium transition-colors ${
@@ -146,7 +173,11 @@ export default function AIChat() {
                         <ChatMessage
                             key={i}
                             message={msg}
-                            isStreaming={isLoading && i === messages.length - 1 && msg.role === 'assistant'}
+                            isStreaming={
+                                isLoading &&
+                                i === messages.length - 1 &&
+                                msg.role === 'assistant'
+                            }
                         />
                     ))}
 
@@ -156,8 +187,10 @@ export default function AIChat() {
                             {QUICK_ACTIONS.map((action) => (
                                 <button
                                     key={action.label}
-                                    onClick={() => handleQuickAction(action.value)}
-                                    className="rounded-full border border-green/30 bg-green-xlight px-3 py-1.5 text-xs font-medium text-green-dark hover:bg-green-light transition-colors"
+                                    onClick={() =>
+                                        handleQuickAction(action.value)
+                                    }
+                                    className="rounded-full border border-green/30 bg-green-xlight px-3 py-1.5 text-xs font-medium text-green-dark transition-colors hover:bg-green-light"
                                 >
                                     {action.label}
                                 </button>
@@ -177,11 +210,26 @@ export default function AIChat() {
                             onClick={() => fileRef.current?.click()}
                             disabled={photoLoading || isLoading}
                             className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-100 text-slate-500 transition-colors hover:bg-green-light hover:text-green disabled:opacity-40"
-                            title={user?.is_premium ? 'Corriger une photo' : 'Premium requis'}
+                            title={
+                                user?.is_premium
+                                    ? 'Corriger une photo'
+                                    : 'Premium requis'
+                            }
                         >
-                            {photoLoading ? <Spinner className="h-4 w-4" /> : <Camera className="h-5 w-5" />}
+                            {photoLoading ? (
+                                <Spinner className="h-4 w-4" />
+                            ) : (
+                                <Camera className="h-5 w-5" />
+                            )}
                         </button>
-                        <input ref={fileRef} type="file" accept="image/*" capture="environment" className="hidden" onChange={handlePhotoUpload} />
+                        <input
+                            ref={fileRef}
+                            type="file"
+                            accept="image/*"
+                            capture="environment"
+                            className="hidden"
+                            onChange={handlePhotoUpload}
+                        />
 
                         {/* Input texte */}
                         <textarea
@@ -195,7 +243,7 @@ export default function AIChat() {
                                     : 'Pose ta question sur le BAC Sénégal…'
                             }
                             rows={1}
-                            className="flex-1 resize-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 focus:border-green focus:bg-white focus:outline-none focus:ring-2 focus:ring-green/20"
+                            className="flex-1 resize-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 focus:border-green focus:bg-white focus:ring-2 focus:ring-green/20 focus:outline-none"
                             style={{ maxHeight: 120, overflowY: 'auto' }}
                         />
 
@@ -226,7 +274,9 @@ export default function AIChat() {
                     {!user?.is_premium && (
                         <p className="mt-1.5 text-center text-[11px] text-slate-400">
                             ✨ La correction de photo est réservée aux élèves{' '}
-                            <span className="font-medium text-amber">Premium</span>
+                            <span className="font-medium text-amber">
+                                Premium
+                            </span>
                         </p>
                     )}
                 </div>

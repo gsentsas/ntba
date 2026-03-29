@@ -73,11 +73,13 @@ export const useAppStore = create<AppState>()(
                     activeChatSubjectId,
                     currentSessionId: null,
                 }),
-            setCurrentSessionId: (currentSessionId) => set({ currentSessionId }),
+            setCurrentSessionId: (currentSessionId) =>
+                set({ currentSessionId }),
             clearChatSession: () => set({ currentSessionId: null }),
             setTodayTasks: (todayTasks) => set({ todayTasks }),
             setGlobalProgress: (globalProgress) => set({ globalProgress }),
-            toggleSidebar: () => set((state) => ({ sidebarOpen: !state.sidebarOpen })),
+            toggleSidebar: () =>
+                set((state) => ({ sidebarOpen: !state.sidebarOpen })),
         }),
         {
             name: 'bac-senegal-store',

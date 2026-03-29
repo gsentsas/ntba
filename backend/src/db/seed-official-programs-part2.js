@@ -68,25 +68,106 @@ const PHILO_CHAPTERS = [
     ],
     course_content: `# Réflexion philosophique
 
-## 1. La démarche philosophique
-La philosophie (du grec *philos* = ami, *sophia* = sagesse) est l'amour de la sagesse. Elle se distingue des autres disciplines par :
-- Son **objet** : les questions fondamentales (existence, connaissance, valeurs).
-- Sa **méthode** : le raisonnement rigoureux, l'argumentation, le doute méthodique.
-- Sa **visée** : la recherche de la vérité et du sens.
+## 1. Objectifs du chapitre
+Ce chapitre doit permettre de :
 
-## 2. L'homme
-Aristote définit l'homme comme **animal raisonnable** (*zoon logikon*) et **animal politique** (*zoon politikon*). La raison est la faculté qui distingue l'homme de l'animal.
+- comprendre ce qui distingue la philosophie des autres formes de savoir
+- réfléchir à la nature de l'homme
+- analyser les notions de liberté, de déterminisme et de libre arbitre
+- comparer plusieurs conceptions du bonheur
 
-## 3. La liberté
-- **Sens négatif** (liberté-de) : absence de contraintes extérieures.
-- **Sens positif** (liberté-pour) : capacité d'autodétermination, de choisir ses actes selon la raison.
-- **Le libre arbitre** (Descartes) : pouvoir de choisir indépendamment de toute cause extérieure.
-- **Le déterminisme** : tout phénomène est causalement déterminé. Pour Spinoza, la liberté est la conscience de la nécessité.
+## 2. La démarche philosophique
+La philosophie est une réflexion rationnelle sur les questions fondamentales de l'existence, de la connaissance et des valeurs.
 
-## 4. Le bonheur
-- **Hédonisme** (Épicure) : le bonheur est le plaisir, principalement l'ataraxie (absence de trouble).
-- **Eudémonisme** (Aristote) : le bonheur est la réalisation de la nature humaine par la vertu et la raison.
-- **Stoïcisme** : le bonheur est la vertu, indépendante des biens extérieurs.`,
+### Ce qui la caractérise
+- elle pose des questions radicales
+- elle refuse les opinions toutes faites
+- elle argumente au lieu d'affirmer sans preuve
+- elle cherche le sens, la vérité et la cohérence
+
+### Philosophie et opinion
+L'opinion est immédiate, souvent vague ou non justifiée.
+La philosophie commence au contraire quand on interroge l'évidence.
+
+## 3. L'homme
+L'homme peut être défini de plusieurs manières.
+
+### Aristote
+Aristote présente l'homme comme :
+- un **animal raisonnable**
+- un **animal politique**
+
+L'homme se distingue ainsi par la pensée, le langage et la vie en société.
+
+### L'homme comme être de culture
+L'homme n'est pas seulement un être biologique.
+Il vit dans un monde de langage, de techniques, de règles et de symboles.
+
+## 4. La liberté
+La liberté est une notion centrale en philosophie.
+
+### Sens négatif
+Être libre peut signifier ne pas subir de contrainte extérieure.
+
+### Sens positif
+Être libre peut aussi signifier se donner à soi-même sa propre loi, agir par raison et non par impulsion.
+
+### Le libre arbitre
+Pour Descartes, le libre arbitre est la capacité de choisir.
+Il manifeste la dignité de la personne humaine.
+
+## 5. Liberté et déterminisme
+Le déterminisme affirme que tout phénomène a une cause.
+
+### Problème philosophique
+Si nos actes sont déterminés par :
+- notre corps
+- notre éducation
+- notre histoire
+- notre milieu social
+
+sommes-nous encore libres ?
+
+### Réponse de Spinoza
+Spinoza ne nie pas la nécessité.
+Pour lui, être libre ne consiste pas à échapper aux causes, mais à comprendre ce qui nous détermine.
+La liberté devient alors connaissance de la nécessité.
+
+## 6. La responsabilité
+La question de la liberté engage celle de la responsabilité.
+On ne peut juger moralement un acte que si son auteur est considéré comme capable de choisir.
+
+La responsabilité suppose donc une certaine forme de liberté.
+
+## 7. Le bonheur
+Le bonheur désigne l'état de satisfaction durable auquel les hommes aspirent.
+
+### Épicure
+Le bonheur réside dans le plaisir, mais un plaisir mesuré.
+Le vrai plaisir est l'absence de trouble de l'âme et de douleur du corps.
+
+### Aristote
+Le bonheur est la réalisation accomplie de la nature humaine.
+Il passe par la raison, la vertu et une vie équilibrée.
+
+### Les stoïciens
+Le bonheur ne dépend pas des biens extérieurs.
+Il consiste à vivre conformément à la raison et à accepter ce qui ne dépend pas de nous.
+
+## 8. Méthode de réflexion philosophique
+Pour traiter une question philosophique :
+
+1. définir les notions du sujet
+2. mettre en évidence le problème
+3. confronter plusieurs thèses
+4. argumenter avec rigueur
+5. aboutir à une conclusion nuancée
+
+## 9. À retenir
+- la philosophie est une recherche rationnelle et critique
+- l'homme est un être de raison, de langage et de société
+- la liberté se pense toujours avec ses limites
+- le bonheur reçoit des interprétations différentes selon les philosophes`,
     exercises: [
       ex('Définition de la philosophie',
         'Quelle est la définition étymologique du mot "philosophie" ?',
@@ -127,24 +208,94 @@ Aristote définit l'homme comme **animal raisonnable** (*zoon logikon*) et **ani
     ],
     course_content: `# Vie sociale et politique
 
-## 1. La société et son origine
-- **Origine naturelle** (Aristote) : l'homme est naturellement un être social.
-- **Origine conventionnelle** (contractualistes) : la société résulte d'un contrat.
+## 1. Objectifs du chapitre
+Ce chapitre doit permettre de :
 
-## 2. Le contrat social
-- **Hobbes** : à l'état de nature, la vie est "solitaire, misérable, dangereuse". Les hommes cèdent leurs droits à un souverain absolu (Léviathan) pour assurer la paix.
-- **Locke** : le contrat social préserve les droits naturels (vie, liberté, propriété). Le souverain doit respecter ces droits.
-- **Rousseau** : la volonté générale transcende les volontés particulières. Le contrat social fonde une communauté d'égaux.
+- expliquer l'origine et la nécessité de la société
+- comprendre les grandes théories du contrat social
+- définir l'État, le droit et la justice
+- comparer plusieurs conceptions philosophiques du politique
 
-## 3. L'État et le droit
-- **L'État** : organisation politique dotée d'un pouvoir souverain sur un territoire et une population.
-- **Droit naturel** : droits universels inhérents à la nature humaine (Locke, Rousseau).
-- **Droit positif** : l'ensemble des lois édictées par les institutions d'un État.
+## 2. La société
+L'homme ne vit pas isolé. Il appartient à une société faite d'institutions, de règles et de rapports sociaux.
 
-## 4. La justice
-- **Justice distributive** (Aristote) : chacun reçoit selon son mérite ou sa contribution.
-- **Justice commutative** : égalité dans les échanges.
-- **Justice sociale** (Rawls) : les inégalités ne sont acceptables que si elles profitent aux plus défavorisés.`,
+### Deux grandes thèses
+- pour Aristote, la société est naturelle
+- pour les contractualistes, elle résulte d'un accord entre individus
+
+La société protège, éduque et organise la coexistence des hommes.
+
+## 3. Le contrat social
+Le contrat social est une théorie expliquant le passage de l'état de nature à la société civile.
+
+### Hobbes
+À l'état de nature, chacun cherche à se conserver.
+Cela conduit à la guerre de tous contre tous.
+Pour en sortir, les individus remettent leur puissance à un souverain fort.
+
+### Locke
+Les hommes possèdent des droits naturels : vie, liberté, propriété.
+Le pouvoir politique doit garantir ces droits, non les supprimer.
+
+### Rousseau
+Le contrat social fonde un corps politique dans lequel chacun obéit à la volonté générale.
+L'autorité légitime doit viser le bien commun.
+
+## 4. L'État
+L'État est une organisation politique dotée :
+
+- d'un territoire
+- d'une population
+- d'un pouvoir souverain
+
+Il garantit l'ordre, édicte les lois et exerce l'autorité publique.
+
+### Weber
+Selon Max Weber, l'État détient le monopole de la violence physique légitime sur un territoire donné.
+
+## 5. Le droit
+### Droit naturel
+Le droit naturel désigne les droits considérés comme universels et inhérents à l'homme.
+
+### Droit positif
+Le droit positif est l'ensemble des lois effectivement en vigueur dans une société donnée.
+
+### Tension philosophique
+Une loi peut être légale sans être juste.
+La réflexion philosophique interroge donc le rapport entre légalité et légitimité.
+
+## 6. La justice
+La justice renvoie à l'idée d'équité, de droit et de juste répartition.
+
+### Justice distributive
+Chez Aristote, elle consiste à attribuer à chacun selon son mérite ou sa place.
+
+### Justice commutative
+Elle concerne l'égalité dans les échanges.
+
+### Justice sociale
+Chez Rawls, les inégalités ne sont acceptables que si elles améliorent la situation des plus défavorisés.
+
+## 7. Liberté et autorité politique
+La vie en société suppose des règles.
+La question est donc de savoir comment obéir à la loi sans perdre sa liberté.
+
+Rousseau répond que l'on reste libre quand on obéit à une loi que l'on s'est prescrite collectivement.
+
+## 8. Méthode de réflexion
+Pour traiter un sujet politique :
+
+1. définir société, État, droit ou justice
+2. repérer le problème
+3. mobiliser les auteurs adaptés
+4. distinguer faits, normes et valeurs
+5. conclure sans simplifier abusivement
+
+## 9. À retenir
+- la société peut être pensée comme naturelle ou conventionnelle
+- l'État organise la vie commune
+- le droit n'épuise pas toujours la justice
+- la philosophie politique cherche les conditions d'un pouvoir légitime`,
     exercises: [
       ex("L'état de nature selon Hobbes",
         "Selon Hobbes, l'état de nature est caractérisé par :",
@@ -181,27 +332,103 @@ Aristote définit l'homme comme **animal raisonnable** (*zoon logikon*) et **ani
     ],
     course_content: `# Épistémologie et Esthétique
 
-## 1. L'épistémologie
-L'épistémologie (du grec *epistémè* = science, *logos* = discours) est la philosophie des sciences. Elle étudie :
-- Les **fondements** de la connaissance scientifique.
-- Les **méthodes** utilisées par les sciences.
-- Les **limites** et la **valeur** du savoir scientifique.
+## 1. Objectifs du chapitre
+Ce chapitre doit permettre de :
 
-## 2. La vérité
-- **Vérité de correspondance** : une proposition est vraie si elle correspond à la réalité (Aristote).
-- **Vérité de cohérence** : une proposition est vraie si elle est logiquement cohérente avec un système.
-- **Vérité pragmatique** (William James) : est vrai ce qui est utile, ce qui réussit dans la pratique.
+- comprendre ce qu'est une connaissance scientifique
+- distinguer plusieurs conceptions de la vérité
+- connaître les grandes méthodes de la science
+- réfléchir à la nature de l'art et du beau
 
-## 3. La méthode scientifique
-- **Méthode empirique** (Bacon) : observation → induction → loi générale.
-- **Méthode hypothético-déductive** : hypothèse → déductions → expérimentation → vérification.
-- **Principe de falsifiabilité** (Popper) : une théorie est scientifique si elle est réfutable.
+## 2. L'épistémologie
+L'épistémologie est la réflexion philosophique sur la science.
 
-## 4. L'art et le beau
-- L'**esthétique** est la philosophie de l'art et du beau.
-- **Le beau** : Kant distingue le beau (jugement désintéressé et universel) de l'agréable (subjectif).
-- **L'art** : Hegel voit l'art comme une manifestation sensible de l'esprit absolu.
-- **Mimèsis** (Platon/Aristote) : l'art comme imitation de la réalité.`,
+Elle étudie :
+- les conditions de validité du savoir scientifique
+- les méthodes utilisées
+- les limites de la science
+- la différence entre science, opinion et croyance
+
+## 3. La vérité
+La vérité est un problème central de la philosophie.
+
+### Vérité de correspondance
+Une proposition est vraie si elle correspond à la réalité.
+
+### Vérité de cohérence
+Une proposition est vraie si elle s'accorde logiquement avec un ensemble de propositions.
+
+### Vérité pragmatique
+Pour les pragmatistes, est vrai ce qui fonctionne dans la pratique et produit des effets satisfaisants.
+
+## 4. La méthode scientifique
+La science repose sur des procédures rigoureuses.
+
+### Observation et expérimentation
+Le savant recueille des faits, formule des hypothèses puis les confronte à l'expérience.
+
+### Méthode hypothético-déductive
+Elle suit le schéma :
+
+1. hypothèse
+2. déduction de conséquences vérifiables
+3. expérimentation
+4. confirmation provisoire ou réfutation
+
+### Popper
+Selon Popper, une théorie n'est scientifique que si elle est falsifiable, c'est-à-dire susceptible d'être réfutée par l'expérience.
+
+## 5. Science et limites
+La science produit un savoir puissant, mais limité :
+
+- elle ne répond pas à toutes les questions existentielles
+- elle n'épuise pas les questions morales ou esthétiques
+- ses théories restent révisables
+
+## 6. L'art
+L'art est une activité de création humaine.
+Il donne forme sensible à une signification, une émotion ou une vision du monde.
+
+## 7. Le beau
+Le beau n'est pas seulement ce qui plaît.
+
+### Kant
+Le jugement esthétique est désintéressé et prétend à une certaine universalité.
+
+### Différence entre beau et agréable
+- l'agréable relève du goût personnel
+- le beau appelle une adhésion plus large, même sans démonstration
+
+## 8. L'art comme imitation ou création
+### Mimèsis
+Chez Platon et Aristote, l'art est souvent pensé comme imitation.
+
+### Hegel
+Chez Hegel, l'art est une manifestation sensible de l'esprit.
+
+L'art ne copie donc pas seulement le réel : il peut l'interpréter, le transformer et lui donner sens.
+
+## 9. Fonction de l'art
+L'art peut :
+- émouvoir
+- révéler une vérité humaine
+- critiquer la société
+- exprimer l'imaginaire
+
+## 10. Méthode de réflexion
+Pour un sujet sur la science ou l'art :
+
+1. définir clairement les notions
+2. distinguer science, vérité, art, beauté
+3. poser le problème central
+4. confronter plusieurs thèses
+5. conclure avec nuance
+
+## 11. À retenir
+- l'épistémologie réfléchit sur la science
+- la vérité peut recevoir plusieurs sens
+- la science repose sur des méthodes rigoureuses mais révisables
+- l'art ne se réduit ni à l'utile ni à l'agréable`,
     exercises: [
       ex('Définition de l\'épistémologie',
         'L\'épistémologie est :',
@@ -244,28 +471,74 @@ const FR_CHAPTERS = [
     ],
     course_content: `# Le Surréalisme
 
-## 1. Contexte et origine
-Le surréalisme naît dans l'entre-deux-guerres, en réaction aux horreurs de la Première Guerre mondiale et au mouvement Dada. André Breton publie le **1er Manifeste du surréalisme en 1924** puis le **2e Manifeste en 1930**.
+## Objectifs du chapitre
+- Situer la naissance du surréalisme dans son contexte historique et culturel.
+- Comprendre les grands principes du mouvement.
+- Identifier les procédés d'écriture et d'image propres aux surréalistes.
+- Être capable d'exploiter ces notions dans un sujet de dissertation, de commentaire ou de résumé.
 
-## 2. Définition et principes
-Breton définit le surréalisme comme : *"Automatisme psychique pur par lequel on se propose d'exprimer, soit verbalement, soit par écrit, soit de toute autre manière, le fonctionnement réel de la pensée."*
+## 1. Contexte historique et origine
+Le surréalisme apparaît dans l'entre-deux-guerres, à une époque marquée par la crise des valeurs, le traumatisme de la Première Guerre mondiale et le rejet des certitudes rationnelles. Il prolonge certains aspects du mouvement Dada, mais il s'en distingue par un projet plus construit : explorer l'esprit humain et transformer la vie.
 
-Principes fondamentaux :
-- **L'écriture automatique** : libérer l'écriture du contrôle de la raison.
-- **Le rêve et l'inconscient** : explorer les profondeurs de la psyché (influence de Freud).
-- **Le hasard objectif** : rencontres et coïncidences révélatrices.
-- **La révolte** contre les valeurs bourgeoises et la logique rationnelle.
+Le texte fondateur est le **Premier Manifeste du surréalisme** publié par **André Breton en 1924**. Un **Second Manifeste** paraît en **1930**. Le mouvement touche d'abord la littérature, puis la peinture, la photographie, le cinéma et même la réflexion politique.
 
-## 3. Procédés stylistiques
-- Images insolites et associations inattendues.
-- Métaphores audacieuses, comparaisons surprenantes.
-- Ruptures syntaxiques, collages, cadavres exquis.
+## 2. Définition et vision du monde
+Breton définit le surréalisme comme un **automatisme psychique pur**, c'est-à-dire une tentative d'exprimer le fonctionnement réel de la pensée sans le contrôle de la raison ni les contraintes morales ou esthétiques.
 
-## 4. Principaux représentants
+Le mot **surréalisme** signifie littéralement ce qui est **au-dessus du réel** ou **au-delà du réel visible**. Il ne s'agit pas de fuir la réalité, mais d'en découvrir une dimension plus profonde grâce au rêve, au désir, à l'inconscient et à l'imagination.
+
+## 3. Les principes essentiels du surréalisme
+### a. L'écriture automatique
+L'écriture automatique consiste à écrire rapidement, en laissant venir les mots, les images et les associations sans les corriger immédiatement. Cette pratique vise à libérer l'inconscient et à contourner la censure de la raison.
+
+### b. Le rêve et l'inconscient
+Les surréalistes sont fortement influencés par la psychanalyse de **Sigmund Freud**. Le rêve devient une source de vérité poétique, car il révèle des désirs cachés, des peurs, des souvenirs et des images inattendues.
+
+### c. Le hasard objectif
+Le hasard objectif désigne des rencontres ou des coïncidences qui semblent avoir un sens secret. Les surréalistes considèrent que certaines surprises de la vie quotidienne révèlent des liens profonds entre le réel et le désir.
+
+### d. La révolte contre l'ordre établi
+Le surréalisme refuse les normes bourgeoises, la logique trop rigide, les conventions morales et les formes artistiques figées. Il valorise la liberté, la créativité et l'audace.
+
+## 4. Les procédés d'écriture et d'expression
+Les textes surréalistes se reconnaissent souvent par :
+- des **images insolites** et des associations inattendues ;
+- des **métaphores surprenantes** ;
+- des ruptures de logique ou de syntaxe ;
+- l'abondance de symboles, de visions, de fragments et d'objets détournés ;
+- des pratiques collectives comme le **cadavre exquis**.
+
+Dans un texte surréaliste, le lecteur peut être déstabilisé, mais cette déstabilisation a un sens : elle oblige à dépasser la lecture ordinaire pour entrer dans un univers plus libre.
+
+## 5. Principaux auteurs et œuvres
 - **André Breton** : *Nadja*, *L'Amour fou*, *Manifestes du surréalisme*.
 - **Paul Éluard** : *Capitale de la douleur*, *L'Amour la poésie*.
 - **Louis Aragon** : *Le Paysan de Paris*.
-- **René Char** : *Fureur et mystère*.`,
+- **René Char** : *Fureur et mystère*.
+
+Il faut aussi retenir que le surréalisme n'est pas limité à la France. Son influence s'étend à de nombreuses littératures et formes artistiques, y compris dans l'espace francophone.
+
+## 6. Ce qu'il faut savoir faire au Bac
+Dans un sujet d'examen, on peut vous demander :
+- de définir le surréalisme ;
+- de montrer l'importance du rêve, de l'inconscient ou de l'écriture automatique ;
+- d'identifier les procédés surréalistes dans un poème ou un extrait narratif ;
+- de comparer le surréalisme à d'autres mouvements littéraires.
+
+Pour bien répondre, il faut toujours :
+1. situer le mouvement dans son époque ;
+2. rappeler les principes essentiels ;
+3. illustrer avec un auteur ou une œuvre ;
+4. expliquer l'effet produit sur le lecteur.
+
+## 7. Erreurs fréquentes
+- Confondre surréalisme et simple imagination sans règles.
+- Réduire le mouvement à des textes incompréhensibles.
+- Oublier le rôle de Breton et des manifestes.
+- Négliger l'influence du rêve et de l'inconscient.
+
+## 8. À retenir
+Le surréalisme est un mouvement littéraire et artistique majeur du XXe siècle. Il cherche à libérer la pensée de la domination de la raison en valorisant le rêve, l'inconscient, l'écriture automatique et les images inattendues. Il représente à la fois une révolution poétique, une attitude de révolte et une nouvelle manière de regarder le monde.`,
     exercises: [
       ex('Date du 1er Manifeste surréaliste',
         'Le premier Manifeste du surréalisme d\'André Breton est publié en :',
@@ -306,32 +579,127 @@ Principes fondamentaux :
     ],
     course_content: `# Esthétique des genres littéraires
 
-## 1. La poésie
-**Le vers** : unité rythmique basée sur le nombre de syllabes.
-- Alexandrin : 12 syllabes (vers noble du théâtre classique).
-- Décasyllabe : 10 syllabes. Octosyllabe : 8 syllabes.
+## Objectifs du chapitre
+- Distinguer les grandes caractéristiques de la poésie, du roman et du théâtre.
+- Maîtriser le vocabulaire d'analyse littéraire lié à chaque genre.
+- Reconnaître les procédés propres à un texte poétique, narratif ou théâtral.
+- Utiliser ces notions avec précision dans un commentaire ou une dissertation.
 
-**La rime** : retour d'un son identique en fin de vers.
-- Rimes plates (AABB), croisées (ABAB), embrassées (ABBA).
+## 1. Notion de genre littéraire
+Un **genre littéraire** regroupe des œuvres qui partagent des formes, des thèmes, des procédés et des effets dominants. Les genres ne sont pas des cases totalement fermées, mais ils permettent d'identifier les attentes du lecteur et les choix de l'auteur.
 
-**Figures de style** : métaphore, comparaison, personnification, anaphore, antithèse, oxymore, allitération, assonance.
+Au programme, les trois grands genres à bien maîtriser sont la **poésie**, le **roman** et le **théâtre**.
 
-## 2. Le roman
-**Le narrateur** :
-- **Omniscient** : sait tout des personnages et de l'histoire.
-- **Interne** : narration à la 1re personne, point de vue limité.
-- **Externe** : observe sans accéder aux pensées des personnages.
+## 2. La poésie
+La poésie est le genre de la sensibilité, du rythme, de la musicalité et de la concentration du langage. Elle cherche souvent à exprimer une émotion, une vision du monde ou une expérience intérieure.
 
-**La construction du personnage** : nom, portrait physique/moral, statut social, évolution.
+### a. Les éléments de versification
+- **Le vers** est l'unité rythmique du poème.
+- **L'alexandrin** comporte 12 syllabes.
+- **Le décasyllabe** comporte 10 syllabes.
+- **L'octosyllabe** comporte 8 syllabes.
+- La **strophe** est un groupement de vers.
+- La **césure** coupe souvent l'alexandrin en deux hémistiches.
 
-**Les types de romans** : réaliste, naturaliste, policier, psychologique, historique, autobiographique.
+### b. Les rimes
+La rime est le retour d'un même son à la fin de plusieurs vers.
+- Rimes **plates** : AABB
+- Rimes **croisées** : ABAB
+- Rimes **embrassées** : ABBA
 
-## 3. Le théâtre
-**Les genres** : tragédie (conflit insoluble, chute du héros), comédie (dénouement heureux, critique sociale), drame (mélange des deux).
+### c. Les figures de style fréquentes
+- **Comparaison**
+- **Métaphore**
+- **Personnification**
+- **Anaphore**
+- **Antithèse**
+- **Oxymore**
+- **Allitération**
+- **Assonance**
 
-**Les unités classiques** : unité de temps (24h), de lieu (un seul endroit), d'action (une intrigue principale).
+Ces procédés servent à créer des images, à renforcer une émotion, à produire une musique ou à mettre en valeur une idée.
 
-**Le schéma actantiel** (Greimas) : Sujet → Objet, aidé par des adjuvants, contré par des opposants, au nom d'un destinateur, pour un destinataire.`,
+## 3. Le roman
+Le roman est un récit de fiction en prose qui met en scène des personnages dans une histoire plus ou moins longue. Il peut représenter la société, explorer la psychologie, raconter une aventure ou proposer une critique du monde.
+
+### a. Le narrateur et le point de vue
+- **Narrateur omniscient** : il sait tout des personnages et des événements.
+- **Narrateur interne** : il adopte le point de vue d'un personnage.
+- **Narrateur externe** : il montre les faits de l'extérieur sans entrer dans les consciences.
+
+Bien analyser le narrateur permet de comprendre comment le récit est construit et comment le lecteur reçoit l'information.
+
+### b. Le personnage
+Le personnage se construit à travers :
+- son identité ;
+- son portrait physique et moral ;
+- sa parole ;
+- ses relations avec les autres ;
+- son évolution dans le récit.
+
+### c. Quelques types de romans
+- **Roman réaliste**
+- **Roman naturaliste**
+- **Roman psychologique**
+- **Roman historique**
+- **Roman autobiographique**
+- **Roman policier**
+
+Chaque type de roman possède ses priorités esthétiques, mais tous reposent sur une organisation du récit et un travail de représentation.
+
+## 4. Le théâtre
+Le théâtre est à la fois un texte et un spectacle. Il est écrit pour être joué devant un public. Sa matière première est le **dialogue**, accompagné de **didascalies** qui précisent gestes, décors, déplacements ou intonations.
+
+### a. Les grands genres théâtraux
+- **La tragédie** : personnages élevés, conflit grave, destin, chute du héros.
+- **La comédie** : situations souvent amusantes, critique des défauts humains, fin heureuse ou apaisée.
+- **Le drame** : mélange de registres et recherche d'une plus grande liberté.
+
+### b. Les règles classiques
+Le théâtre classique insiste sur les **trois unités** :
+- unité de temps ;
+- unité de lieu ;
+- unité d'action.
+
+Il valorise aussi la vraisemblance et la bienséance.
+
+### c. Le conflit dramatique
+Le théâtre progresse grâce à un conflit entre des volontés opposées. Ce conflit structure l'action et donne son intensité aux scènes.
+
+On peut aussi utiliser le **schéma actantiel** :
+- un **sujet** cherche un **objet** ;
+- il reçoit l'aide d'**adjuvants** ;
+- il affronte des **opposants** ;
+- l'action s'inscrit dans une relation entre **destinateur** et **destinataire**.
+
+## 5. Comment comparer les trois genres
+### La poésie
+Elle privilégie le rythme, l'image, la suggestion et la musicalité.
+
+### Le roman
+Il privilégie le récit, l'univers fictif, la durée, la construction des personnages et la narration.
+
+### Le théâtre
+Il privilégie l'action, le dialogue, la parole vivante, le conflit et la représentation scénique.
+
+## 6. Méthode d'analyse au Bac
+Pour analyser un texte, il faut d'abord identifier son genre, puis observer :
+- sa forme ;
+- son vocabulaire ;
+- sa structure ;
+- les procédés dominants ;
+- l'effet produit sur le lecteur ou le spectateur.
+
+Un bon devoir ne se contente pas de nommer les procédés : il montre à quoi ils servent.
+
+## 7. Erreurs fréquentes
+- Confondre narrateur et auteur.
+- Réduire la poésie à la simple présence de rimes.
+- Oublier que le théâtre est fait pour être joué.
+- Citer une figure de style sans en expliquer l'effet.
+
+## 8. À retenir
+La poésie, le roman et le théâtre sont trois grands genres littéraires qui possèdent chacun leurs codes, leurs formes et leurs objectifs. Les maîtriser permet de mieux lire les textes, de mieux les commenter et de mieux argumenter dans les devoirs du Bac.`,
     exercises: [
       ex('L\'alexandrin',
         'Un alexandrin est un vers composé de :',
@@ -371,32 +739,132 @@ Principes fondamentaux :
     ],
     course_content: `# Méthodes de travail
 
-## 1. La dissertation littéraire
-**Structure** :
-1. **Introduction** : amorce → présentation du sujet → problématique → annonce du plan.
-2. **Développement** (généralement 3 parties) : thèse illustrée par des exemples.
-3. **Conclusion** : bilan → ouverture.
+## Objectifs du chapitre
+- Maîtriser la méthodologie de la dissertation, du commentaire composé et du résumé-discussion.
+- Savoir organiser un devoir de manière claire et convaincante.
+- Éviter les erreurs fréquentes de méthode au Baccalauréat.
+- Développer une argumentation précise, cohérente et bien illustrée.
 
-**Plans types** :
-- Plan **dialectique** : thèse / antithèse / synthèse.
-- Plan **thématique** : 3 aspects différents du sujet.
-- Plan **analytique** : causes → faits → conséquences.
+## 1. La dissertation littéraire
+La dissertation est un exercice de réflexion argumentée. Elle consiste à répondre à une question posée sur la littérature, une œuvre, un genre ou une idée, en construisant un raisonnement organisé.
+
+### a. Les étapes de préparation
+Avant de rédiger, il faut :
+1. lire attentivement le sujet ;
+2. repérer les mots-clés ;
+3. définir les notions importantes ;
+4. reformuler le problème posé ;
+5. chercher des idées, arguments et exemples ;
+6. choisir un plan cohérent.
+
+### b. Structure de la dissertation
+#### Introduction
+L'introduction comprend généralement :
+- une **amorce** ;
+- la **présentation du sujet** ;
+- la **problématique** ;
+- l'**annonce du plan**.
+
+#### Développement
+Le développement est organisé en parties et en paragraphes. Chaque partie défend une idée forte. Chaque paragraphe doit contenir :
+- une idée directrice ;
+- une explication ;
+- un exemple précis tiré d'une œuvre ou du cours ;
+- une petite conclusion partielle ou transition.
+
+#### Conclusion
+La conclusion fait :
+- le bilan de la réflexion ;
+- la réponse claire à la problématique ;
+- éventuellement une ouverture mesurée.
+
+### c. Les principaux types de plans
+- **Plan dialectique** : thèse, antithèse, synthèse.
+- **Plan thématique** : étude de plusieurs aspects complémentaires d'un sujet.
+- **Plan analytique** : causes, manifestations, conséquences ou problèmes, analyses, solutions.
+
+Le choix du plan dépend du sujet. Un bon plan répond exactement à la question posée.
 
 ## 2. Le commentaire composé
-Le commentaire composé analyse un texte littéraire selon **axes thématiques** (non linéaires).
+Le commentaire composé consiste à analyser un texte littéraire pour montrer comment il produit du sens et des effets. Il ne s'agit pas de raconter le texte, mais de l'étudier.
 
-**Structure** :
-1. Introduction : situer le texte + problématique + annonce des axes.
-2. Axes d'analyse (2-3) : chaque axe éclaire un aspect du texte, illustré par des citations.
-3. Conclusion : synthèse + ouverture.
+### a. Travail préparatoire
+Il faut d'abord :
+- lire plusieurs fois le texte ;
+- identifier le genre, le thème, le ton, le registre ;
+- relever les procédés importants ;
+- dégager une problématique ;
+- construire deux ou trois axes d'analyse.
 
-**Méthode d'analyse** : citer → observer → interpréter → commenter l'effet produit.
+### b. Structure du commentaire
+#### Introduction
+- présentation du texte et de l'auteur si nécessaire ;
+- situation de l'extrait ;
+- annonce de la problématique ;
+- annonce des axes.
 
-## 3. Le résumé et la discussion
-**Le résumé** : reformuler fidèlement les idées de l'auteur en 1/4 de la longueur du texte.
-- Règles : pas d'ajouts personnels, conserver la progression logique, pas de citations directes.
+#### Développement
+Chaque axe rassemble plusieurs remarques organisées autour d'une idée forte. On appuie l'analyse sur des citations courtes et précises.
 
-**La discussion** : réagir au texte résumé en apportant son point de vue argumenté.`,
+La bonne méthode est :
+**citer -> observer -> interpréter -> montrer l'effet produit**.
+
+#### Conclusion
+La conclusion résume les résultats de l'analyse et peut ouvrir sur une autre perspective.
+
+### c. Ce qu'on attend vraiment
+Un bon commentaire doit :
+- rester fidèle au texte ;
+- organiser les remarques ;
+- éviter la paraphrase ;
+- expliquer en quoi les procédés sont significatifs.
+
+## 3. Le résumé de texte
+Le résumé consiste à condenser fidèlement un texte en respectant sa pensée et sa progression.
+
+### Règles essentielles
+- ne pas donner son avis ;
+- ne pas ajouter d'exemple personnel ;
+- ne pas supprimer les idées essentielles ;
+- reformuler avec ses propres mots ;
+- respecter le volume demandé.
+
+Dans beaucoup de cas, on demande de ramener le texte à **un quart** de sa longueur.
+
+### Méthode pratique
+1. Lire le texte pour en saisir l'idée générale.
+2. Repérer les idées essentielles paragraphe par paragraphe.
+3. Éliminer répétitions, exemples secondaires et détails accessoires.
+4. Reformuler de façon claire et concise.
+5. Vérifier la fidélité au texte de départ.
+
+## 4. La discussion
+La discussion prolonge parfois le résumé. Elle demande au candidat de réagir à une idée du texte par une argumentation personnelle.
+
+Il faut alors :
+- formuler clairement sa position ;
+- organiser ses arguments ;
+- illustrer par des exemples pertinents ;
+- rester mesuré, logique et cohérent.
+
+## 5. Conseils de rédaction
+- Soigner l'introduction et la conclusion.
+- Utiliser des connecteurs logiques.
+- Éviter les phrases trop longues ou vagues.
+- Employer un vocabulaire précis.
+- Illustrer les arguments avec des œuvres, auteurs ou textes étudiés.
+- Relire pour corriger fautes, répétitions et maladresses.
+
+## 6. Erreurs fréquentes
+- Hors-sujet parce que la problématique n'a pas été comprise.
+- Récitation du cours sans lien avec la question.
+- Paraphrase du texte au lieu d'analyse.
+- Arguments sans exemples.
+- Résumé infidèle ou trop long.
+- Plan déséquilibré ou mal annoncé.
+
+## 7. À retenir
+La réussite en français dépend autant de la culture littéraire que de la méthode. Un candidat efficace comprend le sujet, construit un plan adapté, rédige avec clarté et appuie ses idées sur des exemples précis. La dissertation, le commentaire et le résumé-discussion exigent tous rigueur, logique et expression correcte.`,
     exercises: [
       ex('Structure de la dissertation',
         'Le plan dialectique de la dissertation suit l\'ordre :',
@@ -439,25 +907,150 @@ const EN_CHAPTERS = [
     ],
     course_content: `# Commerce, Economy & Society
 
-## Topic 1: Trade and Professions
-**Vocabulary**: imports/exports, trade balance, tariffs, free trade, multinational, entrepreneur, supply/demand.
-**Grammar focus**: Modal verbs (*must*, *should*, *can*, *may*) for obligations and possibilities.
+## Learning goals
+- Master key vocabulary related to trade, economy, jobs and leisure.
+- Use modal verbs, conditional sentences and reported speech correctly.
+- Speak and write about social and economic issues in clear English.
+- Prepare for comprehension, essay writing and oral production at BAC level.
 
-## Topic 2: Economy
-**Vocabulary**: GDP, inflation, recession, development, poverty, inequality, investment, budget.
-**Grammar focus**: Conditional sentences type 2 (unreal present situations):
+## 1. Trade and professions
+This topic helps students discuss business activities, jobs and economic exchanges between countries.
+
+### Key vocabulary
+- imports / exports
+- trade balance
+- tariffs
+- free trade
+- multinational company
+- entrepreneur
+- unemployment
+- salary / wage
+- supply and demand
+
+### Useful ideas
+Trade connects countries, creates jobs and allows access to goods and services. However, trade can also produce inequalities, unfair competition or dependence on foreign products.
+
+### Useful sentences
+- *Senegal exports fish, peanuts and other products.*
+- *Many young people want to become entrepreneurs.*
+- *Governments should support local industries.*
+
+## 2. Economy
+Students must be able to describe the economy of a country, its problems and possible solutions.
+
+### Key vocabulary
+- GDP
+- inflation
+- recession
+- development
+- poverty
+- inequality
+- investment
+- budget
+- public debt
+- growth
+
+### Talking about economic issues
+When discussing the economy, students should link facts and consequences:
+- *Inflation reduces purchasing power.*
+- *Investment can create jobs.*
+- *If a country improves education, it may develop faster.*
+
+## 3. Free time and leisure
+This topic is closer to students' daily lives and often appears in writing or oral tasks.
+
+### Key vocabulary
+- hobbies
+- sports
+- music
+- entertainment
+- tourism
+- internet
+- social media
+- relaxation
+
+### Communicative use
+Students should be able to:
+- describe hobbies and preferences;
+- explain how they spend their free time;
+- discuss the positive and negative effects of social media and entertainment.
+
+## 4. Grammar focus: modal verbs
+Modal verbs express ability, obligation, advice, permission or possibility.
+
+### Main modals
+- **can / could**: ability or possibility
+- **must**: strong obligation
+- **should**: advice
+- **may / might**: possibility
+
+### Examples
+- *Students must work hard to pass the BAC.*
+- *Young people should use social media responsibly.*
+- *Senegal can develop renewable energy.*
+- *The government might reduce taxes.*
+
+## 5. Grammar focus: conditional sentences
+### Conditional type 2
+Used for unreal or hypothetical situations in the present.
+Structure: **If + past simple, would + infinitive**
+
+Example:
 - *If Senegal increased exports, it would reduce the trade deficit.*
 
-## Topic 3: Free Time / Leisure
-**Vocabulary**: hobbies, sports, entertainment, internet, social media, tourism.
-**Grammar focus**: Gerunds and infinitives after certain verbs.
-- *enjoy + gerund* : I enjoy playing football.
-- *want + infinitive* : I want to visit Dakar.
+### Conditional type 3
+Used for unreal situations in the past.
+Structure: **If + past perfect, would have + past participle**
 
-## Key Grammar: Reported Speech
-Direct → Indirect speech: tense backshift and pronoun change.
-- "I am working" → He said he **was** working.
-- "We will come" → They said they **would** come.`,
+Example:
+- *If they had invested more in education, literacy would have improved.*
+
+## 6. Grammar focus: gerunds and infinitives
+Some verbs are followed by a gerund, others by an infinitive.
+
+### Common patterns
+- *enjoy + verb-ing*
+- *avoid + verb-ing*
+- *want + to + verb*
+- *decide + to + verb*
+
+Examples:
+- *I enjoy playing football.*
+- *She wants to study economics.*
+
+## 7. Grammar focus: reported speech
+Reported speech is used to report what someone said without repeating the exact words.
+
+### Main changes
+- present -> past
+- present continuous -> past continuous
+- will -> would
+- can -> could
+
+Examples:
+- *"I am working."* -> He said he **was working**.
+- *"We will come."* -> They said they **would come**.
+
+Pronouns and time expressions may also change:
+- *today* -> *that day*
+- *tomorrow* -> *the next day*
+
+## 8. Method for BAC tasks
+In writing or speaking, students should:
+1. introduce the topic clearly;
+2. use relevant vocabulary;
+3. give examples;
+4. express cause, consequence or opinion;
+5. conclude with a clear idea.
+
+## 9. Common mistakes
+- Mixing up *must* and *should*.
+- Using *will* instead of *would* in type 2 conditionals.
+- Forgetting tense changes in reported speech.
+- Writing short answers without explanation.
+
+## 10. What to remember
+This chapter develops the language needed to discuss trade, jobs, economy and leisure. At BAC level, students must combine vocabulary with grammar accuracy and be able to explain social realities in simple, correct and organised English.`,
     exercises: [
       ex('Conditional type 2',
         'Choose the correct form: "If Senegal _____ more in renewable energy, it _____ reduce its energy costs."',
@@ -493,27 +1086,148 @@ Direct → Indirect speech: tense backshift and pronoun change.
     ],
     course_content: `# Science, Technology & Health
 
-## Topic 4: Science and Technology
-**Vocabulary**: invention, discovery, research, innovation, artificial intelligence, space exploration, digital, robotics.
-**Grammar focus**: **Passive voice** — used when the action is more important than the actor.
-- Active: *Scientists discovered penicillin in 1928.*
-- Passive: *Penicillin was discovered in 1928.*
+## Learning goals
+- Use vocabulary related to science, health and communication.
+- Understand and apply the passive voice, present perfect, relative clauses and question tags.
+- Discuss technological progress and health challenges in clear English.
+- Improve written and oral expression on modern social issues.
 
-## Topic 5: Health
-**Vocabulary**: disease, prevention, treatment, vaccination, malaria, HIV/AIDS, malnutrition, public health.
-**Grammar focus**: **Present perfect** — actions with present relevance.
+## 1. Science and technology
+Science and technology play a major role in development. They improve communication, medicine, transport, agriculture and education.
+
+### Key vocabulary
+- invention
+- discovery
+- research
+- innovation
+- artificial intelligence
+- robotics
+- laboratory
+- digital technology
+- experiment
+- space exploration
+
+### Communicative objectives
+Students should be able to:
+- describe inventions and discoveries;
+- explain the importance of scientific progress;
+- mention the advantages and risks of technology.
+
+Examples:
+- *Technology has changed the way people learn.*
+- *Artificial intelligence can improve productivity.*
+- *Scientific research is essential for development.*
+
+## 2. Health
+This topic helps students speak about diseases, prevention and public health policies.
+
+### Key vocabulary
+- disease
+- prevention
+- treatment
+- vaccination
+- malaria
+- HIV/AIDS
+- malnutrition
+- public health
+- hygiene
+- awareness campaign
+
+### Main ideas
+Health is not only a personal issue but also a social issue. Governments, schools, hospitals and communities all play a role in prevention.
+
+Examples:
+- *Vaccination prevents many diseases.*
+- *Malaria remains a major health problem in Africa.*
+- *Public awareness can save lives.*
+
+## 3. Information and communication
+Modern life is deeply influenced by communication technologies.
+
+### Key vocabulary
+- internet
+- smartphone
+- social networks
+- media
+- cybercrime
+- digital divide
+- online learning
+- broadcasting
+- information access
+
+### Main issues
+Communication technologies make information easier to access, but they can also spread false news, addiction or online insecurity.
+
+## 4. Grammar focus: passive voice
+The passive voice is used when the action is more important than the doer.
+
+### Structure
+**subject + be + past participle**
+
+Examples:
+- *Scientists discovered penicillin in 1928.*  
+  -> *Penicillin was discovered in 1928.*
+- *Researchers are testing a vaccine.*  
+  -> *A vaccine is being tested.*
+
+The passive is common in scientific and formal English because it focuses on results.
+
+## 5. Grammar focus: present perfect
+The present perfect links the past to the present.
+
+### Structure
+**have/has + past participle**
+
+Examples:
 - *Scientists have developed a new vaccine.*
-- *Malaria has killed millions of people in Africa.*
+- *Technology has transformed communication.*
 
-## Topic 6: Information and Communication
-**Vocabulary**: internet, smartphone, social networks, media, cybercrime, digital divide, broadcasting.
-**Grammar focus**: **Relative clauses**.
-- Defining: *The phone **that** you bought is very fast.*
-- Non-defining: *The internet, **which** connects billions of people, has changed the world.*
+It is often used for recent events, life experience or past actions with present relevance.
 
-## Question Tags
-- Positive + negative tag: *You live in Dakar, **don't you**?*
-- Negative + positive tag: *She isn't coming, **is she**?*`,
+## 6. Grammar focus: relative clauses
+Relative clauses give extra information about a person, thing, place or possession.
+
+### Main pronouns
+- **who** for people
+- **which / that** for things
+- **whose** for possession
+- **where** for place
+
+Examples:
+- *The scientist who discovered penicillin became famous.*
+- *The phone that you bought is very fast.*
+- *The village where I was born has electricity now.*
+
+## 7. Grammar focus: question tags
+Question tags are short questions added at the end of a sentence to seek confirmation.
+
+### Rule
+- positive statement -> negative tag
+- negative statement -> positive tag
+
+Examples:
+- *You live in Dakar, don't you?*
+- *She isn't coming, is she?*
+
+Question tags are frequent in spoken English and help make communication more natural.
+
+## 8. Skills for the BAC
+Students may be asked to:
+- write about a scientific invention;
+- discuss health problems in Africa;
+- explain the benefits and dangers of the internet;
+- complete grammar exercises using passive forms or relative clauses.
+
+To succeed, they should combine relevant vocabulary, clear sentences and well-structured ideas.
+
+## 9. Common mistakes
+- Confusing active and passive forms.
+- Using the simple past instead of the present perfect.
+- Mixing *who* and *which*.
+- Forming incorrect question tags.
+
+## 10. What to remember
+This chapter prepares students to talk about modern life through science, technology, health and communication. It also strengthens important grammar structures often tested in BAC exercises and useful in everyday English.`,
     exercises: [
       ex('Passive voice',
         'Transform: "Researchers are testing a new malaria vaccine." → Passive:',
@@ -549,25 +1263,139 @@ Direct → Indirect speech: tense backshift and pronoun change.
     ],
     course_content: `# Culture, Heritage & Education
 
-## Topic 7: Cultural Heritage
-**Vocabulary**: tradition, heritage, culture, colonisation, independence, identity, language, religion, festival.
-**Grammar focus**: **Past perfect** — action that happened before another past action.
-- *By 1960, Senegal **had gained** its independence.*
-- *When he arrived, the ceremony **had already started**.*
+## Learning goals
+- Speak and write about culture, heritage, change and education.
+- Use the past perfect and connectors of contrast correctly.
+- Organise a short English essay with clear arguments.
+- Develop accurate vocabulary on identity, history and schooling.
 
-## Topic 8: Events and Changes
-**Vocabulary**: decolonisation, civil rights, revolution, globalisation, migration, urbanisation, environmental change.
-**Grammar focus**: **Expressing contrast and concession**.
-- *Although* / *Even though* + clause: *Although Africa is rich in resources, many people live in poverty.*
-- *Despite* / *In spite of* + noun/gerund: *Despite independence, inequalities remain.*
-- *However* / *Nevertheless* (linking adverbs, between sentences).
+## 1. Cultural heritage
+Cultural heritage includes what a people receives from the past and transmits to the next generation: languages, beliefs, customs, monuments, music, literature and values.
 
-## Topic 9: Education
-**Vocabulary**: literacy, scholarship, university, vocational training, distance learning, school dropout, curriculum.
-**Essay writing**: Arguing for/against a position.
-1. Introduction: background + thesis statement.
-2. Body: 2-3 paragraphs, each with a **point**, **evidence**, **explanation** (PEE).
-3. Conclusion: restate thesis + call to action or broader implication.`,
+### Key vocabulary
+- tradition
+- heritage
+- culture
+- identity
+- language
+- religion
+- festival
+- independence
+- colonisation
+
+### Main ideas
+Heritage helps people understand who they are. It creates national identity and social cohesion. At the same time, modern societies must preserve heritage while adapting to change.
+
+Examples:
+- *Gorée Island is part of Senegal's historical heritage.*
+- *Traditional music is an important element of cultural identity.*
+
+## 2. Events and changes
+This topic focuses on social, political and historical transformations.
+
+### Key vocabulary
+- decolonisation
+- civil rights
+- revolution
+- globalisation
+- migration
+- urbanisation
+- environmental change
+- independence
+
+### Communicative use
+Students should be able to explain:
+- how societies change over time;
+- how colonisation and independence shaped African countries;
+- how globalisation affects traditions and ways of life.
+
+## 3. Education
+Education is a major theme because it is linked to development, citizenship and professional success.
+
+### Key vocabulary
+- literacy
+- scholarship
+- university
+- vocational training
+- distance learning
+- curriculum
+- school dropout
+- equal opportunity
+
+### Main ideas
+Education helps reduce poverty, improve health and promote development. However, many countries still face problems such as lack of infrastructure, unequal access or school dropout.
+
+## 4. Grammar focus: past perfect
+The past perfect expresses an action completed before another action in the past.
+
+### Structure
+**had + past participle**
+
+Examples:
+- *By 1960, Senegal had gained its independence.*
+- *When he arrived, the ceremony had already started.*
+
+This tense is useful when telling historical events in sequence.
+
+## 5. Grammar focus: contrast and concession
+To write more mature English, students must show opposition and nuance.
+
+### Main connectors
+- **although / even though** + clause
+- **despite / in spite of** + noun or gerund
+- **however / nevertheless** between sentences
+
+Examples:
+- *Although Africa is rich in resources, many people live in poverty.*
+- *Despite progress, many schools still lack equipment.*
+- *Education has improved. However, inequalities remain.*
+
+## 6. Cause and effect
+Students should also use connectors that explain relations between ideas.
+
+### Useful connectors
+- because
+- since
+- therefore
+- as a result
+- consequently
+
+Examples:
+- *Many children drop out of school because their families are poor.*
+- *Urbanisation has increased; as a result, cities are expanding rapidly.*
+
+## 7. Essay writing skills
+At BAC level, students may write a short essay to express an opinion or discuss a topic.
+
+### Basic structure
+1. **Introduction**: introduce the topic and state the main idea.
+2. **Body paragraphs**: each paragraph contains a point, evidence and explanation.
+3. **Conclusion**: summarise the main argument and end clearly.
+
+### PEE method
+- **Point**
+- **Evidence**
+- **Explanation**
+
+This method helps students avoid vague writing and produce organised paragraphs.
+
+## 8. Skills expected at the BAC
+Students may be asked to:
+- discuss the importance of culture or education;
+- describe a social change;
+- write about school challenges;
+- compare tradition and modernity.
+
+They should aim for simple, correct and meaningful English rather than overly complex sentences.
+
+## 9. Common mistakes
+- Using simple past instead of past perfect when sequence matters.
+- Confusing *although* and *despite*.
+- Writing essays without clear paragraph structure.
+- Using vocabulary without context or explanation.
+
+## 10. What to remember
+This chapter brings together language for discussing identity, historical change and education. It is important because it prepares students to speak about society in a thoughtful way while strengthening grammar, connectors and essay organisation.`,
     exercises: [
       ex('Past perfect',
         'Choose the correct tense: "When students arrived, the teacher _____ the lesson."',
@@ -792,31 +1620,107 @@ const SVT_L_CHAPTERS = [
     ],
     course_content: `# Système nerveux et pression artérielle
 
-## 1. Organisation de l'encéphale
-L'encéphale comprend :
-- **Le cerveau** : deux hémisphères, siège des fonctions supérieures (mémoire, langage, pensée).
-- **Le cervelet** : coordination des mouvements et équilibre.
-- **Le tronc cérébral** : régulation des fonctions végétatives (respiration, rythme cardiaque).
+## 1. Objectifs du chapitre
+Ce chapitre doit permettre de :
 
-**Protection** : boîte crânienne (os), méninges (3 enveloppes), liquide céphalorachidien (LCR).
+- connaître l'organisation générale du système nerveux cérébro-spinal
+- distinguer cerveau, cervelet, tronc cérébral et moelle épinière
+- comprendre le rôle des centres nerveux dans la régulation
+- expliquer comment la pression artérielle est contrôlée
 
-## 2. La moelle épinière
-Contenue dans le canal vertébral (colonne vertébrale + méninges + LCR).
-- **Substance grise** (en H) : corps cellulaires des neurones.
-- **Substance blanche** (périphérique) : axones myélinisés.
-- Émet les **nerfs rachidiens** (31 paires).
+## 2. Organisation générale du système nerveux
+Le système nerveux comprend :
 
-## 3. Régulation de la pression artérielle
-**PA = Débit cardiaque × Résistances périphériques**
+- le **système nerveux central** : encéphale et moelle épinière
+- le **système nerveux périphérique** : nerfs et ganglions
 
-**Régulation nerveuse** :
-1. Les **barorécepteurs** (aorte, sinus carotidien) détectent les variations de PA.
-2. Message nerveux → **centre bulbaire**.
-3. Réponse via le système nerveux autonome (sympathique/parasympathique).
+Il assure la réception, le traitement et la transmission des informations.
 
-**Régulation hormonale** : adrénaline (médullosurrénale) augmente la PA ; ADH (hypothalamus) favorise la rétention d'eau.
+## 3. L'encéphale
+L'encéphale est logé dans la boîte crânienne.
 
-**Hypertension artérielle** : PA > 140/90 mmHg. Facteurs de risque : alimentation, sédentarité, stress, hérédité.`,
+### Ses grandes parties
+- **cerveau** : perception, mémoire, langage, pensée, motricité volontaire
+- **cervelet** : équilibre, posture, coordination motrice
+- **tronc cérébral** : centres vitaux, respiration, activité cardiaque
+
+### Protection
+L'encéphale est protégé par :
+- la boîte crânienne
+- les méninges
+- le liquide céphalo-rachidien
+
+## 4. La moelle épinière
+La moelle épinière se situe dans le canal vertébral.
+
+### Structure
+- **substance grise** centrale en forme de H
+- **substance blanche** périphérique
+
+### Rôles
+- conduction de l'influx entre encéphale et organes
+- participation aux réflexes médullaires
+
+## 5. Pression artérielle
+La pression artérielle correspond à la force exercée par le sang sur la paroi des artères.
+
+Elle dépend principalement de :
+- l'activité cardiaque
+- le diamètre des vaisseaux
+- le volume sanguin
+
+On peut résumer par :
+$$PA = Débit\\ cardiaque \\times Résistances\\ périphériques$$
+
+## 6. Régulation nerveuse de la pression artérielle
+Cette régulation est rapide.
+
+### Étapes
+1. les **barorécepteurs** détectent une variation de pression
+2. ils envoient des messages vers le **centre bulbaire**
+3. une réponse nerveuse est transmise au cœur et aux vaisseaux
+
+### Conséquences
+- si la PA augmente : ralentissement du cœur, vasodilatation
+- si la PA baisse : accélération du cœur, vasoconstriction
+
+## 7. Régulation hormonale
+Elle complète la régulation nerveuse.
+
+### Hormones importantes
+- **adrénaline** : augmente la fréquence cardiaque et la pression artérielle
+- **ADH** : favorise la rétention d'eau, augmente le volume sanguin
+
+Ces mécanismes participent au maintien de l'homéostasie.
+
+## 8. Hypertension artérielle
+On parle d'hypertension artérielle lorsque la pression reste élevée de façon durable.
+
+### Risques
+- accidents vasculaires
+- atteintes cardiaques
+- atteintes rénales
+
+### Facteurs favorisants
+- alimentation trop salée
+- sédentarité
+- stress
+- obésité
+- hérédité
+
+## 9. Méthode à retenir
+Dans un exercice de régulation :
+
+1. identifier le paramètre perturbé
+2. repérer les récepteurs sensoriels
+3. préciser le centre intégrateur
+4. décrire les effecteurs
+5. conclure sur le retour à l'équilibre
+
+## 10. À retenir
+- le système nerveux central traite l'information
+- la pression artérielle est régulée en permanence
+- barorécepteurs, centre bulbaire et effecteurs agissent en chaîne`,
     exercises: [
       ex('Structure de l\'encéphale',
         'Quel organe de l\'encéphale assure la coordination des mouvements et l\'équilibre ?',
@@ -853,35 +1757,121 @@ Contenue dans le canal vertébral (colonne vertébrale + méninges + LCR).
     ],
     course_content: `# Glycémie et Immunologie
 
-## 1. Régulation de la glycémie
-La **glycémie** est le taux de glucose dans le sang (valeur normale : 0,8–1,2 g/L).
+## 1. Objectifs du chapitre
+Ce chapitre doit permettre de :
 
-**Système hypoglycémiant** :
-- Après un repas : la glycémie augmente.
-- Les cellules **β** des îlots de Langerhans (pancréas) secrètent l'**insuline**.
-- L'insuline favorise l'entrée du glucose dans les cellules (muscles, foie) et la synthèse de glycogène.
+- définir la glycémie et expliquer sa régulation
+- distinguer insuline et glucagon
+- comprendre les grands types de diabète
+- présenter les grandes lignes de la réponse immunitaire
+- expliquer le mode d'action du VIH
 
-**Système hyperglycémiant** :
-- En jeûne : glycémie diminue.
-- Les cellules **α** secrètent le **glucagon**, qui stimule la glycogénolyse (décomposition du glycogène en glucose).
+## 2. La glycémie
+La glycémie est la concentration de glucose dans le sang.
 
-**Diabète sucré** :
-- Type 1 (insulinodépendant) : destruction auto-immune des cellules β.
-- Type 2 : résistance à l'insuline (souvent lié à l'obésité).
+### Valeur normale
+Chez un adulte à jeun, elle est comprise entre :
+$$0{,}8 \\text{ et } 1{,}2\\ g/L$$
 
-## 2. La réponse immunitaire
-**Non spécifique** : réaction inflammatoire, phagocytose (macrophages, neutrophiles).
+Le maintien de cette valeur est indispensable au bon fonctionnement de l'organisme, notamment du cerveau.
 
-**Spécifique** :
-- **Immunité humorale** : lymphocytes B → plasmocytes → anticorps (immunoglobulines).
-- **Immunité cellulaire** : lymphocytes T cytotoxiques détruisent les cellules infectées.
-- **Mémoire immunitaire** : lymphocytes mémoire → réponse plus rapide lors d'un 2e contact.
+## 3. Régulation hormonale de la glycémie
+Le pancréas endocrine contient les îlots de Langerhans.
 
-## 3. VIH/SIDA
-- **VIH** : virus à ARN, cible les **lymphocytes T4 (CD4+)**.
-- Cycle : fixation → pénétration → transcription inverse → intégration → multiplication.
-- **SIDA** : stade avancé de l'infection (CD4 < 200/mm³) ; infections opportunistes.
-- **Transmission** : sang, rapports sexuels, mère-enfant.`,
+### Rôle de l'insuline
+Les cellules **β** sécrètent l'insuline lorsque la glycémie augmente.
+
+L'insuline :
+- favorise l'entrée du glucose dans les cellules
+- stimule la formation de glycogène
+- fait donc baisser la glycémie
+
+### Rôle du glucagon
+Les cellules **α** sécrètent le glucagon lorsque la glycémie diminue.
+
+Le glucagon :
+- stimule la dégradation du glycogène
+- favorise la libération de glucose dans le sang
+- fait donc augmenter la glycémie
+
+## 4. Homéostasie glycémique
+La régulation de la glycémie fonctionne comme un système de rétrocontrôle.
+
+- hyperglycémie → sécrétion d'insuline
+- hypoglycémie → sécrétion de glucagon
+
+Ce mécanisme permet de maintenir une valeur stable malgré les repas ou le jeûne.
+
+## 5. Le diabète
+### Diabète de type 1
+- destruction auto-immune des cellules β
+- déficit en insuline
+- traitement par apport d'insuline
+
+### Diabète de type 2
+- résistance des tissus à l'insuline
+- souvent favorisé par la sédentarité, l'obésité et l'âge
+
+## 6. La réponse immunitaire non spécifique
+C'est la première ligne de défense.
+
+Elle comprend :
+- la réaction inflammatoire
+- la phagocytose
+- l'action des macrophages et polynucléaires
+
+Elle est rapide mais non ciblée.
+
+## 7. La réponse immunitaire spécifique
+Elle est dirigée contre un antigène précis.
+
+### Immunité humorale
+- les lymphocytes B reconnaissent l'antigène
+- ils se différencient en plasmocytes
+- les plasmocytes fabriquent des anticorps
+
+### Immunité cellulaire
+- les lymphocytes T cytotoxiques détruisent les cellules infectées
+
+### Mémoire immunitaire
+Une partie des lymphocytes devient mémoire.
+Lors d'un second contact, la réponse est plus rapide et plus efficace.
+
+## 8. Anticorps et antigènes
+Un antigène est une substance reconnue comme étrangère par l'organisme.
+Un anticorps est une protéine spécifique produite contre cet antigène.
+
+La liaison antigène-anticorps participe à l'élimination de l'agent pathogène.
+
+## 9. VIH et SIDA
+Le VIH est un virus qui cible principalement les lymphocytes T4 (CD4+).
+
+### Conséquences
+- diminution progressive des défenses immunitaires
+- infections opportunistes
+- évolution vers le SIDA si l'infection n'est pas contrôlée
+
+### Transmission
+- voie sexuelle
+- voie sanguine
+- transmission mère-enfant
+
+## 10. Vaccination
+La vaccination repose sur la mémoire immunitaire.
+Elle prépare l'organisme à réagir rapidement lors d'un contact futur avec l'agent pathogène.
+
+## 11. Méthode à retenir
+Pour un exercice sur l'immunité :
+
+1. identifier l'agent pathogène
+2. distinguer réponse non spécifique et spécifique
+3. préciser les cellules impliquées
+4. conclure sur l'élimination ou la mémoire immunitaire
+
+## 12. À retenir
+- la glycémie est régulée par insuline et glucagon
+- l'immunité associe défenses immédiates et spécifiques
+- le VIH affaiblit le système immunitaire en détruisant les lymphocytes T4`,
     exercises: [
       ex('Glycémie normale',
         'La glycémie normale à jeun chez un adulte est de :',
@@ -922,26 +1912,67 @@ La **glycémie** est le taux de glucose dans le sang (valeur normale : 0,8–1,2
     ],
     course_content: `# Reproduction et Hérédité
 
-## 1. La gamétogenèse
-**Spermatogenèse** (testicules) : production de spermatozoïdes (continue dès la puberté).
-**Ovogenèse** (ovaires) : production d'ovules (cycles menstruels).
+## 1. Objectifs du chapitre
+Ce chapitre doit permettre de :
 
-Les deux processus impliquent une **méiose** qui réduit le nombre de chromosomes de 2n à n.
+- expliquer la formation des gamètes
+- comprendre le rôle de la méiose
+- montrer comment la fécondation rétablit la diploïdie
+- interpréter quelques cas classiques d'hérédité humaine
 
-## 2. La méiose
-- **Division I** (réductionnelle) : séparation des chromosomes homologues → 2 cellules à n chromosomes.
-- **Division II** (équationnelle) : séparation des chromatides → 4 cellules haploïdes.
+## 2. La gamétogenèse
+La gamétogenèse est la formation des cellules sexuelles.
 
-**Brassage génétique** :
-- **Interchromosomal** : assortiment indépendant des chromosomes à la métaphase I.
-- **Intrachromosomal** (crossing-over) : échanges de segments entre chromosomes homologues à la prophase I.
+### Spermatogenèse
+Elle a lieu dans les testicules.
+Elle est continue à partir de la puberté et produit des spermatozoïdes.
 
-## 3. La fécondation
-Fusion du spermatozoïde et de l'ovule → **zygote** (2n chromosomes). Rétablissement de la diploïdie.
-**Monospermie** : un seul spermatozoïde pénètre l'ovule (réaction corticale).
+### Ovogenèse
+Elle a lieu dans les ovaires.
+Elle est cyclique et conduit à la formation d'un ovule.
 
-## 4. Hérédité humaine
-**Groupes sanguins ABO** : 3 allèles (IA, IB, i). IA et IB codominants, i récessif.
+Dans les deux cas, il y a passage de cellules diploïdes à des cellules haploïdes.
+
+## 3. La méiose
+La méiose comporte deux divisions successives.
+
+### Première division
+Elle sépare les chromosomes homologues.
+
+### Deuxième division
+Elle sépare les chromatides.
+
+Au final, une cellule diploïde donne quatre cellules haploïdes.
+
+## 4. Le brassage génétique
+### Brassage interchromosomique
+Il résulte de la répartition aléatoire des chromosomes homologues lors de la méiose.
+
+### Brassage intrachromosomique
+Il résulte du crossing-over entre chromatides homologues au cours de la prophase I.
+
+Ces brassages expliquent la diversité génétique des gamètes.
+
+## 5. La fécondation
+La fécondation correspond à l'union d'un gamète mâle et d'un gamète femelle.
+
+### Conséquence essentielle
+Elle restaure la diploïdie :
+$$n + n = 2n$$
+
+Le produit de la fécondation est le **zygote**.
+
+## 6. Hérédité humaine
+L'hérédité est la transmission des caractères des parents aux descendants.
+
+### Groupes sanguins ABO
+Ils sont déterminés par trois allèles :
+- $I^A$
+- $I^B$
+- $i$
+
+Les allèles $I^A$ et $I^B$ sont codominants, l'allèle $i$ est récessif.
+
 | Génotype | Groupe sanguin |
 |----------|----------------|
 | IAIA ou IAi | A |
@@ -949,8 +1980,39 @@ Fusion du spermatozoïde et de l'ovule → **zygote** (2n chromosomes). Rétabli
 | IAIB | AB |
 | ii | O |
 
-**Facteur Rhésus** : Rh+ dominant sur Rh-.
-**Albinisme** : autosomal récessif.`,
+### Facteur Rhésus
+Le facteur Rh+ est dominant sur Rh-.
+
+## 7. Hérédité autosomale et liée au sexe
+### Autosomale
+Le gène est porté par un autosome.
+Exemple : albinisme autosomal récessif.
+
+### Liée au sexe
+Le gène est porté par le chromosome X.
+Exemples : daltonisme, hémophilie.
+
+Chez l'homme, un allèle récessif porté par X s'exprime plus facilement car le chromosome Y ne porte pas l'allèle correspondant.
+
+## 8. Lecture d'un croisement
+Pour interpréter un exercice :
+
+1. identifier les allèles
+2. préciser dominance, récessivité ou codominance
+3. écrire les génotypes parentaux
+4. construire les gamètes
+5. déduire les génotypes et phénotypes de la descendance
+
+## 9. Importance biologique
+La méiose, la fécondation et les brassages génétiques assurent :
+
+- la stabilité du nombre de chromosomes de génération en génération
+- la diversité génétique des individus
+
+## 10. À retenir
+- la méiose produit des gamètes haploïdes
+- la fécondation rétablit la diploïdie
+- les lois de transmission permettent d'expliquer de nombreux caractères humains`,
     exercises: [
       ex('La méiose',
         'La méiose produit des cellules :',
@@ -1002,26 +2064,88 @@ const SVT_S1_CHAPTERS = [
     ],
     course_content: `# Tissu nerveux et influx nerveux
 
-## 1. Le neurone
-**Structure** :
-- **Corps cellulaire** (péricaryon) : noyau + organes cellulaires.
-- **Dendrites** : prolongements courts qui reçoivent les informations.
-- **Axone** : prolongement long qui transmet l'influx nerveux. Peut être myélinisé (gaine de myéline).
+## 1. Objectifs du chapitre
+Ce chapitre doit permettre de :
 
-## 2. Le potentiel d'action
-**Potentiel de repos** : -70 mV (membrane polarisée, K+ intracellulaire, Na+ extracellulaire).
+- connaître la structure du neurone
+- expliquer la naissance du potentiel d'action
+- comprendre la propagation de l'influx nerveux
+- décrire la transmission synaptique
 
-**Potentiel d'action** :
-1. **Dépolarisation** : ouverture des canaux Na+ → entrée massive de Na+ → potentiel monte jusqu'à +30 mV.
-2. **Repolarisation** : fermeture des canaux Na+, ouverture des canaux K+ → sortie de K+ → retour au potentiel de repos.
+## 2. Le neurone
+Le neurone est la cellule spécialisée du système nerveux.
 
-**Loi du tout ou rien** : si le stimulus dépasse le seuil, un potentiel d'action de même amplitude est déclenché.
+### Ses parties principales
+- **corps cellulaire** : contient le noyau
+- **dendrites** : reçoivent les messages
+- **axone** : conduit l'influx nerveux
+- **terminaisons synaptiques** : transmettent le message à une autre cellule
 
-## 3. La transmission synaptique
-- Le potentiel d'action arrive au **bouton synaptique**.
-- Les **vésicules synaptiques** libèrent le **neurotransmetteur** dans la fente synaptique.
-- Le neurotransmetteur se fixe sur les **récepteurs** de la membrane postsynaptique.
-- Excitation (ex : acétylcholine) ou inhibition (ex : GABA) de la cellule postsynaptique.`,
+Certains axones sont entourés d'une gaine de myéline.
+
+## 3. Potentiel de repos
+Au repos, la membrane du neurone est polarisée.
+Le potentiel de repos vaut environ :
+$$-70\\ mV$$
+
+Cette polarisation résulte de la répartition inégale des ions et du fonctionnement de la pompe sodium/potassium.
+
+## 4. Potentiel d'action
+Quand le seuil d'excitation est atteint, un potentiel d'action apparaît.
+
+### Étapes
+1. dépolarisation : entrée massive de Na+
+2. repolarisation : sortie de K+
+3. retour au potentiel de repos
+
+### Loi du tout ou rien
+Si le seuil n'est pas atteint, il n'y a pas de potentiel d'action.
+S'il est atteint, l'amplitude du potentiel d'action reste la même.
+
+## 5. Propagation de l'influx nerveux
+Le potentiel d'action se propage le long de l'axone.
+
+### Fibres non myélinisées
+La propagation est continue et relativement lente.
+
+### Fibres myélinisées
+La propagation est saltatoire de nœud de Ranvier en nœud de Ranvier.
+Elle est plus rapide et plus économique.
+
+## 6. Synapse chimique
+La synapse est la zone de communication entre deux cellules.
+
+### Étapes de la transmission
+1. arrivée du potentiel d'action au bouton synaptique
+2. libération du neurotransmetteur
+3. diffusion dans la fente synaptique
+4. fixation sur les récepteurs postsynaptiques
+5. réponse de la cellule cible
+
+## 7. Neurotransmetteurs
+Les neurotransmetteurs sont des molécules chimiques de signalisation.
+
+Ils peuvent avoir un effet :
+- excitateur
+- inhibiteur
+
+## 8. Sens biologique
+Le tissu nerveux assure :
+- la perception
+- la transmission rapide de l'information
+- la coordination des réponses de l'organisme
+
+## 9. Méthode à retenir
+Pour interpréter un schéma nerveux :
+
+1. identifier la cellule ou la structure
+2. préciser le sens du message
+3. distinguer phénomène électrique et transmission chimique
+
+## 10. À retenir
+- le neurone est l'unité fonctionnelle du système nerveux
+- le potentiel d'action obéit à la loi du tout ou rien
+- la synapse chimique assure la transmission entre deux cellules`,
     exercises: [
       ex('Potentiel d\'action',
         'Lors d\'un potentiel d\'action, la dépolarisation est due à :',
@@ -1065,25 +2189,86 @@ const SVT_S2_CHAPTERS = [
     ],
     course_content: `# Génétique et Biotechnologies
 
-## 1. Les lois de Mendel
-**Expérience** : Mendel travaille sur des pois (*Pisum sativum*) et étudie des caractères contrastés.
+## 1. Objectifs du chapitre
+Ce chapitre doit permettre de :
 
-**1ère loi** (uniformité des hybrides F1) : Quand on croise deux parents homozygotes pour deux allèles différents, tous les individus F1 sont identiques (hétérozygotes). L'allèle dominant s'exprime.
+- appliquer les lois de Mendel
+- interpréter un croisement monohybride
+- reconnaître une hérédité liée au sexe
+- présenter les grandes biotechnologies modernes
 
-**2ème loi** (disjonction des allèles) : En F2, les allèles se séparent et donnent un ratio **3:1** (phénotypiques) et **1:2:1** (génotypiques).
+## 2. Les lois de Mendel
+Mendel a travaillé sur des lignées pures de pois possédant des caractères contrastés.
 
-**Test cross** : croisement d'un individu de phénotype dominant avec un homozygote récessif. Si descendants 1:1, l'individu est hétérozygote.
+### Première loi
+Le croisement de deux lignées pures différentes donne une génération F1 uniforme.
 
-## 2. Hérédité liée au sexe
-Gènes portés sur le **chromosome X** (hémizygotie chez l'homme XY).
-- **Daltonisme** (gène récessif lié à X) : plus fréquent chez l'homme.
-- **Hémophilie** A et B : maladies hémorragiques récessives liées à X.
+### Deuxième loi
+Lors du croisement des hybrides F1, les allèles se séparent et donnent en F2 :
+- un ratio phénotypique 3:1
+- un ratio génotypique 1:2:1
 
-## 3. Biotechnologies
-- **OGM** : introduction d'un gène étranger via plasmide bactérien ou vecteur viral.
-- **Clonage** : reproduction d'un organisme génétiquement identique (ex : brebis Dolly, 1996).
-- **PCR** (Polymerase Chain Reaction) : amplification in vitro d'un fragment d'ADN.
-- **Applications** : médicaments (insuline humaine par bactéries OGM), agriculture, médecine légale.`,
+## 3. Dominance et récessivité
+Dans un couple d'allèles :
+- l'allèle dominant s'exprime chez l'hétérozygote
+- l'allèle récessif ne s'exprime qu'à l'état homozygote
+
+## 4. Croisement-test
+Le croisement-test ou **test cross** consiste à croiser un individu de phénotype dominant avec un homozygote récessif.
+
+### Intérêt
+Il permet de déterminer si l'individu dominant est :
+- homozygote
+- ou hétérozygote
+
+## 5. Hérédité liée au sexe
+Certains gènes sont portés par le chromosome X.
+
+### Conséquence
+Chez l'homme, qui possède XY, un allèle récessif porté par X peut s'exprimer directement.
+
+### Exemples
+- daltonisme
+- hémophilie
+
+## 6. Notions de biotechnologie
+Les biotechnologies utilisent les êtres vivants ou leurs constituants pour produire ou modifier des substances.
+
+### OGM
+Un OGM est un organisme dont le génome a été modifié, souvent par insertion d'un gène étranger.
+
+### Clonage
+Le clonage permet d'obtenir un individu génétiquement identique à un autre.
+
+### PCR
+La PCR permet d'amplifier rapidement un fragment d'ADN spécifique.
+
+## 7. Applications
+Les biotechnologies sont utilisées en :
+- médecine
+- agriculture
+- recherche
+- identification génétique
+
+## 8. Enjeux
+Les biotechnologies soulèvent aussi des questions :
+- éthiques
+- sanitaires
+- environnementales
+
+## 9. Méthode à retenir
+Pour un exercice de génétique :
+
+1. choisir les symboles des allèles
+2. écrire le génotype des parents
+3. construire les gamètes
+4. établir le tableau de croisement
+5. interpréter les proportions
+
+## 10. À retenir
+- les lois de Mendel restent la base de la génétique classique
+- le test cross révèle le génotype
+- les biotechnologies reposent sur la maîtrise du matériel génétique`,
     exercises: [
       ex('Ratio F2 en monohybridisme',
         'Lors d\'un croisement en F2 (monohybridisme), le ratio phénotypique attendu est :',
@@ -1126,33 +2311,141 @@ const PHY_S_CHAPTERS = [
     ],
     course_content: `# Mécanique
 
-## 1. Cinématique du point
-**Vecteur position** : OM(t) dans un référentiel.
-**Vecteur vitesse** : $\\vec{v} = \\frac{d\\overrightarrow{OM}}{dt}$
-**Vecteur accélération** : $\\vec{a} = \\frac{d\\vec{v}}{dt}$
+## 1. Objectifs du chapitre
+En Terminale S2, la mécanique doit permettre de :
 
-**Types de mouvements** :
-- Rectiligne uniforme : v = constante, a = 0.
-- Rectiligne uniformément varié : a = constante.
-- Circulaire uniforme : |v| = constante, a centripète vers le centre.
+- décrire un mouvement dans un référentiel donné
+- calculer vitesse et accélération
+- appliquer les lois de Newton
+- étudier le mouvement d'un projectile ou d'un satellite
+- utiliser la gravitation universelle dans les problèmes astronomiques
 
-## 2. Dynamique – Lois de Newton
-- **1re loi (inertie)** : dans un référentiel galiléen, si ΣF = 0, alors a = 0 (repos ou MCU).
-- **2e loi (RFD)** : $\\sum \\vec{F} = m\\vec{a}$
-- **3e loi (action-réaction)** : FAB = -FBA.
+## 2. Référentiel et repérage
+Un mouvement ne se décrit jamais de manière absolue : il se décrit dans un **référentiel**.
 
-**Applications** :
-- Chute libre : a = g = 9,8 m·s⁻².
-- Plan incliné, pendule conique, mouvement parabolique.
+### Référentiel galiléen
+On assimile à un référentiel galiléen un référentiel dans lequel le principe d'inertie est vérifié.
 
-## 3. Gravitation universelle
-$$F = G\\frac{Mm}{d^2}$$
-G = 6,67×10⁻¹¹ N·m²·kg⁻².
+Exemples usuels :
+- référentiel terrestre pour des mouvements proches de la surface terrestre
+- référentiel géocentrique pour l'étude des satellites
+- référentiel héliocentrique pour l'étude du mouvement des planètes
 
-**Satellite en orbite circulaire** :
-- La gravitation fournit la force centripète.
-- Vitesse de satellisation : $v = \\sqrt{\\frac{GM}{R}}$
-- **3e loi de Kepler** : $\\frac{T^2}{R^3} = \\frac{4\\pi^2}{GM}$ = constante.`,
+## 3. Cinématique du point
+La cinématique décrit le mouvement sans chercher ses causes.
+
+### Vecteurs fondamentaux
+- vecteur position : $\\overrightarrow{OM}(t)$
+- vecteur vitesse : $\\vec{v}=\\frac{d\\overrightarrow{OM}}{dt}$
+- vecteur accélération : $\\vec{a}=\\frac{d\\vec{v}}{dt}$
+
+### Interprétation
+- la vitesse indique la rapidité et la direction du mouvement
+- l'accélération indique comment la vitesse varie
+
+## 4. Types de mouvements
+### Mouvement rectiligne uniforme
+- trajectoire : droite
+- vitesse constante
+- accélération nulle
+
+### Mouvement rectiligne uniformément varié
+- trajectoire rectiligne
+- accélération constante
+- relations usuelles :
+  - $v(t)=v_0+at$
+  - $x(t)=x_0+v_0t+\\frac{1}{2}at^2$
+  - $v^2-v_0^2=2a(x-x_0)$
+
+### Mouvement circulaire uniforme
+- norme de la vitesse constante
+- direction de la vitesse change en permanence
+- accélération centripète dirigée vers le centre
+
+## 5. Dynamique : les lois de Newton
+La dynamique relie le mouvement à ses causes : les forces.
+
+### Première loi de Newton
+Dans un référentiel galiléen, si la somme des forces extérieures est nulle, alors le corps reste au repos ou en mouvement rectiligne uniforme.
+
+### Deuxième loi de Newton
+$$\\sum \\vec{F}=m\\vec{a}$$
+
+Elle permet de calculer l'accélération à partir du bilan des forces.
+
+### Troisième loi de Newton
+Si un corps A exerce une force sur un corps B, alors B exerce sur A une force :
+
+- de même direction
+- de même intensité
+- de sens opposé
+
+## 6. Bilan des forces usuelles
+Dans les exercices, on rencontre souvent :
+
+- le poids : $\\vec{P}=m\\vec{g}$
+- la réaction du support
+- la tension d'un fil
+- la force de frottement
+- la force gravitationnelle
+
+Le schéma de forces est indispensable avant tout calcul.
+
+## 7. Chute libre et projectile
+### Chute libre
+En négligeant les frottements de l'air, seule la pesanteur agit :
+$$\\vec{a}=\\vec{g}$$
+
+### Mouvement d'un projectile
+On décompose le mouvement selon deux axes :
+
+- horizontal : mouvement rectiligne uniforme
+- vertical : mouvement uniformément accéléré par $g$
+
+Cette décomposition explique la trajectoire parabolique.
+
+## 8. Gravitation universelle
+Deux masses $M$ et $m$ séparées par une distance $d$ s'attirent avec une force :
+$$F=G\\frac{Mm}{d^2}$$
+
+où :
+- $G=6{,}67\\times 10^{-11}\\ \\mathrm{N\\cdot m^2\\cdot kg^{-2}}$
+
+### Caractéristiques
+- force attractive
+- dirigée selon la droite joignant les centres des masses
+- proportionnelle au produit des masses
+- inversement proportionnelle au carré de la distance
+
+## 9. Satellites et mouvement orbital
+Pour un satellite en orbite circulaire, la gravitation fournit la force centripète.
+
+### Vitesse orbitale
+$$v=\\sqrt{\\frac{GM}{R}}$$
+
+### Période
+En combinant la cinématique circulaire et la gravitation, on obtient :
+$$\\frac{T^2}{R^3}=\\frac{4\\pi^2}{GM}$$
+
+Cette relation correspond à la troisième loi de Kepler.
+
+## 10. Méthode type pour un exercice
+1. choisir le référentiel
+2. faire le schéma du système
+3. établir le bilan des forces
+4. projeter la relation fondamentale sur les axes utiles
+5. résoudre avec les conditions initiales
+
+## 11. Erreurs fréquentes
+- oublier le référentiel
+- confondre vitesse constante et accélération nulle en mouvement circulaire
+- oublier qu'une force est un vecteur
+- appliquer les formules de chute libre sur un axe mal orienté
+
+## 12. À retenir
+- la cinématique décrit le mouvement
+- la dynamique l'explique
+- la gravitation permet d'étudier aussi bien une chute qu'une orbite satellitaire`,
     exercises: [
       ex('Relation fondamentale de la dynamique',
         'Un objet de masse 5 kg est soumis à une force résultante de 20 N. Son accélération est :',
@@ -1189,29 +2482,129 @@ G = 6,67×10⁻¹¹ N·m²·kg⁻².
     ],
     course_content: `# Électromagnétisme
 
-## 1. Champs magnétiques
-**Champ d'un fil rectiligne infini** : B = μ₀I/(2πd), lignes de champ circulaires.
-**Champ d'un solénoïde** : B = μ₀nI (n = nombre de spires par unité de longueur).
+## 1. Objectifs du chapitre
+Ce chapitre doit permettre de :
 
-## 2. Force de Laplace
-Conducteur parcouru par un courant I dans un champ B :
-$$F = BIL\\sin\theta$$
-(θ = angle entre I et B ; F ⊥ au plan formé par I et B)
+- caractériser un champ magnétique créé par un courant
+- déterminer la force exercée sur un conducteur ou une charge en mouvement
+- comprendre le phénomène d'induction
+- modéliser les dipôles R-L, R-C et les oscillations L-C
 
-**Mouvement d'une particule chargée** dans B : force de Lorentz = qvB → mouvement circulaire uniforme.
+## 2. Champ magnétique
+Un champ magnétique est une grandeur vectorielle notée $\\vec{B}$.
+Il s'exprime en tesla (T).
 
-## 3. Induction électromagnétique
-**Loi de Faraday** : $e = -\\frac{d\\Phi}{dt}$ (Φ = flux magnétique, B·S·cos θ)
-**Loi de Lenz** : le courant induit s'oppose à la cause qui lui donne naissance.
+### Champ créé par un fil rectiligne infini
+À une distance $d$ d'un fil parcouru par un courant $I$ :
+$$B=\\frac{\\mu_0 I}{2\\pi d}$$
 
-## 4. Dipôles et oscillations
-**Dipôle R-L** : $E = Ri + L\\frac{di}{dt}$ (charge d'une bobine)
-**Dipôle R-C** : $E = Ri + \\frac{q}{C}$ (charge d'un condensateur)
+Le champ est tangent à des cercles centrés sur le fil.
+Le sens se détermine par la règle de la main droite.
 
-**Circuit L-C** (oscillations libres) :
-$$T_0 = 2\\pi\\sqrt{LC}$$
+### Champ créé par un solénoïde
+À l'intérieur d'un solénoïde long :
+$$B=\\mu_0 n I$$
+où $n$ est le nombre de spires par mètre.
 
-**Oscillations forcées** : résonance quand la fréquence d'excitation = fréquence propre.`,
+Le champ y est pratiquement uniforme.
+
+## 3. Force de Laplace et force de Lorentz
+### Force de Laplace
+Un conducteur rectiligne de longueur $L$, parcouru par un courant $I$, plongé dans un champ magnétique $B$, subit une force :
+$$F=BIL\\sin\\theta$$
+
+où $\\theta$ est l'angle entre la direction du courant et celle du champ.
+
+### Sens de la force
+La force est perpendiculaire :
+
+- au conducteur
+- au champ magnétique
+
+Elle se détermine par une règle d'orientation adaptée au cours.
+
+### Particule chargée en mouvement
+Une charge $q$ animée d'une vitesse $\\vec{v}$ dans un champ magnétique subit une force magnétique.
+Quand $\\vec{v}$ est perpendiculaire à $\\vec{B}$, cette force peut engendrer un mouvement circulaire.
+
+## 4. Flux magnétique
+Le flux magnétique à travers une surface $S$ vaut :
+$$\\Phi=B S \\cos\\theta$$
+
+Le flux dépend :
+- de l'intensité du champ
+- de la surface
+- de l'orientation de la surface par rapport au champ
+
+## 5. Induction électromagnétique
+Quand le flux magnétique à travers un circuit varie, il apparaît une force électromotrice induite.
+
+### Loi de Faraday
+$$e=-\\frac{d\\Phi}{dt}$$
+
+### Loi de Lenz
+Le courant induit s'oppose à la variation du flux qui lui donne naissance.
+
+Le signe négatif dans la loi de Faraday traduit cette opposition.
+
+## 6. Dipôle R-L
+Pour un circuit comprenant une résistance $R$ et une bobine d'inductance $L$ :
+$$E=Ri+L\\frac{di}{dt}$$
+
+### Interprétation
+- le terme $Ri$ correspond à la chute de tension ohmique
+- le terme $L\\frac{di}{dt}$ traduit l'auto-induction
+
+Dans un circuit R-L, le courant ne s'établit pas instantanément.
+
+## 7. Dipôle R-C
+Pour un circuit comprenant une résistance $R$ et un condensateur $C$ :
+$$E=Ri+\\frac{q}{C}$$
+
+avec :
+$$i=\\frac{dq}{dt}$$
+
+Le condensateur emmagasine de l'énergie électrique.
+
+## 8. Oscillations électriques
+### Circuit L-C
+Dans un circuit L-C idéal, il y a échange périodique d'énergie entre :
+
+- le condensateur
+- la bobine
+
+La période propre vaut :
+$$T_0=2\\pi\\sqrt{LC}$$
+
+### Résonance
+Dans un régime forcé, l'amplitude devient maximale lorsque la fréquence excitatrice est voisine de la fréquence propre.
+
+## 9. Méthode pratique
+### Pour un champ magnétique
+1. identifier la source du champ
+2. choisir la formule adaptée
+3. vérifier les unités
+
+### Pour une force de Laplace
+1. repérer l'angle entre courant et champ
+2. appliquer $F=BIL\\sin\\theta$
+3. vérifier le sens de la force
+
+### Pour une induction
+1. calculer le flux initial et final
+2. évaluer sa variation
+3. appliquer la loi de Faraday
+
+## 10. Erreurs fréquentes
+- oublier le sinus dans la force de Laplace
+- utiliser la formule du solénoïde pour un fil rectiligne
+- oublier que l'induction n'apparaît que si le flux varie
+- confondre tension, intensité et flux magnétique
+
+## 11. À retenir
+- les courants créent des champs magnétiques
+- un champ magnétique agit sur les charges et les conducteurs
+- l'induction est un phénomène fondamental de conversion électromagnétique`,
     exercises: [
       ex('Force de Laplace',
         'Un fil de longueur L = 0,5 m parcouru par I = 2 A est plongé dans un champ B = 0,1 T (perpendiculaire au fil). La force de Laplace est :',
@@ -1248,35 +2641,153 @@ $$T_0 = 2\\pi\\sqrt{LC}$$
     ],
     course_content: `# Phénomènes ondulatoires et corpusculaires
 
-## 1. Interférences lumineuses
-**Conditions** : deux sources cohérentes (même fréquence, différence de phase constante).
+## 1. Objectifs du chapitre
+Ce chapitre relie optique, physique quantique élémentaire et physique nucléaire. Il faut savoir :
 
-**Conditions d'interférence** :
-- Frange **brillante** : δ = k·λ (k ∈ ℤ)
-- Frange **obscure** : δ = (2k+1)·λ/2
+- décrire des interférences lumineuses
+- exploiter la relation de l'interfrange
+- utiliser le modèle photonique de la lumière
+- appliquer l'équation d'Einstein pour l'effet photoélectrique
+- reconnaître les principaux types de radioactivité
+- exploiter la loi de décroissance radioactive
 
-**Interfrange** : $i = \\frac{\\lambda D}{a}$
-(D = distance source-écran, a = distance entre les deux sources)
+## 2. Interférences lumineuses
+Les interférences apparaissent lorsque deux ondes lumineuses cohérentes se superposent.
 
-## 2. Effet photoélectrique
-Einstein (1905) : la lumière est quantifiée en **photons** d'énergie E = hν.
+### Conditions de cohérence
+Les deux sources doivent :
+- avoir la même fréquence
+- garder une différence de phase constante
 
-$$E_c^{max} = h\\nu - W_s$$
+### Différence de marche
+On note $\\delta$ la différence de marche entre les deux ondes.
 
-(Ec_max = énergie cinétique max de l'électron éjecté, Ws = travail d'extraction)
+### Conditions d'interférence
+- frange brillante : $\\delta=k\\lambda$
+- frange sombre : $\\delta=(2k+1)\\frac{\\lambda}{2}$
 
-**Dualité onde-corpuscule** : la lumière a à la fois des propriétés ondulatoires (interférences) et corpusculaires (effet photoélectrique).
+où $k$ est un entier relatif.
 
-## 3. Réactions nucléaires
-**Radioactivité** : désintégration spontanée d'un noyau instable.
-- α : émission d'un noyau He-4 (A-4, Z-2)
-- β⁻ : émission d'un électron (A=cte, Z+1)
-- γ : émission d'un photon (A=cte, Z=cte)
+### Interfrange
+Dans les fentes d'Young :
+$$i=\\frac{\\lambda D}{a}$$
 
-**Loi de désintégration** : $N(t) = N_0 e^{-\\lambda t}$, $T_{1/2} = \\frac{\\ln 2}{\\lambda}$
+avec :
+- $\\lambda$ : longueur d'onde
+- $D$ : distance entre les fentes et l'écran
+- $a$ : distance entre les deux sources
 
-**Fission** : rupture d'un noyau lourd (ex : U-235 + n → Ba + Kr + 3n + énergie).
-**Fusion** : union de noyaux légers (ex : D + T → He-4 + n + énergie).`,
+## 3. Nature ondulatoire de la lumière
+La lumière manifeste un comportement ondulatoire à travers :
+
+- les interférences
+- la diffraction
+- la propagation avec longueur d'onde et fréquence
+
+Cette vision explique la répartition en franges claires et sombres.
+
+## 4. Nature corpusculaire de la lumière
+La lumière peut aussi être décrite comme un flux de photons.
+
+### Énergie d'un photon
+$$E=h\\nu=\\frac{hc}{\\lambda}$$
+
+où :
+- $h$ est la constante de Planck
+- $\\nu$ la fréquence
+- $c$ la célérité de la lumière
+
+## 5. Effet photoélectrique
+Lorsqu'un métal reçoit une lumière suffisamment énergétique, il peut émettre des électrons.
+
+### Équation d'Einstein
+$$E_c^{max}=h\\nu-W_s$$
+
+où :
+- $E_c^{max}$ est l'énergie cinétique maximale de l'électron
+- $W_s$ est le travail d'extraction du métal
+
+### Fréquence seuil
+L'effet photoélectrique n'a lieu que si :
+$$h\\nu\\ge W_s$$
+
+soit :
+$$\\nu\\ge \\nu_0=\\frac{W_s}{h}$$
+
+### Conséquence importante
+Une lumière plus intense ne suffit pas si la fréquence est inférieure à la fréquence seuil.
+
+## 6. Dualité onde-corpuscule
+La lumière possède à la fois :
+
+- des propriétés d'onde
+- des propriétés de particule
+
+Ce double aspect constitue la dualité onde-corpuscule.
+
+## 7. Radioactivité
+La radioactivité est la transformation spontanée d'un noyau instable en un autre noyau.
+
+### Radioactivité alpha
+Émission d'un noyau d'hélium :
+- nombre de masse : $A\\to A-4$
+- numéro atomique : $Z\\to Z-2$
+
+### Radioactivité bêta moins
+Émission d'un électron :
+- nombre de masse inchangé
+- numéro atomique : $Z\\to Z+1$
+
+### Rayonnement gamma
+Émission d'un photon :
+- $A$ inchangé
+- $Z$ inchangé
+
+## 8. Loi de décroissance radioactive
+Le nombre de noyaux restants à l'instant $t$ est :
+$$N(t)=N_0e^{-\\lambda t}$$
+
+où $\\lambda$ est la constante radioactive.
+
+### Demi-vie
+La demi-vie $T_{1/2}$ est la durée au bout de laquelle il reste la moitié des noyaux initiaux :
+$$T_{1/2}=\\frac{\\ln 2}{\\lambda}$$
+
+## 9. Réactions nucléaires
+### Fission
+La fission correspond à la rupture d'un noyau lourd en noyaux plus légers avec libération d'énergie.
+
+### Fusion
+La fusion correspond à l'union de deux noyaux légers pour former un noyau plus lourd avec libération d'énergie.
+
+## 10. Conservation dans les réactions nucléaires
+Dans toute réaction nucléaire, il faut conserver :
+
+- le nombre de masse
+- le numéro atomique
+
+Cette règle permet de compléter une équation nucléaire.
+
+## 11. Méthode pratique
+### Pour les interférences
+1. identifier la formule utile
+2. convertir les unités
+3. calculer l'interfrange ou la différence de marche
+
+### Pour l'effet photoélectrique
+1. calculer l'énergie du photon
+2. comparer à $W_s$
+3. conclure sur l'émission ou non d'électrons
+
+### Pour la radioactivité
+1. repérer le type de désintégration
+2. conserver $A$ et $Z$
+3. utiliser la demi-vie ou la loi exponentielle si besoin
+
+## 12. À retenir
+- les interférences prouvent le caractère ondulatoire de la lumière
+- l'effet photoélectrique montre son aspect corpusculaire
+- la radioactivité et les réactions nucléaires obéissent à des lois de conservation précises`,
     exercises: [
       ex('Interfrange',
         'Dans une expérience d\'Young avec λ = 600 nm, D = 1 m et a = 0,3 mm. L\'interfrange est :',
@@ -1323,38 +2834,132 @@ const CHI_S_CHAPTERS = [
     ],
     course_content: `# Chimie organique
 
-## 1. Les alcools
-**Classification** :
-- **Primaire** : –CH₂–OH (le carbone portant –OH est lié à 1 carbone)
-- **Secondaire** : =CH–OH (lié à 2 carbones)
-- **Tertiaire** : ≡C–OH (lié à 3 carbones)
+## 1. Objectifs du chapitre
+En Terminale S2, ce chapitre doit permettre de :
 
-**Propriétés** : les alcools peuvent s'oxyder (primaire → aldéhyde → acide carboxylique ; secondaire → cétone).
+- reconnaître les principales fonctions organiques du programme
+- classer les alcools, amines et acides carboxyliques
+- comprendre les transformations chimiques usuelles
+- distinguer estérification et saponification
+- relier la chimie organique aux biomolécules comme les acides aminés
 
-**Déshydratation** : alcool → alcène + eau (catalyse acide, température élevée).
+## 2. Les alcools
+Les alcools sont des composés organiques possédant le groupe hydroxyle **–OH** porté par un carbone saturé.
 
-## 2. Les amines
-Dérivées de l'ammoniac (NH₃) par substitution d'un ou plusieurs H par des groupes alkyles.
-- Amine primaire : R–NH₂ ; secondaire : R₂NH ; tertiaire : R₃N.
-- **Caractère basique** des amines (accepteur de proton).
+### Classification
+On classe les alcools selon le nombre de carbones liés au carbone portant –OH :
 
-## 3. Les acides carboxyliques et dérivés
-**Acides carboxyliques** : groupe fonctionnel –COOH.
+- alcool **primaire** : ce carbone est lié à un seul autre carbone
+- alcool **secondaire** : il est lié à deux autres carbones
+- alcool **tertiaire** : il est lié à trois autres carbones
 
-**Estérification** (réversible, lente) :
-$$R–COOH + R'–OH \\rightleftharpoons R–COO–R' + H_2O$$
+### Exemples
+- éthanol : alcool primaire
+- propan-2-ol : alcool secondaire
+- tert-butanol : alcool tertiaire
 
-Caractéristiques : réaction lente, équilibre, catalysée par les ions H+ (acide concentré).
+## 3. Réactions des alcools
+### Oxydation
+- alcool primaire → aldéhyde → acide carboxylique
+- alcool secondaire → cétone
+- alcool tertiaire : pas d'oxydation ménagée usuelle
 
-**Saponification** (totale, irréversible) :
-$$R–COO–R' + NaOH \\rightarrow R–COONa + R'–OH$$
+### Déshydratation
+Sous l'action d'un acide et de la chaleur :
+$$\\text{alcool} \\rightarrow \\text{alcène} + H_2O$$
 
-Caractéristiques : rapide, totale, base forte nécessaire.
+Cette réaction élimine une molécule d'eau.
 
-## 4. Acides α-aminés
-Molécules portant à la fois –NH₂ et –COOH sur le même carbone α.
-- Forment des **peptides** et des **protéines** (liaisons peptidiques).
-- Stéréochimie : L ou D selon la configuration du carbone asymétrique.`,
+## 4. Les amines
+Les amines dérivent de l'ammoniac NH₃ par substitution d'un ou plusieurs atomes d'hydrogène par des groupements alkyles.
+
+### Types d'amines
+- amine primaire : $R-NH_2$
+- amine secondaire : $R_2NH$
+- amine tertiaire : $R_3N$
+
+### Propriété essentielle
+Les amines ont un **caractère basique** car l'atome d'azote possède un doublet libre capable de capter un proton.
+
+## 5. Les acides carboxyliques
+Les acides carboxyliques possèdent le groupe fonctionnel :
+$$-COOH$$
+
+Ils présentent un caractère acide en solution aqueuse.
+
+### Exemples
+- acide méthanoïque
+- acide éthanoïque
+- acides gras à longue chaîne
+
+## 6. Les esters
+Les esters possèdent la fonction :
+$$-COO-$$
+
+Ils sont souvent responsables d'odeurs fruitées.
+
+### Estérification
+Un acide carboxylique réagit avec un alcool selon :
+$$R-COOH + R'-OH \\rightleftharpoons R-COO-R' + H_2O$$
+
+### Caractéristiques
+- réaction lente
+- limitée par un équilibre
+- réversible
+- catalysée par un acide
+
+## 7. La saponification
+La saponification est l'hydrolyse basique d'un ester :
+$$R-COO-R' + NaOH \\rightarrow R-COONa + R'-OH$$
+
+### Caractéristiques
+- réaction rapide
+- totale
+- irréversible
+- produit un alcool et le sel d'un acide carboxylique
+
+La saponification des corps gras est à la base de la fabrication des savons.
+
+## 8. Différence entre estérification et saponification
+### Estérification
+- réactifs : acide + alcool
+- produit : ester + eau
+- lente et équilibrée
+
+### Saponification
+- réactifs : ester + base forte
+- produit : alcool + sel
+- rapide et totale
+
+## 9. Les acides α-aminés
+Les acides α-aminés portent à la fois :
+
+- une fonction amine $-NH_2$
+- une fonction acide carboxylique $-COOH$
+
+sur le même carbone dit **carbone α**.
+
+### Importance biologique
+Les acides aminés sont les unités de base des protéines.
+Ils se lient entre eux par une **liaison peptidique**.
+
+## 10. Méthode pour reconnaître une fonction organique
+1. repérer le groupe caractéristique
+2. identifier la famille chimique
+3. relier la famille aux propriétés connues
+4. vérifier si une transformation est possible
+
+## 11. Erreurs fréquentes
+- confondre alcool secondaire et tertiaire
+- croire que tous les alcools s'oxydent de la même façon
+- confondre ester et acide carboxylique
+- oublier que l'estérification est réversible
+- oublier que la saponification se fait en milieu basique
+
+## 12. À retenir
+- la fonction chimique détermine le comportement de la molécule
+- les alcools, amines et acides carboxyliques sont des familles fondamentales
+- l'estérification et la saponification sont deux transformations opposées mais de nature différente`,
     exercises: [
       ex('Classification des alcools',
         'Le 2-propanol (CH₃–CHOH–CH₃) est un alcool :',
@@ -1391,35 +2996,127 @@ Molécules portant à la fois –NH₂ et –COOH sur le même carbone α.
     ],
     course_content: `# Cinétique et équilibres acido-basiques
 
-## 1. Cinétique chimique
-La **vitesse de réaction** mesure la rapidité de disparition des réactifs ou d'apparition des produits.
+## 1. Objectifs du chapitre
+Ce chapitre permet de :
 
-**Facteurs cinétiques** (qui influencent la vitesse) :
-- **Température** : augmenter T accélère la réaction (règle de Van't Hoff : ×2 par 10°C).
-- **Concentration** : augmenter [réactifs] accélère la réaction.
-- **Catalyseur** : accélère sans être consommé.
-- **Surface de contact** : solides pulvérisés réagissent plus vite.
+- définir la vitesse d'une réaction chimique
+- identifier les facteurs cinétiques
+- utiliser les notions de pH, $K_e$, $K_a$ et $pK_a$
+- étudier l'équilibre d'un couple acide/base
+- exploiter un dosage acido-basique
 
-## 2. Autoprotolyse de l'eau
+## 2. Cinétique chimique
+La cinétique chimique étudie l'évolution d'une réaction au cours du temps.
+
+### Vitesse de réaction
+La vitesse mesure la rapidité de disparition d'un réactif ou d'apparition d'un produit :
+$$v=-\\frac{d[R]}{dt}=\\frac{d[P]}{dt}$$
+
+Cette grandeur dépend du temps et des conditions expérimentales.
+
+## 3. Facteurs cinétiques
+### Température
+Quand la température augmente, l'agitation moléculaire augmente et les collisions efficaces deviennent plus nombreuses.
+
+### Concentration
+Plus la concentration des réactifs est grande, plus les collisions sont fréquentes.
+
+### Catalyseur
+Un catalyseur accélère une réaction sans être consommé à la fin.
+Il abaisse l'énergie d'activation.
+
+### Surface de contact
+Pour un solide, une poudre réagit plus vite qu'un bloc compact.
+
+## 4. Autoprotolyse de l'eau
+L'eau peut jouer à la fois le rôle d'acide et de base :
 $$H_2O + H_2O \\rightleftharpoons H_3O^+ + OH^-$$
-$$K_e = [H_3O^+][OH^-] = 10^{-14} \\text{ à 25°C}$$
 
-**Échelle de pH** : 0–14. pH = 7 (neutre), < 7 (acide), > 7 (basique).
+À 25°C :
+$$K_e=[H_3O^+][OH^-]=10^{-14}$$
 
-## 3. Acides et bases faibles
-Un acide faible AH n'est que partiellement dissocié :
+Dans l'eau pure :
+$$[H_3O^+]=[OH^-]=10^{-7}\\ \\text{mol·L}^{-1}$$
+donc :
+$$pH=7$$
+
+## 5. pH d'une solution
+Le pH est défini par :
+$$pH=-\\log[H_3O^+]$$
+
+### Interprétation
+- solution acide : $pH<7$
+- solution neutre : $pH=7$
+- solution basique : $pH>7$
+
+## 6. Acides et bases faibles
+Un acide faible ne se dissocie que partiellement dans l'eau :
 $$AH + H_2O \\rightleftharpoons A^- + H_3O^+$$
-$$K_a = \\frac{[A^-][H_3O^+]}{[AH]}\\quad ; \\quad pK_a = -\\log K_a$$
 
-**Relation de Henderson-Hasselbalch** : $pH = pK_a + \\log\\frac{[A^-]}{[AH]}$
+La constante d'acidité vaut :
+$$K_a=\\frac{[A^-][H_3O^+]}{[AH]}$$
 
-À l'équivalence (base forte + acide faible) : pH > 7 (solution basique, hydrolyse basique de A⁻).
+et :
+$$pK_a=-\\log K_a$$
 
-## 4. Dosages acido-basiques
-**Point d'équivalence** : quantité de base = quantité d'acide. Repéré par indicateur coloré ou pH-mètre.
+### Sens physique
+- plus $K_a$ est grand, plus l'acide est fort
+- plus $pK_a$ est petit, plus l'acide est fort
 
-Acide fort + base forte → sel + eau, pH équivalence = 7.
-Acide faible + base forte → pH > 7 à l'équivalence.`,
+## 7. Couple acide/base et relation de Henderson-Hasselbalch
+Pour un couple $AH/A^-$ :
+$$pH=pK_a+\\log\\frac{[A^-]}{[AH]}$$
+
+Cette relation est fondamentale pour les solutions tampons et les dosages.
+
+### Cas particulier
+Si $[A^-]=[AH]$, alors :
+$$pH=pK_a$$
+
+Ce cas apparaît au point de demi-équivalence dans le dosage d'un acide faible par une base forte.
+
+## 8. Notion d'équilibre chimique
+Une réaction limitée atteint un état d'équilibre dynamique.
+
+À l'équilibre :
+- les réactifs et produits coexistent
+- les vitesses directe et inverse sont égales
+
+Un catalyseur n'en change pas la composition finale, il aide seulement à l'atteindre plus vite.
+
+## 9. Dosages acido-basiques
+Le dosage consiste à déterminer la concentration d'une espèce en la faisant réagir avec une solution de concentration connue.
+
+### Point d'équivalence
+À l'équivalence, les quantités de matière sont dans les proportions stoechiométriques.
+
+### Cas classiques
+- acide fort + base forte : $pH=7$ à l'équivalence
+- acide faible + base forte : $pH>7$ à l'équivalence
+
+Le point d'équivalence peut être repéré :
+- par un indicateur coloré
+- par un suivi pH-métrique
+
+## 10. Méthode pratique pour un dosage
+1. écrire l'équation de réaction
+2. identifier les espèces réagissantes
+3. repérer la stoechiométrie
+4. utiliser la relation à l'équivalence
+5. calculer la concentration inconnue
+
+## 11. Erreurs fréquentes
+- confondre acide fort et solution acide
+- oublier l'unité de concentration
+- croire qu'un catalyseur change l'équilibre
+- oublier qu'à la demi-équivalence on a $pH=pK_a$
+- confondre $K_e$, $K_a$ et $pK_a$
+
+## 12. À retenir
+- la cinétique décrit la vitesse d'évolution d'une réaction
+- le pH traduit l'acidité d'une solution
+- l'équilibre acido-basique se lit avec $K_a$ et $pK_a$
+- le dosage est un outil expérimental central en chimie analytique`,
     exercises: [
       ex('Facteurs cinétiques',
         'Un catalyseur augmente la vitesse de réaction en :',

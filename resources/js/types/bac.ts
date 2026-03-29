@@ -1,6 +1,16 @@
 export type BacRole = 'eleve' | 'professeur' | 'admin';
-export type ExerciseType = 'qcm' | 'calcul' | 'dissertation' | 'vrai_faux' | 'oral';
-export type PlanningTaskType = 'cours' | 'exercices' | 'revision' | 'simulation' | 'annale';
+export type ExerciseType =
+    | 'qcm'
+    | 'calcul'
+    | 'dissertation'
+    | 'vrai_faux'
+    | 'oral';
+export type PlanningTaskType =
+    | 'cours'
+    | 'exercices'
+    | 'revision'
+    | 'simulation'
+    | 'annale';
 
 export type BacUser = {
     id: string;
@@ -218,6 +228,11 @@ export type AdminStats = {
     premium_revenue_xof: number;
     active_today: number;
     series_distribution: Array<{ code: string; count: number; pct: number }>;
-    hardest_chapters: Array<{ title: string; subject: string; error_rate: number; attempts: number }>;
+    hardest_chapters: Array<{
+        title: string;
+        subject: string;
+        error_rate: number;
+        attempts: number;
+    }>;
     daily_active_users: Array<{ date: string; count: number }>;
 };

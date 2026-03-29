@@ -22,7 +22,10 @@ export default function Subjects() {
         setPage('subjects');
     }, [setPage]);
 
-    const { data: series = [] } = useQuery({ queryKey: ['series'], queryFn: subjectsApi.series });
+    const { data: series = [] } = useQuery({
+        queryKey: ['series'],
+        queryFn: subjectsApi.series,
+    });
 
     const subjectsQuery = useQuery({
         queryKey: ['subjects', selectedSerie],
@@ -34,7 +37,7 @@ export default function Subjects() {
             <section className="space-y-6">
                 <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
                     <div>
-                        <p className="text-sm font-semibold uppercase tracking-[0.16em] text-green-dark">
+                        <p className="text-sm font-semibold tracking-[0.16em] text-green-dark uppercase">
                             Matières
                         </p>
                         <h1 className="mt-2 text-4xl font-semibold text-slate-950">
@@ -43,7 +46,10 @@ export default function Subjects() {
                     </div>
 
                     <div className="w-full md:w-56">
-                        <Select value={selectedSerie} onValueChange={setSelectedSerie}>
+                        <Select
+                            value={selectedSerie}
+                            onValueChange={setSelectedSerie}
+                        >
                             <SelectTrigger className="h-12 w-full rounded-2xl bg-white">
                                 <SelectValue placeholder="Choisir une série" />
                             </SelectTrigger>
@@ -67,7 +73,9 @@ export default function Subjects() {
                                         <div>
                                             <div
                                                 className="inline-flex size-12 items-center justify-center rounded-2xl text-2xl"
-                                                style={{ backgroundColor: `${subject.color}22` }}
+                                                style={{
+                                                    backgroundColor: `${subject.color}22`,
+                                                }}
                                             >
                                                 {subject.icon}
                                             </div>
@@ -85,7 +93,10 @@ export default function Subjects() {
                                     <div className="mt-4 flex items-center gap-2 text-sm text-slate-500">
                                         <span>Coeff {subject.coefficient}</span>
                                         <span>·</span>
-                                        <span>{subject.chapters_count ?? 0} chapitres</span>
+                                        <span>
+                                            {subject.chapters_count ?? 0}{' '}
+                                            chapitres
+                                        </span>
                                     </div>
                                 </CardContent>
                             </Card>

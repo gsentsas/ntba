@@ -1,28 +1,34 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useMemo } from 'react';
-import { BrowserRouter, Navigate, Outlet, Route, Routes } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
+import {
+    BrowserRouter,
+    Navigate,
+    Outlet,
+    Route,
+    Routes,
+} from 'react-router-dom';
 
+import AdminContent from '@/pages/admin/AdminContent';
+import AdminDashboard from '@/pages/admin/AdminDashboard';
+import AdminExercises from '@/pages/admin/AdminExercises';
+import AdminForum from '@/pages/admin/AdminForum';
+import AdminLayout from '@/pages/admin/AdminLayout';
+import AdminUsers from '@/pages/admin/AdminUsers';
+import AIChat from '@/pages/AIChat';
+import Annales from '@/pages/Annales';
 import ChapterDetail from '@/pages/ChapterDetail';
+import Community from '@/pages/Community';
 import Dashboard from '@/pages/dashboard';
+import Landing from '@/pages/Landing';
 import Login from '@/pages/Login';
 import Register from '@/pages/Register';
 import Subjects from '@/pages/Subjects';
-import AIChat from '@/pages/AIChat';
 import Quiz from '@/pages/Quiz';
 import Planning from '@/pages/Planning';
 import Stats from '@/pages/Stats';
-import Community from '@/pages/Community';
-import Annales from '@/pages/Annales';
 import Simulation from '@/pages/Simulation';
 import Premium from '@/pages/Premium';
-import AdminLayout from '@/pages/admin/AdminLayout';
-import AdminDashboard from '@/pages/admin/AdminDashboard';
-import AdminUsers from '@/pages/admin/AdminUsers';
-import AdminExercises from '@/pages/admin/AdminExercises';
-import AdminContent from '@/pages/admin/AdminContent';
-import AdminForum from '@/pages/admin/AdminForum';
-import Landing from '@/pages/Landing';
 import { useAppStore } from '@/store';
 
 function PrivateRoute() {
@@ -61,7 +67,10 @@ export default function App() {
                     <Route element={<PrivateRoute />}>
                         <Route path="/dashboard" element={<Dashboard />} />
                         <Route path="/subjects" element={<Subjects />} />
-                        <Route path="/chapters/:id" element={<ChapterDetail />} />
+                        <Route
+                            path="/chapters/:id"
+                            element={<ChapterDetail />}
+                        />
                         <Route path="/ai-chat" element={<AIChat />} />
                         <Route path="/quiz" element={<Quiz />} />
                         <Route path="/planning" element={<Planning />} />
@@ -90,7 +99,9 @@ export default function App() {
                 position="top-right"
                 toastOptions={{
                     style: { borderRadius: 12, fontSize: 14 },
-                    success: { iconTheme: { primary: '#1D9E75', secondary: '#fff' } },
+                    success: {
+                        iconTheme: { primary: '#1D9E75', secondary: '#fff' },
+                    },
                 }}
             />
         </QueryClientProvider>

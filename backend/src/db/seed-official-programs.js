@@ -507,22 +507,135 @@ $\\begin{cases}x=f(t)\\\\y=g(t)\\end{cases}$ : tangente en $t_0$ dirigée par $(
         ],
         course_content: `# Fonctions numériques et usuelles (S2/S4)
 
-## 1. Rappels de continuité et TVI
-Identiques au programme S1/S3 : voir fiche correspondante.
+## 1. Objectifs du chapitre
+Dans ce chapitre, l'élève de Terminale S2 doit savoir :
 
-## 2. Fonctions usuelles au programme S2/S4
-- **Polynômes et fractions rationnelles** : dérivées, limites, branches infinies
-- **Fonctions trigonométriques** : $\\sin, \\cos, \\tan$ et leurs primitives
-- **Logarithme népérien** : $\\ln x$ (domaine $]0;+\\infty[$), $(\\ln x)'=1/x$
-- **Fonction exponentielle** : $e^x$, primitive de $e^x$
-- **Fonctions puissances** $x^\\alpha$ pour $\\alpha\\in\\mathbb{R}$
+- déterminer le domaine de définition d'une fonction
+- calculer des limites et reconnaître une forme indéterminée
+- étudier la continuité d'une fonction
+- utiliser le théorème des valeurs intermédiaires
+- dériver une fonction composée, quotient, produit ou réciproque
+- dresser un tableau de variations complet
+- interpréter graphiquement les résultats
 
-## 3. Étude de fonctions
-1. Domaine de définition
-2. Parité, périodicité
-3. Limites aux bornes, asymptotes
-4. Dérivée, tableau de variation
-5. Courbe représentative`,
+## 2. Domaine de définition
+Le **domaine de définition** d'une fonction est l'ensemble des réels pour lesquels son écriture a un sens.
+
+### Cas classiques
+- Pour une fraction : le dénominateur doit être non nul.
+- Pour un logarithme : l'expression à l'intérieur doit être strictement positive.
+- Pour une racine carrée : l'expression sous le radical doit être positive ou nulle.
+
+### Exemples
+- $f(x)=\\frac{2x+1}{x-3}$ est définie sur $\\mathbb{R}\\setminus\\{3\\}$
+- $g(x)=\\ln(x+2)$ est définie sur $]-2;+\\infty[$
+- $h(x)=\\sqrt{5-x}$ est définie sur $]-\\infty;5]$
+
+## 3. Continuité et théorème des valeurs intermédiaires
+Une fonction $f$ est **continue en $a$** si :
+$$\\lim_{x\\to a}f(x)=f(a)$$
+
+Les polynômes, fonctions rationnelles sur leur domaine, fonctions exponentielle, logarithme et trigonométriques usuelles sont continues sur leurs domaines de définition.
+
+### Théorème des valeurs intermédiaires (TVI)
+Si $f$ est continue sur $[a;b]$ et si $f(a)$ et $f(b)$ sont de signes contraires, alors il existe au moins un réel $c\\in]a;b[$ tel que $f(c)=0$.
+
+### Utilité au BAC
+Le TVI sert surtout à :
+
+- montrer qu'une équation admet une solution
+- localiser une racine dans un intervalle
+- justifier numériquement une existence avant approximation
+
+## 4. Limites et asymptotes
+L'étude des limites permet de comprendre le comportement d'une courbe aux bornes du domaine.
+
+### Asymptote horizontale
+Si $\\lim_{x\\to \\pm\\infty} f(x)=\\ell$, alors la droite $y=\\ell$ est une asymptote horizontale.
+
+### Asymptote verticale
+Si $\\lim_{x\\to a} f(x)=\\pm\\infty$, alors la droite $x=a$ est une asymptote verticale.
+
+### Asymptote oblique
+Si $\\lim_{x\\to \\pm\\infty}[f(x)-(ax+b)]=0$, alors la droite $y=ax+b$ est une asymptote oblique.
+
+### Méthodes usuelles
+- factoriser par le terme de plus haut degré
+- utiliser les limites de référence
+- reconnaître les formes $\\frac{\\infty}{\\infty}$, $\\infty-\\infty$, $0\\times\\infty$
+
+## 5. Dérivation
+La dérivée mesure la variation instantanée de la fonction.
+
+### Formules à maîtriser
+- $(u+v)' = u'+v'$
+- $(uv)' = u'v+uv'$
+- $\\left(\\frac{u}{v}\\right)' = \\frac{u'v-uv'}{v^2}$
+- $(e^u)' = u'e^u$
+- $(\\ln u)' = \\frac{u'}{u}$
+- $(u^\\alpha)' = \\alpha u' u^{\\alpha-1}$
+
+### Fonctions usuelles
+- $(x^n)' = nx^{n-1}$
+- $(\\sin x)' = \\cos x$
+- $(\\cos x)' = -\\sin x$
+- $(\\tan x)' = 1+\\tan^2 x$ sur son domaine
+- $(e^x)' = e^x$
+- $(\\ln x)' = \\frac{1}{x}$ sur $]0;+\\infty[$
+
+## 6. Fonction réciproque
+Si une fonction est continue, strictement monotone et bijective sur un intervalle, alors elle admet une fonction réciproque.
+
+Si en plus $f$ est dérivable et $f'(x)\\neq 0$, alors :
+$$\\left(f^{-1}\\right)'(y)=\\frac{1}{f'(f^{-1}(y))}$$
+
+Cette formule est importante pour les fonctions logarithmes, exponentielles et certaines fonctions trigonométriques restreintes.
+
+## 7. Étude complète d'une fonction
+Une étude de fonction au BAC suit en général cet ordre :
+
+1. déterminer le domaine
+2. calculer les limites utiles
+3. étudier la continuité éventuelle
+4. calculer la dérivée
+5. étudier le signe de la dérivée
+6. dresser le tableau de variations
+7. repérer les asymptotes et points remarquables
+8. tracer ou interpréter l'allure de la courbe
+
+## 8. Fonctions trigonométriques, logarithme et exponentielle
+### Fonctions trigonométriques
+- $\\sin$ et $\\cos$ sont définies sur $\\mathbb{R}$ et périodiques de période $2\\pi$
+- $\\tan$ est définie sur $\\mathbb{R}\\setminus\\left\\{\\frac{\\pi}{2}+k\\pi\\right\\}$
+
+### Logarithme népérien
+- domaine : $]0;+\\infty[$
+- croissance : la fonction $\\ln$ est strictement croissante
+- propriétés :
+  - $\\ln(ab)=\\ln a + \\ln b$
+  - $\\ln\\left(\\frac{a}{b}\\right)=\\ln a - \\ln b$
+  - $\\ln(a^n)=n\\ln a$
+
+### Exponentielle
+- définie sur $\\mathbb{R}$
+- toujours strictement positive
+- strictement croissante
+- propriétés :
+  - $e^{a+b}=e^ae^b$
+  - $e^{-a}=\\frac{1}{e^a}$
+  - $\\ln(e^x)=x$ et $e^{\\ln x}=x$ pour $x>0$
+
+## 9. Conseils méthode
+- ne jamais dériver avant d'avoir trouvé le domaine
+- dans un TVI, toujours vérifier la continuité puis le changement de signe
+- pour une limite à l'infini d'une fraction rationnelle, diviser par la plus grande puissance de $x$
+- dans un tableau de variations, séparer clairement les zéros de la dérivée et les valeurs interdites
+
+## 10. À retenir
+- la continuité permet de justifier l'existence d'une racine
+- la dérivée donne le sens de variation
+- les limites déterminent les asymptotes
+- l'étude de fonction est une synthèse de plusieurs outils du programme`,
         exercises: [
           ex('Dérivée – règle de chaîne',
             'La dérivée de $f(x) = e^{x^2-1}$ est :',
@@ -557,18 +670,127 @@ Identiques au programme S1/S3 : voir fiche correspondante.
         ],
         course_content: `# Suites numériques (S2/S4)
 
-## 1. Théorèmes de convergence
-- Suite croissante et majorée ⟹ convergente
-- Suite décroissante et minorée ⟹ convergente
+## 1. Notion de suite
+Une suite numérique est une fonction définie sur $\\mathbb{N}$.
+On note ses termes $u_0, u_1, u_2, \\dots, u_n$.
 
-## 2. Suite définie par U_{n+1} = f(U_n)
-**Étapes** :
-1. Trouver un intervalle stable $I$ : $f(I)\\subset I$
-2. Montrer la monotonie de $(u_n)$ sur $I$
-3. En déduire la convergence vers $l$ tel que $l=f(l)$
+On rencontre principalement :
 
-## 3. Suites adjacentes
-$(u_n)$ croissante, $(v_n)$ décroissante, $v_n-u_n\\to 0$ ⟹ même limite.`,
+- les suites définies **explicitement** : $u_n=f(n)$
+- les suites définies **par récurrence** : $u_{n+1}=f(u_n)$
+
+## 2. Suites arithmétiques et géométriques
+### Suite arithmétique
+Une suite est arithmétique si :
+$$u_{n+1}=u_n+r$$
+où $r$ est la raison.
+
+Formule explicite :
+$$u_n=u_0+nr$$
+
+### Suite géométrique
+Une suite est géométrique si :
+$$u_{n+1}=qu_n$$
+où $q$ est la raison.
+
+Formule explicite :
+$$u_n=u_0q^n$$
+
+### Interprétation rapide
+- si $r>0$, une suite arithmétique est croissante
+- si $q>1$ et $u_0>0$, une suite géométrique est croissante
+- si $0<q<1$, une suite géométrique positive décroît vers $0$
+
+## 3. Monotonie d'une suite
+Pour étudier la monotonie, on compare :
+
+- soit $u_{n+1}-u_n$
+- soit, si les termes sont positifs, $\\frac{u_{n+1}}{u_n}$
+
+### Règles
+- si $u_{n+1}-u_n \\ge 0$, la suite est croissante
+- si $u_{n+1}-u_n \\le 0$, la suite est décroissante
+
+## 4. Suites bornées
+Une suite est :
+
+- **majorée** si $u_n \\le M$ pour tout $n$
+- **minorée** si $u_n \\ge m$ pour tout $n$
+- **bornée** si elle est à la fois majorée et minorée
+
+L'encadrement est une étape clé avant toute preuve de convergence.
+
+## 5. Théorèmes de convergence
+### Théorème fondamental
+- toute suite croissante et majorée converge
+- toute suite décroissante et minorée converge
+
+Ce résultat est central en Terminale S2.
+
+### Théorème des gendarmes
+Si $u_n \\le v_n \\le w_n$ et si $u_n\\to l$ et $w_n\\to l$, alors $v_n\\to l$.
+
+## 6. Suites adjacentes
+Deux suites $(u_n)$ et $(v_n)$ sont adjacentes si :
+
+- l'une est croissante
+- l'autre est décroissante
+- $v_n-u_n\\to 0$
+
+Alors elles convergent vers la même limite.
+
+## 7. Suites définies par récurrence : méthode complète
+Pour une suite définie par :
+$$u_{n+1}=f(u_n)$$
+
+on suit en général cette méthode :
+
+### Étape 1 : trouver un intervalle stable
+On cherche un intervalle $I$ tel que si $u_n\\in I$, alors $u_{n+1}=f(u_n)\\in I$.
+
+### Étape 2 : montrer que la suite est monotone
+On étudie le signe de $u_{n+1}-u_n$ ou on utilise le sens de variation de $f$.
+
+### Étape 3 : montrer qu'elle est bornée
+On prouve que tous les termes restent dans l'intervalle stable.
+
+### Étape 4 : conclure à la convergence
+La suite étant monotone et bornée, elle converge.
+
+### Étape 5 : calculer la limite
+Si $u_n\\to l$ et si $f$ est continue, alors :
+$$l=f(l)$$
+On résout cette équation, puis on choisit la solution compatible avec les bornes de la suite.
+
+## 8. Limites usuelles
+À connaître :
+
+- si $|q|<1$, alors $q^n\\to 0$
+- si $q>1$, alors $q^n\\to +\\infty$
+- si $q<-1$, alors la suite $q^n$ diverge par oscillation d'amplitude croissante
+- $\\frac{1}{n}\\to 0$
+- $\\frac{n+1}{2n+3}\\to \\frac{1}{2}$
+
+## 9. Raisonnement par récurrence
+La récurrence permet de démontrer une propriété vraie pour tout entier naturel.
+
+Elle comporte deux étapes :
+
+1. **initialisation** : vérifier la propriété au premier rang
+2. **hérédité** : supposer la propriété vraie au rang $n$ et la montrer au rang $n+1$
+
+Cette méthode est souvent utilisée pour prouver qu'une suite est bornée.
+
+## 10. Erreurs fréquentes
+- résoudre $l=f(l)$ sans avoir prouvé que la suite converge
+- oublier de montrer que la suite reste dans un intervalle stable
+- confondre suite bornée et suite convergente
+- conclure à la monotonie sans signe explicite de $u_{n+1}-u_n$
+
+## 11. À retenir
+- monotone + bornée = convergente
+- pour une suite récurrente, la limite est un point fixe
+- l'encadrement et la récurrence sont des outils essentiels du chapitre`,
         exercises: [
           ex('Suite récurrente – point fixe',
             "La suite définie par $u_0=0$ et $u_{n+1}=\\frac{1}{2}u_n+1$ converge vers :",
@@ -605,19 +827,115 @@ $(u_n)$ croissante, $(v_n)$ décroissante, $v_n-u_n\\to 0$ ⟹ même limite.`,
         ],
         course_content: `# Calcul intégral et équations différentielles (S2/S4)
 
-## Calcul intégral
-Voir fiche Calcul intégral (S1) pour les définitions et propriétés complètes.
+## 1. Primitives et intégrales
+Une primitive de $f$ sur un intervalle $I$ est une fonction $F$ telle que :
+$$F'(x)=f(x)$$
 
-Points spécifiques S2 :
-- Calcul d'aires entre courbes : $\\mathcal{A}=\\int_a^b|f-g|\\,dx$
-- Volumes de révolution : $V=\\pi\\int_a^b[f(x)]^2\\,dx$
+Si $F$ est une primitive de $f$ sur $[a;b]$, alors :
+$$\\int_a^b f(x)\\,dx = F(b)-F(a)$$
 
-## Équations différentielles
-**1er ordre** : $y'+ay=0$ → $y=Ce^{-ax}$
-**2ème ordre** : résolution via équation caractéristique $r^2+pr+q=0$
-- $\\Delta>0$ : $y=C_1e^{r_1x}+C_2e^{r_2x}$
-- $\\Delta=0$ : $y=(C_1+C_2x)e^{rx}$
-- $\\Delta<0$ : $y=e^{\\alpha x}(C_1\\cos\\beta x+C_2\\sin\\beta x)$`,
+Cette formule est la base du calcul intégral au BAC.
+
+## 2. Propriétés de l'intégrale
+### Linéarité
+$$\\int_a^b (\\alpha f + \\beta g)=\\alpha\\int_a^b f + \\beta\\int_a^b g$$
+
+### Relation de Chasles
+$$\\int_a^b f = \\int_a^c f + \\int_c^b f$$
+
+### Positivité
+Si $f(x)\\ge 0$ sur $[a;b]$, alors :
+$$\\int_a^b f(x)\\,dx \\ge 0$$
+
+## 3. Primitives usuelles à maîtriser
+- $\\int x^n\\,dx = \\frac{x^{n+1}}{n+1}+C$ pour $n\\neq -1$
+- $\\int \\frac{1}{x}\\,dx = \\ln|x| + C$
+- $\\int e^x\\,dx = e^x + C$
+- $\\int \\sin x\\,dx = -\\cos x + C$
+- $\\int \\cos x\\,dx = \\sin x + C$
+
+## 4. Intégration par parties
+Pour deux fonctions dérivables $u$ et $v$ :
+$$\\int_a^b u(x)v'(x)\\,dx = [u(x)v(x)]_a^b - \\int_a^b u'(x)v(x)\\,dx$$
+
+### Quand l'utiliser ?
+- lorsqu'un produit apparaît
+- quand une primitive directe est difficile
+- pour les expressions du type $xe^x$, $x\\sin x$, $x\\ln x$
+
+## 5. Aires
+### Aire sous une courbe
+Si $f(x)\\ge 0$ sur $[a;b]$, alors l'aire entre la courbe de $f$ et l'axe des abscisses est :
+$$\\mathcal{A}=\\int_a^b f(x)\\,dx$$
+
+### Aire entre deux courbes
+Si $f(x)\\ge g(x)$ sur $[a;b]$, alors :
+$$\\mathcal{A}=\\int_a^b [f(x)-g(x)]\\,dx$$
+
+Si on ne connaît pas l'ordre des courbes, on écrit :
+$$\\mathcal{A}=\\int_a^b |f(x)-g(x)|\\,dx$$
+
+## 6. Volumes de révolution
+Le volume du solide obtenu en faisant tourner la courbe $y=f(x)$ autour de l'axe des abscisses sur $[a;b]$ est :
+$$V=\\pi\\int_a^b [f(x)]^2\\,dx$$
+
+Cette formule est très classique en Terminale S2.
+
+## 7. Équations différentielles du premier ordre
+### Forme homogène
+On considère :
+$$y'+ay=0$$
+
+La solution générale est :
+$$y=Ce^{-ax}$$
+
+où $C$ est une constante réelle.
+
+### Avec condition initiale
+Si on connaît une valeur comme $y(0)=k$, on remplace dans la solution générale pour trouver $C$.
+
+## 8. Équations différentielles du second ordre
+On considère une équation de la forme :
+$$y''+py'+qy=0$$
+
+On lui associe l'équation caractéristique :
+$$r^2+pr+q=0$$
+
+### Cas 1 : discriminant positif
+Si $\\Delta>0$, les racines sont $r_1$ et $r_2$, alors :
+$$y=C_1e^{r_1x}+C_2e^{r_2x}$$
+
+### Cas 2 : discriminant nul
+Si $\\Delta=0$, la racine double est $r$, alors :
+$$y=(C_1+C_2x)e^{rx}$$
+
+### Cas 3 : discriminant négatif
+Si $\\Delta<0$, les racines sont complexes $\\alpha\\pm i\\beta$, alors :
+$$y=e^{\\alpha x}(C_1\\cos \\beta x + C_2\\sin \\beta x)$$
+
+## 9. Méthode de résolution
+### Pour une intégrale
+1. identifier la primitive directe si possible
+2. sinon penser à l'intégration par parties
+3. vérifier les bornes
+4. calculer proprement la valeur numérique
+
+### Pour une équation différentielle
+1. reconnaître le type d'équation
+2. écrire la solution générale
+3. utiliser la condition initiale pour trouver les constantes
+
+## 10. Erreurs fréquentes
+- oublier la constante dans une primitive
+- confondre aire et intégrale algébrique
+- oublier le carré dans la formule du volume de révolution
+- résoudre l'équation caractéristique sans distinguer les trois cas du discriminant
+
+## 11. À retenir
+- l'intégrale calcule une accumulation
+- l'aire entre deux courbes utilise une différence
+- les équations différentielles décrivent une évolution
+- en S2, ce chapitre relie analyse, géométrie et modélisation`,
         exercises: [
           ex("Calcul d'intégrale",
             "$\\int_1^e \\frac{1}{x}\\,dx$ vaut :",
@@ -655,22 +973,111 @@ Points spécifiques S2 :
         course_content: `# Organisation de données : statistiques et probabilités (S2/S4)
 
 ## 1. Statistiques à deux variables
-**Nuage de points** : chaque observation est un point $(x_i, y_i)$.
-**Point moyen** : $G=(\\bar{x}, \\bar{y})$.
-**Covariance** : $\\text{cov}(X,Y) = \\frac{1}{n}\\sum x_iy_i - \\bar{x}\\bar{y}$
+Quand on observe simultanément deux caractères quantitatifs, on obtient une série statistique à deux variables.
 
-## 2. Droite de régression (moindres carrés)
-La droite $y=ax+b$ minimise $\\sum(y_i-ax_i-b)^2$ :
-$$a = \\frac{\\text{cov}(X,Y)}{V(X)}, \\quad b = \\bar{y}-a\\bar{x}$$
-La droite passe par $G=(\\bar{x},\\bar{y})$.
+Chaque observation est représentée par un point :
+$$M_i(x_i,y_i)$$
 
-## 3. Coefficient de corrélation linéaire
-$$r = \\frac{\\text{cov}(X,Y)}{\\sigma_X\\sigma_Y}$$
-- $r=1$ ou $r=-1$ : corrélation parfaite
-- $|r|>0{,}9$ : forte corrélation linéaire
+L'ensemble de ces points forme le **nuage de points**.
 
-## 4. Variables aléatoires et loi binomiale
-$X\\sim B(n,p)$ : $P(X=k) = \\binom{n}{k}p^k(1-p)^{n-k}$, $E(X)=np$, $V(X)=np(1-p)$.`,
+## 2. Point moyen et lecture du nuage
+On calcule les moyennes :
+$$\\bar{x}=\\frac{1}{n}\\sum x_i, \\qquad \\bar{y}=\\frac{1}{n}\\sum y_i$$
+
+Le point moyen est :
+$$G(\\bar{x},\\bar{y})$$
+
+Ce point joue un rôle important car la droite de régression passe par lui.
+
+## 3. Covariance
+La covariance mesure le sens de variation commune de deux variables :
+$$\\mathrm{cov}(X,Y)=\\overline{xy}-\\bar{x}\\bar{y}$$
+
+### Interprétation
+- covariance positive : quand $X$ augmente, $Y$ a tendance à augmenter
+- covariance négative : quand $X$ augmente, $Y$ a tendance à diminuer
+- covariance proche de 0 : liaison linéaire faible ou inexistante
+
+## 4. Droite de régression linéaire
+On cherche une droite d'ajustement :
+$$y=ax+b$$
+
+Elle est obtenue par la méthode des moindres carrés.
+
+### Formules
+$$a=\\frac{\\mathrm{cov}(X,Y)}{V(X)}$$
+$$b=\\bar{y}-a\\bar{x}$$
+
+### Rôle
+La droite de régression permet :
+
+- d'ajuster le nuage de points
+- d'estimer une valeur de $Y$ à partir de $X$
+- de modéliser une tendance
+
+## 5. Coefficient de corrélation linéaire
+Il est défini par :
+$$r=\\frac{\\mathrm{cov}(X,Y)}{\\sigma_X\\sigma_Y}$$
+
+où $\\sigma_X$ et $\\sigma_Y$ sont les écarts-types.
+
+### Interprétation
+- $r=1$ : corrélation linéaire positive parfaite
+- $r=-1$ : corrélation linéaire négative parfaite
+- $r$ proche de 0 : absence de corrélation linéaire significative
+
+Plus $|r|$ est proche de 1, plus la liaison linéaire est forte.
+
+## 6. Variables aléatoires discrètes
+Une variable aléatoire discrète prend un nombre fini ou dénombrable de valeurs.
+
+### Espérance
+L'espérance est la moyenne théorique :
+$$E(X)=\\sum x_ip_i$$
+
+### Variance
+La variance mesure la dispersion :
+$$V(X)=E(X^2)-[E(X)]^2$$
+
+### Écart-type
+$$\\sigma(X)=\\sqrt{V(X)}$$
+
+## 7. Loi de Bernoulli et loi binomiale
+### Loi de Bernoulli
+Une épreuve de Bernoulli admet deux issues :
+
+- succès avec probabilité $p$
+- échec avec probabilité $1-p$
+
+### Loi binomiale
+Si l'on répète $n$ fois de manière indépendante une épreuve de Bernoulli de probabilité $p$, alors le nombre de succès $X$ suit une loi binomiale :
+$$X\\sim B(n,p)$$
+
+### Formule de probabilité
+$$P(X=k)=\\binom{n}{k}p^k(1-p)^{n-k}$$
+
+### Paramètres
+$$E(X)=np, \\qquad V(X)=np(1-p)$$
+
+## 8. Méthode pratique en probabilité
+Pour résoudre un exercice :
+
+1. identifier l'expérience aléatoire
+2. préciser les événements ou la variable aléatoire
+3. vérifier si les épreuves sont indépendantes
+4. reconnaître une loi binomiale si besoin
+5. utiliser la bonne formule sans oublier les conditions
+
+## 9. Erreurs fréquentes
+- confondre covariance et coefficient de corrélation
+- oublier que la droite de régression passe par le point moyen
+- utiliser une loi binomiale alors que les répétitions ne sont pas indépendantes
+- oublier le coefficient binomial $\\binom{n}{k}$
+
+## 10. À retenir
+- les statistiques à deux variables servent à analyser une tendance
+- la corrélation mesure l'intensité d'une liaison linéaire
+- la loi binomiale modélise un nombre de succès sur $n$ essais indépendants`,
         exercises: [
           ex('Covariance',
             'Si $\\overline{xy}=15$, $\\bar{x}=3$, $\\bar{y}=4$, alors $\\text{cov}(X,Y)$ =',
@@ -707,12 +1114,135 @@ $X\\sim B(n,p)$ : $P(X=k) = \\binom{n}{k}p^k(1-p)^{n-k}$, $E(X)=np$, $V(X)=np(1-
         ],
         course_content: `# Nombres complexes (S2/S4)
 
-Contenu identique à la fiche Nombres complexes S1/S3.
+## 1. Forme algébrique
+Un nombre complexe s'écrit :
+$$z=a+ib$$
+avec $a,b\\in\\mathbb{R}$ et $i^2=-1$.
 
-Points d'insistance pour la série S2 :
-- **Linéarisation** de $\\cos^n\\theta$ et $\\sin^n\\theta$ via les formules d'Euler
-- **Calcul de $\\cos n\\theta$** via $\\text{Re}(e^{in\\theta})$
-- **Applications géométriques** : identification d'une isométrie ou similitude`,
+### Parties réelle et imaginaire
+- partie réelle : $\\Re(z)=a$
+- partie imaginaire : $\\Im(z)=b$
+
+Deux nombres complexes sont égaux si et seulement si leurs parties réelles et imaginaires sont égales.
+
+## 2. Opérations
+### Addition
+$$(a+ib)+(c+id)=(a+c)+i(b+d)$$
+
+### Multiplication
+$$(a+ib)(c+id)=(ac-bd)+i(ad+bc)$$
+
+### Conjugué
+Le conjugué de $z=a+ib$ est :
+$$\\overline{z}=a-ib$$
+
+### Module
+$$|z|=\\sqrt{a^2+b^2}$$
+
+Propriétés :
+- $z\\overline{z}=|z|^2$
+- $|z_1z_2|=|z_1||z_2|$
+
+## 3. Forme trigonométrique et exponentielle
+Si $z\\neq 0$, on peut écrire :
+$$z=r(\\cos\\theta+i\\sin\\theta)=re^{i\\theta}$$
+
+où :
+- $r=|z|>0$
+- $\\theta$ est un argument de $z$
+
+Cette écriture est très utile pour les puissances, les racines et la géométrie.
+
+## 4. Argument
+L'argument d'un complexe non nul est l'angle orienté entre l'axe réel positif et le vecteur image de $z$.
+
+On note :
+$$\\arg(z)=\\theta \\pmod{2\\pi}$$
+
+### Propriétés
+- $\\arg(z_1z_2)=\\arg(z_1)+\\arg(z_2)$
+- $\\arg\\left(\\frac{z_1}{z_2}\\right)=\\arg(z_1)-\\arg(z_2)$
+
+## 5. Formule de Moivre
+Si :
+$$z=r(\\cos\\theta+i\\sin\\theta)$$
+alors :
+$$z^n=r^n(\\cos n\\theta+i\\sin n\\theta)$$
+
+ou encore :
+$$\\left(e^{i\\theta}\\right)^n=e^{in\\theta}$$
+
+Cette formule sert à :
+
+- calculer rapidement des puissances
+- obtenir des formules trigonométriques
+- linéariser certaines expressions
+
+## 6. Racines nièmes
+Pour résoudre l'équation :
+$$z^n=z_0$$
+où $z_0=r_0e^{i\\theta_0}$, les solutions sont :
+$$z_k=r_0^{1/n}e^{i(\\theta_0+2k\\pi)/n}$$
+pour $k=0,1,\\dots,n-1$.
+
+Les racines sont régulièrement réparties sur un cercle de centre O.
+
+## 7. Lien avec la trigonométrie
+Les complexes donnent des outils puissants pour :
+
+- calculer $\\cos n\\theta$ et $\\sin n\\theta$
+- établir des formules d'addition
+- linéariser $\\cos^2\\theta$, $\\sin^2\\theta$, etc.
+
+### Exemple classique
+À partir de :
+$$e^{i\\theta}=\\cos\\theta+i\\sin\\theta$$
+on obtient :
+$$\\cos\\theta=\\frac{e^{i\\theta}+e^{-i\\theta}}{2}$$
+$$\\sin\\theta=\\frac{e^{i\\theta}-e^{-i\\theta}}{2i}$$
+
+## 8. Applications géométriques
+Dans le plan complexe :
+
+- un point $M$ d'affixe $z$ est représenté par le vecteur $\\overrightarrow{OM}$
+- une translation, rotation ou similitude peut s'écrire par une relation complexe
+
+### Similitude directe
+Une transformation de la forme :
+$$z'=az+b$$
+avec $a\\in\\mathbb{C}^*$, est une similitude directe.
+
+Elle combine :
+- une rotation
+- une homothétie
+- éventuellement une translation
+
+## 9. Méthode pratique
+### Pour passer en forme trigonométrique
+1. calculer le module
+2. déterminer le quadrant
+3. trouver un argument adapté
+
+### Pour calculer une puissance
+1. écrire le complexe sous forme trigonométrique
+2. appliquer la formule de Moivre
+3. revenir si besoin à la forme algébrique
+
+### Pour calculer des racines
+1. écrire le complexe sous forme exponentielle
+2. diviser l'argument par $n$
+3. ne pas oublier les $n$ valeurs de $k$
+
+## 10. Erreurs fréquentes
+- oublier que l'argument est défini modulo $2\\pi$
+- se tromper de quadrant
+- oublier une racine dans les équations du type $z^n=z_0$
+- confondre module et partie réelle
+
+## 11. À retenir
+- la forme algébrique sert aux calculs simples
+- la forme trigonométrique simplifie puissances et racines
+- les complexes sont un outil d'algèbre, de trigonométrie et de géométrie à la fois`,
         exercises: [
           ex("Forme trigonométrique",
             "Le nombre $z=1+i\\sqrt{3}$ a pour module et argument :",

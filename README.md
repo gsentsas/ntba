@@ -24,3 +24,24 @@ Base de travail du projet **BAC Sénégal IA** adaptée au repo Laravel + React 
 ## Objectif de cette étape
 
 Cette étape initialise l'infrastructure du projet existant pour accueillir les prochaines phases de BAC Sénégal IA sans recréer un second projet parallèle.
+
+## Préparation production
+
+Avant un déploiement de production, vérifier au minimum :
+
+- configuration Laravel dans `.env`
+- possibilité de partir de `.env.production.example` pour le serveur Laravel
+- configuration backend Node dans `backend/.env`
+- présence des secrets obligatoires : `JWT_SECRET`, `DATABASE_URL`, `FRONTEND_URL`
+- disponibilité des services externes : PostgreSQL, Redis, Anthropic, Wave/Orange Money si activés
+
+Exemple backend :
+
+- copier `backend/.env.example` vers `backend/.env`
+- adapter les valeurs au serveur cible
+- lancer `bash scripts/preflight_prod.sh` avant un déploiement manuel
+
+Attention :
+
+- si `ANTHROPIC_API_KEY` est absente ou invalide, l'IA bascule en mode dégradé
+- si les clés de paiement sont absentes, certaines réponses restent en `demo_mode`

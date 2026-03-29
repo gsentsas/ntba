@@ -29,7 +29,7 @@ export function ChatMessage({ message, isStreaming }: Props) {
                             <span className="h-2 w-2 animate-bounce rounded-full bg-slate-400 [animation-delay:300ms]" />
                         </div>
                     ) : (
-                        <div className="prose prose-sm max-w-none text-slate-800 prose-headings:font-semibold prose-strong:text-slate-900 prose-code:rounded prose-code:bg-slate-100 prose-code:px-1 prose-code:py-0.5 prose-code:text-green-dark prose-pre:bg-slate-900 prose-pre:text-slate-50">
+                        <div className="prose prose-sm prose-headings:font-semibold prose-strong:text-slate-900 prose-code:rounded prose-code:bg-slate-100 prose-code:px-1 prose-code:py-0.5 prose-code:text-green-dark prose-pre:bg-slate-900 prose-pre:text-slate-50 max-w-none text-slate-800">
                             <ReactMarkdown remarkPlugins={[remarkGfm]}>
                                 {message.content}
                             </ReactMarkdown>
@@ -45,9 +45,11 @@ export function ChatMessage({ message, isStreaming }: Props) {
 
     return (
         <div className="flex items-start justify-end gap-3">
-            <div className={cn(
-                'max-w-[80%] rounded-2xl rounded-tr-sm bg-green px-4 py-3 text-sm text-white shadow',
-            )}>
+            <div
+                className={cn(
+                    'max-w-[80%] rounded-2xl rounded-tr-sm bg-green px-4 py-3 text-sm text-white shadow',
+                )}
+            >
                 {message.content}
             </div>
 

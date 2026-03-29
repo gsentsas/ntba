@@ -1,12 +1,25 @@
-import { isAxiosError } from 'axios';
-import { ArrowRight, Building2, Mail, MapPin, School, UserRound } from 'lucide-react';
-import { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import toast from 'react-hot-toast';
 import { useQuery } from '@tanstack/react-query';
+import { isAxiosError } from 'axios';
+import {
+    ArrowRight,
+    Building2,
+    Mail,
+    MapPin,
+    School,
+    UserRound,
+} from 'lucide-react';
+import { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardHeader,
+    CardTitle,
+} from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import {
     Select,
@@ -23,7 +36,10 @@ export default function Register() {
     const navigate = useNavigate();
     const { register, isLoading, token } = useAuth();
     const { setSelectedSerie, setPage } = useAppStore();
-    const { data: series = [] } = useQuery({ queryKey: ['series'], queryFn: subjectsApi.series });
+    const { data: series = [] } = useQuery({
+        queryKey: ['series'],
+        queryFn: subjectsApi.series,
+    });
     const [serie, setSerie] = useState('');
     const [form, setForm] = useState({
         prenom: '',
@@ -49,6 +65,7 @@ export default function Register() {
 
         if (!serie) {
             toast.error('Choisis ta série du BAC');
+
             return;
         }
 
@@ -66,7 +83,8 @@ export default function Register() {
         } catch (error) {
             toast.error(
                 isAxiosError(error)
-                    ? error.response?.data?.message ?? 'Inscription impossible'
+                    ? (error.response?.data?.message ??
+                          'Inscription impossible')
                     : 'Inscription impossible',
             );
         }
@@ -78,9 +96,12 @@ export default function Register() {
                 <div className="grid w-full gap-8 lg:grid-cols-[0.95fr_1.05fr]">
                     <Card className="border-white/70 bg-white/92 shadow-2xl shadow-slate-900/5">
                         <CardHeader className="space-y-3">
-                            <CardTitle className="text-3xl text-slate-950">Créer mon compte</CardTitle>
+                            <CardTitle className="text-3xl text-slate-950">
+                                Créer mon compte
+                            </CardTitle>
                             <CardDescription className="text-base leading-6 text-slate-600">
-                                Configure ton profil de révision pour recevoir un parcours adapté à ta série.
+                                Configure ton profil de révision pour recevoir
+                                un parcours adapté à ta série.
                             </CardDescription>
                         </CardHeader>
 
@@ -88,12 +109,19 @@ export default function Register() {
                             <form className="space-y-5" onSubmit={handleSubmit}>
                                 <div className="grid gap-5 sm:grid-cols-2">
                                     <label className="block space-y-2">
-                                        <span className="text-sm font-medium text-slate-800">Prénom *</span>
+                                        <span className="text-sm font-medium text-slate-800">
+                                            Prénom *
+                                        </span>
                                         <div className="relative">
                                             <UserRound className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-slate-400" />
                                             <Input
                                                 value={form.prenom}
-                                                onChange={(e) => setForm((p) => ({ ...p, prenom: e.target.value }))}
+                                                onChange={(e) =>
+                                                    setForm((p) => ({
+                                                        ...p,
+                                                        prenom: e.target.value,
+                                                    }))
+                                                }
                                                 className="h-12 rounded-2xl border-slate-200 bg-slate-50 pl-10"
                                                 placeholder="Aminata"
                                                 required
@@ -102,10 +130,17 @@ export default function Register() {
                                     </label>
 
                                     <label className="block space-y-2">
-                                        <span className="text-sm font-medium text-slate-800">Nom *</span>
+                                        <span className="text-sm font-medium text-slate-800">
+                                            Nom *
+                                        </span>
                                         <Input
                                             value={form.nom}
-                                            onChange={(e) => setForm((p) => ({ ...p, nom: e.target.value }))}
+                                            onChange={(e) =>
+                                                setForm((p) => ({
+                                                    ...p,
+                                                    nom: e.target.value,
+                                                }))
+                                            }
                                             className="h-12 rounded-2xl border-slate-200 bg-slate-50"
                                             placeholder="Diallo"
                                             required
@@ -114,13 +149,20 @@ export default function Register() {
                                 </div>
 
                                 <label className="block space-y-2">
-                                    <span className="text-sm font-medium text-slate-800">Email *</span>
+                                    <span className="text-sm font-medium text-slate-800">
+                                        Email *
+                                    </span>
                                     <div className="relative">
                                         <Mail className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-slate-400" />
                                         <Input
                                             type="email"
                                             value={form.email}
-                                            onChange={(e) => setForm((p) => ({ ...p, email: e.target.value }))}
+                                            onChange={(e) =>
+                                                setForm((p) => ({
+                                                    ...p,
+                                                    email: e.target.value,
+                                                }))
+                                            }
                                             className="h-12 rounded-2xl border-slate-200 bg-slate-50 pl-10"
                                             placeholder="eleve@exemple.sn"
                                             required
@@ -129,11 +171,18 @@ export default function Register() {
                                 </label>
 
                                 <label className="block space-y-2">
-                                    <span className="text-sm font-medium text-slate-800">Mot de passe *</span>
+                                    <span className="text-sm font-medium text-slate-800">
+                                        Mot de passe *
+                                    </span>
                                     <Input
                                         type="password"
                                         value={form.password}
-                                        onChange={(e) => setForm((p) => ({ ...p, password: e.target.value }))}
+                                        onChange={(e) =>
+                                            setForm((p) => ({
+                                                ...p,
+                                                password: e.target.value,
+                                            }))
+                                        }
                                         className="h-12 rounded-2xl border-slate-200 bg-slate-50"
                                         placeholder="Au moins 8 caractères"
                                         required
@@ -146,13 +195,23 @@ export default function Register() {
                                         <School className="size-4 text-green-dark" />
                                         Série du BAC *
                                     </span>
-                                    <Select value={serie} onValueChange={setSerie}>
-                                        <SelectTrigger className={`h-12 w-full rounded-2xl border-slate-200 bg-slate-50 ${!serie ? 'text-slate-400' : ''}`}>
+                                    <Select
+                                        value={serie}
+                                        onValueChange={setSerie}
+                                    >
+                                        <SelectTrigger
+                                            className={`h-12 w-full rounded-2xl border-slate-200 bg-slate-50 ${!serie ? 'text-slate-400' : ''}`}
+                                        >
                                             <SelectValue placeholder="Choisir une série" />
                                         </SelectTrigger>
                                         <SelectContent>
                                             {series.map((serie) => (
-                                                <SelectItem key={serie} value={serie}>{serie}</SelectItem>
+                                                <SelectItem
+                                                    key={serie}
+                                                    value={serie}
+                                                >
+                                                    {serie}
+                                                </SelectItem>
                                             ))}
                                         </SelectContent>
                                     </Select>
@@ -167,7 +226,13 @@ export default function Register() {
                                             <Building2 className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-slate-400" />
                                             <Input
                                                 value={form.etablissement}
-                                                onChange={(e) => setForm((p) => ({ ...p, etablissement: e.target.value }))}
+                                                onChange={(e) =>
+                                                    setForm((p) => ({
+                                                        ...p,
+                                                        etablissement:
+                                                            e.target.value,
+                                                    }))
+                                                }
                                                 className="h-12 rounded-2xl border-slate-200 bg-slate-50 pl-10"
                                                 placeholder="Lycée Lamine Guèye"
                                             />
@@ -175,12 +240,19 @@ export default function Register() {
                                     </label>
 
                                     <label className="block space-y-2">
-                                        <span className="text-sm font-medium text-slate-800">Ville</span>
+                                        <span className="text-sm font-medium text-slate-800">
+                                            Ville
+                                        </span>
                                         <div className="relative">
                                             <MapPin className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-slate-400" />
                                             <Input
                                                 value={form.ville}
-                                                onChange={(e) => setForm((p) => ({ ...p, ville: e.target.value }))}
+                                                onChange={(e) =>
+                                                    setForm((p) => ({
+                                                        ...p,
+                                                        ville: e.target.value,
+                                                    }))
+                                                }
                                                 className="h-12 rounded-2xl border-slate-200 bg-slate-50 pl-10"
                                                 placeholder="Dakar"
                                             />
@@ -200,7 +272,10 @@ export default function Register() {
 
                             <p className="mt-6 text-sm text-slate-600">
                                 Déjà inscrit ?{' '}
-                                <Link className="font-semibold text-green-dark hover:underline" to="/login">
+                                <Link
+                                    className="font-semibold text-green-dark hover:underline"
+                                    to="/login"
+                                >
                                     Me connecter
                                 </Link>
                             </p>
@@ -208,17 +283,17 @@ export default function Register() {
                     </Card>
 
                     <div className="hidden rounded-[2rem] border border-white/60 bg-white/60 p-8 backdrop-blur lg:block">
-                        <div className="inline-flex rounded-full bg-purple-light px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-purple">
+                        <div className="inline-flex rounded-full bg-purple-light px-3 py-1 text-xs font-semibold tracking-[0.18em] text-purple uppercase">
                             Onboarding rapide
                         </div>
-                        <h2 className="mt-6 text-4xl font-semibold leading-tight text-slate-950">
+                        <h2 className="mt-6 text-4xl leading-tight font-semibold text-slate-950">
                             Ton espace se configure en moins d'une minute.
                         </h2>
                         <div className="mt-8 space-y-4">
                             {[
-                                "Choisis ta série pour adapter les matières et coefficients.",
+                                'Choisis ta série pour adapter les matières et coefficients.',
                                 "Récupère un planning IA construit jusqu'au 10 juin.",
-                                "Commence avec des quiz, annales et un suivi de progression réel.",
+                                'Commence avec des quiz, annales et un suivi de progression réel.',
                             ].map((item) => (
                                 <div
                                     key={item}

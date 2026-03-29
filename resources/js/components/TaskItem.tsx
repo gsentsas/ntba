@@ -10,12 +10,18 @@ type TaskItemProps = {
     disabled?: boolean;
 };
 
-export default function TaskItem({ task, onToggle, disabled = false }: TaskItemProps) {
+export default function TaskItem({
+    task,
+    onToggle,
+    disabled = false,
+}: TaskItemProps) {
     return (
         <div
             className={cn(
                 'flex items-center justify-between gap-4 rounded-2xl border px-4 py-4 transition',
-                task.is_completed ? 'border-green-light bg-green-xlight' : 'border-slate-200 bg-white',
+                task.is_completed
+                    ? 'border-green-light bg-green-xlight'
+                    : 'border-slate-200 bg-white',
             )}
         >
             <div className="min-w-0 flex-1">
@@ -33,7 +39,9 @@ export default function TaskItem({ task, onToggle, disabled = false }: TaskItemP
                 <div className="mt-2 flex items-center gap-2 text-xs text-slate-500">
                     <Clock3 className="size-3.5" />
                     <span>{task.estimated_minutes} min</span>
-                    {task.chapter_title ? <span>· {task.chapter_title}</span> : null}
+                    {task.chapter_title ? (
+                        <span>· {task.chapter_title}</span>
+                    ) : null}
                 </div>
             </div>
 

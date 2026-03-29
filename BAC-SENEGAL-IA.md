@@ -1324,7 +1324,7 @@ npm run dev                   # :5173
 
 # 5. Comptes par défaut
 Admin   : admin@bac-senegal.sn / Admin123!
-Élève   : test@bac-senegal.sn  / Test123!
+Élève   : test@bac-senegal.sn  / 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 SECTION 7 — CONTRAINTES FINALES
