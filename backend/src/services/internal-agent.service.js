@@ -284,11 +284,23 @@ function buildRecommendation(context) {
 function buildStudyPackPdf(result) {
     return createSimplePdfBuffer({
         title: `Pack de révision - ${result.target.subject.name}`,
+        subtitle:
+            'Fiche structurée, recommandation prioritaire et exercice conseillé pour une révision efficace du BAC.',
+        documentLabel: 'PACK DE REVISION',
         fileName: `pack-revision-${result.target.subject.slug ?? 'bac'}.pdf`,
+        meta: [
+            { label: 'Série', value: result.target.subject.serie_code },
+            { label: 'Matière', value: result.target.subject.name },
+            { label: 'Chapitre', value: result.target.chapter.title },
+        ],
         sections: [
             {
-                heading: 'Chapitre ciblé',
-                body: `${result.target.chapter.title}\nSérie: ${result.target.subject.serie_code}\nRecommandation: ${result.recommendation}`,
+                heading: 'Priorité de travail',
+                body: [
+                    `Chapitre ciblé: ${result.target.chapter.title}`,
+                    '',
+                    `Recommandation: ${result.recommendation}`,
+                ].join('\n'),
             },
             {
                 heading: 'Fiche de révision',
@@ -316,7 +328,15 @@ function buildStudyPackPdf(result) {
 function buildCorrectionPdf(result) {
     return createSimplePdfBuffer({
         title: `Correction - ${result.exercise.title}`,
+        subtitle:
+            'Diagnostic de la réponse élève avec verdict, explication et prochaines étapes de progression.',
+        documentLabel: 'CORRECTION TEXTE',
         fileName: 'correction-exercice.pdf',
+        meta: [
+            { label: 'Matière', value: result.exercise.subject_name },
+            { label: 'Chapitre', value: result.exercise.chapter_title },
+            { label: 'Verdict', value: result.verdict },
+        ],
         sections: [
             {
                 heading: 'Réponse de l’élève',
@@ -342,7 +362,15 @@ function buildCorrectionPdf(result) {
 function buildPhotoCorrectionPdf(result, subjectName) {
     return createSimplePdfBuffer({
         title: `Correction photo - ${subjectName}`,
+        subtitle:
+            'Retour visuel structuré sur la copie avec note estimée et axes prioritaires de progression.',
+        documentLabel: 'CORRECTION PHOTO',
         fileName: 'correction-photo.pdf',
+        meta: [
+            { label: 'Matière', value: subjectName },
+            { label: 'Note estimée', value: `${result.note_estimee}/20` },
+            { label: 'Source', value: result.provider === 'anthropic' ? 'IA avancée' : 'Mode secours' },
+        ],
         sections: [
             {
                 heading: 'Correction',
