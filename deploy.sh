@@ -62,8 +62,8 @@ if ! command -v npm >/dev/null 2>&1; then
 fi
 echo "   node : $(node -v)  npm : $(npm -v)"
 
-echo "📦 Dépendances npm (frontend)…"
-npm ci --omit=dev 2>/dev/null || npm install --omit=dev
+echo "📦 Dépendances npm (frontend — avec devDeps pour le build)…"
+npm ci 2>/dev/null || npm install
 
 echo "🔨 Build Vite…"
 npm run build
