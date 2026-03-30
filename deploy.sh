@@ -86,12 +86,14 @@ fi
 cd "$APP_DIR"
 
 # ── 5. PM2 ──────────────────────────────────────────────────
+# PM2 installé localement dans le backend
+PM2="$APP_DIR/backend/node_modules/.bin/pm2"
 echo "🚀 Redémarrage du backend (PM2)…"
-if pm2 list | grep -q "bac-api"; then
-    pm2 reload bac-api
+if "$PM2" list | grep -q "bac-api"; then
+    "$PM2" reload bac-api
 else
-    pm2 start ecosystem.config.cjs
-    pm2 save
+    "$PM2" start ecosystem.config.cjs
+    "$PM2" save
 fi
 
 echo ""
