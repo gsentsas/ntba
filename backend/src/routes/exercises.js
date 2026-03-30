@@ -28,6 +28,8 @@ function parseBoolean(value, defaultValue = false) {
     return ['true', '1', 'yes'].includes(String(value).toLowerCase());
 }
 
+router.use(requireAuth);
+
 router.get(
     '/',
     asyncHandler(async (req, res) => {
@@ -39,6 +41,14 @@ router.get(
         if (req.query.subject_id) {
             params.push(req.query.subject_id);
             filters.push(`e.subject_id = $${params.length}`);
+        }
+
+        if (req.user.role !== 'admin') {
+            params.push(req.user.serie_code);
+            filters.push(`s.serie_code = $${params.length}`);
+        } else if (req.query.serie_code) {
+            params.push(req.query.serie_code);
+            filters.push(`s.serie_code = $${params.length}`);
         }
 
         if (req.query.chapter_id) {
@@ -111,7 +121,10 @@ router.get(
         const filters = ['e.is_annale = true'];
         const params = [];
 
-        if (req.query.serie_code) {
+        if (req.user.role !== 'admin') {
+            params.push(req.user.serie_code);
+            filters.push(`s.serie_code = $${params.length}`);
+        } else if (req.query.serie_code) {
             params.push(req.query.serie_code);
             filters.push(`s.serie_code = $${params.length}`);
         }
@@ -189,6 +202,14 @@ router.get(
 router.get(
     '/:id',
     asyncHandler(async (req, res) => {
+        const params = [req.params.id];
+        let extraWhere = '';
+
+        if (req.user.role !== 'admin') {
+            params.push(req.user.serie_code);
+            extraWhere = ` AND s.serie_code = $${params.length}`;
+        }
+
         const result = await pool.query(
             `
                 SELECT
@@ -213,8 +234,9 @@ router.get(
                 JOIN subjects s ON s.id = e.subject_id
                 JOIN chapters c ON c.id = e.chapter_id
                 WHERE e.id = $1
+                ${extraWhere}
             `,
-            [req.params.id],
+            params,
         );
 
         if (result.rowCount === 0) {
@@ -228,7 +250,24 @@ router.get(
 router.get(
     '/:id/hint',
     asyncHandler(async (req, res) => {
-        const result = await pool.query('SELECT hints FROM exercises WHERE id = $1', [req.params.id]);
+        const params = [req.params.id];
+        let extraWhere = '';
+
+        if (req.user.role !== 'admin') {
+            params.push(req.user.serie_code);
+            extraWhere = ` AND s.serie_code = $${params.length}`;
+        }
+
+        const result = await pool.query(
+            `
+                SELECT e.hints
+                FROM exercises e
+                JOIN subjects s ON s.id = e.subject_id
+                WHERE e.id = $1
+                ${extraWhere}
+            `,
+            params,
+        );
 
         if (result.rowCount === 0) {
             return res.status(404).json({ message: 'Exercice introuvable' });
@@ -247,16 +286,25 @@ router.get(
 
 router.post(
     '/:id/submit',
-    requireAuth,
     validateBody(submitSchema),
     asyncHandler(async (req, res) => {
+        const params = [req.params.id];
+        let extraWhere = '';
+
+        if (req.user.role !== 'admin') {
+            params.push(req.user.serie_code);
+            extraWhere = ` AND s.serie_code = $${params.length}`;
+        }
+
         const exerciseResult = await pool.query(
             `
-                SELECT id, chapter_id, subject_id, type, correct_answer, explanation, points
-                FROM exercises
-                WHERE id = $1
+                SELECT e.id, e.chapter_id, e.subject_id, e.type, e.correct_answer, e.explanation, e.points
+                FROM exercises e
+                JOIN subjects s ON s.id = e.subject_id
+                WHERE e.id = $1
+                ${extraWhere}
             `,
-            [req.params.id],
+            params,
         );
 
         if (exerciseResult.rowCount === 0) {

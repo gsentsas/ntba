@@ -1686,17 +1686,73 @@ Elle combine :
         key_formulas: ["f'(x) = lim[f(x+h)-f(x)]/h", "(uv)' = u'v+uv'", "(u/v)' = (u'v-uv')/v²", 'Si f\'(x)>0 sur I, f croissante sur I'],
         course_content: `# Fonctions numériques (Séries L)
 
-## 1. Rappels essentiels
-**Domaine de définition** : ensemble des $x$ où $f(x)$ existe.
-**Continuité** : $f$ est continue en $a$ si $\\lim_{x\\to a}f(x)=f(a)$.
+## Objectifs du chapitre
+- Déterminer le domaine de définition d'une fonction.
+- Étudier les limites, la continuité et la dérivabilité.
+- Utiliser la dérivée pour dresser un tableau de variations.
+- Lire et interpréter graphiquement les résultats.
 
-## 2. Dérivée et variations
-$$f'(x) = \\lim_{h\\to 0}\\frac{f(x+h)-f(x)}{h}$$
-- $f'>0$ ⟹ $f$ croissante ; $f'<0$ ⟹ $f$ décroissante
-- $f'(a)=0$ ⟹ extremum possible en $a$
+## 1. Domaine de définition et continuité
+Le **domaine de définition** d'une fonction est l'ensemble des réels pour lesquels l'expression de $f(x)$ a un sens.
 
-## 3. Tableau de variations et lecture graphique
-Méthode : calculer $f'$, étudier son signe, dresser le tableau.`,
+Il faut toujours commencer l'étude d'une fonction par cette étape.
+
+Une fonction est **continue en $a$** si :
+$$\\lim_{x\\to a}f(x)=f(a)$$
+
+La continuité garantit qu'il n'y a pas de rupture au point considéré.
+
+## 2. Dérivée et sens de variation
+La dérivée mesure le taux de variation instantané :
+$$f'(x)=\\lim_{h\\to 0}\\frac{f(x+h)-f(x)}{h}$$
+
+### Interprétation
+- si $f'(x)>0$, la fonction est croissante ;
+- si $f'(x)<0$, la fonction est décroissante ;
+- si $f'(a)=0$, il peut y avoir un extremum.
+
+La dérivée est donc l'outil principal pour comprendre le comportement d'une fonction.
+
+## 3. Extremums
+Un maximum ou un minimum local apparaît souvent en un point où la dérivée s'annule ou change de signe.
+
+Il faut toujours vérifier :
+- la valeur de la dérivée ;
+- le signe de $f'$ avant et après le point ;
+- la valeur de la fonction en ce point.
+
+## 4. Tableau de variations
+Le tableau de variations synthétise :
+- le domaine ;
+- les limites ;
+- les zéros éventuels de la dérivée ;
+- les intervalles de croissance et de décroissance ;
+- les extremums.
+
+C'est une étape incontournable dans les exercices de fonction.
+
+## 5. Lecture graphique
+L'étude analytique doit déboucher sur une lecture graphique :
+- pente de la tangente ;
+- points hauts et points bas ;
+- asymptotes éventuelles ;
+- allure générale de la courbe.
+
+## 6. Méthode type
+1. déterminer le domaine de définition ;
+2. calculer la dérivée ;
+3. étudier le signe de la dérivée ;
+4. dresser le tableau de variations ;
+5. interpréter le résultat graphiquement.
+
+## 7. Erreurs fréquentes
+- Oublier le domaine de définition.
+- Se tromper dans le signe de la dérivée.
+- Conclure à un extremum sans étude du signe de $f'$.
+- Dresser un tableau incomplet.
+
+## 8. À retenir
+Dans les séries L, l'étude des fonctions doit rester claire, progressive et bien organisée. La dérivée n'est pas une formule isolée : c'est un outil pour comprendre la variation et la représentation d'une fonction.`,
         exercises: [
           ex("Dérivée d'un polynôme",
             "La dérivée de $f(x)=x^3-3x+2$ s'annule en :",
@@ -1718,6 +1774,14 @@ Méthode : calculer $f'$, étudier son signe, dresser le tableau.`,
             "La valeur maximale de $f(x) = -x^2 + 4x - 3$ est :",
             opt("$1$", "$3$", "$-3$", "$4$"),
             'A', "$f'(x) = -2x + 4 = 0$ pour $x = 2$. $f(2) = -4 + 8 - 3 = 1$. Comme la parabole est tournée vers le bas ($-x^2$), c'est un maximum.", 2),
+          ex("Vrai ou faux – dérivée et extremum",
+            "Vrai ou faux : si $f'(a)=0$, alors $f$ admet forcément un maximum ou un minimum en $a$.",
+            opt("Vrai", "Faux", "Vrai seulement si $f(a)=0$", "Le cours ne permet pas de répondre"),
+            'B', "C'est faux. La condition $f'(a)=0$ est nécessaire dans beaucoup de cas, mais elle n'est pas suffisante. Il faut encore étudier le signe de $f'$ autour de $a$. Par exemple, $f(x)=x^3$ vérifie $f'(0)=0$ sans avoir d'extremum en 0.", 3),
+          ex("Calcul de valeur d'une fonction",
+            "Si $f(x)=\\dfrac{x+1}{x-1}$, alors $f(3)$ vaut :",
+            opt("$1$", "$2$", "$\\dfrac{3}{2}$", "$4$"),
+            'B', "On remplace $x$ par $3$ : $f(3)=\\dfrac{3+1}{3-1}=\\dfrac{4}{2}=2$.", 1),
         ],
       },
       {
@@ -1727,17 +1791,64 @@ Méthode : calculer $f'$, étudier son signe, dresser le tableau.`,
         key_formulas: ['u_n = u_0 + nr (arithmétique)', 'u_n = u_0·qⁿ (géométrique)', 'S_n géom. = u_0(1-qⁿ)/(1-q)', 'Si U_{n+1}=f(U_n) → l=f(l)'],
         course_content: `# Suites numériques (Séries L)
 
+## Objectifs du chapitre
+- Reconnaître une suite arithmétique ou géométrique.
+- Calculer un terme général et une somme.
+- Étudier la convergence d'une suite simple.
+- Utiliser l'idée de point fixe pour les suites récurrentes.
+
 ## 1. Suites arithmétiques
-$u_n = u_0 + nr$, raison $r$.
-Somme des $n+1$ premiers termes : $S = \\frac{(n+1)(u_0+u_n)}{2}$
+Une suite arithmétique est définie par une différence constante :
+$$u_{n+1}-u_n=r$$
+
+On a alors :
+$$u_n=u_0+nr$$
+
+### Somme
+La somme des $n+1$ premiers termes vaut :
+$$S=\\frac{(n+1)(u_0+u_n)}{2}$$
 
 ## 2. Suites géométriques
-$u_n = u_0 q^n$, raison $q$.
-Somme : $S = u_0\\frac{1-q^{n+1}}{1-q}$ (si $q\\neq 1$)
+Une suite géométrique est définie par un quotient constant :
+$$\\frac{u_{n+1}}{u_n}=q$$
 
-## 3. Convergence
-- Suite croissante et majorée ⟹ convergente
-- Suite récurrente $u_{n+1}=f(u_n)$ : si convergente vers $l$, alors $l=f(l)$`,
+On a :
+$$u_n=u_0q^n$$
+
+### Somme
+Si $q\\neq 1$ :
+$$S=u_0\\frac{1-q^{n+1}}{1-q}$$
+
+## 3. Convergence des suites
+L'étude de la convergence consiste à déterminer le comportement de $u_n$ quand $n$ devient très grand.
+
+### Résultats importants
+- une suite croissante et majorée converge ;
+- une suite décroissante et minorée converge ;
+- une suite géométrique de raison $q$ avec $|q|<1$ converge vers 0.
+
+## 4. Suites récurrentes
+Pour une suite définie par :
+$$u_{n+1}=f(u_n)$$
+si l'on sait qu'elle converge vers $l$, alors :
+$$l=f(l)$$
+
+Cette équation permet d'identifier la limite éventuelle.
+
+## 5. Méthode type
+1. reconnaître la nature de la suite ;
+2. utiliser la bonne formule ;
+3. calculer un terme ou une somme ;
+4. étudier la monotonie et les bornes si besoin ;
+5. conclure sur la convergence.
+
+## 6. Erreurs fréquentes
+- Confondre suite arithmétique et géométrique.
+- Se tromper entre la formule du terme général et celle de la somme.
+- Résoudre $l=f(l)$ sans avoir justifié la convergence.
+
+## 7. À retenir
+Les suites des séries L reposent sur des mécanismes simples mais très utiles : progression régulière, somme de termes, et comportement à long terme. Une bonne méthode suffit souvent à réussir le chapitre.`,
         exercises: [
           ex("Suite arithmétique",
             "La somme des 10 premiers termes d'une suite arithmétique de premier terme $u_0=2$ et de raison $r=3$ est :",
@@ -1759,6 +1870,14 @@ Somme : $S = u_0\\frac{1-q^{n+1}}{1-q}$ (si $q\\neq 1$)
             "La suite définie par $u_n = 3n + 7$ est :",
             opt("Géométrique de raison $3$", "Arithmétique de raison $3$", "Ni arithmétique ni géométrique", "Constante"),
             'B', "$u_{n+1} - u_n = 3(n+1)+7 - (3n+7) = 3$. La différence est constante et égale à $3$, donc la suite est arithmétique de raison $r = 3$.", 1),
+          ex("Vrai ou faux – convergence",
+            "Vrai ou faux : toute suite géométrique de raison $q=1{,}2$ converge.",
+            opt("Vrai", "Faux", "Vrai si $u_0>0$", "Vrai seulement si la suite est croissante"),
+            'B', "C'est faux. Une suite géométrique de raison $q=1{,}2$ a des termes dont la valeur absolue grandit ; elle ne converge pas vers une limite finie, sauf cas très particulier $u_0=0$.", 2),
+          ex("Calcul de terme",
+            "Une suite arithmétique vérifie $u_0=7$ et $r=-2$. Alors $u_5$ vaut :",
+            opt("$-3$", "$-1$", "$1$", "$3$"),
+            'A', "$u_n=u_0+nr$. Donc $u_5=7+5\\times(-2)=7-10=-3$.", 2),
         ],
       },
       {
@@ -1768,21 +1887,51 @@ Somme : $S = u_0\\frac{1-q^{n+1}}{1-q}$ (si $q\\neq 1$)
         key_formulas: ['∫_a^b f = F(b)-F(a)', '∫xⁿ = xⁿ⁺¹/(n+1)+C', '∫eˣ = eˣ+C', '∫1/x = ln|x|+C', 'Aire = ∫_a^b |f(x)| dx'],
         course_content: `# Calcul intégral (Séries L)
 
+## Objectifs du chapitre
+- Connaître les primitives usuelles.
+- Utiliser la relation entre primitive et intégrale définie.
+- Calculer des aires simples.
+- Donner une interprétation géométrique à l'intégrale.
+
 ## 1. Primitives usuelles
-| $f(x)$ | $F(x)$ |
-|--------|--------|
-| $x^n$ ($n\\neq-1$) | $\\frac{x^{n+1}}{n+1}$ |
+| $f(x)$ | Une primitive $F(x)$ |
+|--------|----------------------|
+| $x^n$ ($n\\neq -1$) | $\\frac{x^{n+1}}{n+1}$ |
 | $e^x$ | $e^x$ |
 | $\\frac{1}{x}$ | $\\ln|x|$ |
 | $\\cos x$ | $\\sin x$ |
 | $\\sin x$ | $-\\cos x$ |
 
+Il faut apprendre à reconnaître rapidement ces formes.
+
 ## 2. Intégrale définie
+Si $F$ est une primitive de $f$, alors :
 $$\\int_a^b f(x)\\,dx = F(b)-F(a)$$
 
-## 3. Calcul d'aires
-Aire de la surface entre $\\mathcal{C}_f$ et l'axe des $x$ sur $[a;b]$ :
-$$\\mathcal{A} = \\int_a^b |f(x)|\\,dx$$`,
+Cette formule permet de transformer un calcul d'intégrale en calcul de primitive.
+
+## 3. Sens géométrique
+L'intégrale définie représente une aire algébrique. Dans les exercices simples, elle permet d'évaluer la surface située sous une courbe.
+
+### Aire entre la courbe et l'axe des abscisses
+$$\\mathcal{A}=\\int_a^b |f(x)|\\,dx$$
+
+La valeur absolue permet d'obtenir une aire positive.
+
+## 4. Méthode type
+1. chercher une primitive ;
+2. appliquer la formule $F(b)-F(a)$ ;
+3. simplifier soigneusement ;
+4. interpréter le résultat si l'énoncé parle d'aire.
+
+## 5. Erreurs fréquentes
+- Oublier les bornes.
+- Confondre primitive et intégrale.
+- Oublier la valeur absolue dans un calcul d'aire.
+- Se tromper sur les primitives de $\\sin x$ et $\\cos x$.
+
+## 6. À retenir
+Dans les séries L, le calcul intégral doit être compris comme un outil simple et utile : il sert à calculer, mais aussi à interpréter graphiquement une situation.`,
         exercises: [
           ex("Calcul d'intégrale",
             "$\\int_0^2 (x+1)\\,dx$ =",
@@ -1813,20 +1962,63 @@ $$\\mathcal{A} = \\int_a^b |f(x)|\\,dx$$`,
         key_formulas: ['P(A∩B) = P(A)·P(B|A)', 'P(A|B) = P(A∩B)/P(B)', 'E(X) = Σxᵢpᵢ', 'V(X) = E(X²)-[E(X)]²', 'X~B(n,p): E(X)=np'],
         course_content: `# Probabilités et statistiques (Séries L)
 
+## Objectifs du chapitre
+- Utiliser la probabilité conditionnelle.
+- Reconnaître l'indépendance de deux événements.
+- Calculer l'espérance et la variance d'une variable aléatoire discrète.
+- Exploiter la loi binomiale dans des situations simples.
+
 ## 1. Probabilité conditionnelle
-$$P(A|B) = \\frac{P(A\\cap B)}{P(B)}$$
-**Formule des probabilités composées** : $P(A\\cap B) = P(B)\\cdot P(A|B)$
+La probabilité de $A$ sachant $B$ est définie par :
+$$P(A|B)=\\frac{P(A\\cap B)}{P(B)}$$
+
+Elle permet de raisonner dans des situations où une information supplémentaire est connue.
+
+### Formule associée
+$$P(A\\cap B)=P(B)\\cdot P(A|B)$$
 
 ## 2. Indépendance
-$A$ et $B$ indépendants $\\Leftrightarrow P(A\\cap B)=P(A)\\cdot P(B)$
+Deux événements $A$ et $B$ sont indépendants si :
+$$P(A\\cap B)=P(A)\\cdot P(B)$$
 
-## 3. Variables aléatoires discrètes
-- **Espérance** : $E(X) = \\sum x_ip_i$ (valeur moyenne théorique)
-- **Variance** : $V(X) = E(X^2)-[E(X)]^2$ (mesure de dispersion)
+Cela signifie que la réalisation de l'un ne modifie pas la probabilité de l'autre.
 
-## 4. Loi binomiale $B(n,p)$
-$n$ épreuves indépendantes de Bernoulli, proba succès $p$ :
-$P(X=k)=\\binom{n}{k}p^k(1-p)^{n-k}$, $E(X)=np$`,
+## 3. Variable aléatoire discrète
+Une variable aléatoire discrète prend un nombre fini ou dénombrable de valeurs.
+
+### Espérance
+$$E(X)=\\sum x_i p_i$$
+
+Elle représente la valeur moyenne théorique.
+
+### Variance
+$$V(X)=E(X^2)-[E(X)]^2$$
+
+Elle mesure la dispersion autour de la moyenne.
+
+## 4. Loi binomiale
+La loi binomiale modélise le nombre de succès dans une répétition de $n$ épreuves indépendantes de Bernoulli de probabilité $p$.
+
+Si $X\\sim B(n,p)$ :
+$$P(X=k)=\\binom{n}{k}p^k(1-p)^{n-k}$$
+
+et :
+$$E(X)=np$$
+
+## 5. Méthode type
+1. identifier les événements ou la variable aléatoire ;
+2. choisir la bonne formule ;
+3. effectuer les calculs avec soin ;
+4. interpréter le résultat.
+
+## 6. Erreurs fréquentes
+- Confondre $P(A|B)$ et $P(B|A)$.
+- Déclarer deux événements indépendants sans vérification.
+- Oublier que la variance n'est pas l'écart-type.
+- Utiliser la loi binomiale sans indépendance des essais.
+
+## 7. À retenir
+Les probabilités et statistiques en séries L doivent être comprises comme des outils de lecture du hasard et des données. Le plus important est de bien modéliser la situation avant de calculer.`,
         exercises: [
           ex("Probabilité conditionnelle",
             "P(A)=0,4, P(B)=0,5, P(A∩B)=0,2. Alors P(A|B) =",
@@ -1848,6 +2040,14 @@ $P(X=k)=\\binom{n}{k}p^k(1-p)^{n-k}$, $E(X)=np$`,
             "Un QCM a 6 questions à 4 choix chacune. En répondant au hasard, la probabilité d'avoir exactement 0 bonne réponse est :",
             opt("$(0{,}25)^6$", "$(0{,}75)^6$", "$6 \\times 0{,}25 \\times 0{,}75^5$", "$1$"),
             'B', "Chaque réponse est juste avec probabilité $p = 1/4 = 0{,}25$. $P(X=0) = C_6^0 \\times (0{,}25)^0 \\times (0{,}75)^6 = (0{,}75)^6 \\approx 0{,}178$.", 3),
+          ex("Vrai ou faux – indépendance",
+            "Vrai ou faux : si $P(A\\cap B)=P(A)$, alors $A$ et $B$ sont forcément indépendants.",
+            opt("Vrai", "Faux", "Vrai si $P(B)=1$", "Toujours impossible à savoir"),
+            'B', "C'est faux en général. L'indépendance exige $P(A\\cap B)=P(A)P(B)$. Ici, l'égalité $P(A\\cap B)=P(A)$ signifie surtout que $A$ est inclus dans $B$ ou que $B$ se réalise toujours dans le cadre considéré.", 3),
+          ex("Calcul d'espérance",
+            "Une variable aléatoire $X$ prend les valeurs 0, 1 et 2 avec probabilités 0,2 ; 0,5 ; 0,3. Alors $E(X)$ vaut :",
+            opt("$1{,}0$", "$1{,}1$", "$1{,}3$", "$1{,}5$"),
+            'B', "$E(X)=0\\times0{,}2+1\\times0{,}5+2\\times0{,}3=0+0{,}5+0{,}6=1{,}1$.", 2),
         ],
       },
     ],
@@ -1856,26 +2056,158 @@ $P(X=k)=\\binom{n}{k}p^k(1-p)^{n-k}$, $E(X)=np$`,
   // L2 Maths = même programme allégé que L1 Maths
   [SID.L2_MATHS]: {
     chapters: [
-      { title: 'Fonctions numériques', order_index: 1, summary: 'Domaine, continuité, dérivée, variations.', key_formulas: ["(uv)'=u'v+uv'","(u/v)'=(u'v-uv')/v²","f'>0 ⟹ f croissante"], course_content: '# Fonctions numériques (L2)\n\nVoir programme L1 Mathématiques – contenu identique.\n\nLes séries L1 et L2 suivent le même programme allégé de mathématiques pour le BAC Sénégal.', exercises: [
+      { title: 'Fonctions numériques', order_index: 1, summary: 'Domaine, continuité, dérivée, variations.', key_formulas: ["(uv)'=u'v+uv'","(u/v)'=(u'v-uv')/v²","f'>0 ⟹ f croissante"], course_content: `# Fonctions numériques (L2)
+
+## Objectifs du chapitre
+- Déterminer le domaine de définition d'une fonction.
+- Étudier sa continuité et sa dérivée.
+- Relier le signe de la dérivée au sens de variation.
+- Interpréter graphiquement les résultats.
+
+## 1. Domaine et continuité
+Le domaine de définition regroupe toutes les valeurs de $x$ pour lesquelles la fonction existe.
+
+La continuité en un point $a$ s'écrit :
+$$\\lim_{x\\to a}f(x)=f(a)$$
+
+## 2. Dérivée et variations
+La dérivée permet d'étudier l'évolution de la fonction.
+
+- si $f'(x)>0$, alors $f$ est croissante
+- si $f'(x)<0$, alors $f$ est décroissante
+
+Un point où $f'(a)=0$ peut correspondre à un maximum ou un minimum.
+
+## 3. Tableau de variations
+Le tableau de variations résume :
+- le domaine ;
+- les valeurs critiques ;
+- les intervalles de croissance ou décroissance ;
+- les extremums éventuels.
+
+## 4. Méthode rapide
+Pour étudier une fonction en L2, on peut suivre cet ordre :
+1. déterminer le domaine ;
+2. calculer la dérivée si c'est utile ;
+3. étudier le signe de cette dérivée ;
+4. dresser le tableau de variations ;
+5. interpréter le résultat sur le graphique si nécessaire.
+
+### Erreurs fréquentes
+- oublier les valeurs interdites dans le domaine ;
+- conclure trop vite qu'un point critique est un extremum ;
+- confondre signe de $f$ et signe de $f'$ ;
+- négliger l'interprétation graphique.
+
+## 5. À retenir
+En L2, l'étude des fonctions doit être simple, rigoureuse et directement exploitable dans les exercices du Bac.`, exercises: [
         ex("Sens de variation","$f(x)=x^2-4x+3$ est croissante sur :",opt("$]-\\infty;2[$","$[2;+\\infty[$","$[0;4]$","$]-\\infty;+\\infty[$"),'B',"$f'(x)=2x-4>0$ pour $x>2$. $f$ est donc croissante sur $[2;+\\infty[$.",1),
         ex("Extremum","La valeur minimale de $f(x)=x^2-6x+5$ est :",opt("$5$","$-4$","$0$","$-6$"),'B',"$f'(x)=2x-6=0$ pour $x=3$. $f(3)=9-18+5=-4$. C'est un minimum (parabole ouverte vers le haut).",2),
         ex("Dérivée d'un produit","La dérivée de $h(x)=(x+1)(x^2-2)$ est :",opt("$(x^2-2)+(x+1)\\cdot 2x$","$2x(x+1)$","$x^2-1$","$(x+1)^2$"),'A',"On applique $(uv)'=u'v+uv'$ avec $u=x+1$, $u'=1$, $v=x^2-2$, $v'=2x$. Résultat : $(x^2-2)+2x(x+1)$.",2),
         ex("Domaine de définition","Le domaine de définition de $f(x)=\\ln(x-2)$ est :",opt("$\\mathbb{R}$","$]2;+\\infty[$","$[2;+\\infty[$","$]-\\infty;2[$"),'B',"$\\ln$ est défini pour les réels strictement positifs. Donc $x-2>0$, soit $x>2$. Le domaine est $]2;+\\infty[$.",1),
         ex("Continuité et limite","$\\lim_{x\\to 0} \\frac{\\sin x}{x}$ vaut :",opt("$0$","$1$","$+\\infty$","$\\pi$"),'B',"La limite de $\\frac{\\sin x}{x}$ quand $x \\to 0$ est $1$ : c'est une limite fondamentale. Elle sert notamment à prouver que $\\sin'(x)=\\cos x$.",2),
+        ex("Vrai ou faux – domaine","Vrai ou faux : la fonction $f(x)=\\dfrac{1}{x-5}$ est définie pour tout réel.",opt("Vrai","Faux","Vrai seulement pour $x>5$","Vrai seulement pour $x<5$"),'B',"C'est faux, car on ne peut pas diviser par zéro. Il faut exclure $x=5$, donc le domaine est $\\mathbb{R}\\setminus\\{5\\}$.",1),
+        ex("Calcul de dérivée","La dérivée de $f(x)=3x^2-5x+1$ est :",opt("$6x-5$","$3x-5$","$6x+1$","$2x-5$"),'A',"$f'(x)=(3x^2)'-(5x)'=(6x)-5=6x-5$.",1),
       ]},
-      { title: 'Suites numériques', order_index: 2, summary: 'Suites arithmétiques, géométriques, convergence.', key_formulas: ['u_n=u_0+nr','u_n=u_0·qⁿ','S_arith=(n+1)(u_0+u_n)/2'], course_content: '# Suites numériques (L2)\n\nVoir programme L1 Mathématiques – contenu identique.', exercises: [
+      { title: 'Suites numériques', order_index: 2, summary: 'Suites arithmétiques, géométriques, convergence.', key_formulas: ['u_n=u_0+nr','u_n=u_0·qⁿ','S_arith=(n+1)(u_0+u_n)/2'], course_content: `# Suites numériques (L2)
+
+## Objectifs du chapitre
+- Reconnaître les suites arithmétiques et géométriques.
+- Calculer un terme général et une somme.
+- Étudier la convergence dans les cas simples.
+
+## 1. Suite arithmétique
+Une suite arithmétique vérifie :
+$$u_n=u_0+nr$$
+
+Sa somme s'obtient par :
+$$S=\\frac{(n+1)(u_0+u_n)}{2}$$
+
+## 2. Suite géométrique
+Une suite géométrique vérifie :
+$$u_n=u_0q^n$$
+
+Si $q\\neq 1$, sa somme s'écrit :
+$$S=u_0\\frac{1-q^{n+1}}{1-q}$$
+
+## 3. Convergence
+Une suite géométrique de raison $q$ avec $|q|<1$ converge vers 0.
+Une suite monotone et bornée converge.
+
+## 4. Méthode rapide
+Dans un exercice sur les suites :
+1. identifier le type de suite ;
+2. écrire proprement la formule du terme général ;
+3. distinguer clairement terme et somme ;
+4. étudier le sens de variation ou la limite si on le demande.
+
+### Erreurs fréquentes
+- confondre suite arithmétique et suite géométrique ;
+- oublier la place de l'indice dans les formules ;
+- utiliser une formule de somme à la place du terme général ;
+- conclure à tort qu'une suite converge sans justification.
+
+## 5. À retenir
+En L2, les suites doivent être reconnues rapidement et traitées avec les bonnes formules, sans confusion entre terme général et somme.`, exercises: [
         ex("Raison","Une suite géométrique vérifie $u_0=2$ et $u_3=54$. Sa raison est :",opt("$3$","$\\sqrt{27}$","$27$","$6$"),'A',"$u_3=2q^3=54 \\Rightarrow q^3=27 \\Rightarrow q=3$.",2),
         ex("Terme général arithmétique","Une suite arithmétique a $u_1=5$ et de raison $r=4$. Son terme général $u_n$ (pour $n \\geq 1$) est :",opt("$4n+5$","$4n+1$","$5n+4$","$4(n-1)+5$"),'D',"$u_n = u_1 + (n-1) \\times r = 5 + (n-1) \\times 4 = 4n+1$. Mais en notation $u_n = u_1 + (n-1)r$, on a $4(n-1)+5$, ce qui donne bien $4n+1$.",2),
         ex("Somme d'une suite géométrique","La somme $S = 1 + 2 + 4 + 8 + 16$ (5 termes, $u_0=1$, $q=2$) vaut :",opt("$30$","$31$","$32$","$16$"),'B',"$S = u_0 \\cdot \\frac{1-q^5}{1-q} = 1 \\cdot \\frac{1-32}{1-2} = \\frac{-31}{-1} = 31$.",2),
         ex("Convergence d'une suite","La suite $u_n = \\frac{3n-1}{n+2}$ converge vers :",opt("$1$","$3$","$0$","$-\\frac{1}{2}$"),'B',"En divisant par $n$ : $\\frac{3-1/n}{1+2/n} \\to \\frac{3}{1} = 3$.",1),
         ex("Suite croissante ou décroissante","La suite $u_n = \\frac{1}{n+1}$ est :",opt("Croissante","Constante","Décroissante et minorée par $0$","Non bornée"),'C',"$u_{n+1} - u_n = \\frac{1}{n+2} - \\frac{1}{n+1} = \\frac{-1}{(n+1)(n+2)} < 0$. La suite est décroissante et minorée par $0$ (tous les termes sont positifs).",2),
+        ex("Vrai ou faux – suite arithmétique","Vrai ou faux : dans une suite arithmétique, la différence entre deux termes consécutifs est constante.",opt("Vrai","Faux","Vrai seulement si la suite est positive","Vrai seulement si elle est croissante"),'A',"C'est vrai. C'est même la définition d'une suite arithmétique : $u_{n+1}-u_n=r$ avec $r$ constant.",1),
+        ex("Calcul de somme","Une suite arithmétique a pour premier terme $u_0=4$ et raison $r=2$. La somme $u_0+u_1+u_2+u_3$ vaut :",opt("$20$","$22$","$24$","$28$"),'D',"$u_1=6$, $u_2=8$, $u_3=10$. La somme vaut $4+6+8+10=28$.",2),
       ]},
-      { title: 'Probabilités et statistiques', order_index: 3, summary: 'Probabilité conditionnelle, variables aléatoires, espérance, loi binomiale.', key_formulas: ['P(A|B)=P(A∩B)/P(B)','E(X)=Σxᵢpᵢ','B(n,p): E(X)=np'], course_content: '# Probabilités et statistiques (L2)\n\nVoir programme L1 Mathématiques – contenu identique.', exercises: [
+      { title: 'Probabilités et statistiques', order_index: 3, summary: 'Probabilité conditionnelle, variables aléatoires, espérance, loi binomiale.', key_formulas: ['P(A|B)=P(A∩B)/P(B)','E(X)=Σxᵢpᵢ','B(n,p): E(X)=np'], course_content: `# Probabilités et statistiques (L2)
+
+## Objectifs du chapitre
+- Calculer une probabilité conditionnelle.
+- Tester l'indépendance de deux événements.
+- Déterminer l'espérance d'une variable aléatoire discrète.
+- Exploiter la loi binomiale dans les cas élémentaires.
+
+## 1. Probabilité conditionnelle
+$$P(A|B)=\\frac{P(A\\cap B)}{P(B)}$$
+
+Cette formule permet d'actualiser une probabilité lorsqu'une information est connue.
+
+## 2. Indépendance
+Deux événements sont indépendants si :
+$$P(A\\cap B)=P(A)P(B)$$
+
+## 3. Espérance
+Pour une variable aléatoire discrète :
+$$E(X)=\\sum x_i p_i$$
+
+L'espérance représente une moyenne théorique.
+
+## 4. Loi binomiale
+Si $X\\sim B(n,p)$, alors :
+$$E(X)=np$$
+
+La loi binomiale modélise un nombre de succès dans des essais indépendants.
+
+## 5. Méthode rapide
+Pour bien traiter un exercice de probabilités en L2 :
+1. identifier les événements ou la variable aléatoire ;
+2. traduire la situation en écriture probabiliste ;
+3. choisir la bonne formule ;
+4. vérifier la cohérence du résultat obtenu.
+
+### Erreurs fréquentes
+- confondre union, intersection et conditionnement ;
+- oublier que certaines probabilités doivent être comprises entre 0 et 1 ;
+- appliquer la loi binomiale sans vérifier l'indépendance des essais ;
+- confondre espérance et probabilité.
+
+## 6. À retenir
+En L2, ce chapitre demande surtout une bonne compréhension des situations et une application propre des formules de base.`, exercises: [
         ex("Loi binomiale","$X\\sim B(4;0{,}5)$. $P(X=2)$ =",opt("$0{,}5$","$0{,}375$","$0{,}25$","$0{,}125$"),'B',"$\\binom{4}{2}(0{,}5)^2(0{,}5)^2=6\\times0{,}25\\times0{,}25=0{,}375$.",2),
         ex("Probabilité de l'union","$P(A)=0{,}5$, $P(B)=0{,}3$, $P(A\\cap B)=0{,}1$. $P(A\\cup B)$ =",opt("$0{,}8$","$0{,}7$","$0{,}9$","$0{,}15$"),'B',"$P(A\\cup B) = P(A)+P(B)-P(A\\cap B) = 0{,}5+0{,}3-0{,}1=0{,}7$.",1),
         ex("Espérance loi binomiale","$X\\sim B(15;0{,}4)$. $E(X)$ =",opt("$6$","$4$","$9$","$0{,}4$"),'A',"$E(X)=np=15\\times0{,}4=6$.",1),
         ex("Probabilité conditionnelle","Dans une classe, 60 % des élèves sont des filles. 50 % des filles et 40 % des garçons aiment les maths. La probabilité qu'un élève choisi au hasard soit une fille qui aime les maths est :",opt("$0{,}5$","$0{,}3$","$0{,}24$","$0{,}6$"),'B',"$P(\\text{fille} \\cap \\text{maths}) = P(\\text{fille}) \\times P(\\text{maths}|\\text{fille}) = 0{,}6 \\times 0{,}5 = 0{,}3$.",2),
         ex("Variance","$X\\sim B(10;0{,}2)$. $V(X)$ =",opt("$2$","$1{,}6$","$0{,}2$","$4$"),'B',"$V(X)=np(1-p)=10\\times0{,}2\\times0{,}8=1{,}6$.",2),
+        ex("Vrai ou faux – probabilité","Vrai ou faux : une probabilité peut être égale à $1{,}4$.",opt("Vrai","Faux","Vrai si l'événement est certain","Vrai si on additionne deux probabilités"),'B',"C'est faux. Une probabilité est toujours comprise entre 0 et 1.",1),
+        ex("Calcul binomial simple","On lance 3 fois une pièce équilibrée. La probabilité d'obtenir exactement 2 piles est :",opt("$\\dfrac{1}{8}$","$\\dfrac{3}{8}$","$\\dfrac{1}{2}$","$\\dfrac{3}{4}$"),'B',"On a $X\\sim B(3;0{,}5)$. Donc $P(X=2)=\\binom{3}{2}(0{,}5)^2(0{,}5)^1=3\\times\\dfrac{1}{8}=\\dfrac{3}{8}$.",2),
       ]},
     ],
   },

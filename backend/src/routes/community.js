@@ -29,7 +29,10 @@ router.get(
         const filters = ['fp.is_published = true'];
         const params = [];
 
-        if (req.query.serie_code) {
+        if (req.user.role !== 'admin') {
+            params.push(req.user.serie_code);
+            filters.push(`fp.serie_code = $${params.length}`);
+        } else if (req.query.serie_code) {
             params.push(req.query.serie_code);
             filters.push(`fp.serie_code = $${params.length}`);
         }
@@ -85,7 +88,43 @@ router.post(
     requireAuth,
     validateBody(createPostSchema),
     asyncHandler(async (req, res) => {
-        const { title, content, subject_id: subjectId, serie_code: serieCode } = req.validatedBody;
+        const {
+            title,
+            content,
+            subject_id: subjectId,
+            serie_code: requestedSerieCode,
+        } = req.validatedBody;
+        const serieCode =
+            req.user.role === 'admin' ? requestedSerieCode : req.user.serie_code;
+
+        if (subjectId) {
+            const subjectParams = [subjectId];
+            let subjectWhere = '';
+
+            if (req.user.role !== 'admin') {
+                subjectParams.push(req.user.serie_code);
+                subjectWhere = ` AND serie_code = $${subjectParams.length}`;
+            } else {
+                subjectParams.push(serieCode);
+                subjectWhere = ` AND serie_code = $${subjectParams.length}`;
+            }
+
+            const subjectResult = await pool.query(
+                `
+                    SELECT id
+                    FROM subjects
+                    WHERE id = $1
+                    ${subjectWhere}
+                `,
+                subjectParams,
+            );
+
+            if (subjectResult.rowCount === 0) {
+                return res.status(403).json({
+                    message: 'Matière non autorisée pour cette série',
+                });
+            }
+        }
 
         const result = await pool.query(
             `
@@ -105,14 +144,23 @@ router.get(
     '/posts/:id',
     requireAuth,
     asyncHandler(async (req, res) => {
+        const params = [req.params.id];
+        let extraWhere = '';
+
+        if (req.user.role !== 'admin') {
+            params.push(req.user.serie_code);
+            extraWhere = ` AND serie_code = $${params.length}`;
+        }
+
         const postResult = await pool.query(
             `
                 UPDATE forum_posts
                 SET views_count = views_count + 1
                 WHERE id = $1
+                ${extraWhere}
                 RETURNING *
             `,
-            [req.params.id],
+            params,
         );
 
         if (postResult.rowCount === 0) {
@@ -148,6 +196,28 @@ router.post(
     requireAuth,
     validateBody(replySchema),
     asyncHandler(async (req, res) => {
+        const postParams = [req.params.id];
+        let postWhere = '';
+
+        if (req.user.role !== 'admin') {
+            postParams.push(req.user.serie_code);
+            postWhere = ` AND serie_code = $${postParams.length}`;
+        }
+
+        const postResult = await pool.query(
+            `
+                SELECT id
+                FROM forum_posts
+                WHERE id = $1
+                ${postWhere}
+            `,
+            postParams,
+        );
+
+        if (postResult.rowCount === 0) {
+            return res.status(404).json({ message: 'Post introuvable' });
+        }
+
         const result = await pool.query(
             `
                 INSERT INTO forum_replies (id, post_id, user_id, content, created_at)
@@ -166,6 +236,28 @@ router.post(
     '/posts/:id/like',
     requireAuth,
     asyncHandler(async (req, res) => {
+        const postParams = [req.params.id];
+        let postWhere = '';
+
+        if (req.user.role !== 'admin') {
+            postParams.push(req.user.serie_code);
+            postWhere = ` AND serie_code = $${postParams.length}`;
+        }
+
+        const postResult = await pool.query(
+            `
+                SELECT id
+                FROM forum_posts
+                WHERE id = $1
+                ${postWhere}
+            `,
+            postParams,
+        );
+
+        if (postResult.rowCount === 0) {
+            return res.status(404).json({ message: 'Post introuvable' });
+        }
+
         const existing = await pool.query('SELECT 1 FROM forum_likes WHERE user_id = $1 AND post_id = $2', [req.user.id, req.params.id]);
 
         if (existing.rowCount > 0) {
@@ -199,7 +291,23 @@ router.patch(
     '/posts/:id/resolve',
     requireAuth,
     asyncHandler(async (req, res) => {
-        const postResult = await pool.query('SELECT user_id FROM forum_posts WHERE id = $1', [req.params.id]);
+        const params = [req.params.id];
+        let extraWhere = '';
+
+        if (req.user.role !== 'admin') {
+            params.push(req.user.serie_code);
+            extraWhere = ` AND serie_code = $${params.length}`;
+        }
+
+        const postResult = await pool.query(
+            `
+                SELECT user_id
+                FROM forum_posts
+                WHERE id = $1
+                ${extraWhere}
+            `,
+            params,
+        );
 
         if (postResult.rowCount === 0) {
             return res.status(404).json({ message: 'Post introuvable' });

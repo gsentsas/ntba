@@ -20,6 +20,7 @@ import Annales from '@/pages/Annales';
 import ChapterDetail from '@/pages/ChapterDetail';
 import Community from '@/pages/Community';
 import Dashboard from '@/pages/dashboard';
+import InternalAgent from '@/pages/InternalAgent';
 import Landing from '@/pages/Landing';
 import Login from '@/pages/Login';
 import Register from '@/pages/Register';
@@ -67,6 +68,10 @@ export default function App() {
                     <Route element={<PrivateRoute />}>
                         <Route path="/dashboard" element={<Dashboard />} />
                         <Route path="/subjects" element={<Subjects />} />
+                        <Route
+                            path="/internal-agent"
+                            element={<InternalAgent />}
+                        />
                         <Route
                             path="/chapters/:id"
                             element={<ChapterDetail />}

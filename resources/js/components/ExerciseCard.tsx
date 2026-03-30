@@ -1,4 +1,4 @@
-import { BookOpen, Clock, Lightbulb } from 'lucide-react';
+import { BookOpen, Bot, Clock, Lightbulb } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import { Badge } from '@/components/ui/badge';
@@ -53,6 +53,11 @@ export default function ExerciseCard({
                 {/* Header */}
                 <div className="flex items-start justify-between gap-2">
                     <div className="flex flex-wrap items-center gap-1.5">
+                        {exercise.serie_code && (
+                            <Badge className="border-0 bg-slate-100 text-xs text-slate-700">
+                                {exercise.serie_code}
+                            </Badge>
+                        )}
                         <Badge className="border-0 bg-green-light text-xs text-green-dark">
                             {typeLabel}
                         </Badge>
@@ -118,26 +123,41 @@ export default function ExerciseCard({
                         </span>
                     </div>
 
-                    {showAction &&
-                        (onStart ? (
+                    <div className="flex items-center gap-2">
+                        <Link
+                            to={`/internal-agent?subject=${exercise.subject_id}&chapter=${exercise.chapter_id}&exercise=${exercise.id}`}
+                        >
                             <Button
                                 size="sm"
-                                onClick={() => onStart(exercise)}
-                                className="h-7 bg-green px-3 py-1 text-xs text-white hover:bg-green-dark"
+                                variant="outline"
+                                className="h-7 px-3 py-1 text-xs"
                             >
-                                Faire
+                                <Bot className="h-3 w-3" />
+                                Agent
                             </Button>
-                        ) : (
-                            <Link to="/quiz">
+                        </Link>
+
+                        {showAction &&
+                            (onStart ? (
                                 <Button
                                     size="sm"
+                                    onClick={() => onStart(exercise)}
                                     className="h-7 bg-green px-3 py-1 text-xs text-white hover:bg-green-dark"
                                 >
-                                    <BookOpen className="h-3 w-3" />
-                                    Quiz
+                                    Faire
                                 </Button>
-                            </Link>
-                        ))}
+                            ) : (
+                                <Link to="/quiz">
+                                    <Button
+                                        size="sm"
+                                        className="h-7 bg-green px-3 py-1 text-xs text-white hover:bg-green-dark"
+                                    >
+                                        <BookOpen className="h-3 w-3" />
+                                        Quiz
+                                    </Button>
+                                </Link>
+                            ))}
+                    </div>
                 </div>
             </CardContent>
         </Card>

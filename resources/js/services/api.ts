@@ -4,6 +4,10 @@ import toast from 'react-hot-toast';
 
 import type {
     AdminStats,
+    AgentAnswerCorrection,
+    AgentContext,
+    AgentPhotoCorrection,
+    AgentStudyPack,
     AuthPayload,
     Chapter,
     DailyTask,
@@ -60,11 +64,16 @@ type ChatOptions = {
     chapter_id?: string | null;
 };
 
+type ChatStreamResult = {
+    sessionId: string | null;
+    provider: 'anthropic' | 'fallback' | null;
+};
+
 async function streamAiChat(
     message: string,
     options: ChatOptions = {},
     onChunk?: (text: string) => void,
-): Promise<string | null> {
+): Promise<ChatStreamResult> {
     const token = window.localStorage.getItem('token');
     const response = await fetch(
         `${import.meta.env.VITE_API_URL ?? '/api'}/ai/chat`,
@@ -79,14 +88,35 @@ async function streamAiChat(
         },
     );
 
-    if (!response.ok || !response.body) {
-        throw new Error(`Erreur chat IA (${response.status})`);
+    if (!response.ok) {
+        let errorMessage = `Erreur chat IA (${response.status})`;
+
+        try {
+            const contentType = response.headers.get('content-type') ?? '';
+
+            if (contentType.includes('application/json')) {
+                const payload = (await response.json()) as { message?: string };
+                errorMessage = payload.message ?? errorMessage;
+            } else {
+                const text = (await response.text()).trim();
+                if (text) {
+                    errorMessage = text;
+                }
+            }
+        } catch {}
+
+        throw new Error(errorMessage);
+    }
+
+    if (!response.body) {
+        throw new Error('Le flux du tuteur IA est indisponible');
     }
 
     const reader = response.body.getReader();
     const decoder = new TextDecoder();
     let buffer = '';
     let sessionId: string | null = options.session_id ?? null;
+    let provider: 'anthropic' | 'fallback' | null = null;
 
     while (true) {
         const { value, done } = await reader.read();
@@ -104,11 +134,23 @@ async function streamAiChat(
                 continue;
             }
 
-            const payload = JSON.parse(line.slice(6)) as {
-                text?: string;
-                done?: boolean;
-                session_id?: string;
-            };
+            let payload;
+
+            try {
+                payload = JSON.parse(line.slice(6)) as {
+                    text?: string;
+                    done?: boolean;
+                    session_id?: string;
+                    provider?: 'anthropic' | 'fallback';
+                    error?: string;
+                };
+            } catch {
+                continue;
+            }
+
+            if (payload.error) {
+                throw new Error(payload.error);
+            }
 
             if (payload.text) {
                 onChunk?.(payload.text);
@@ -116,11 +158,12 @@ async function streamAiChat(
 
             if (payload.done) {
                 sessionId = payload.session_id ?? sessionId;
+                provider = payload.provider ?? provider;
             }
         }
     }
 
-    return sessionId;
+    return { sessionId, provider };
 }
 
 export const authApi = {
@@ -206,10 +249,18 @@ export const aiApi = {
         chapter_id: string;
         difficulty: number;
         type: string;
-    }) => (await api.post<Exercise>('/ai/generate-exercise', payload)).data,
+    }) =>
+        (
+            await api.post<
+                Exercise & { provider?: 'anthropic' | 'fallback' }
+            >('/ai/generate-exercise', payload)
+        ).data,
     summary: async (chapterId: string) =>
         (
-            await api.post<{ summary: string }>('/ai/summary', {
+            await api.post<{
+                summary: string;
+                provider?: 'anthropic' | 'fallback';
+            }>('/ai/summary', {
                 chapter_id: chapterId,
             })
         ).data,
@@ -223,6 +274,7 @@ export const aiApi = {
                 correction: string;
                 note_estimee: number;
                 points_a_retravailler: string[];
+                provider?: 'anthropic' | 'fallback';
             }>('/ai/correct-photo', payload)
         ).data,
     simulate: async (subjectId: string) =>
@@ -231,7 +283,60 @@ export const aiApi = {
                 subject_text: string;
                 correction_key: string;
                 duration_minutes: number;
+                provider?: 'anthropic' | 'fallback';
             }>('/ai/simulate', { subject_id: subjectId })
+        ).data,
+};
+
+export const internalAgentApi = {
+    context: async (params?: {
+        subject_id?: string | null;
+        chapter_id?: string | null;
+        serie_code?: string | null;
+    }) =>
+        (
+            await api.get<AgentContext>('/internal-agent/context', {
+                params,
+            })
+        ).data,
+    studyPack: async (payload: {
+        subject_id?: string | null;
+        chapter_id?: string | null;
+        serie_code?: string | null;
+        difficulty?: number;
+        type?: string;
+        include_pdf?: boolean;
+    }) =>
+        (
+            await api.post<AgentStudyPack>(
+                '/internal-agent/study-pack',
+                payload,
+            )
+        ).data,
+    correctAnswer: async (payload: {
+        exercise_id: string;
+        answer: string;
+        serie_code?: string | null;
+        include_pdf?: boolean;
+    }) =>
+        (
+            await api.post<AgentAnswerCorrection>(
+                '/internal-agent/correct-answer',
+                payload,
+            )
+        ).data,
+    correctPhotoReport: async (payload: {
+        image_base64: string;
+        media_type: string;
+        subject_id?: string | null;
+        serie_code?: string | null;
+        include_pdf?: boolean;
+    }) =>
+        (
+            await api.post<AgentPhotoCorrection>(
+                '/internal-agent/correct-photo-report',
+                payload,
+            )
         ).data,
 };
 

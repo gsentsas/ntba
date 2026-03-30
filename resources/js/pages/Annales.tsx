@@ -1,15 +1,18 @@
 import { useQuery } from '@tanstack/react-query';
 import {
     BookOpen,
+    Bot,
     ChevronDown,
     ChevronUp,
     Download,
     FileText,
 } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 
 import { Layout } from '@/components/Layout/Layout';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Spinner } from '@/components/ui/spinner';
 import { exercisesApi, subjectsApi } from '@/services/api';
@@ -17,7 +20,11 @@ import { useAppStore } from '@/store';
 import type { Exercise } from '@/types';
 
 export default function Annales() {
-    const { user, setPage } = useAppStore();
+    const { user, setPage, selectedSerie, setSelectedSerie } = useAppStore();
+    const isAdmin = user?.role === 'admin';
+    const activeSerie = isAdmin ? selectedSerie : user?.serie_code ?? '';
+    const [searchParams] = useSearchParams();
+
     useEffect(() => {
         setPage('annales');
     }, [setPage]);
@@ -25,22 +32,33 @@ export default function Annales() {
     const [filterYear, setFilterYear] = useState<number | ''>('');
     const [filterSubject, setFilterSubject] = useState('');
     const [expanded, setExpanded] = useState<string | null>(null);
+    const { data: series = [] } = useQuery({
+        queryKey: ['subject-series'],
+        queryFn: subjectsApi.series,
+    });
 
     const { data: subjects = [] } = useQuery({
-        queryKey: ['subjects', user?.serie_code],
-        queryFn: () => subjectsApi.list(user?.serie_code),
-        enabled: !!user?.serie_code,
+        queryKey: ['subjects', activeSerie],
+        queryFn: () => subjectsApi.list(activeSerie || undefined),
+        enabled: !!user,
     });
 
     const { data: annales = [], isLoading } = useQuery({
-        queryKey: ['annales', filterYear, filterSubject, user?.serie_code],
+        queryKey: ['annales', filterYear, filterSubject, activeSerie],
         queryFn: () =>
             exercisesApi.annales({
-                serie_code: user?.serie_code,
+                serie_code: activeSerie || undefined,
                 year: filterYear || undefined,
                 subject_id: filterSubject || undefined,
             }),
     });
+
+    useEffect(() => {
+        const subjectFromQuery = searchParams.get('subject') ?? '';
+        if (subjectFromQuery) {
+            setFilterSubject(subjectFromQuery);
+        }
+    }, [searchParams]);
 
     const availableYears = [...new Set(annales.map((a) => a.year))].sort(
         (a, b) => b - a,
@@ -54,12 +72,43 @@ export default function Annales() {
                         Annales du BAC
                     </h1>
                     <p className="mt-1 text-sm text-slate-500">
-                        Sujets officiels avec corrigés — Session 2024
+                        {isAdmin
+                            ? 'Sujets officiels avec corrigés, filtrables par série.'
+                            : "Sujets officiels avec corrigés, classés pour la série de l'élève"}
                     </p>
+                    <div className="mt-3 flex flex-wrap items-center gap-2">
+                        <Badge className="border-0 bg-slate-900 text-white">
+                            {activeSerie
+                                ? `Série ${activeSerie}`
+                                : 'Toutes les séries'}
+                        </Badge>
+                        <Badge className="border-0 bg-green-light text-green-dark">
+                            {subjects.length} matière
+                            {subjects.length > 1 ? 's' : ''}
+                        </Badge>
+                    </div>
                 </div>
 
                 {/* Filtres */}
                 <div className="flex flex-wrap gap-3">
+                    {isAdmin ? (
+                        <select
+                            value={activeSerie}
+                            onChange={(event) => {
+                                setSelectedSerie(event.target.value);
+                                setFilterSubject('');
+                            }}
+                            className="rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm focus:border-green focus:outline-none"
+                        >
+                            <option value="">Toutes les séries</option>
+                            {series.map((serie) => (
+                                <option key={serie} value={serie}>
+                                    {serie}
+                                </option>
+                            ))}
+                        </select>
+                    ) : null}
+
                     <select
                         value={filterYear}
                         onChange={(e) =>
@@ -101,12 +150,47 @@ export default function Annales() {
                         <CardContent className="flex flex-col items-center gap-3 py-16 text-center">
                             <BookOpen className="h-12 w-12 text-slate-200" />
                             <p className="text-slate-500">
-                                Aucune annale trouvée avec ces filtres.
+                                Aucune annale trouvée pour la série{' '}
+                                <span className="font-medium text-slate-700">
+                                    {activeSerie || 'sélectionnée'}
+                                </span>{' '}
+                                avec ces filtres.
                             </p>
                         </CardContent>
                     </Card>
                 ) : (
                     <div className="space-y-4">
+                        <Card className="border-green/20 bg-[linear-gradient(135deg,#eef8f4_0%,#ffffff_100%)]">
+                            <CardContent className="flex flex-col gap-4 px-5 py-5 md:flex-row md:items-center md:justify-between">
+                                <div className="flex items-center gap-3">
+                                    <div className="flex size-11 items-center justify-center rounded-2xl bg-green text-white">
+                                        <Bot className="size-5" />
+                                    </div>
+                                    <div>
+                                        <p className="text-sm font-semibold text-slate-950">
+                                            Besoin d’une fiche ou d’une aide ciblée ?
+                                        </p>
+                                        <p className="text-xs text-slate-500">
+                                            Ouvre l’agent interne depuis une annale
+                                            pour préparer une fiche PDF ou un
+                                            accompagnement par matière.
+                                        </p>
+                                    </div>
+                                </div>
+                                <Link
+                                    to={
+                                        filterSubject
+                                            ? `/internal-agent?subject=${filterSubject}&action=study-pack`
+                                            : '/internal-agent?action=study-pack'
+                                    }
+                                >
+                                    <Button className="rounded-2xl bg-green text-white hover:bg-green-dark">
+                                        Ouvrir l’agent
+                                    </Button>
+                                </Link>
+                            </CardContent>
+                        </Card>
+
                         {annales.map(({ year, subject, exercises }) => {
                             const key = `${year}-${subject.id}`;
                             const isOpen = expanded === key;
@@ -129,9 +213,14 @@ export default function Annales() {
                                                         <CardTitle className="text-base">
                                                             {subject.name}
                                                         </CardTitle>
-                                                        <p className="text-sm text-slate-500">
-                                                            Session {year}
-                                                        </p>
+                                                        <div className="mt-1 flex flex-wrap items-center gap-2">
+                                                            <p className="text-sm text-slate-500">
+                                                                Session {year}
+                                                            </p>
+                                                            <Badge className="border-0 bg-slate-100 text-slate-700">
+                                                                {subject.serie_code}
+                                                            </Badge>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div className="flex items-center gap-3">
@@ -172,6 +261,21 @@ export default function Annales() {
                                                         </div>
 
                                                         <div className="flex shrink-0 gap-2">
+                                                            <Link
+                                                                to={`/internal-agent?subject=${subject.id}&chapter=${ex.chapter_id}&exercise=${ex.id}&action=study-pack`}
+                                                                onClick={(e) =>
+                                                                    e.stopPropagation()
+                                                                }
+                                                            >
+                                                                <Button
+                                                                    size="sm"
+                                                                    variant="outline"
+                                                                    className="h-8 rounded-lg"
+                                                                >
+                                                                    <Bot className="h-3.5 w-3.5" />
+                                                                    Agent
+                                                                </Button>
+                                                            </Link>
                                                             {ex.pdf_url && (
                                                                 <a
                                                                     href={
@@ -209,6 +313,37 @@ export default function Annales() {
                                                                 </a>
                                                             )}
                                                         </div>
+                                                    </div>
+
+                                                    <div className="mt-3 flex flex-wrap gap-2">
+                                                        <Link
+                                                            to={`/internal-agent?subject=${subject.id}&chapter=${ex.chapter_id}&action=study-pack`}
+                                                            onClick={(e) =>
+                                                                e.stopPropagation()
+                                                            }
+                                                        >
+                                                            <Button
+                                                                size="sm"
+                                                                variant="outline"
+                                                                className="rounded-lg"
+                                                            >
+                                                                Fiche PDF de révision
+                                                            </Button>
+                                                        </Link>
+                                                        <Link
+                                                            to={`/quiz?subject=${subject.id}`}
+                                                            onClick={(e) =>
+                                                                e.stopPropagation()
+                                                            }
+                                                        >
+                                                            <Button
+                                                                size="sm"
+                                                                variant="outline"
+                                                                className="rounded-lg"
+                                                            >
+                                                                S’entraîner sur cette matière
+                                                            </Button>
+                                                        </Link>
                                                     </div>
                                                 </div>
                                             ))}

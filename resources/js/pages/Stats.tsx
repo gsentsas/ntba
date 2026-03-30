@@ -29,7 +29,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ProgressBar } from '@/components/ui/progress-bar';
 import { Spinner } from '@/components/ui/spinner';
-import { progressApi } from '@/services/api';
+import { adminApi, progressApi } from '@/services/api';
 import { useAppStore } from '@/store';
 
 const ACHIEVEMENTS_META: Record<string, { icon: string; label: string }> = {
@@ -44,6 +44,7 @@ const ACHIEVEMENTS_META: Record<string, { icon: string; label: string }> = {
 
 export default function Stats() {
     const { user, setPage } = useAppStore();
+    const isAdmin = user?.role === 'admin';
     useEffect(() => {
         setPage('stats');
     }, [setPage]);
@@ -51,30 +52,172 @@ export default function Stats() {
     const { data: global, isLoading: loadingGlobal } = useQuery({
         queryKey: ['progress-global'],
         queryFn: progressApi.global,
+        enabled: !isAdmin,
     });
 
     const { data: subjects = [], isLoading: loadingSubjects } = useQuery({
         queryKey: ['progress-subjects'],
         queryFn: progressApi.subjects,
+        enabled: !isAdmin,
     });
 
     const { data: weekly = [], isLoading: loadingWeekly } = useQuery({
         queryKey: ['progress-weekly'],
         queryFn: progressApi.weeklyActivity,
+        enabled: !isAdmin,
     });
 
     const { data: achievements = [] } = useQuery({
         queryKey: ['achievements'],
         queryFn: progressApi.achievements,
+        enabled: !isAdmin,
     });
 
-    const isLoading = loadingGlobal || loadingSubjects || loadingWeekly;
+    const { data: adminStats, isLoading: loadingAdmin } = useQuery({
+        queryKey: ['admin-stats-stats-page'],
+        queryFn: adminApi.stats,
+        enabled: isAdmin,
+    });
+
+    const isLoading = isAdmin
+        ? loadingAdmin
+        : loadingGlobal || loadingSubjects || loadingWeekly;
 
     if (isLoading) {
         return (
             <Layout>
                 <div className="flex justify-center py-20">
                     <Spinner className="h-8 w-8 text-green" />
+                </div>
+            </Layout>
+        );
+    }
+
+    if (isAdmin) {
+        return (
+            <Layout>
+                <div className="space-y-6">
+                    <div>
+                        <h1 className="text-2xl font-bold text-slate-800">
+                            Statistiques plateforme
+                        </h1>
+                        <p className="mt-1 text-sm text-slate-500">
+                            Vue admin consolidée sur toutes les séries
+                        </p>
+                    </div>
+
+                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                        {[
+                            {
+                                icon: <Target className="h-5 w-5" />,
+                                label: 'Utilisateurs',
+                                value: adminStats?.total_users ?? 0,
+                                color: 'text-green',
+                            },
+                            {
+                                icon: <TrendingUp className="h-5 w-5" />,
+                                label: 'Actifs aujourd’hui',
+                                value: adminStats?.active_today ?? 0,
+                                color: 'text-purple',
+                            },
+                            {
+                                icon: <BookOpen className="h-5 w-5" />,
+                                label: 'Exercices',
+                                value: adminStats?.total_exercises ?? 0,
+                                color: 'text-amber',
+                            },
+                            {
+                                icon: <Zap className="h-5 w-5" />,
+                                label: 'Sessions IA',
+                                value: adminStats?.total_ai_sessions ?? 0,
+                                color: 'text-coral',
+                            },
+                        ].map((kpi, i) => (
+                            <Card key={i}>
+                                <CardContent className="flex items-center gap-4 py-4">
+                                    <div
+                                        className={`${kpi.color} rounded-xl bg-slate-50 p-2.5`}
+                                    >
+                                        {kpi.icon}
+                                    </div>
+                                    <div>
+                                        <p className="text-xs text-slate-500">
+                                            {kpi.label}
+                                        </p>
+                                        <p
+                                            className={`text-2xl font-bold ${kpi.color}`}
+                                        >
+                                            {String(kpi.value)}
+                                        </p>
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        ))}
+                    </div>
+
+                    <Card>
+                        <CardHeader>
+                            <CardTitle>Séries les plus actives</CardTitle>
+                        </CardHeader>
+                        <CardContent className="space-y-4">
+                            {(adminStats?.series_distribution ?? []).map(
+                                (serie) => (
+                                    <div
+                                        key={serie.code}
+                                        className="flex items-center gap-3"
+                                    >
+                                        <Badge className="border-0 bg-slate-900 text-white">
+                                            {serie.code}
+                                        </Badge>
+                                        <div className="h-2 flex-1 rounded-full bg-slate-100">
+                                            <div
+                                                className="h-2 rounded-full bg-green"
+                                                style={{
+                                                    width: `${serie.pct}%`,
+                                                }}
+                                            />
+                                        </div>
+                                        <span className="text-xs text-slate-500">
+                                            {serie.count} ({serie.pct}%)
+                                        </span>
+                                    </div>
+                                ),
+                            )}
+                        </CardContent>
+                    </Card>
+
+                    <Card>
+                        <CardHeader>
+                            <CardTitle>Chapitres les plus difficiles</CardTitle>
+                        </CardHeader>
+                        <CardContent className="space-y-3">
+                            {(adminStats?.hardest_chapters ?? [])
+                                .slice(0, 6)
+                                .map((chapter) => (
+                                    <div
+                                        key={`${chapter.subject}-${chapter.title}`}
+                                        className="flex items-start justify-between gap-3"
+                                    >
+                                        <div className="min-w-0">
+                                            <p className="truncate text-sm font-medium text-slate-800">
+                                                {chapter.title}
+                                            </p>
+                                            <p className="text-xs text-slate-500">
+                                                {chapter.subject}
+                                            </p>
+                                        </div>
+                                        <div className="text-right">
+                                            <p className="text-sm font-semibold text-coral">
+                                                {chapter.error_rate}%
+                                            </p>
+                                            <p className="text-xs text-slate-500">
+                                                {chapter.attempts} tentatives
+                                            </p>
+                                        </div>
+                                    </div>
+                                ))}
+                        </CardContent>
+                    </Card>
                 </div>
             </Layout>
         );

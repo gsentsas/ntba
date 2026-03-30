@@ -1,21 +1,26 @@
 import { useQuery } from '@tanstack/react-query';
 import {
     AlertCircle,
+    BookOpenCheck,
+    Bot,
+    Calculator,
     ChevronRight,
     Clock,
     Lightbulb,
+    RotateCcw,
     Star,
     Trophy,
 } from 'lucide-react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 import { Layout } from '@/components/Layout/Layout';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Spinner } from '@/components/ui/spinner';
+import { useProgress } from '@/hooks/useProgress';
 import { exercisesApi, subjectsApi } from '@/services/api';
 import { useAppStore } from '@/store';
 import type { Exercise, ExerciseOption } from '@/types';
@@ -31,7 +36,10 @@ type SubmitResult = {
 
 export default function Quiz() {
     const navigate = useNavigate();
-    const { user, setPage } = useAppStore();
+    const [searchParams] = useSearchParams();
+    const { user, setPage, selectedSerie, setSelectedSerie } = useAppStore();
+    const isAdmin = user?.role === 'admin';
+    const activeSerie = isAdmin ? selectedSerie : user?.serie_code ?? '';
 
     // ── Filtres ──
     const [filterSubjectId, setFilterSubjectId] = useState('');
@@ -52,11 +60,16 @@ export default function Quiz() {
     const [done, setDone] = useState(false);
 
     const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+    const { subjectsProgress } = useProgress();
+    const { data: series = [] } = useQuery({
+        queryKey: ['subject-series'],
+        queryFn: subjectsApi.series,
+    });
 
     const { data: subjects = [] } = useQuery({
-        queryKey: ['subjects', user?.serie_code],
-        queryFn: () => subjectsApi.list(user?.serie_code),
-        enabled: !!user?.serie_code,
+        queryKey: ['subjects', activeSerie],
+        queryFn: () => subjectsApi.list(activeSerie || undefined),
+        enabled: !!user,
     });
 
     const {
@@ -66,6 +79,7 @@ export default function Quiz() {
     } = useQuery({
         queryKey: [
             'quiz-exercises',
+            activeSerie,
             filterSubjectId,
             filterDifficulty,
             filterType,
@@ -73,6 +87,7 @@ export default function Quiz() {
         ],
         queryFn: () =>
             exercisesApi.list({
+                serie_code: activeSerie || undefined,
                 subject_id: filterSubjectId || undefined,
                 difficulty: filterDifficulty || undefined,
                 type: filterType || undefined,
@@ -81,11 +96,55 @@ export default function Quiz() {
                 shuffle: true,
             }),
         staleTime: 0,
+        enabled: !!user,
     });
 
     useEffect(() => {
         setPage('quiz');
     }, [setPage]);
+
+    useEffect(() => {
+        const subjectFromQuery = searchParams.get('subject') ?? '';
+        if (subjectFromQuery) {
+            setFilterSubjectId(subjectFromQuery);
+        }
+    }, [searchParams]);
+
+    const activeSubject = subjects.find((subject) => subject.id === filterSubjectId);
+    const activeSubjectName = activeSubject?.name ?? null;
+    const recommendedSubject = [...subjectsProgress]
+        .sort((a, b) => {
+            const scoreA = a.subject.coefficient * 10 - a.simulated_grade;
+            const scoreB = b.subject.coefficient * 10 - b.simulated_grade;
+
+            return scoreB - scoreA;
+        })[0];
+    const recommendedDifficulty =
+        recommendedSubject && recommendedSubject.simulated_grade < 10
+            ? '2'
+            : recommendedSubject && recommendedSubject.simulated_grade < 13
+              ? '3'
+              : '4';
+
+    const applyPreset = useCallback(
+        ({
+            subjectId,
+            difficulty,
+            type,
+            annale,
+        }: {
+            subjectId?: string;
+            difficulty?: string;
+            type?: string;
+            annale?: boolean;
+        }) => {
+            setFilterSubjectId(subjectId ?? '');
+            setFilterDifficulty(difficulty ?? '');
+            setFilterType(type ?? '');
+            setAnnaleOnly(annale ?? false);
+        },
+        [],
+    );
 
     useEffect(() => {
         if (rawExercises) {
@@ -250,10 +309,16 @@ export default function Quiz() {
                                 </Button>
                                 <Button
                                     variant="outline"
-                                    onClick={() => navigate('/ai-chat')}
+                                    onClick={() =>
+                                        navigate(
+                                            recommendedSubject
+                                                ? `/internal-agent?subject=${recommendedSubject.subject.id}&action=study-pack`
+                                                : '/internal-agent',
+                                        )
+                                    }
                                     className="w-full border-green/30 text-green"
                                 >
-                                    Réviser avec l'IA
+                                    Réviser avec l’agent
                                 </Button>
                                 <Button
                                     variant="ghost"
@@ -273,9 +338,292 @@ export default function Quiz() {
     return (
         <Layout>
             <div className="mx-auto max-w-3xl space-y-4">
+                {recommendedSubject ? (
+                    <Card className="border-purple-light bg-[linear-gradient(135deg,#f5f3ff_0%,#ffffff_100%)]">
+                        <CardContent className="space-y-4 py-4">
+                            <div className="flex flex-wrap items-start justify-between gap-3">
+                                <div>
+                                    <p className="text-sm font-semibold text-purple">
+                                        Recommandé pour toi
+                                    </p>
+                                    <p className="mt-1 text-sm leading-6 text-slate-700">
+                                        Commence par{' '}
+                                        <span className="font-semibold">
+                                            {recommendedSubject.subject.name}
+                                        </span>{' '}
+                                        {activeSerie
+                                            ? `en série ${activeSerie}.`
+                                            : ' dans les séries actuellement visibles.'}{' '}
+                                        C’est la matière où le gain semble le
+                                        plus utile pour remonter ta moyenne.
+                                    </p>
+                                </div>
+                                <Badge className="border-0 bg-white text-purple">
+                                    {recommendedSubject.simulated_grade.toFixed(1)}
+                                    /20
+                                </Badge>
+                            </div>
+
+                            <div className="flex flex-wrap gap-2">
+                                <Button
+                                    type="button"
+                                    onClick={() =>
+                                        applyPreset({
+                                            subjectId:
+                                                recommendedSubject.subject.id,
+                                            difficulty:
+                                                recommendedDifficulty,
+                                            type: '',
+                                            annale: false,
+                                        })
+                                    }
+                                    className="rounded-2xl bg-purple text-white hover:bg-purple/90"
+                                >
+                                    Quiz conseillé
+                                </Button>
+                                <Button
+                                    type="button"
+                                    variant="outline"
+                                    onClick={() =>
+                                        applyPreset({
+                                            subjectId:
+                                                recommendedSubject.subject.id,
+                                            difficulty: '',
+                                            type: 'vrai_faux',
+                                            annale: false,
+                                        })
+                                    }
+                                    className="rounded-2xl border-purple/30 text-purple hover:bg-purple-light"
+                                >
+                                    Révision rapide
+                                </Button>
+                            </div>
+                        </CardContent>
+                    </Card>
+                ) : null}
+
+                <Card>
+                    <CardContent className="space-y-4 py-4">
+                        <div className="flex flex-wrap items-center justify-between gap-3">
+                            <div>
+                                <p className="text-sm font-semibold text-slate-900">
+                                    Parcours rapides
+                                </p>
+                                <p className="text-sm text-slate-500">
+                                    Lance un quiz déjà classé pour la série{' '}
+                                    <span className="font-medium text-slate-700">
+                                        {activeSerie ||
+                                            (isAdmin
+                                                ? 'choisie par l’admin'
+                                                : 'de l’élève')}
+                                    </span>
+                                    {activeSubjectName
+                                        ? ` et la matière ${activeSubjectName}`
+                                        : ''}
+                                    .
+                                </p>
+                            </div>
+                            {isAdmin ? (
+                                <select
+                                    value={activeSerie}
+                                    onChange={(event) =>
+                                        setSelectedSerie(event.target.value)
+                                    }
+                                    className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 focus:border-green focus:outline-none"
+                                >
+                                    <option value="">
+                                        Toutes les séries
+                                    </option>
+                                    {series.map((serie) => (
+                                        <option key={serie} value={serie}>
+                                            {serie}
+                                        </option>
+                                    ))}
+                                </select>
+                            ) : null}
+                            {(filterSubjectId ||
+                                filterDifficulty ||
+                                filterType ||
+                                annaleOnly) && (
+                                <Button
+                                    type="button"
+                                    variant="outline"
+                                    onClick={() =>
+                                        applyPreset({
+                                            subjectId: '',
+                                            difficulty: '',
+                                            type: '',
+                                            annale: false,
+                                        })
+                                    }
+                                    className="rounded-2xl"
+                                >
+                                    <RotateCcw className="h-4 w-4" />
+                                    Réinitialiser
+                                </Button>
+                            )}
+                        </div>
+
+                        <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+                            <button
+                                type="button"
+                                onClick={() =>
+                                    applyPreset({
+                                        subjectId: '',
+                                        difficulty: '',
+                                        type: '',
+                                        annale: false,
+                                    })
+                                }
+                                className="rounded-2xl border border-slate-200 bg-white px-4 py-4 text-left transition hover:border-green hover:bg-green-xlight"
+                            >
+                                <p className="text-sm font-semibold text-slate-900">
+                                    Quiz de ma série
+                                </p>
+                                <p className="mt-1 text-xs leading-5 text-slate-500">
+                                    Tous les exercices de {activeSerie || 'la série'}
+                                </p>
+                            </button>
+
+                            <button
+                                type="button"
+                                onClick={() =>
+                                    applyPreset({
+                                        subjectId: filterSubjectId,
+                                        difficulty: '',
+                                        type: '',
+                                        annale: false,
+                                    })
+                                }
+                                disabled={!filterSubjectId}
+                                className="rounded-2xl border border-slate-200 bg-white px-4 py-4 text-left transition hover:border-green hover:bg-green-xlight disabled:cursor-not-allowed disabled:opacity-50"
+                            >
+                                <p className="text-sm font-semibold text-slate-900">
+                                    Quiz de ma matière
+                                </p>
+                                <p className="mt-1 text-xs leading-5 text-slate-500">
+                                    {activeSubjectName
+                                        ? activeSubjectName
+                                        : "Choisis d'abord une matière"}
+                                </p>
+                            </button>
+
+                            <button
+                                type="button"
+                                onClick={() =>
+                                    applyPreset({
+                                        subjectId: filterSubjectId,
+                                        difficulty: '',
+                                        type: 'calcul',
+                                        annale: false,
+                                    })
+                                }
+                                className="rounded-2xl border border-slate-200 bg-white px-4 py-4 text-left transition hover:border-green hover:bg-green-xlight"
+                            >
+                                <div className="flex items-center gap-2">
+                                    <Calculator className="h-4 w-4 text-green-dark" />
+                                    <p className="text-sm font-semibold text-slate-900">
+                                        Calcul
+                                    </p>
+                                </div>
+                                <p className="mt-1 text-xs leading-5 text-slate-500">
+                                    Exercices numériques et applications
+                                </p>
+                            </button>
+
+                            <button
+                                type="button"
+                                onClick={() =>
+                                    applyPreset({
+                                        subjectId: filterSubjectId,
+                                        difficulty: '',
+                                        type: '',
+                                        annale: true,
+                                    })
+                                }
+                                className="rounded-2xl border border-slate-200 bg-white px-4 py-4 text-left transition hover:border-green hover:bg-green-xlight"
+                            >
+                                <div className="flex items-center gap-2">
+                                    <BookOpenCheck className="h-4 w-4 text-amber" />
+                                    <p className="text-sm font-semibold text-slate-900">
+                                        Annales
+                                    </p>
+                                </div>
+                                <p className="mt-1 text-xs leading-5 text-slate-500">
+                                    Mode entraînement sur sujets officiels
+                                </p>
+                            </button>
+                        </div>
+
+                        <div className="grid gap-3 md:grid-cols-2">
+                            <button
+                                type="button"
+                                onClick={() =>
+                                    applyPreset({
+                                        subjectId: filterSubjectId,
+                                        difficulty: '',
+                                        type: 'vrai_faux',
+                                        annale: false,
+                                    })
+                                }
+                                className="rounded-2xl border border-slate-200 bg-white px-4 py-4 text-left transition hover:border-green hover:bg-green-xlight"
+                            >
+                                <div className="flex items-center gap-2">
+                                    <Lightbulb className="h-4 w-4 text-amber" />
+                                    <p className="text-sm font-semibold text-slate-900">
+                                        Vrai / Faux
+                                    </p>
+                                </div>
+                                <p className="mt-1 text-xs leading-5 text-slate-500">
+                                    Révisions rapides pour vérifier les bases
+                                </p>
+                            </button>
+
+                            <button
+                                type="button"
+                                onClick={() =>
+                                    applyPreset({
+                                        subjectId: filterSubjectId,
+                                        difficulty: '3',
+                                        type: '',
+                                        annale: false,
+                                    })
+                                }
+                                className="rounded-2xl border border-slate-200 bg-white px-4 py-4 text-left transition hover:border-green hover:bg-green-xlight"
+                            >
+                                <div className="flex items-center gap-2">
+                                    <Star className="h-4 w-4 text-amber" />
+                                    <p className="text-sm font-semibold text-slate-900">
+                                        Niveau moyen
+                                    </p>
+                                </div>
+                                <p className="mt-1 text-xs leading-5 text-slate-500">
+                                    Pour avancer sans partir trop facile ou trop dur
+                                </p>
+                            </button>
+                        </div>
+                    </CardContent>
+                </Card>
+
                 {/* ── Filtres ── */}
                 <Card>
-                    <CardContent className="flex flex-wrap items-center gap-3 py-3">
+                    <CardContent className="space-y-3 py-3">
+                        <div className="flex flex-wrap items-center justify-between gap-3">
+                            <div className="flex flex-wrap items-center gap-2">
+                                <Badge className="border-0 bg-slate-900 text-white">
+                                    Serie {activeSerie || 'non definie'}
+                                </Badge>
+                                <span className="text-sm text-slate-500">
+                                    Quiz classes pour les eleves de cette serie
+                                </span>
+                            </div>
+                            <span className="text-sm text-slate-500">
+                                {subjects.length} matiere
+                                {subjects.length > 1 ? 's' : ''}
+                            </span>
+                        </div>
+
+                        <div className="flex flex-wrap items-center gap-3">
                         <select
                             value={filterSubjectId}
                             onChange={(e) => setFilterSubjectId(e.target.value)}
@@ -326,6 +674,7 @@ export default function Quiz() {
                             />
                             Annales uniquement
                         </label>
+                        </div>
                     </CardContent>
                 </Card>
 
@@ -367,6 +716,11 @@ export default function Quiz() {
                                         {currentEx.subject_name && (
                                             <Badge className="border-0 bg-green-light text-green-dark">
                                                 {currentEx.subject_name}
+                                            </Badge>
+                                        )}
+                                        {currentEx.serie_code && (
+                                            <Badge className="border-0 bg-slate-100 text-slate-700">
+                                                {currentEx.serie_code}
                                             </Badge>
                                         )}
                                         {currentEx.is_annale && (
@@ -511,6 +865,21 @@ export default function Quiz() {
                                                 +{result.points_earned} points
                                             </p>
                                         )}
+                                        <div className="mt-3">
+                                            <Button
+                                                variant="outline"
+                                                size="sm"
+                                                onClick={() =>
+                                                    navigate(
+                                                        `/internal-agent?subject=${currentEx.subject_id}&chapter=${currentEx.chapter_id}&exercise=${currentEx.id}&answer=${encodeURIComponent(selected ?? '')}&action=correct-answer`,
+                                                    )
+                                                }
+                                                className="border-white/60 bg-white/80 text-slate-700 hover:bg-white"
+                                            >
+                                                <Bot className="h-4 w-4" />
+                                                Revoir cette réponse avec l’agent
+                                            </Button>
+                                        </div>
                                     </div>
                                 )}
 
@@ -543,23 +912,36 @@ export default function Quiz() {
                                             </Button>
                                         </>
                                     ) : (
-                                        <Button
-                                            onClick={handleNext}
-                                            className="ml-auto bg-green text-white hover:bg-green-dark"
-                                        >
-                                            {currentIndex + 1 <
-                                            exercises.length ? (
-                                                <>
-                                                    Question suivante{' '}
-                                                    <ChevronRight className="h-4 w-4" />
-                                                </>
-                                            ) : (
-                                                <>
-                                                    Voir mon score{' '}
-                                                    <Trophy className="h-4 w-4" />
-                                                </>
-                                            )}
-                                        </Button>
+                                        <div className="ml-auto flex flex-wrap gap-2">
+                                            <Button
+                                                variant="outline"
+                                                onClick={() =>
+                                                    navigate(
+                                                        `/internal-agent?subject=${currentEx.subject_id}&chapter=${currentEx.chapter_id}&exercise=${currentEx.id}&answer=${encodeURIComponent(selected ?? '')}&action=correct-answer`,
+                                                    )
+                                                }
+                                            >
+                                                <Bot className="h-4 w-4" />
+                                                Agent interne
+                                            </Button>
+                                            <Button
+                                                onClick={handleNext}
+                                                className="bg-green text-white hover:bg-green-dark"
+                                            >
+                                                {currentIndex + 1 <
+                                                exercises.length ? (
+                                                    <>
+                                                        Question suivante{' '}
+                                                        <ChevronRight className="h-4 w-4" />
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        Voir mon score{' '}
+                                                        <Trophy className="h-4 w-4" />
+                                                    </>
+                                                )}
+                                            </Button>
+                                        </div>
                                     )}
                                 </div>
                             </CardContent>
@@ -573,7 +955,11 @@ export default function Quiz() {
                         <CardContent className="flex flex-col items-center gap-3 py-12 text-center">
                             <AlertCircle className="h-10 w-10 text-slate-300" />
                             <p className="text-slate-500">
-                                Aucun exercice trouvé avec ces filtres.
+                                Aucun exercice trouve pour la serie{' '}
+                                <span className="font-medium text-slate-700">
+                                    {activeSerie || 'selectionnee'}
+                                </span>{' '}
+                                avec ces filtres.
                             </p>
                             <Button
                                 variant="outline"

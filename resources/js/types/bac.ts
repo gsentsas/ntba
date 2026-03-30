@@ -96,11 +96,13 @@ export type Exercise = {
     chapter_title?: string;
     pdf_url?: string | null;
     corrige_url?: string | null;
+    provider?: 'anthropic' | 'fallback';
 };
 
 export type ChatMessage = {
     role: 'user' | 'assistant';
     content: string;
+    provider?: 'anthropic' | 'fallback' | null;
 };
 
 export type DailyTask = {
@@ -215,6 +217,74 @@ export type ForumReply = {
     is_best_answer: boolean;
     created_at: string;
     author_name?: string | null;
+};
+
+export type AgentPdf = {
+    file_name: string;
+    mime_type: string;
+    base64: string;
+};
+
+export type AgentContext = {
+    serie_code: string;
+    target: {
+        subject: Subject;
+        chapter: Chapter;
+    };
+    weak_subjects: Array<{
+        id: string;
+        name: string;
+        simulated_grade: number;
+        completion_pct: number;
+        coefficient: number;
+    }>;
+    today_tasks: Array<{
+        id: string;
+        task_type: PlanningTaskType;
+        title: string;
+        description?: string | null;
+        estimated_minutes: number;
+        is_completed: boolean;
+        subject_name?: string | null;
+        chapter_title?: string | null;
+    }>;
+    recommendation: string;
+};
+
+export type AgentStudyPack = {
+    target: {
+        subject: Subject;
+        chapter: Chapter;
+    };
+    recommendation: string;
+    weak_subjects: AgentContext['weak_subjects'];
+    today_tasks: AgentContext['today_tasks'];
+    summary: string;
+    summary_provider: 'anthropic' | 'fallback';
+    exercise: Exercise;
+    exercise_provider: 'anthropic' | 'fallback';
+    pdf?: AgentPdf;
+};
+
+export type AgentAnswerCorrection = {
+    exercise: Exercise;
+    answer: string;
+    is_correct: boolean | null;
+    verdict: string;
+    correct_answer?: string | null;
+    feedback: string;
+    next_steps: string[];
+    provider: 'internal';
+    pdf?: AgentPdf;
+};
+
+export type AgentPhotoCorrection = {
+    subject: Pick<Subject, 'id' | 'name' | 'serie_code'> | null;
+    correction: string;
+    note_estimee: number;
+    points_a_retravailler: string[];
+    provider: 'anthropic' | 'fallback';
+    pdf?: AgentPdf;
 };
 
 export type AdminStats = {

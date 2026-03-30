@@ -30,6 +30,21 @@ export function ChatMessage({ message, isStreaming }: Props) {
                         </div>
                     ) : (
                         <div className="prose prose-sm prose-headings:font-semibold prose-strong:text-slate-900 prose-code:rounded prose-code:bg-slate-100 prose-code:px-1 prose-code:py-0.5 prose-code:text-green-dark prose-pre:bg-slate-900 prose-pre:text-slate-50 max-w-none text-slate-800">
+                            {message.provider ? (
+                                <div className="mb-2 not-prose">
+                                    <span
+                                        className={`inline-flex rounded-full px-2.5 py-1 text-[11px] font-semibold ${
+                                            message.provider === 'anthropic'
+                                                ? 'bg-emerald-100 text-emerald-700'
+                                                : 'bg-amber-100 text-amber-700'
+                                        }`}
+                                    >
+                                        {message.provider === 'anthropic'
+                                            ? 'Mode IA avance'
+                                            : 'Mode secours'}
+                                    </span>
+                                </div>
+                            ) : null}
                             <ReactMarkdown remarkPlugins={[remarkGfm]}>
                                 {message.content}
                             </ReactMarkdown>

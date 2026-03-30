@@ -89,6 +89,16 @@ La philosophie est une réflexion rationnelle sur les questions fondamentales de
 L'opinion est immédiate, souvent vague ou non justifiée.
 La philosophie commence au contraire quand on interroge l'évidence.
 
+### Philosophie et mythe
+Le mythe raconte, symbolise et transmet une sagesse imagée.
+La philosophie, elle, cherche à démontrer, distinguer et argumenter.
+Elle ne se contente pas de raconter le monde : elle veut en rendre raison.
+
+### Philosophie et science
+La science étudie des objets précis avec des méthodes définies.
+La philosophie interroge les principes, les limites et le sens des savoirs.
+Elle ne remplace pas la science, mais réfléchit sur ses fondements et ses enjeux.
+
 ## 3. L'homme
 L'homme peut être défini de plusieurs manières.
 
@@ -103,6 +113,11 @@ L'homme se distingue ainsi par la pensée, le langage et la vie en société.
 L'homme n'est pas seulement un être biologique.
 Il vit dans un monde de langage, de techniques, de règles et de symboles.
 
+### L'homme comme conscience
+L'homme se distingue aussi par sa capacité à se rapporter à lui-même.
+Il se sait vivant, mortel, capable de se juger, d'anticiper et de donner un sens à ses actes.
+C'est pourquoi la question de l'homme ouvre immédiatement sur celles de la morale, de la liberté et du bonheur.
+
 ## 4. La liberté
 La liberté est une notion centrale en philosophie.
 
@@ -115,6 +130,11 @@ La liberté est une notion centrale en philosophie.
 ### Le libre arbitre
 Pour Descartes, le libre arbitre est la capacité de choisir.
 Il manifeste la dignité de la personne humaine.
+
+### La liberté comme conquête
+La liberté n'est pas toujours donnée immédiatement.
+Elle peut demander un travail sur soi, une éducation, une maîtrise des passions et une lucidité plus grande.
+Être libre, ce n'est donc pas faire tout ce que l'on veut, mais apprendre à vouloir de manière éclairée.
 
 ## 5. Liberté et déterminisme
 Le déterminisme affirme que tout phénomène a une cause.
@@ -132,6 +152,10 @@ sommes-nous encore libres ?
 Spinoza ne nie pas la nécessité.
 Pour lui, être libre ne consiste pas à échapper aux causes, mais à comprendre ce qui nous détermine.
 La liberté devient alors connaissance de la nécessité.
+
+### Enjeu philosophique
+Le problème n'oppose donc pas seulement liberté et contrainte.
+Il oblige à se demander si la vraie liberté est indépendance absolue ou autonomie raisonnable.
 
 ## 6. La responsabilité
 La question de la liberté engage celle de la responsabilité.
@@ -154,7 +178,34 @@ Il passe par la raison, la vertu et une vie équilibrée.
 Le bonheur ne dépend pas des biens extérieurs.
 Il consiste à vivre conformément à la raison et à accepter ce qui ne dépend pas de nous.
 
-## 8. Méthode de réflexion philosophique
+### Bonheur et désir
+La réflexion sur le bonheur conduit souvent à interroger le désir.
+Faut-il satisfaire tous ses désirs pour être heureux ?
+Ou faut-il apprendre à les hiérarchiser, à les maîtriser et à distinguer l'essentiel du superflu ?
+
+Cette question traverse la philosophie antique comme la philosophie moderne.
+
+## 8. Repères d'auteurs et problématiques utiles
+Pour enrichir une copie, il faut savoir mobiliser les auteurs à bon escient.
+
+### Quelques repères utiles
+- **Socrate** : l'exigence de l'examen de soi et du dialogue.
+- **Aristote** : l'homme comme animal raisonnable et politique ; le bonheur comme activité conforme à la vertu.
+- **Descartes** : la liberté comme puissance de choisir et l'importance de la raison.
+- **Spinoza** : la liberté comme compréhension de la nécessité.
+- **Épicure** : le bonheur comme absence de trouble.
+- **Épictète** : distinguer ce qui dépend de nous de ce qui n'en dépend pas.
+
+### Problématiques fréquentes
+- L'homme est-il naturellement libre ?
+- Être libre, est-ce faire ce que l'on veut ?
+- Le bonheur dépend-il de nous ?
+- La connaissance de soi rend-elle plus libre ?
+- Le désir est-il un obstacle ou un moteur du bonheur ?
+
+Un bon devoir ne cite pas un auteur pour faire savant. Il s'en sert pour éclairer un problème précis et faire progresser l'argumentation.
+
+## 9. Méthode de réflexion philosophique
 Pour traiter une question philosophique :
 
 1. définir les notions du sujet
@@ -163,7 +214,33 @@ Pour traiter une question philosophique :
 4. argumenter avec rigueur
 5. aboutir à une conclusion nuancée
 
-## 9. À retenir
+### Exigences d'une bonne copie
+- ne pas réciter des définitions sans lien avec le sujet ;
+- faire apparaître une vraie tension ou difficulté ;
+- utiliser les auteurs pour éclairer un problème, non pour décorer le devoir ;
+- toujours distinguer exemple, argument et thèse.
+
+### Formulations utiles dans une copie
+- "Le sujet oppose en apparence..., mais il invite en réalité à se demander si..."
+- "Cette thèse montre que..., cependant elle rencontre une limite..."
+- "Il faut ici distinguer... afin d'éviter une confusion fréquente."
+- "L'enjeu n'est donc pas seulement de définir..., mais de comprendre dans quelle mesure..."
+
+## 10. Sujets types pour s'entraîner
+Voici quelques sujets classiques qui permettent de réviser ce chapitre :
+
+- L'homme est-il condamné à désirer sans jamais être heureux ?
+- Être libre, est-ce n'obéir à personne ?
+- Le bonheur dépend-il des circonstances extérieures ?
+- La connaissance de soi suffit-elle à rendre l'homme libre ?
+
+### Ce qu'on attend dans ce type de sujet
+- une définition précise des notions ;
+- une vraie tension entre plusieurs thèses ;
+- des auteurs bien choisis ;
+- une conclusion nuancée et non récitative.
+
+## 11. À retenir
 - la philosophie est une recherche rationnelle et critique
 - l'homme est un être de raison, de langage et de société
 - la liberté se pense toujours avec ses limites
@@ -193,6 +270,14 @@ Pour traiter une question philosophique :
         'Pour les stoïciens (Épictète, Marc Aurèle), le bonheur est atteint en :',
         opt('Fuyant la société et ses contraintes', 'Recherchant les plaisirs sensoriels intenses', 'Distinguant ce qui dépend de nous de ce qui n\'en dépend pas', 'Accumulant les connaissances scientifiques'),
         'C', "Le stoïcisme enseigne la distinction entre ce qui dépend de nous (nos jugements, désirs, volonté) et ce qui n'en dépend pas (la maladie, la mort, la réputation). Le bonheur consiste à maîtriser ce qui dépend de nous et à accepter le reste.", 3),
+      ex('Vrai ou faux – liberté',
+        'Vrai ou faux : pour Spinoza, être libre consiste à échapper à toute cause.',
+        opt('Vrai', 'Faux', 'Vrai seulement en morale', 'Le cours ne tranche pas'),
+        'B', "C'est faux. Pour Spinoza, la liberté n'est pas l'absence de causes, mais la compréhension de ce qui nous détermine. La liberté est donc liée à la connaissance de la nécessité.", 3),
+      ex('QCM – bonheur et désir',
+        'La réflexion philosophique sur le bonheur conduit souvent à interroger :',
+        opt('La vitesse du progrès technique', 'Le désir et sa maîtrise', 'Le calcul mathématique', 'La géographie politique'),
+        'B', "Dans le cours, la question du bonheur est liée à celle du désir : faut-il satisfaire tous ses désirs, les hiérarchiser ou apprendre à les maîtriser pour être heureux ?", 2),
     ],
   },
   {
@@ -225,6 +310,11 @@ L'homme ne vit pas isolé. Il appartient à une société faite d'institutions, 
 
 La société protège, éduque et organise la coexistence des hommes.
 
+### Ambivalence de la société
+La société protège, mais elle contraint aussi.
+Elle civilise l'individu, mais elle lui impose des normes.
+Le problème philosophique consiste donc à penser ensemble l'exigence de vivre avec les autres et le désir de liberté.
+
 ## 3. Le contrat social
 Le contrat social est une théorie expliquant le passage de l'état de nature à la société civile.
 
@@ -241,6 +331,10 @@ Le pouvoir politique doit garantir ces droits, non les supprimer.
 Le contrat social fonde un corps politique dans lequel chacun obéit à la volonté générale.
 L'autorité légitime doit viser le bien commun.
 
+### Enjeu du contractualisme
+Les théories du contrat social ne décrivent pas forcément un événement historique réel.
+Elles proposent surtout une manière de penser le fondement légitime du pouvoir politique.
+
 ## 4. L'État
 L'État est une organisation politique dotée :
 
@@ -249,6 +343,10 @@ L'État est une organisation politique dotée :
 - d'un pouvoir souverain
 
 Il garantit l'ordre, édicte les lois et exerce l'autorité publique.
+
+### Fonctions de l'État
+L'État n'est pas seulement un appareil de contrainte.
+Il assure aussi la sécurité, la justice, l'administration, l'éducation et parfois la solidarité sociale.
 
 ### Weber
 Selon Max Weber, l'État détient le monopole de la violence physique légitime sur un territoire donné.
@@ -264,6 +362,11 @@ Le droit positif est l'ensemble des lois effectivement en vigueur dans une soci�
 Une loi peut être légale sans être juste.
 La réflexion philosophique interroge donc le rapport entre légalité et légitimité.
 
+On peut alors se demander :
+- faut-il toujours obéir à la loi ?
+- qu'est-ce qu'une loi injuste ?
+- dans quelles conditions la désobéissance peut-elle être moralement justifiée ?
+
 ## 6. La justice
 La justice renvoie à l'idée d'équité, de droit et de juste répartition.
 
@@ -276,13 +379,36 @@ Elle concerne l'égalité dans les échanges.
 ### Justice sociale
 Chez Rawls, les inégalités ne sont acceptables que si elles améliorent la situation des plus défavorisés.
 
+### Justice et égalité
+L'égalité ne signifie pas toujours identité de traitement.
+Selon les conceptions, être juste peut vouloir dire :
+- traiter tout le monde de la même façon ;
+- donner à chacun ce qui lui revient ;
+- corriger certaines inégalités de départ.
+
 ## 7. Liberté et autorité politique
 La vie en société suppose des règles.
 La question est donc de savoir comment obéir à la loi sans perdre sa liberté.
 
 Rousseau répond que l'on reste libre quand on obéit à une loi que l'on s'est prescrite collectivement.
 
-## 8. Méthode de réflexion
+## 8. Repères d'auteurs et questions classiques
+### Quelques auteurs à mobiliser
+- **Aristote** : la cité est naturelle et l'homme est un animal politique.
+- **Hobbes** : sans pouvoir commun, les hommes risquent la guerre de tous contre tous.
+- **Locke** : l'État doit protéger les droits naturels.
+- **Rousseau** : la légitimité politique repose sur la volonté générale.
+- **Montesquieu** : la séparation des pouvoirs protège la liberté.
+- **Rawls** : une société juste doit aussi penser le sort des plus défavorisés.
+
+### Questions fréquentes
+- La société limite-t-elle nécessairement la liberté ?
+- Faut-il toujours obéir aux lois ?
+- Une loi légale est-elle forcément juste ?
+- L'État est-il un protecteur ou une menace pour la liberté ?
+- L'égalité suffit-elle à définir la justice ?
+
+## 9. Méthode de réflexion
 Pour traiter un sujet politique :
 
 1. définir société, État, droit ou justice
@@ -291,7 +417,18 @@ Pour traiter un sujet politique :
 4. distinguer faits, normes et valeurs
 5. conclure sans simplifier abusivement
 
-## 9. À retenir
+### Conseil utile
+Dans une dissertation politique, il faut éviter deux pièges :
+- parler seulement de l'actualité sans problématiser ;
+- parler seulement des auteurs sans montrer l'enjeu concret des notions.
+
+### Formulations utiles
+- "L'État apparaît d'abord comme..., mais il peut aussi..."
+- "Il faut distinguer la légalité, qui renvoie à..., et la légitimité, qui renvoie à..."
+- "La justice ne se réduit pas à l'égalité arithmétique, car..."
+- "Le problème central est de savoir comment concilier autorité politique et liberté individuelle."
+
+## 10. À retenir
 - la société peut être pensée comme naturelle ou conventionnelle
 - l'État organise la vie commune
 - le droit n'épuise pas toujours la justice
@@ -349,6 +486,10 @@ Elle étudie :
 - les limites de la science
 - la différence entre science, opinion et croyance
 
+### Pourquoi cette réflexion est importante
+La science a un immense prestige, mais il faut encore savoir ce qui fait sa valeur.
+L'épistémologie cherche donc à distinguer le savoir démontré, l'hypothèse, la croyance, l'idéologie ou la pseudo-science.
+
 ## 3. La vérité
 La vérité est un problème central de la philosophie.
 
@@ -360,6 +501,10 @@ Une proposition est vraie si elle s'accorde logiquement avec un ensemble de prop
 
 ### Vérité pragmatique
 Pour les pragmatistes, est vrai ce qui fonctionne dans la pratique et produit des effets satisfaisants.
+
+### Enjeu du problème
+Ces conceptions montrent que la vérité n'est pas une notion simple.
+On peut alors se demander si la vérité est découverte, construite, vérifiée ou simplement approchée.
 
 ## 4. La méthode scientifique
 La science repose sur des procédures rigoureuses.
@@ -378,6 +523,10 @@ Elle suit le schéma :
 ### Popper
 Selon Popper, une théorie n'est scientifique que si elle est falsifiable, c'est-à-dire susceptible d'être réfutée par l'expérience.
 
+### Science et progrès
+Le progrès scientifique ne consiste pas seulement à accumuler des vérités définitives.
+Il passe aussi par des rectifications, des remises en cause, des crises et des réorganisations du savoir.
+
 ## 5. Science et limites
 La science produit un savoir puissant, mais limité :
 
@@ -389,6 +538,10 @@ La science produit un savoir puissant, mais limité :
 L'art est une activité de création humaine.
 Il donne forme sensible à une signification, une émotion ou une vision du monde.
 
+### L'œuvre d'art
+Une œuvre d'art n'est pas un simple objet utile.
+Elle porte un style, une intention, une forme, et suscite une expérience singulière chez celui qui la reçoit.
+
 ## 7. Le beau
 Le beau n'est pas seulement ce qui plaît.
 
@@ -399,6 +552,10 @@ Le jugement esthétique est désintéressé et prétend à une certaine universa
 - l'agréable relève du goût personnel
 - le beau appelle une adhésion plus large, même sans démonstration
 
+### Le jugement esthétique
+Quand on dit qu'une œuvre est belle, on n'exprime pas seulement une préférence privée.
+On prétend souvent, au moins implicitement, que d'autres peuvent reconnaître cette beauté.
+
 ## 8. L'art comme imitation ou création
 ### Mimèsis
 Chez Platon et Aristote, l'art est souvent pensé comme imitation.
@@ -407,6 +564,10 @@ Chez Platon et Aristote, l'art est souvent pensé comme imitation.
 Chez Hegel, l'art est une manifestation sensible de l'esprit.
 
 L'art ne copie donc pas seulement le réel : il peut l'interpréter, le transformer et lui donner sens.
+
+### Art et vérité
+Une œuvre peut révéler quelque chose du monde, de l'homme, du temps ou de la condition humaine.
+L'art n'est donc pas étranger à la vérité, même si sa vérité n'est pas celle de la science.
 
 ## 9. Fonction de l'art
 L'art peut :
@@ -424,7 +585,29 @@ Pour un sujet sur la science ou l'art :
 4. confronter plusieurs thèses
 5. conclure avec nuance
 
-## 11. À retenir
+### Erreurs fréquentes
+- opposer trop vite science et philosophie ;
+- réduire l'art à la décoration ;
+- confondre beau, utile et agréable ;
+- croire qu'une théorie scientifique est vraie une fois pour toutes.
+
+## 11. Repères et questions utiles
+### Quelques repères
+- **Descartes** valorise la clarté, la méthode et l'évidence.
+- **Claude Bernard** insiste sur la démarche expérimentale.
+- **Karl Popper** fait de la réfutabilité un critère du savoir scientifique.
+- **Thomas Kuhn** montre que les sciences évoluent aussi par changements de paradigme.
+- **Platon** se méfie de l'art comme imitation éloignée de la vérité.
+- **Kant** analyse le beau comme un jugement désintéressé.
+
+### Questions classiques
+- La science dit-elle toute la vérité sur le réel ?
+- Peut-on parler d'une vérité absolue en science ?
+- L'art doit-il imiter la réalité ?
+- Le beau est-il seulement affaire de goût ?
+- Le progrès scientifique garantit-il le progrès humain ?
+
+## 12. À retenir
 - l'épistémologie réfléchit sur la science
 - la vérité peut recevoir plusieurs sens
 - la science repose sur des méthodes rigoureuses mais révisables
@@ -510,15 +693,42 @@ Les textes surréalistes se reconnaissent souvent par :
 
 Dans un texte surréaliste, le lecteur peut être déstabilisé, mais cette déstabilisation a un sens : elle oblige à dépasser la lecture ordinaire pour entrer dans un univers plus libre.
 
+### Effets produits sur le lecteur
+Le texte surréaliste peut :
+- surprendre ;
+- déranger ;
+- émerveiller ;
+- troubler la logique habituelle ;
+- ouvrir un espace d'interprétation plus large.
+
+Le lecteur n'est plus placé devant un discours purement explicatif, mais devant une expérience poétique.
+
 ## 5. Principaux auteurs et œuvres
 - **André Breton** : *Nadja*, *L'Amour fou*, *Manifestes du surréalisme*.
 - **Paul Éluard** : *Capitale de la douleur*, *L'Amour la poésie*.
 - **Louis Aragon** : *Le Paysan de Paris*.
 - **René Char** : *Fureur et mystère*.
 
+### Quelques repères d'analyse
+- Chez **Breton**, on observe souvent le mélange entre autobiographie, rêve, hasard et quête d'absolu.
+- Chez **Éluard**, le lyrisme amoureux se combine avec des images neuves et une grande liberté verbale.
+- Chez **Aragon**, la ville moderne peut devenir un espace de dérive, de découverte et de fascination.
+- Chez **René Char**, la densité poétique donne au langage une force à la fois mystérieuse et méditative.
+
 Il faut aussi retenir que le surréalisme n'est pas limité à la France. Son influence s'étend à de nombreuses littératures et formes artistiques, y compris dans l'espace francophone.
 
-## 6. Ce qu'il faut savoir faire au Bac
+## 6. Le surréalisme dans les autres arts
+Le surréalisme ne se réduit pas à la poésie ou au roman.
+Il touche également :
+- la peinture ;
+- la photographie ;
+- le cinéma ;
+- le collage ;
+- les jeux d'écriture collectifs.
+
+Cette extension montre qu'il s'agit moins d'un simple style que d'une manière nouvelle d'explorer l'esprit et le réel.
+
+## 7. Ce qu'il faut savoir faire au Bac
 Dans un sujet d'examen, on peut vous demander :
 - de définir le surréalisme ;
 - de montrer l'importance du rêve, de l'inconscient ou de l'écriture automatique ;
@@ -531,13 +741,31 @@ Pour bien répondre, il faut toujours :
 3. illustrer avec un auteur ou une œuvre ;
 4. expliquer l'effet produit sur le lecteur.
 
-## 7. Erreurs fréquentes
+### Formulations utiles
+- "Le texte rompt avec la logique ordinaire..."
+- "L'image poétique associe ici deux réalités éloignées..."
+- "Le rêve devient un moyen d'exploration de l'inconscient..."
+- "Le poète cherche à libérer la parole des contraintes rationnelles..."
+
+## 8. Sujets types et pistes d'analyse
+### Exemples de sujets possibles
+- Montrez que le surréalisme est à la fois une révolution poétique et une révolte contre l'ordre établi.
+- En quoi le rêve et l'inconscient transforment-ils l'écriture surréaliste ?
+- Le surréalisme cherche-t-il à fuir le réel ou à le dépasser ?
+
+### Réflexes d'analyse
+- partir d'un procédé précis avant de généraliser ;
+- relier l'image poétique à la liberté créatrice ;
+- montrer que l'étrangeté produit du sens, et pas seulement de la surprise ;
+- penser le surréalisme comme une vision du monde, non comme un simple style.
+
+## 9. Erreurs fréquentes
 - Confondre surréalisme et simple imagination sans règles.
 - Réduire le mouvement à des textes incompréhensibles.
 - Oublier le rôle de Breton et des manifestes.
 - Négliger l'influence du rêve et de l'inconscient.
 
-## 8. À retenir
+## 10. À retenir
 Le surréalisme est un mouvement littéraire et artistique majeur du XXe siècle. Il cherche à libérer la pensée de la domination de la raison en valorisant le rêve, l'inconscient, l'écriture automatique et les images inattendues. Il représente à la fois une révolution poétique, une attitude de révolte et une nouvelle manière de regarder le monde.`,
     exercises: [
       ex('Date du 1er Manifeste surréaliste',
@@ -564,6 +792,14 @@ Le surréalisme est un mouvement littéraire et artistique majeur du XXe siècle
         'Paul Éluard est l\'auteur de :',
         opt('*Le Paysan de Paris*', '*Capitale de la douleur*', '*Les Fleurs du mal*', '*Alcools*'),
         'B', "*Capitale de la douleur* (1926) est le recueil phare de Paul Éluard, poète surréaliste. Il y exprime la douleur de l'amour perdu et la puissance du désir, à travers des images innovantes libérées du contrôle rationnel. *Le Paysan de Paris* est d'Aragon ; *Alcools* d'Apollinaire.", 2),
+      ex('Vrai ou faux – surréalisme',
+        'Vrai ou faux : le surréalisme cherche uniquement à décrire la réalité visible de manière fidèle.',
+        opt('Vrai', 'Faux', 'Vrai seulement dans le roman', 'Le manifeste affirme les deux'),
+        'B', "C'est faux. Le surréalisme veut dépasser le réel visible pour explorer le rêve, l'inconscient, le désir et les associations inattendues.", 2),
+      ex('QCM – autres arts',
+        'Le surréalisme ne s\'est pas limité à la littérature. Il a aussi marqué :',
+        opt('Seulement la musique religieuse', 'La peinture, la photographie et le cinéma', 'Uniquement la sculpture antique', 'Aucun autre art'),
+        'B', "Le chapitre rappelle que le surréalisme a touché plusieurs arts : peinture, photographie, cinéma, collage et jeux d'écriture collectifs.", 1),
     ],
   },
   {
@@ -619,6 +855,16 @@ La rime est le retour d'un même son à la fin de plusieurs vers.
 
 Ces procédés servent à créer des images, à renforcer une émotion, à produire une musique ou à mettre en valeur une idée.
 
+### Registres poétiques fréquents
+La poésie peut relever de plusieurs registres :
+- lyrique ;
+- élégiaque ;
+- satirique ;
+- épique ;
+- engagé.
+
+Reconnaître le registre aide à comprendre l'intention du poète et l'effet recherché.
+
 ## 3. Le roman
 Le roman est un récit de fiction en prose qui met en scène des personnages dans une histoire plus ou moins longue. Il peut représenter la société, explorer la psychologie, raconter une aventure ou proposer une critique du monde.
 
@@ -647,6 +893,15 @@ Le personnage se construit à travers :
 
 Chaque type de roman possède ses priorités esthétiques, mais tous reposent sur une organisation du récit et un travail de représentation.
 
+### Outils d'analyse du roman
+Pour commenter un extrait de roman, on peut étudier :
+- la focalisation ;
+- le rythme du récit ;
+- la description ;
+- le portrait ;
+- la place du narrateur ;
+- le rapport entre narration et dialogue.
+
 ## 4. Le théâtre
 Le théâtre est à la fois un texte et un spectacle. Il est écrit pour être joué devant un public. Sa matière première est le **dialogue**, accompagné de **didascalies** qui précisent gestes, décors, déplacements ou intonations.
 
@@ -672,6 +927,16 @@ On peut aussi utiliser le **schéma actantiel** :
 - il affronte des **opposants** ;
 - l'action s'inscrit dans une relation entre **destinateur** et **destinataire**.
 
+### Notions utiles au théâtre
+Il faut aussi maîtriser :
+- la **double énonciation** ;
+- le **monologue** ;
+- la **tirade** ;
+- le **quiproquo** ;
+- les **didascalies**.
+
+Ces notions permettent de mieux analyser l'efficacité dramatique d'une scène.
+
 ## 5. Comment comparer les trois genres
 ### La poésie
 Elle privilégie le rythme, l'image, la suggestion et la musicalité.
@@ -692,13 +957,35 @@ Pour analyser un texte, il faut d'abord identifier son genre, puis observer :
 
 Un bon devoir ne se contente pas de nommer les procédés : il montre à quoi ils servent.
 
-## 7. Erreurs fréquentes
+### Exemples de questions à se poser
+- Qu'est-ce qui fait la musicalité de ce poème ?
+- Quel regard le narrateur impose-t-il au lecteur ?
+- Comment le dialogue théâtral fait-il naître le conflit ?
+- En quoi la forme choisie renforce-t-elle le sens du texte ?
+
+## 7. Plans d'analyse utiles
+### Pour un poème
+- identifier le thème dominant ;
+- observer rythme, images et sonorités ;
+- montrer comment la forme produit une émotion ou une vision du monde.
+
+### Pour un extrait de roman
+- étudier le narrateur et la focalisation ;
+- analyser la construction du personnage ou du décor ;
+- expliquer l'effet produit sur le lecteur.
+
+### Pour une scène de théâtre
+- repérer le conflit ;
+- étudier la parole, les didascalies et la dynamique scénique ;
+- montrer comment la scène agit sur le spectateur.
+
+## 8. Erreurs fréquentes
 - Confondre narrateur et auteur.
 - Réduire la poésie à la simple présence de rimes.
 - Oublier que le théâtre est fait pour être joué.
 - Citer une figure de style sans en expliquer l'effet.
 
-## 8. À retenir
+## 9. À retenir
 La poésie, le roman et le théâtre sont trois grands genres littéraires qui possèdent chacun leurs codes, leurs formes et leurs objectifs. Les maîtriser permet de mieux lire les textes, de mieux les commenter et de mieux argumenter dans les devoirs du Bac.`,
     exercises: [
       ex('L\'alexandrin',
@@ -725,6 +1012,14 @@ La poésie, le roman et le théâtre sont trois grands genres littéraires qui p
         'Dans un récit en focalisation interne, le narrateur :',
         opt('Sait tout sur tous les personnages (omniscient)', 'Adopte le point de vue d\'un personnage spécifique et ne voit que ce qu\'il voit', 'Observe les personnages de l\'extérieur sans accéder à leurs pensées', 'Raconte des événements futurs'),
         'B', "La focalisation interne signifie que le récit est filtré par la conscience d'un personnage particulier : le lecteur ne sait que ce que ce personnage sait, ressent et perçoit. Ex. : *L'Étranger* de Camus (focalisation interne sur Meursault).", 3),
+      ex('Vrai ou faux – théâtre',
+        'Vrai ou faux : au théâtre, les didascalies donnent des indications de jeu, de geste ou de décor.',
+        opt('Vrai', 'Faux', 'Vrai seulement dans la tragédie', 'Vrai seulement dans la comédie'),
+        'A', "C'est vrai. Les didascalies accompagnent le dialogue et renseignent sur les gestes, le ton, les déplacements, le décor ou le contexte scénique.", 1),
+      ex('QCM – genre poétique',
+        'Parmi les éléments suivants, lequel relève directement de la versification ?',
+        opt('Le narrateur omniscient', 'La césure', 'Le schéma actantiel', 'La double énonciation'),
+        'B', "La césure est un élément de versification, notamment dans l'alexandrin. Les autres notions relèvent du roman ou du théâtre.", 1),
     ],
   },
   {
@@ -785,6 +1080,16 @@ La conclusion fait :
 
 Le choix du plan dépend du sujet. Un bon plan répond exactement à la question posée.
 
+### d. Ce qui fait une bonne dissertation
+Une bonne dissertation ne juxtapose pas des idées apprises par cœur.
+Elle construit progressivement une réponse à une question précise.
+Chaque partie doit donc faire avancer le raisonnement.
+
+### e. Les exemples littéraires
+Un bon devoir de français s'appuie sur des références précises.
+Il vaut mieux quelques exemples bien exploités que beaucoup d'œuvres simplement citées.
+L'exemple doit toujours servir l'argument.
+
 ## 2. Le commentaire composé
 Le commentaire composé consiste à analyser un texte littéraire pour montrer comment il produit du sens et des effets. Il ne s'agit pas de raconter le texte, mais de l'étudier.
 
@@ -808,6 +1113,18 @@ Chaque axe rassemble plusieurs remarques organisées autour d'une idée forte. O
 
 La bonne méthode est :
 **citer -> observer -> interpréter -> montrer l'effet produit**.
+
+### d. Ce qu'il faut éviter
+- paraphraser le texte ;
+- aligner des procédés sans interprétation ;
+- citer trop longuement ;
+- perdre de vue la problématique.
+
+### e. Les bons réflexes
+- annoncer clairement l'idée du paragraphe ;
+- citer brièvement ;
+- commenter immédiatement la citation ;
+- relier l'analyse à la problématique générale.
 
 #### Conclusion
 La conclusion résume les résultats de l'analyse et peut ouvrir sur une autre perspective.
@@ -838,6 +1155,16 @@ Dans beaucoup de cas, on demande de ramener le texte à **un quart** de sa longu
 4. Reformuler de façon claire et concise.
 5. Vérifier la fidélité au texte de départ.
 
+### Difficulté principale
+Le résumé demande à la fois fidélité et reformulation.
+Il faut être précis sans recopier, synthétique sans trahir, et bref sans appauvrir la pensée.
+
+### Astuce utile
+Après un premier résumé, il faut relire en vérifiant trois points :
+- ai-je gardé toutes les idées essentielles ?
+- ai-je supprimé les détails secondaires ?
+- ai-je respecté l'ordre logique du texte ?
+
 ## 4. La discussion
 La discussion prolonge parfois le résumé. Elle demande au candidat de réagir à une idée du texte par une argumentation personnelle.
 
@@ -847,6 +1174,12 @@ Il faut alors :
 - illustrer par des exemples pertinents ;
 - rester mesuré, logique et cohérent.
 
+### Esprit de la discussion
+Il ne s'agit pas d'écrire une opinion vague.
+Il faut partir d'une idée du texte, prendre position et construire une argumentation personnelle, organisée et nuancée.
+
+Il faut aussi éviter le ton polémique ou purement affectif : une discussion réussie reste argumentée, claire et mesurée.
+
 ## 5. Conseils de rédaction
 - Soigner l'introduction et la conclusion.
 - Utiliser des connecteurs logiques.
@@ -855,7 +1188,47 @@ Il faut alors :
 - Illustrer les arguments avec des œuvres, auteurs ou textes étudiés.
 - Relire pour corriger fautes, répétitions et maladresses.
 
-## 6. Erreurs fréquentes
+### Formulations utiles
+Pour annoncer une idée :
+- "On peut d'abord montrer que..."
+- "Cependant, cette thèse rencontre une limite..."
+- "Il convient enfin de dépasser cette opposition..."
+
+Pour commenter un texte :
+- "Ce procédé met en valeur..."
+- "L'auteur suggère ainsi que..."
+- "On voit ici apparaître..."
+
+## 6. Gérer son temps le jour de l'épreuve
+Une bonne copie dépend aussi de l'organisation du temps.
+
+### Répartition conseillée
+- prendre quelques minutes pour lire et analyser le sujet ;
+- réserver un vrai temps de brouillon pour trouver la problématique et le plan ;
+- garder l'essentiel du temps pour un développement soigné ;
+- conserver quelques minutes finales pour la relecture.
+
+### Réflexes utiles
+- ne pas commencer à rédiger avant d'avoir une direction claire ;
+- éviter de passer trop de temps sur l'introduction ;
+- surveiller l'équilibre entre les parties ;
+- relire les transitions et la conclusion.
+
+## 7. Petite boîte à outils pour la rédaction
+### Connecteurs logiques utiles
+- addition : "de plus", "en outre", "par ailleurs"
+- opposition : "cependant", "pourtant", "toutefois", "en revanche"
+- conséquence : "ainsi", "donc", "par conséquent"
+- conclusion : "en somme", "au total", "en définitive"
+
+### Ce qui rend une copie convaincante
+- une problématique nette ;
+- des parties équilibrées ;
+- des exemples précis ;
+- des transitions visibles ;
+- une expression simple, correcte et rigoureuse.
+
+## 8. Erreurs fréquentes
 - Hors-sujet parce que la problématique n'a pas été comprise.
 - Récitation du cours sans lien avec la question.
 - Paraphrase du texte au lieu d'analyse.
@@ -863,7 +1236,7 @@ Il faut alors :
 - Résumé infidèle ou trop long.
 - Plan déséquilibré ou mal annoncé.
 
-## 7. À retenir
+## 9. À retenir
 La réussite en français dépend autant de la culture littéraire que de la méthode. Un candidat efficace comprend le sujet, construit un plan adapté, rédige avec clarté et appuie ses idées sur des exemples précis. La dissertation, le commentaire et le résumé-discussion exigent tous rigueur, logique et expression correcte.`,
     exercises: [
       ex('Structure de la dissertation',
@@ -886,6 +1259,14 @@ La réussite en français dépend autant de la culture littéraire que de la mé
         'Dans un commentaire composé, les axes d\'analyse doivent être organisés :',
         opt('De manière linéaire, ligne par ligne du texte', 'Par axes thématiques qui éclairent chacun un aspect du texte', 'Par ordre chronologique des événements du texte', 'Uniquement selon les figures de style identifiées'),
         'B', "Le commentaire composé (ou composé d'axes) s'organise en axes thématiques : chaque axe développe une idée centrale sur le texte, illustrée par des citations analysées. Il ne suit pas l'ordre du texte (contrairement à l'explication linéaire).", 2),
+      ex('Vrai ou faux – résumé',
+        'Vrai ou faux : dans un résumé de texte, on peut ajouter librement ses propres exemples pour clarifier l\'idée.',
+        opt('Vrai', 'Faux', 'Vrai seulement si le texte est difficile', 'Vrai si le résumé est très court'),
+        'B', "C'est faux. Le résumé doit rester fidèle au texte de départ : il ne faut ni ajouter d'exemples personnels ni donner son avis.", 2),
+      ex('QCM – gestion du temps',
+        'Quel est un bon réflexe méthodologique le jour de l\'épreuve ?',
+        opt('Rédiger immédiatement sans brouillon', 'Garder quelques minutes finales pour la relecture', 'Passer tout son temps sur l\'introduction', 'Éviter les transitions pour aller plus vite'),
+        'B', "Le cours insiste sur l'importance d'une bonne gestion du temps, y compris quelques minutes finales pour relire la copie, corriger les fautes et vérifier l'équilibre du devoir.", 1),
     ],
   },
 ];
@@ -935,6 +1316,11 @@ Trade connects countries, creates jobs and allows access to goods and services. 
 - *Many young people want to become entrepreneurs.*
 - *Governments should support local industries.*
 
+### Expressing opinion
+- *In my opinion, trade can create opportunities.*
+- *I think unemployment is one of the biggest social issues.*
+- *From my point of view, young people need more professional training.*
+
 ## 2. Economy
 Students must be able to describe the economy of a country, its problems and possible solutions.
 
@@ -956,6 +1342,13 @@ When discussing the economy, students should link facts and consequences:
 - *Investment can create jobs.*
 - *If a country improves education, it may develop faster.*
 
+### Useful connectors
+- *because*
+- *therefore*
+- *however*
+- *as a result*
+- *on the one hand / on the other hand*
+
 ## 3. Free time and leisure
 This topic is closer to students' daily lives and often appears in writing or oral tasks.
 
@@ -974,6 +1367,11 @@ Students should be able to:
 - describe hobbies and preferences;
 - explain how they spend their free time;
 - discuss the positive and negative effects of social media and entertainment.
+
+### Sample speaking ideas
+- *In my free time, I usually...*
+- *Leisure activities help young people relax and develop social skills.*
+- *Social media can be useful, but it can also waste time.*
 
 ## 4. Grammar focus: modal verbs
 Modal verbs express ability, obligation, advice, permission or possibility.
@@ -1042,6 +1440,32 @@ In writing or speaking, students should:
 3. give examples;
 4. express cause, consequence or opinion;
 5. conclude with a clear idea.
+
+### Helpful expressions for BAC writing
+- *First of all...*
+- *Another important point is...*
+- *For example...*
+- *As a consequence...*
+- *To conclude...*
+
+### Speaking and debate toolkit
+Students should also know how to react orally in a simple but natural way.
+
+- *I agree with this idea because...*
+- *I partly agree, but we should also consider...*
+- *In everyday life, we can see that...*
+- *This problem affects young people in many ways.*
+- *A possible solution would be to...*
+
+### Paragraph model
+A short BAC paragraph can follow this pattern:
+1. state the idea;
+2. explain it;
+3. give one example;
+4. add a concluding sentence.
+
+Example:
+*Unemployment is a major problem in many countries. It affects young people more than adults because they often lack experience. For example, many graduates struggle to find their first job. This is why professional training is essential.*
 
 ## 9. Common mistakes
 - Mixing up *must* and *should*.
@@ -1158,6 +1582,11 @@ Modern life is deeply influenced by communication technologies.
 ### Main issues
 Communication technologies make information easier to access, but they can also spread false news, addiction or online insecurity.
 
+### Useful discussion points
+- technology improves learning opportunities
+- access remains unequal in many regions
+- communication tools can both connect and isolate people
+
 ## 4. Grammar focus: passive voice
 The passive voice is used when the action is more important than the doer.
 
@@ -1219,6 +1648,28 @@ Students may be asked to:
 - complete grammar exercises using passive forms or relative clauses.
 
 To succeed, they should combine relevant vocabulary, clear sentences and well-structured ideas.
+
+### Helpful expressions
+- *It is often said that...*
+- *One major advantage is...*
+- *A serious drawback is...*
+- *This shows that...*
+
+### Useful oral expressions
+- *Nowadays, technology plays a central role in our lives.*
+- *On the one hand..., on the other hand...*
+- *This development can improve..., but it may also create...*
+- *In the field of health, prevention is better than cure.*
+- *Access to technology should be improved for everyone.*
+
+### How to build a balanced answer
+When students discuss science or health, they should try to present:
+1. one benefit;
+2. one limitation or danger;
+3. one concrete example;
+4. one short conclusion.
+
+This makes the answer clearer, more mature and easier to follow.
 
 ## 9. Common mistakes
 - Confusing active and passive forms.
@@ -1325,6 +1776,13 @@ Education is a major theme because it is linked to development, citizenship and 
 ### Main ideas
 Education helps reduce poverty, improve health and promote development. However, many countries still face problems such as lack of infrastructure, unequal access or school dropout.
 
+### Possible discussion angles
+- girls' education
+- equal access to school
+- quality of teaching
+- digital learning
+- vocational training
+
 ## 4. Grammar focus: past perfect
 The past perfect expresses an action completed before another action in the past.
 
@@ -1379,6 +1837,13 @@ At BAC level, students may write a short essay to express an opinion or discuss 
 
 This method helps students avoid vague writing and produce organised paragraphs.
 
+### Useful essay phrases
+- *Nowadays, many people believe that...*
+- *There are several reasons for this.*
+- *For instance...*
+- *In contrast...*
+- *In conclusion...*
+
 ## 8. Skills expected at the BAC
 Students may be asked to:
 - discuss the importance of culture or education;
@@ -1387,6 +1852,28 @@ Students may be asked to:
 - compare tradition and modernity.
 
 They should aim for simple, correct and meaningful English rather than overly complex sentences.
+
+### What examiners usually value
+- clarity of ideas
+- correct grammar
+- relevant vocabulary
+- logical paragraphing
+- coherent conclusion
+
+### Useful expressions for essays and oral work
+- *Cultural heritage should be preserved because it shapes identity.*
+- *Education remains one of the keys to development.*
+- *Although progress has been made, many challenges remain.*
+- *This situation has changed over time.*
+- *If more students had access to school, society would benefit.*
+
+### A simple argumentative pattern
+For many BAC topics, students can organise their answer like this:
+1. introduce the theme;
+2. explain why it matters;
+3. present an example from Senegal, Africa or daily life;
+4. mention a challenge or limit;
+5. end with a constructive conclusion.
 
 ## 9. Common mistakes
 - Using simple past instead of past perfect when sequence matters.
@@ -1477,6 +1964,12 @@ L'Asie ouvre la voie dès les années 1940.
 
 L'Asie devient ainsi un espace majeur d'affirmation des peuples anciennement colonisés.
 
+### Acteurs importants
+- Gandhi : lutte non violente
+- Nehru : construction de l'Inde indépendante
+- Hô Chi Minh : combat anticolonial en Indochine
+- Soekarno : figure de l'indépendance indonésienne
+
 ## 5. La décolonisation en Afrique
 En Afrique, le mouvement s'accélère surtout dans les années 1950 et 1960.
 
@@ -1485,6 +1978,9 @@ En Afrique, le mouvement s'accélère surtout dans les années 1950 et 1960.
 - **1960** : "année de l'Afrique", avec de nombreuses indépendances.
 
 La décolonisation africaine est diverse : certaines indépendances sont négociées, d'autres arrachées dans la violence.
+
+### Diversité des situations
+L'Afrique du Nord, l'Afrique noire, les colonies portugaises ou l'Afrique australe n'évoluent pas au même rythme. Il faut donc éviter toute vision uniforme du continent.
 
 ## 6. Bandung et la naissance du Tiers-Monde
 En **avril 1955**, la conférence de **Bandung** en Indonésie réunit 29 pays d'Asie et d'Afrique. C'est un moment politique majeur.
@@ -1526,6 +2022,9 @@ La décolonisation transforme profondément le monde :
 - entrée des pays du Sud dans les relations internationales
 - naissance de nouveaux défis : développement, unité nationale, dépendance économique
 
+### Limites des indépendances
+L'indépendance politique n'entraîne pas toujours une indépendance économique réelle. Beaucoup de nouveaux États restent dépendants des anciennes puissances, des marchés extérieurs ou des aides internationales.
+
 ## 10. Méthode pour un devoir
 Pour traiter un sujet sur la décolonisation, il faut :
 1. définir le terme ;
@@ -1534,6 +2033,19 @@ Pour traiter un sujet sur la décolonisation, il faut :
 4. distinguer les formes de décolonisation ;
 5. donner des exemples précis ;
 6. ouvrir sur le Tiers-Monde et le non-alignement.
+
+### Repères à maîtriser
+- 1947 : indépendance de l'Inde
+- 1955 : Bandung
+- 1960 : année de l'Afrique
+- 1961 : Belgrade
+- 4 avril 1960 : indépendance du Sénégal
+
+### Formulations utiles dans une copie
+- "La décolonisation s'explique à la fois par l'affaiblissement des métropoles et par la montée des nationalismes."
+- "Il faut distinguer les indépendances négociées des indépendances conquises par la guerre."
+- "Bandung marque une étape décisive dans l'affirmation politique des peuples du Sud."
+- "L'indépendance politique ne supprime pas automatiquement les dépendances économiques."
 
 ## 11. Erreurs fréquentes
 - Confondre décolonisation et simple changement administratif.
@@ -1630,6 +2142,9 @@ La compétition concerne :
 - l'Amérique latine
 - l'espace et la technologie
 
+### Logique d'affrontement
+La Guerre froide ne se réduit pas à des discours idéologiques : elle se traduit aussi par des alliances, des aides économiques, des coups d'État soutenus de l'extérieur, des guerres périphériques et une propagande intense.
+
 ## 4. Les grandes crises de la Guerre froide
 ### Berlin
 Berlin est un lieu symbolique majeur de la division du monde.
@@ -1652,6 +2167,9 @@ La possession de l'arme nucléaire crée un équilibre de la terreur. Chaque cam
 - **1957** : Spoutnik 1 lancé par l'URSS
 - **1961** : Youri Gagarine, premier homme dans l'espace
 - **1969** : les États-Unis marchent sur la Lune
+
+### Enjeu symbolique
+La conquête spatiale n'est pas seulement scientifique. Elle sert à démontrer la puissance technique, militaire et idéologique de chaque bloc.
 
 ## 6. La détente
 À partir des années 1960-1970, les deux camps cherchent par moments à réduire les tensions.
@@ -1678,6 +2196,9 @@ La détente n'efface pas la rivalité, mais elle en limite certains risques.
 
 Ces réformes accélèrent les transformations sans sauver le système.
 
+### Pays de l'Est
+L'effondrement du bloc soviétique s'explique aussi par la contestation dans les démocraties populaires d'Europe de l'Est, où les régimes communistes perdent progressivement leur légitimité.
+
 ## 8. La fin de la Guerre froide
 Plusieurs dates sont essentielles :
 - **9 novembre 1989** : chute du mur de Berlin
@@ -1693,6 +2214,20 @@ Dans un devoir, il faut :
 3. illustrer avec des crises précises ;
 4. distinguer tension, détente et fin du conflit ;
 5. utiliser les bonnes dates.
+
+### Dates-clés à connaître
+- 1947 : doctrine Truman et plan Marshall
+- 1948-1949 : blocus de Berlin
+- 1962 : crise de Cuba
+- 1972 : accords SALT
+- 1989 : chute du mur de Berlin
+- 1991 : disparition de l'URSS
+
+### Formulations utiles dans une copie
+- "La Guerre froide est un affrontement global qui oppose deux modèles de société."
+- "La bipolarisation du monde se traduit par des alliances, des crises et une forte compétition idéologique."
+- "La détente limite les risques sans faire disparaître la rivalité entre les deux blocs."
+- "La fin de la Guerre froide résulte à la fois de l'affaiblissement soviétique et des transformations de l'Europe de l'Est."
 
 ## 10. Erreurs fréquentes
 - Dire que les États-Unis et l'URSS se sont affrontés directement dans une guerre mondiale.
@@ -1777,6 +2312,13 @@ Ils connaissent souvent :
 ### Les pays émergents
 Les pays émergents connaissent une croissance rapide et un poids croissant dans la mondialisation, mais ils conservent souvent de fortes inégalités internes.
 
+### Inégalités à plusieurs échelles
+Il faut distinguer :
+- les inégalités entre pays ;
+- les inégalités à l'intérieur d'un même pays ;
+- les inégalités entre villes et campagnes ;
+- les inégalités d'accès aux services, au numérique ou à l'emploi.
+
 ## 3. Les facteurs d'inégalités
 Les écarts entre pays et à l'intérieur des pays s'expliquent par plusieurs facteurs :
 - héritages historiques
@@ -1807,6 +2349,14 @@ Cette concentration des flux renforce l'idée de **triade**.
 - uniformisation culturelle
 - pression sur l'environnement
 
+### Acteurs de la mondialisation
+La mondialisation repose sur l'action combinée :
+- des États ;
+- des entreprises multinationales ;
+- des organisations internationales ;
+- des métropoles ;
+- des réseaux de transport et de communication.
+
 ## 5. Développement durable et défis environnementaux
 Le développement durable vise à répondre aux besoins du présent sans compromettre ceux des générations futures.
 
@@ -1833,6 +2383,9 @@ L'Afrique occupe une place de plus en plus importante dans la géographie mondia
 - pression démographique
 - vulnérabilité climatique
 
+### Une lecture nuancée
+Il ne faut ni réduire l'Afrique à ses difficultés, ni l'idéaliser. Le continent combine des dynamiques de croissance, des innovations, des ressources importantes et des défis structurels majeurs.
+
 L'Afrique n'est donc ni un continent uniforme ni un espace marginal : elle est un espace de contrastes, de défis et d'opportunités.
 
 ## 7. Le Sénégal dans la mondialisation
@@ -1851,6 +2404,19 @@ Pour réussir un sujet de géographie :
 3. utiliser des exemples précis ;
 4. articuler échelles mondiale, africaine et sénégalaise ;
 5. montrer les contrastes.
+
+### Démarche attendue
+Une bonne copie de géographie doit :
+- définir les notions ;
+- organiser l'espace étudié ;
+- faire apparaître centres, périphéries, flux et contrastes ;
+- mobiliser des exemples concrets et actuels.
+
+### Formulations utiles
+- "Le développement ne peut pas être réduit à la seule croissance économique."
+- "La mondialisation crée à la fois des opportunités et de nouvelles formes d'inégalités."
+- "L'analyse doit se faire à plusieurs échelles : mondiale, régionale et locale."
+- "L'Afrique occupe une place contrastée dans la mondialisation contemporaine."
 
 ## 9. Erreurs fréquentes
 - Réduire le développement au seul PIB.
@@ -1916,7 +2482,12 @@ Le système nerveux comprend :
 - le **système nerveux central** : encéphale et moelle épinière
 - le **système nerveux périphérique** : nerfs et ganglions
 
-Il assure la réception, le traitement et la transmission des informations.
+Il assure trois grandes fonctions :
+- recevoir les informations du milieu extérieur et intérieur ;
+- traiter ces informations ;
+- commander des réponses adaptées.
+
+Le système nerveux est donc un système de coordination rapide de l'organisme.
 
 ## 3. L'encéphale
 L'encéphale est logé dans la boîte crânienne.
@@ -1932,6 +2503,9 @@ L'encéphale est protégé par :
 - les méninges
 - le liquide céphalo-rachidien
 
+### Intérêt fonctionnel
+Chaque région ne travaille pas de manière isolée. Les structures nerveuses communiquent en permanence pour intégrer les messages sensitifs et produire des réponses motrices ou végétatives.
+
 ## 4. La moelle épinière
 La moelle épinière se situe dans le canal vertébral.
 
@@ -1943,6 +2517,9 @@ La moelle épinière se situe dans le canal vertébral.
 - conduction de l'influx entre encéphale et organes
 - participation aux réflexes médullaires
 
+### Réflexe médullaire
+Dans un réflexe simple, la moelle épinière peut suffire à élaborer une réponse rapide sans intervention immédiate du cerveau.
+
 ## 5. Pression artérielle
 La pression artérielle correspond à la force exercée par le sang sur la paroi des artères.
 
@@ -1953,6 +2530,9 @@ Elle dépend principalement de :
 
 On peut résumer par :
 $$PA = Débit\\ cardiaque \\times Résistances\\ périphériques$$
+
+### Importance biologique
+Une pression artérielle correcte garantit l'irrigation des organes, notamment le cerveau, les reins et le cœur.
 
 ## 6. Régulation nerveuse de la pression artérielle
 Cette régulation est rapide.
@@ -1966,6 +2546,9 @@ Cette régulation est rapide.
 - si la PA augmente : ralentissement du cœur, vasodilatation
 - si la PA baisse : accélération du cœur, vasoconstriction
 
+### Idée essentielle
+La régulation nerveuse fonctionne selon un mécanisme de rétrocontrôle qui tend à ramener la pression vers une valeur normale.
+
 ## 7. Régulation hormonale
 Elle complète la régulation nerveuse.
 
@@ -1974,6 +2557,9 @@ Elle complète la régulation nerveuse.
 - **ADH** : favorise la rétention d'eau, augmente le volume sanguin
 
 Ces mécanismes participent au maintien de l'homéostasie.
+
+### Complément utile
+La régulation hormonale est plus lente que la régulation nerveuse, mais ses effets peuvent durer plus longtemps.
 
 ## 8. Hypertension artérielle
 On parle d'hypertension artérielle lorsque la pression reste élevée de façon durable.
@@ -1990,7 +2576,22 @@ On parle d'hypertension artérielle lorsque la pression reste élevée de façon
 - obésité
 - hérédité
 
-## 9. Méthode à retenir
+### Prévention
+La prévention repose sur l'hygiène de vie, le contrôle médical et la réduction des facteurs de risque.
+
+## 9. Schéma fonctionnel à maîtriser
+Pour bien raisonner, il faut savoir reconstituer la chaîne de régulation :
+
+- variation de la pression artérielle ;
+- détection par les barorécepteurs ;
+- transmission du message nerveux ;
+- intégration au niveau bulbaire ;
+- réponse des effecteurs ;
+- retour vers une valeur plus stable.
+
+Cette logique permet d'expliquer clairement le rôle de chaque organe sans réciter le cours.
+
+## 10. Méthode à retenir
 Dans un exercice de régulation :
 
 1. identifier le paramètre perturbé
@@ -1999,10 +2600,24 @@ Dans un exercice de régulation :
 4. décrire les effecteurs
 5. conclure sur le retour à l'équilibre
 
-## 10. À retenir
+### Lecture de document
+Face à un schéma, un tableau ou une courbe, il faut toujours se demander :
+- quel paramètre varie ?
+- quel organe détecte cette variation ?
+- quelle réponse est mise en place ?
+- cette réponse ramène-t-elle l'organisme vers l'équilibre ?
+
+## 11. Erreurs fréquentes
+- confondre cerveau et cervelet
+- croire que la moelle épinière ne fait que transmettre les messages
+- oublier le rôle des barorécepteurs
+- confondre régulation nerveuse rapide et régulation hormonale plus lente
+
+## 12. À retenir
 - le système nerveux central traite l'information
 - la pression artérielle est régulée en permanence
-- barorécepteurs, centre bulbaire et effecteurs agissent en chaîne`,
+- barorécepteurs, centre bulbaire et effecteurs agissent en chaîne
+- la régulation de la PA illustre le maintien de l'homéostasie`,
     exercises: [
       ex('Structure de l\'encéphale',
         'Quel organe de l\'encéphale assure la coordination des mouvements et l\'équilibre ?',
@@ -2084,6 +2699,9 @@ La régulation de la glycémie fonctionne comme un système de rétrocontrôle.
 
 Ce mécanisme permet de maintenir une valeur stable malgré les repas ou le jeûne.
 
+### Organes impliqués
+Le foie, les muscles et le tissu adipeux jouent un rôle important dans le stockage ou la libération du glucose.
+
 ## 5. Le diabète
 ### Diabète de type 1
 - destruction auto-immune des cellules β
@@ -2094,6 +2712,9 @@ Ce mécanisme permet de maintenir une valeur stable malgré les repas ou le jeû
 - résistance des tissus à l'insuline
 - souvent favorisé par la sédentarité, l'obésité et l'âge
 
+### Conséquences possibles
+Un diabète mal contrôlé peut provoquer des complications vasculaires, rénales, nerveuses ou oculaires.
+
 ## 6. La réponse immunitaire non spécifique
 C'est la première ligne de défense.
 
@@ -2103,6 +2724,9 @@ Elle comprend :
 - l'action des macrophages et polynucléaires
 
 Elle est rapide mais non ciblée.
+
+### Caractère essentiel
+Elle agit de la même manière face à des agents pathogènes variés.
 
 ## 7. La réponse immunitaire spécifique
 Elle est dirigée contre un antigène précis.
@@ -2125,6 +2749,9 @@ Un anticorps est une protéine spécifique produite contre cet antigène.
 
 La liaison antigène-anticorps participe à l'élimination de l'agent pathogène.
 
+### Idée importante
+La spécificité antigène-anticorps explique l'efficacité ciblée de la réponse immunitaire acquise.
+
 ## 9. VIH et SIDA
 Le VIH est un virus qui cible principalement les lymphocytes T4 (CD4+).
 
@@ -2138,11 +2765,26 @@ Le VIH est un virus qui cible principalement les lymphocytes T4 (CD4+).
 - voie sanguine
 - transmission mère-enfant
 
+### Prévention
+La prévention repose sur l'information, la protection lors des rapports sexuels, la sécurité transfusionnelle et le dépistage.
+
 ## 10. Vaccination
 La vaccination repose sur la mémoire immunitaire.
 Elle prépare l'organisme à réagir rapidement lors d'un contact futur avec l'agent pathogène.
 
-## 11. Méthode à retenir
+Elle constitue l'une des stratégies majeures de santé publique.
+
+## 11. Lecture biologique à maîtriser
+Dans un document sur la glycémie ou l'immunité, il faut relier les variations observées aux mécanismes étudiés.
+
+### Exemples de raisonnement
+- si la glycémie augmente après un repas, cela stimule la sécrétion d'insuline ;
+- si des anticorps apparaissent après un contact avec un antigène, cela traduit l'activation de l'immunité humorale ;
+- si le nombre de lymphocytes T4 diminue, cela peut affaiblir l'ensemble de la réponse immunitaire.
+
+L'objectif n'est pas seulement de décrire la courbe ou le tableau, mais d'expliquer le mécanisme biologique correspondant.
+
+## 12. Méthode à retenir
 Pour un exercice sur l'immunité :
 
 1. identifier l'agent pathogène
@@ -2150,10 +2792,23 @@ Pour un exercice sur l'immunité :
 3. préciser les cellules impliquées
 4. conclure sur l'élimination ou la mémoire immunitaire
 
-## 12. À retenir
+### Formulations utiles
+- "La variation observée s'explique par..."
+- "Cette réponse traduit l'intervention de..."
+- "Le document met en évidence un rétrocontrôle..."
+- "La mémoire immunitaire permet ici une réponse plus rapide et plus intense."
+
+## 13. Erreurs fréquentes
+- confondre insuline et glucagon
+- croire que tous les diabètes ont la même origine
+- confondre immunité humorale et immunité cellulaire
+- réduire le VIH à une maladie qui détruit "tous les globules blancs"
+
+## 14. À retenir
 - la glycémie est régulée par insuline et glucagon
 - l'immunité associe défenses immédiates et spécifiques
-- le VIH affaiblit le système immunitaire en détruisant les lymphocytes T4`,
+- le VIH affaiblit le système immunitaire en détruisant les lymphocytes T4
+- la vaccination utilise la mémoire immunitaire`,
     exercises: [
       ex('Glycémie normale',
         'La glycémie normale à jeun chez un adulte est de :',
@@ -2215,6 +2870,9 @@ Elle est cyclique et conduit à la formation d'un ovule.
 
 Dans les deux cas, il y a passage de cellules diploïdes à des cellules haploïdes.
 
+### Intérêt biologique
+La gamétogenèse prépare la reproduction sexuée en produisant des cellules spécialisées capables de fusionner lors de la fécondation.
+
 ## 3. La méiose
 La méiose comporte deux divisions successives.
 
@@ -2226,6 +2884,9 @@ Elle sépare les chromatides.
 
 Au final, une cellule diploïde donne quatre cellules haploïdes.
 
+### Importance
+La méiose réduit de moitié le nombre de chromosomes, ce qui rend possible la restauration ultérieure de la diploïdie lors de la fécondation.
+
 ## 4. Le brassage génétique
 ### Brassage interchromosomique
 Il résulte de la répartition aléatoire des chromosomes homologues lors de la méiose.
@@ -2234,6 +2895,9 @@ Il résulte de la répartition aléatoire des chromosomes homologues lors de la 
 Il résulte du crossing-over entre chromatides homologues au cours de la prophase I.
 
 Ces brassages expliquent la diversité génétique des gamètes.
+
+### Conséquence
+Deux parents peuvent ainsi engendrer des descendants très différents, même au sein d'une même fratrie.
 
 ## 5. La fécondation
 La fécondation correspond à l'union d'un gamète mâle et d'un gamète femelle.
@@ -2244,7 +2908,28 @@ $$n + n = 2n$$
 
 Le produit de la fécondation est le **zygote**.
 
-## 6. Hérédité humaine
+Elle marque le point de départ du développement embryonnaire.
+
+## 6. Régulation hormonale des cycles
+Chez la femme, l'activité reproductrice est rythmée par un cycle sous contrôle hormonal.
+
+### Hormones principales
+- **FSH** : stimule la maturation folliculaire ;
+- **LH** : déclenche l'ovulation ;
+- **œstrogènes** : participent à la prolifération de la muqueuse utérine ;
+- **progestérone** : prépare et maintient l'endomètre après l'ovulation.
+
+### Logique d'ensemble
+Au cours du cycle :
+- un follicule se développe dans l'ovaire ;
+- l'ovulation libère l'ovocyte ;
+- le corps jaune sécrète surtout la progestérone ;
+- en l'absence de fécondation, les taux hormonaux chutent et les règles apparaissent.
+
+### Intérêt biologique
+Cette régulation coordonne l'activité ovarienne et l'état de l'utérus afin de rendre possible une éventuelle grossesse.
+
+## 7. Hérédité humaine
 L'hérédité est la transmission des caractères des parents aux descendants.
 
 ### Groupes sanguins ABO
@@ -2265,7 +2950,7 @@ Les allèles $I^A$ et $I^B$ sont codominants, l'allèle $i$ est récessif.
 ### Facteur Rhésus
 Le facteur Rh+ est dominant sur Rh-.
 
-## 7. Hérédité autosomale et liée au sexe
+## 8. Hérédité autosomale et liée au sexe
 ### Autosomale
 Le gène est porté par un autosome.
 Exemple : albinisme autosomal récessif.
@@ -2276,7 +2961,7 @@ Exemples : daltonisme, hémophilie.
 
 Chez l'homme, un allèle récessif porté par X s'exprime plus facilement car le chromosome Y ne porte pas l'allèle correspondant.
 
-## 8. Lecture d'un croisement
+## 9. Lecture d'un croisement
 Pour interpréter un exercice :
 
 1. identifier les allèles
@@ -2285,16 +2970,38 @@ Pour interpréter un exercice :
 4. construire les gamètes
 5. déduire les génotypes et phénotypes de la descendance
 
-## 9. Importance biologique
+### Outil utile
+Le tableau de croisement permet d'organiser clairement les possibilités génétiques.
+
+## 10. Importance biologique
 La méiose, la fécondation et les brassages génétiques assurent :
 
 - la stabilité du nombre de chromosomes de génération en génération
 - la diversité génétique des individus
 
-## 10. À retenir
+Ces mécanismes sont au cœur de l'évolution et de la variabilité humaine.
+
+## 11. Méthode de raisonnement
+Dans un exercice de génétique, il faut éviter de se précipiter vers la réponse.
+
+### Réflexes utiles
+- partir des phénotypes observés ;
+- remonter aux génotypes possibles ;
+- vérifier la cohérence des croisements ;
+- distinguer ce qui relève du sexe, d'un autosome ou d'une codominance.
+
+## 12. Erreurs fréquentes
+- confondre mitose et méiose
+- oublier que la fécondation réunit deux cellules haploïdes
+- confondre dominance et fréquence d'un caractère
+- mal lire les génotypes des groupes sanguins
+
+## 13. À retenir
 - la méiose produit des gamètes haploïdes
 - la fécondation rétablit la diploïdie
-- les lois de transmission permettent d'expliquer de nombreux caractères humains`,
+- les cycles hormonaux coordonnent ovaires et utérus
+- les lois de transmission permettent d'expliquer de nombreux caractères humains
+- brassage génétique et reproduction sexuée expliquent la diversité biologique`,
     exercises: [
       ex('La méiose',
         'La méiose produit des cellules :',

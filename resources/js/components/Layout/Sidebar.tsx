@@ -1,15 +1,19 @@
 import {
+    Activity,
     BookOpen,
     BookOpenCheck,
+    Bot,
     CalendarDays,
     ChartColumn,
     ClipboardList,
     Crown,
+    FilePen,
     FlaskConical,
     LayoutDashboard,
     LogOut,
     MessageSquareText,
     Sparkles,
+    Users,
 } from 'lucide-react';
 import { NavLink, useNavigate } from 'react-router-dom';
 
@@ -26,6 +30,7 @@ const items: SidebarItem[] = [
     { to: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
     { to: '/subjects', label: 'Matières', icon: BookOpen },
     { to: '/ai-chat', label: 'Tuteur IA', icon: Sparkles },
+    { to: '/internal-agent', label: 'Agent Interne', icon: Bot },
     { to: '/quiz', label: 'Quiz', icon: ClipboardList },
     { to: '/planning', label: 'Planning', icon: CalendarDays },
     { to: '/annales', label: 'Annales', icon: BookOpenCheck },
@@ -35,9 +40,27 @@ const items: SidebarItem[] = [
     { to: '/premium', label: 'Premium', icon: Crown },
 ];
 
+const adminItems: SidebarItem[] = [
+    { to: '/dashboard', label: 'Vue d’ensemble', icon: LayoutDashboard },
+    { to: '/subjects', label: 'Matières', icon: BookOpen },
+    { to: '/internal-agent', label: 'Agent Interne', icon: Bot },
+    { to: '/quiz', label: 'Quiz', icon: ClipboardList },
+    { to: '/annales', label: 'Annales', icon: BookOpenCheck },
+    { to: '/community', label: 'Communauté', icon: MessageSquareText },
+    { to: '/ai-chat', label: 'Tuteur IA', icon: Sparkles },
+    { to: '/simulation', label: 'Simulation BAC', icon: FlaskConical },
+    { to: '/admin', label: 'Panneau admin', icon: Activity },
+    { to: '/admin/users', label: 'Utilisateurs', icon: Users },
+    { to: '/admin/exercises', label: 'Exercices', icon: ClipboardList },
+    { to: '/admin/content', label: 'Contenu', icon: FilePen },
+    { to: '/admin/forum', label: 'Forum admin', icon: MessageSquareText },
+];
+
 export function Sidebar() {
     const { sidebarOpen, toggleSidebar, user, logout } = useAppStore();
     const navigate = useNavigate();
+    const isAdmin = user?.role === 'admin';
+    const navItems = isAdmin ? adminItems : items;
 
     function handleLogout() {
         logout();
@@ -60,7 +83,7 @@ export function Sidebar() {
             </div>
 
             <nav className="space-y-1 pb-24">
-                {items.map((item) => {
+                {navItems.map((item) => {
                     const Icon = item.icon;
 
                     return (
@@ -98,7 +121,7 @@ export function Sidebar() {
                             {user?.prenom} {user?.nom}
                         </p>
                         <p className="truncate text-xs text-slate-500">
-                            {user?.serie_code}
+                            {isAdmin ? 'Administrateur' : user?.serie_code}
                         </p>
                     </div>
                     <button

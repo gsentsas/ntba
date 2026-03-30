@@ -18,6 +18,59 @@ import { validateBody } from '../utils/validators.js';
 
 const router = Router();
 
+async function getAccessibleSubject(subjectId, user) {
+    if (!subjectId) {
+        return null;
+    }
+
+    const params = [subjectId];
+    let extraWhere = '';
+
+    if (user.role !== 'admin') {
+        params.push(user.serie_code);
+        extraWhere = ` AND serie_code = $${params.length}`;
+    }
+
+    const result = await pool.query(
+        `
+            SELECT *
+            FROM subjects
+            WHERE id = $1
+            ${extraWhere}
+        `,
+        params,
+    );
+
+    return result.rows[0] ?? null;
+}
+
+async function getAccessibleChapter(chapterId, user) {
+    if (!chapterId) {
+        return null;
+    }
+
+    const params = [chapterId];
+    let extraWhere = '';
+
+    if (user.role !== 'admin') {
+        params.push(user.serie_code);
+        extraWhere = ` AND s.serie_code = $${params.length}`;
+    }
+
+    const result = await pool.query(
+        `
+            SELECT c.*, s.serie_code
+            FROM chapters c
+            JOIN subjects s ON s.id = c.subject_id
+            WHERE c.id = $1
+            ${extraWhere}
+        `,
+        params,
+    );
+
+    return result.rows[0] ?? null;
+}
+
 function isApiCreditError(error) {
     return error?.status === 400 && (
         error?.error?.error?.message?.toLowerCase().includes('credit') ||
@@ -70,6 +123,22 @@ router.post(
     validateBody(chatSchema),
     asyncHandler(async (req, res) => {
         const { message, session_id: sessionIdInput, subject_id: subjectId, chapter_id: chapterId } = req.validatedBody;
+        const [subjectRecord, chapterRecord] = await Promise.all([
+            getAccessibleSubject(subjectId, req.user),
+            getAccessibleChapter(chapterId, req.user),
+        ]);
+
+        if (subjectId && !subjectRecord) {
+            return res.status(404).json({ message: 'Matière introuvable pour cette série' });
+        }
+
+        if (chapterId && !chapterRecord) {
+            return res.status(404).json({ message: 'Chapitre introuvable pour cette série' });
+        }
+
+        if (subjectRecord && chapterRecord && chapterRecord.subject_id !== subjectRecord.id) {
+            return res.status(400).json({ message: 'Le chapitre ne correspond pas à la matière sélectionnée' });
+        }
 
         let sessionId = sessionIdInput;
         let sessionRecord;
@@ -95,11 +164,6 @@ router.post(
             );
         }
 
-        const [subjectResult, chapterResult] = await Promise.all([
-            subjectId ? pool.query('SELECT * FROM subjects WHERE id = $1', [subjectId]) : Promise.resolve({ rows: [] }),
-            chapterId ? pool.query('SELECT * FROM chapters WHERE id = $1', [chapterId]) : Promise.resolve({ rows: [] }),
-        ]);
-
         const history = Array.isArray(sessionRecord.messages) ? sessionRecord.messages.slice(-10) : [];
         const fullHistory = [...history, { role: 'user', content: message }];
 
@@ -108,40 +172,50 @@ router.post(
         res.setHeader('Connection', 'keep-alive');
 
         let assistantMessage = '';
+        try {
+            const result = await streamTutorResponse(
+                message,
+                history,
+                {
+                    user: req.user,
+                    subject: subjectRecord,
+                    chapter: chapterRecord,
+                },
+                (text) => {
+                    assistantMessage += text;
+                    res.write(`data: ${JSON.stringify({ text })}\n\n`);
+                },
+            );
 
-        const result = await streamTutorResponse(
-            message,
-            history,
-            {
-                user: req.user,
-                subject: subjectResult.rows[0] ?? null,
-                chapter: chapterResult.rows[0] ?? null,
-            },
-            (text) => {
-                assistantMessage += text;
-                res.write(`data: ${JSON.stringify({ text })}\n\n`);
-            },
-        );
+            const messagesToSave = [...fullHistory, { role: 'assistant', content: assistantMessage }];
 
-        const messagesToSave = [...fullHistory, { role: 'assistant', content: assistantMessage }];
+            await pool.query(
+                `
+                    UPDATE ai_sessions
+                    SET messages = $1::jsonb,
+                        total_tokens_used = COALESCE(total_tokens_used, 0) + $2 + $3,
+                        subject_id = COALESCE($4, subject_id),
+                        chapter_id = COALESCE($5, chapter_id),
+                        last_message_at = NOW()
+                    WHERE id = $6
+                `,
+                [JSON.stringify(messagesToSave.slice(-20)), result.inputTokens, result.outputTokens, subjectId, chapterId, sessionId],
+            );
 
-        await pool.query(
-            `
-                UPDATE ai_sessions
-                SET messages = $1::jsonb,
-                    total_tokens_used = COALESCE(total_tokens_used, 0) + $2 + $3,
-                    subject_id = COALESCE($4, subject_id),
-                    chapter_id = COALESCE($5, chapter_id),
-                    last_message_at = NOW()
-                WHERE id = $6
-            `,
-            [JSON.stringify(messagesToSave.slice(-20)), result.inputTokens, result.outputTokens, subjectId, chapterId, sessionId],
-        );
+            await pool.query('UPDATE users SET total_points = total_points + 2, updated_at = NOW() WHERE id = $1', [req.user.id]);
 
-        await pool.query('UPDATE users SET total_points = total_points + 2, updated_at = NOW() WHERE id = $1', [req.user.id]);
+            res.write(`data: ${JSON.stringify({ done: true, session_id: sessionId, provider: result.provider })}\n\n`);
+            res.end();
+        } catch (error) {
+            const fallbackErrorMessage =
+                error?.message ??
+                "Le tuteur IA est momentanément indisponible. Réessaie dans un instant.";
 
-        res.write(`data: ${JSON.stringify({ done: true, session_id: sessionId })}\n\n`);
-        res.end();
+            res.write(
+                `data: ${JSON.stringify({ error: fallbackErrorMessage })}\n\n`,
+            );
+            res.end();
+        }
     }),
 );
 
@@ -153,18 +227,22 @@ router.post(
     asyncHandler(async (req, res) => {
         const { subject_id: subjectId, chapter_id: chapterId, difficulty, type } = req.validatedBody;
 
-        const [subjectResult, chapterResult] = await Promise.all([
-            pool.query('SELECT * FROM subjects WHERE id = $1', [subjectId]),
-            pool.query('SELECT * FROM chapters WHERE id = $1', [chapterId]),
+        const [subjectRecord, chapterRecord] = await Promise.all([
+            getAccessibleSubject(subjectId, req.user),
+            getAccessibleChapter(chapterId, req.user),
         ]);
 
-        if (subjectResult.rowCount === 0 || chapterResult.rowCount === 0) {
+        if (!subjectRecord || !chapterRecord) {
             return res.status(404).json({ message: 'Sujet ou chapitre introuvable' });
+        }
+
+        if (chapterRecord.subject_id !== subjectRecord.id) {
+            return res.status(400).json({ message: 'Le chapitre ne correspond pas à la matière sélectionnée' });
         }
 
         let exercise;
         try {
-            exercise = await generateExercise(chapterResult.rows[0], difficulty, type);
+            exercise = await generateExercise(chapterRecord, difficulty, type);
         } catch (error) {
             if (handleAiError(error, res)) return;
             // Fallback DB : retourner un exercice existant du même chapitre
@@ -172,7 +250,12 @@ router.post(
                 `SELECT * FROM exercises WHERE chapter_id = $1 AND is_published = true ORDER BY RANDOM() LIMIT 1`,
                 [chapterId],
             );
-            if (existing.rowCount > 0) return res.json(existing.rows[0]);
+            if (existing.rowCount > 0) {
+                return res.json({
+                    ...existing.rows[0],
+                    provider: 'fallback',
+                });
+            }
             throw error;
         }
         const inserted = await pool.query(
@@ -203,7 +286,10 @@ router.post(
             ],
         );
 
-        res.json(inserted.rows[0]);
+        res.json({
+            ...inserted.rows[0],
+            provider: exercise.provider ?? 'fallback',
+        });
     }),
 );
 
@@ -213,14 +299,23 @@ router.post(
     aiLimiter,
     validateBody(summarySchema),
     asyncHandler(async (req, res) => {
+        const params = [req.validatedBody.chapter_id];
+        let extraWhere = '';
+
+        if (req.user.role !== 'admin') {
+            params.push(req.user.serie_code);
+            extraWhere = ` AND s.serie_code = $${params.length}`;
+        }
+
         const chapterResult = await pool.query(
             `
                 SELECT c.*, s.name AS subject_name, s.serie_code
                 FROM chapters c
                 JOIN subjects s ON s.id = c.subject_id
                 WHERE c.id = $1
+                ${extraWhere}
             `,
-            [req.validatedBody.chapter_id],
+            params,
         );
 
         if (chapterResult.rowCount === 0) {
@@ -228,8 +323,11 @@ router.post(
         }
 
         const row = chapterResult.rows[0];
-        const summary = await generateChapterSummary(row, { name: row.subject_name, serie_code: row.serie_code });
-        res.json({ summary });
+        const summary = await generateChapterSummary(row, {
+            name: row.subject_name,
+            serie_code: row.serie_code,
+        });
+        res.json(summary);
     }),
 );
 
@@ -262,9 +360,20 @@ router.post(
             }
         }
 
-        const subjectResult = subjectId ? await pool.query('SELECT * FROM subjects WHERE id = $1', [subjectId]) : { rows: [] };
+        const subjectRecord = subjectId
+            ? await getAccessibleSubject(subjectId, req.user)
+            : null;
+
+        if (subjectId && !subjectRecord) {
+            return res.status(404).json({ message: 'Matière introuvable pour cette série' });
+        }
+
         try {
-            const result = await correctStudentWork(imageBase64, mediaType, subjectResult.rows[0] ?? null);
+            const result = await correctStudentWork(
+                imageBase64,
+                mediaType,
+                subjectRecord,
+            );
             res.json(result);
         } catch (error) {
             if (handleAiError(error, res)) return;
@@ -283,15 +392,25 @@ router.post(
             return res.status(403).json({ message: 'Simulation complète réservée aux utilisateurs premium' });
         }
 
-        const subjectResult = await pool.query('SELECT * FROM subjects WHERE id = $1', [req.validatedBody.subject_id]);
+        const subject = await getAccessibleSubject(
+            req.validatedBody.subject_id,
+            req.user,
+        );
 
-        if (subjectResult.rowCount === 0) {
+        if (!subject) {
             return res.status(404).json({ message: 'Matière introuvable' });
         }
 
-        const subject = subjectResult.rows[0];
         try {
-            const simulation = await generateSimulationSubject(subject, req.user.serie_code, new Date().getFullYear());
+            const targetSerie =
+                req.user.role === 'admin'
+                    ? subject.serie_code
+                    : req.user.serie_code;
+            const simulation = await generateSimulationSubject(
+                subject,
+                targetSerie,
+                new Date().getFullYear(),
+            );
             res.json(simulation);
         } catch (error) {
             if (handleAiError(error, res)) return;

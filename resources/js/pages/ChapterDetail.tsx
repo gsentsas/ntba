@@ -1,11 +1,12 @@
 import { useQueries, useQuery } from '@tanstack/react-query';
-import { ChevronLeft, FileText, ListChecks } from 'lucide-react';
+import { Bot, ChevronLeft, FileText, ListChecks } from 'lucide-react';
 import { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Link, useParams } from 'react-router-dom';
 
 import { Layout } from '@/components/Layout/Layout';
+import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { exercisesApi, subjectsApi } from '@/services/api';
@@ -75,6 +76,13 @@ export default function ChapterDetail() {
                         <h1 className="mt-2 text-4xl font-semibold text-slate-950">
                             {subjectQuery.data?.name ?? 'Chargement...'}
                         </h1>
+                        {subjectQuery.data?.serie_code ? (
+                            <div className="mt-3">
+                                <Badge className="border-0 bg-slate-900 text-white">
+                                    Série {subjectQuery.data.serie_code}
+                                </Badge>
+                            </div>
+                        ) : null}
                         <p className="mt-4 max-w-3xl text-sm leading-7 text-slate-600">
                             {subjectQuery.data?.description}
                         </p>
@@ -154,6 +162,39 @@ export default function ChapterDetail() {
                             </CardTitle>
                         </CardHeader>
                         <CardContent className="space-y-4">
+                            {subjectQuery.data?.id ? (
+                                <div className="grid gap-3 md:grid-cols-3">
+                                    <Link
+                                        to={`/quiz?subject=${subjectQuery.data.id}`}
+                                    >
+                                        <Button className="w-full rounded-2xl bg-green text-white hover:bg-green-dark">
+                                            Quiz de cette matière
+                                        </Button>
+                                    </Link>
+                                    <Link
+                                        to={`/annales?subject=${subjectQuery.data.id}`}
+                                    >
+                                        <Button
+                                            variant="outline"
+                                            className="w-full rounded-2xl"
+                                        >
+                                            Annales de cette matière
+                                        </Button>
+                                    </Link>
+                                    <Link
+                                        to={`/internal-agent?subject=${subjectQuery.data.id}&action=study-pack`}
+                                    >
+                                        <Button
+                                            variant="outline"
+                                            className="w-full rounded-2xl"
+                                        >
+                                            <Bot className="size-4" />
+                                            Agent de la matière
+                                        </Button>
+                                    </Link>
+                                </div>
+                            ) : null}
+
                             {exerciseQueries
                                 .flatMap((query) => query.data ?? [])
                                 .slice(0, 8)
@@ -162,14 +203,48 @@ export default function ChapterDetail() {
                                         key={exercise.id}
                                         className="rounded-2xl border border-slate-200 p-4"
                                     >
+                                        {exercise.serie_code ? (
+                                            <div className="mb-2">
+                                                <Badge className="border-0 bg-slate-100 text-slate-700">
+                                                    {exercise.serie_code}
+                                                </Badge>
+                                            </div>
+                                        ) : null}
                                         <p className="text-sm font-semibold text-slate-950">
                                             {exercise.title}
                                         </p>
                                         <p className="mt-2 text-sm leading-6 text-slate-600">
                                             {exercise.question_text}
                                         </p>
+                                        <div className="mt-3">
+                                            <Link
+                                                to={`/internal-agent?subject=${exercise.subject_id}&chapter=${exercise.chapter_id}&exercise=${exercise.id}`}
+                                            >
+                                                <Button
+                                                    variant="outline"
+                                                    size="sm"
+                                                    className="rounded-xl"
+                                                >
+                                                    Corriger avec l’agent
+                                                </Button>
+                                            </Link>
+                                        </div>
                                     </div>
                                 ))}
+
+                            {chapterDetails[0] ? (
+                                <Link
+                                    to={`/internal-agent?subject=${chapterDetails[0].subject_id}&chapter=${chapterDetails[0].id}&action=study-pack`}
+                                >
+                                    <Button
+                                        variant="outline"
+                                        className="w-full rounded-2xl border-green/30 text-green"
+                                    >
+                                        <Bot className="size-4" />
+                                        Créer ma fiche PDF sur ce chapitre
+                                    </Button>
+                                </Link>
+                            ) : null}
 
                             <Link to="/dashboard">
                                 <Button className="mt-2 w-full rounded-2xl bg-green text-white hover:bg-green-dark">

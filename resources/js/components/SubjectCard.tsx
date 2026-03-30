@@ -1,6 +1,8 @@
 import { ArrowRight, TriangleAlert } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { ProgressBar } from '@/components/ui/progress-bar';
 import type { SubjectProgress } from '@/types';
 
@@ -18,6 +20,11 @@ export default function SubjectCard({ item }: SubjectCardProps) {
                     <div className="inline-flex items-center gap-2 rounded-full bg-bac-bg px-3 py-1 text-xs font-semibold tracking-[0.16em] text-slate-700 uppercase">
                         <span>{item.subject.icon}</span>
                         <span>{item.subject.name}</span>
+                    </div>
+                    <div className="mt-3">
+                        <Badge className="border-0 bg-slate-100 text-slate-700">
+                            {item.subject.serie_code}
+                        </Badge>
                     </div>
                     <p className="mt-3 text-sm text-slate-600">
                         Coefficient {item.subject.coefficient} ·{' '}
@@ -53,13 +60,27 @@ export default function SubjectCard({ item }: SubjectCardProps) {
                 </div>
             </div>
 
-            <Link
-                to="/subjects"
-                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-green-dark"
-            >
-                Ouvrir la matière
-                <ArrowRight className="size-4" />
-            </Link>
+            <div className="mt-5 flex flex-wrap gap-2">
+                <Link to={`/chapters/${item.subject.id}`}>
+                    <Button className="rounded-2xl bg-green text-white hover:bg-green-dark">
+                        Ouvrir le cours
+                        <ArrowRight className="size-4" />
+                    </Button>
+                </Link>
+                <Link to={`/quiz?subject=${item.subject.id}`}>
+                    <Button
+                        variant="outline"
+                        className="rounded-2xl border-green/30 text-green-dark hover:bg-green-xlight"
+                    >
+                        Quiz matière
+                    </Button>
+                </Link>
+                <Link to={`/annales?subject=${item.subject.id}`}>
+                    <Button variant="outline" className="rounded-2xl">
+                        Annales
+                    </Button>
+                </Link>
+            </div>
         </article>
     );
 }

@@ -4,7 +4,12 @@ import { useEffect } from 'react';
 import { planningApi } from '@/services/api';
 import { useAppStore } from '@/store';
 
-export function usePlanning() {
+type UsePlanningOptions = {
+    enabled?: boolean;
+};
+
+export function usePlanning(options: UsePlanningOptions = {}) {
+    const enabled = options.enabled ?? true;
     const queryClient = useQueryClient();
     const setTodayTasks = useAppStore((state) => state.setTodayTasks);
 
@@ -12,12 +17,14 @@ export function usePlanning() {
         queryKey: ['planning', 'today'],
         queryFn: planningApi.today,
         staleTime: 30_000,
+        enabled,
     });
 
     const weekQuery = useQuery({
         queryKey: ['planning', 'week'],
         queryFn: () => planningApi.week(),
         staleTime: 30_000,
+        enabled,
     });
 
     const generateMutation = useMutation({

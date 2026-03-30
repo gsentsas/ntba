@@ -26,6 +26,7 @@ type SimulationResult = {
     subject_text: string;
     correction_key: string;
     duration_minutes: number;
+    provider?: 'anthropic' | 'fallback';
 };
 
 const GENERATION_STEPS = [
@@ -36,8 +37,16 @@ const GENERATION_STEPS = [
     'Finalisation du corrigé…',
 ];
 
+const SIMULATION_TIPS = [
+    'Lis tout le sujet avant de commencer pour repérer les exercices les plus rentables.',
+    'Commence par les questions directes pour sécuriser des points rapidement.',
+    'Garde 10 à 15 minutes à la fin pour relire et corriger les oublis.',
+];
+
 export default function Simulation() {
-    const { user, setPage } = useAppStore();
+    const { user, setPage, selectedSerie, setSelectedSerie } = useAppStore();
+    const isAdmin = user?.role === 'admin';
+    const activeSerie = isAdmin ? selectedSerie : user?.serie_code ?? '';
     useEffect(() => {
         setPage('simulation');
     }, [setPage]);
@@ -50,12 +59,25 @@ export default function Simulation() {
     const [showCorrection, setShowCorrection] = useState(false);
     const [timeLeft, setTimeLeft] = useState(0);
     const [timerActive, setTimerActive] = useState(false);
+    const { data: series = [] } = useQuery({
+        queryKey: ['subject-series'],
+        queryFn: subjectsApi.series,
+    });
 
     const { data: subjects = [] } = useQuery({
-        queryKey: ['subjects', user?.serie_code],
-        queryFn: () => subjectsApi.list(user?.serie_code),
-        enabled: !!user?.serie_code,
+        queryKey: ['subjects', activeSerie],
+        queryFn: () => subjectsApi.list(activeSerie || undefined),
+        enabled: !!user,
     });
+
+    useEffect(() => {
+        if (
+            selectedSubjectId &&
+            !subjects.some((subject) => subject.id === selectedSubjectId)
+        ) {
+            setSelectedSubjectId('');
+        }
+    }, [selectedSubjectId, subjects]);
 
     // Countdown timer
     useEffect(() => {
@@ -146,6 +168,48 @@ export default function Simulation() {
                         Génère un sujet complet style BAC Sénégal et
                         entraîne-toi dans les conditions réelles
                     </p>
+                    <div className="mt-3 flex flex-wrap items-center gap-2">
+                        <Badge className="border-0 bg-slate-900 text-white">
+                            {activeSerie
+                                ? `Série ${activeSerie}`
+                                : 'Toutes les séries'}
+                        </Badge>
+                        {user?.serie_code ? (
+                            <Badge className="border-0 bg-green-light text-green-dark">
+                                Série élève {user.serie_code}
+                            </Badge>
+                        ) : null}
+                        {simulation?.provider ? (
+                            <Badge
+                                className={`border-0 ${
+                                    simulation.provider === 'anthropic'
+                                        ? 'bg-emerald-100 text-emerald-700'
+                                        : 'bg-amber-100 text-amber-700'
+                                }`}
+                            >
+                                {simulation.provider === 'anthropic'
+                                    ? 'Mode IA avancé'
+                                    : 'Mode secours'}
+                            </Badge>
+                        ) : null}
+                        {isAdmin ? (
+                            <select
+                                value={activeSerie}
+                                onChange={(event) => {
+                                    setSelectedSerie(event.target.value);
+                                    setSelectedSubjectId('');
+                                }}
+                                className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 focus:border-green focus:outline-none"
+                            >
+                                <option value="">Toutes les séries</option>
+                                {series.map((serie) => (
+                                    <option key={serie} value={serie}>
+                                        {serie}
+                                    </option>
+                                ))}
+                            </select>
+                        ) : null}
+                    </div>
                 </div>
 
                 {/* Premium guard */}
@@ -188,9 +252,14 @@ export default function Simulation() {
                                     <p className="mt-1 text-sm font-medium text-slate-700">
                                         {s.name}
                                     </p>
-                                    <p className="text-xs text-slate-400">
-                                        coeff {s.coefficient}
-                                    </p>
+                                    <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-slate-400">
+                                        <span>coeff {s.coefficient}</span>
+                                        {isAdmin ? (
+                                            <span className="rounded-full bg-slate-100 px-2 py-0.5 font-semibold text-slate-600">
+                                                {s.serie_code}
+                                            </span>
+                                        ) : null}
+                                    </div>
                                 </button>
                             ))}
                         </div>
@@ -218,6 +287,45 @@ export default function Simulation() {
                         </Button>
                     </CardContent>
                 </Card>
+
+                {selectedSubject && !simulation && !loading ? (
+                    <Card className="border-slate-200 bg-slate-50/80">
+                        <CardContent className="space-y-4 py-5">
+                            <div className="flex flex-wrap items-center gap-2">
+                                <Badge className="border-0 bg-white text-slate-700 shadow-sm">
+                                    {selectedSubject.name}
+                                </Badge>
+                                <Badge className="border-0 bg-white text-slate-700 shadow-sm">
+                                    coeff {selectedSubject.coefficient}
+                                </Badge>
+                                <Badge className="border-0 bg-white text-slate-700 shadow-sm">
+                                    durée cible 180 min
+                                </Badge>
+                            </div>
+
+                            <div>
+                                <p className="text-sm font-semibold text-slate-900">
+                                    Avant de lancer la simulation
+                                </p>
+                                <p className="mt-1 text-sm text-slate-500">
+                                    Le sujet sera généré pour {selectedSubject.name}
+                                    {' '}dans le format BAC Sénégal, avec corrigé indicatif.
+                                </p>
+                            </div>
+
+                            <div className="grid gap-2 md:grid-cols-3">
+                                {SIMULATION_TIPS.map((tip) => (
+                                    <div
+                                        key={tip}
+                                        className="rounded-xl border border-slate-200 bg-white px-3 py-3 text-sm text-slate-600"
+                                    >
+                                        {tip}
+                                    </div>
+                                ))}
+                            </div>
+                        </CardContent>
+                    </Card>
+                ) : null}
 
                 {/* Loading state avec étapes animées */}
                 {loading && (
@@ -274,6 +382,25 @@ export default function Simulation() {
                             Sujet généré par IA — conditions BAC Sénégal{' '}
                             {new Date().getFullYear()}
                         </div>
+
+                        {simulation.provider === 'fallback' ? (
+                            <Card className="border-amber-200 bg-amber-50">
+                                <CardContent className="flex items-start gap-3 py-4">
+                                    <AlertCircle className="mt-0.5 h-5 w-5 shrink-0 text-amber-600" />
+                                    <div className="space-y-1">
+                                        <p className="font-medium text-amber-800">
+                                            Sujet généré en mode secours
+                                        </p>
+                                        <p className="text-sm text-amber-700">
+                                            La simulation reste utilisable tout de
+                                            suite. Dès que le crédit Anthropic
+                                            revient, une nouvelle génération
+                                            repassera automatiquement en mode IA avancé.
+                                        </p>
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        ) : null}
 
                         {/* Timer */}
                         <Card

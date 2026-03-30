@@ -6,6 +6,8 @@ import { asyncHandler } from '../utils/helpers.js';
 
 const router = Router();
 
+router.use(requireAuth);
+
 router.get(
     '/',
     asyncHandler(async (req, res) => {
@@ -16,6 +18,11 @@ router.get(
         if (subjectId) {
             params.push(subjectId);
             whereClause += ` AND c.subject_id = $${params.length}`;
+        }
+
+        if (req.user.role !== 'admin') {
+            params.push(req.user.serie_code);
+            whereClause += ` AND s.serie_code = $${params.length}`;
         }
 
         const result = await pool.query(
@@ -48,6 +55,14 @@ router.get(
 router.get(
     '/:id',
     asyncHandler(async (req, res) => {
+        const params = [req.params.id];
+        let extraWhere = '';
+
+        if (req.user.role !== 'admin') {
+            params.push(req.user.serie_code);
+            extraWhere = ` AND s.serie_code = $${params.length}`;
+        }
+
         const result = await pool.query(
             `
                 SELECT
@@ -68,8 +83,9 @@ router.get(
                 FROM chapters c
                 JOIN subjects s ON s.id = c.subject_id
                 WHERE c.id = $1
+                ${extraWhere}
             `,
-            [req.params.id],
+            params,
         );
 
         if (result.rowCount === 0) {

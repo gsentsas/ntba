@@ -24,7 +24,9 @@ import { useAppStore } from '@/store';
 import type { ForumPost, ForumReply } from '@/types';
 
 export default function Community() {
-    const { user, setPage } = useAppStore();
+    const { user, setPage, selectedSerie, setSelectedSerie } = useAppStore();
+    const isAdmin = user?.role === 'admin';
+    const activeSerie = isAdmin ? selectedSerie : user?.serie_code ?? '';
     const queryClient = useQueryClient();
     useEffect(() => {
         setPage('community');
@@ -38,24 +40,22 @@ export default function Community() {
     const [newTitle, setNewTitle] = useState('');
     const [newContent, setNewContent] = useState('');
     const [replyContent, setReplyContent] = useState('');
+    const { data: series = [] } = useQuery({
+        queryKey: ['subject-series'],
+        queryFn: subjectsApi.series,
+    });
 
     const { data: subjects = [] } = useQuery({
-        queryKey: ['subjects', user?.serie_code],
-        queryFn: () => subjectsApi.list(user?.serie_code),
-        enabled: !!user?.serie_code,
+        queryKey: ['subjects', activeSerie],
+        queryFn: () => subjectsApi.list(activeSerie || undefined),
+        enabled: !!user,
     });
 
     const { data: posts = [], isLoading } = useQuery({
-        queryKey: [
-            'community-posts',
-            search,
-            sort,
-            filterSubject,
-            user?.serie_code,
-        ],
+        queryKey: ['community-posts', search, sort, filterSubject, activeSerie],
         queryFn: () =>
             communityApi.posts({
-                serie_code: user?.serie_code,
+                serie_code: activeSerie || undefined,
                 subject_id: filterSubject || undefined,
                 search: search || undefined,
                 sort,
@@ -73,7 +73,7 @@ export default function Community() {
             communityApi.createPost({
                 title: newTitle,
                 content: newContent,
-                serie_code: user?.serie_code,
+                serie_code: activeSerie || user?.serie_code,
                 subject_id: filterSubject || undefined,
             }),
         onSuccess: () => {
@@ -118,11 +118,26 @@ export default function Community() {
         <Layout>
             <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                    <h1 className="text-2xl font-bold text-slate-800">
-                        Forum Communauté
-                    </h1>
+                    <div>
+                        <h1 className="text-2xl font-bold text-slate-800">
+                            Forum Communauté
+                        </h1>
+                        <div className="mt-2 flex flex-wrap items-center gap-2">
+                            <Badge className="border-0 bg-slate-900 text-white">
+                                {activeSerie
+                                    ? `Série ${activeSerie}`
+                                    : 'Toutes les séries'}
+                            </Badge>
+                            {user?.serie_code ? (
+                                <Badge className="border-0 bg-green-light text-green-dark">
+                                    Série élève {user.serie_code}
+                                </Badge>
+                            ) : null}
+                        </div>
+                    </div>
                     <Button
                         onClick={() => setShowNewPost(true)}
+                        disabled={isAdmin && !activeSerie}
                         className="bg-green text-white hover:bg-green-dark"
                     >
                         <Plus className="h-4 w-4" />
@@ -164,6 +179,23 @@ export default function Community() {
                             </button>
                         ))}
                     </div>
+                    {isAdmin ? (
+                        <select
+                            value={activeSerie}
+                            onChange={(e) => {
+                                setSelectedSerie(e.target.value);
+                                setFilterSubject('');
+                            }}
+                            className="rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm focus:border-green focus:outline-none"
+                        >
+                            <option value="">Toutes les séries</option>
+                            {series.map((serie) => (
+                                <option key={serie} value={serie}>
+                                    {serie}
+                                </option>
+                            ))}
+                        </select>
+                    ) : null}
                 </div>
 
                 {/* Liste des posts */}
@@ -196,6 +228,9 @@ export default function Community() {
                                                         {post.subject_name}
                                                     </Badge>
                                                 )}
+                                                <Badge className="border-0 bg-slate-900/5 text-xs text-slate-600">
+                                                    {post.serie_code}
+                                                </Badge>
                                             </div>
                                             <h3 className="line-clamp-2 font-medium text-slate-800">
                                                 {post.title}
@@ -259,6 +294,12 @@ export default function Community() {
                 title="Poser une question"
             >
                 <div className="space-y-4">
+                    {isAdmin && !activeSerie ? (
+                        <div className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
+                            Choisis d’abord une série pour publier une question
+                            dans le bon espace élève.
+                        </div>
+                    ) : null}
                     <div>
                         <label className="mb-1.5 block text-sm font-medium text-slate-700">
                             Titre *
@@ -294,6 +335,9 @@ export default function Community() {
                             disabled={
                                 !newTitle.trim() ||
                                 !newContent.trim() ||
+                                !(
+                                    activeSerie || user?.serie_code
+                                ) ||
                                 createPostMutation.isPending
                             }
                             className="bg-green text-white hover:bg-green-dark"
@@ -324,6 +368,9 @@ export default function Community() {
                             {postDetail.post.content}
                         </p>
                         <div className="flex items-center gap-3">
+                            <Badge className="border-0 bg-slate-100 text-slate-600">
+                                {postDetail.post.serie_code}
+                            </Badge>
                             <p className="text-xs text-slate-400">
                                 par {postDetail.post.author_name}
                             </p>

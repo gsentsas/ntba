@@ -40,7 +40,14 @@ export const useAppStore = create<AppState>()(
             todayTasks: [],
             globalProgress: null,
             sidebarOpen: false,
-            setUser: (user) => set({ user }),
+            setUser: (user) =>
+                set((state) => ({
+                    user,
+                    selectedSerie:
+                        user && user.role !== 'admin'
+                            ? user.serie_code
+                            : state.selectedSerie,
+                })),
             setToken: (token) => {
                 if (typeof window !== 'undefined') {
                     if (token) {
@@ -60,6 +67,7 @@ export const useAppStore = create<AppState>()(
                 set({
                     token: null,
                     user: null,
+                    selectedSerie: 'S2',
                     activeChatSubjectId: null,
                     currentSessionId: null,
                     todayTasks: [],
@@ -67,7 +75,13 @@ export const useAppStore = create<AppState>()(
                 });
             },
             setPage: (currentPage) => set({ currentPage }),
-            setSelectedSerie: (selectedSerie) => set({ selectedSerie }),
+            setSelectedSerie: (selectedSerie) =>
+                set((state) => ({
+                    selectedSerie:
+                        state.user && state.user.role !== 'admin'
+                            ? state.user.serie_code
+                            : selectedSerie,
+                })),
             setActiveChatSubject: (activeChatSubjectId) =>
                 set({
                     activeChatSubjectId,
