@@ -2,6 +2,12 @@
 
 set -euo pipefail
 
+# Charger nvm en session non-interactive
+export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"
+# shellcheck source=/dev/null
+[[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
+export PATH="$HOME/.nvm/versions/node/$(ls $HOME/.nvm/versions/node 2>/dev/null | tail -1)/bin:/usr/local/bin:/usr/bin:$PATH"
+
 ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 
 echo "Pré-contrôle production"
