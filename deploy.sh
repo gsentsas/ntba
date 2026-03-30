@@ -53,6 +53,15 @@ if [[ "$FRESH" == "--fresh" ]]; then
 fi
 
 # ── 3. Frontend Node.js / Vite ───────────────────────────────
+# Diagnostic si npm toujours absent
+if ! command -v npm >/dev/null 2>&1; then
+    echo "❌ npm introuvable. Chemins testés : $PATH"
+    echo "   Cherche npm sur le système…"
+    find /opt /usr/local /usr/bin /root /home -name "npm" -type f 2>/dev/null | head -5
+    exit 1
+fi
+echo "   node : $(node -v)  npm : $(npm -v)"
+
 echo "📦 Dépendances npm (frontend)…"
 npm ci --omit=dev 2>/dev/null || npm install --omit=dev
 

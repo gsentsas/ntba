@@ -52,7 +52,10 @@ require_non_empty_var() {
 require_command git
 require_command composer
 require_command php
-require_command npm
+# npm/node : chemin variable selon Plesk — vérifié dans deploy.sh
+if ! command -v npm >/dev/null 2>&1; then
+    echo "AVERTISSEMENT: npm introuvable dans PATH=$PATH — deploy.sh tentera de le localiser"
+fi
 
 require_file "$ROOT_DIR/.env"
 require_file "$ROOT_DIR/backend/.env"
