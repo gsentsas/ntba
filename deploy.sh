@@ -8,12 +8,18 @@
 # ─────────────────────────────────────────────────────────────
 set -euo pipefail
 
-# Charger nvm / node dans les sessions SSH non-interactives
+# Charger node/npm — supporte nvm, n, apt, brew, Plesk NodeJS
 export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"
-# shellcheck source=/dev/null
-[[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
-# Fallback : chemins courants si nvm absent
-export PATH="$HOME/.nvm/versions/node/$(ls $HOME/.nvm/versions/node 2>/dev/null | tail -1)/bin:/usr/local/bin:/usr/bin:$PATH"
+[[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh" 2>/dev/null || true
+for _d in \
+    "$HOME/.nvm/versions/node/"*/bin \
+    /usr/local/bin \
+    /usr/bin \
+    /opt/plesk/node/*/bin \
+    /opt/nvm/versions/node/*/bin \
+    /usr/local/nodejs/bin; do
+    [[ -d "$_d" ]] && export PATH="$_d:$PATH"
+done
 
 FRESH=${1:-""}
 APP_DIR="$(cd "$(dirname "$0")" && pwd)"
