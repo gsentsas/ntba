@@ -8,6 +8,13 @@
 # ─────────────────────────────────────────────────────────────
 set -euo pipefail
 
+# Charger nvm / node dans les sessions SSH non-interactives
+export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"
+# shellcheck source=/dev/null
+[[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
+# Fallback : chemins courants si nvm absent
+export PATH="$HOME/.nvm/versions/node/$(ls $HOME/.nvm/versions/node 2>/dev/null | tail -1)/bin:/usr/local/bin:/usr/bin:$PATH"
+
 FRESH=${1:-""}
 APP_DIR="$(cd "$(dirname "$0")" && pwd)"
 
